@@ -7,17 +7,14 @@ import Image from 'next/image';
 import Herosection from 'modules/commanmodules/Herosection';
 
 export default function Imagepara(props) {
-
     return (
         <div>
             <Herosection
-
-
                 img={
                     <Image
                         alt='Mountains'
-                        src={'/assets/images/AboutUs.png'}
-                        height='85%'
+                        src={'/assets/images/Safe/SAFe-Agilist-Logo.png'}
+                        height='80%'
                         width='100%'
                         sizes='100vw'
                         // fill
@@ -46,14 +43,14 @@ export default function Imagepara(props) {
                             <ListItemText primary='  1 year membership to the SAFe Community Platform' />
                         </ListItem>
                     </List>
-
-
                 }
-                list1={['2 Days of Classroom Training', '  100% Assured Results',
+                list1={[
+
+                    '2 Days of Classroom Training',
+                    '  100% Assured Results',
                     'Trained by experienced SPC 5.0 SAFe Consultant',
-                    '  1 year membership to the SAFe Community Platform']}
-
-
+                    '  1 year membership to the SAFe Community Platform',
+                ]}
             />
         </div>
     );

@@ -1,15 +1,14 @@
-import React from 'react';
-import Grid from '@mui/material/Grid';
+import React from "react";
+import { Container, Grid, Box } from "@mui/material";
+import { Fonts } from "shared/constants/AppEnums";
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
-import { AppBar, Box, Card, Container } from '@mui/material';
-import { Fonts } from 'shared/constants/AppEnums';
 
-export default function Herosection(props) {
+export default function Herocontainer(props) {
     return (
-        <div>
+        <>
             <Grid className="section section-lg section-shaped " style={{ backgroundImage: "linear-gradient(90deg, #05445e 35%, #189ab4 90%)", position: "relative" }}>
                 <div className="shape shape-style-u1 shape-dark">
                     <span className="span-150" />
@@ -23,13 +22,10 @@ export default function Herosection(props) {
                     <span className="span-50" />
                     <span className="span-100" />
                 </div>
-                <Container sx={{ maxWidth: { xl: 1400 } }}>
-                    <Grid container spacing={7} alignItems='center' sx={{ position: "relative", zIndex: 1 }}>
+                <Container>
+                    <Grid container spacing={3} alignItems='center' sx={{ position: "relative", zIndex: 1 }}>
                         <Grid item xs={12} md={4}>
-                            <Box sx={{ border: "2px solid white", background: "white" }}>
-                                {props.img}
-                            </Box>
-
+                            {props.img}
                         </Grid>
                         <Grid
                             item
@@ -37,14 +33,12 @@ export default function Herosection(props) {
                             md={8}
                             alignItems='center'
                             justifyContent='center'
-
                         >
                             <Box
                                 component='h1'
                                 sx={{
                                     mb: 4,
                                     fontWeight: Fonts.BOLD,
-                                    color: "wheat"
                                     // fontSize: 16,
                                 }}
                             >
@@ -52,14 +46,14 @@ export default function Herosection(props) {
                             </Box>
 
                             <Box component='p' sx={{ mb: 5 }}>
-                                <List sx={{ color: "white" }}>
+                                {/* <List sx={{ bgcolor: 'background.paper' }}>
                                     {props.list1.map((item) => (
                                         <ListItem>
                                             <KeyboardDoubleArrowRightIcon></KeyboardDoubleArrowRightIcon>
-                                            <ListItemText primary={item} primaryTypographyProps={{ fontSize: '18px' }} />
+                                            <ListItemText primary={item} />
                                         </ListItem>
                                     ))}
-                                </List>
+                                </List> */}
                             </Box>
                         </Grid>
                     </Grid>
@@ -78,6 +72,6 @@ export default function Herosection(props) {
                     </svg>
                 </div>
             </Grid>
-        </div>
+        </>
     );
 }

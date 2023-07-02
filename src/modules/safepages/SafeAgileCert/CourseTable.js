@@ -83,7 +83,7 @@ export default function CourseTable() {
     const LectureCategoryData = {}
 
     return (
-        <Container>
+        <Container sx={{ maxWidth: { xl: 1450 }, marginTop: 10 }}>
             {LectureCategoryData &&
                 <>
                     <AppGridContainer>

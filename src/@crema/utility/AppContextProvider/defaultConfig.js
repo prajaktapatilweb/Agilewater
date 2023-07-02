@@ -118,7 +118,8 @@ export const defaultTheme = {
         fontSize: 16,
       },
       body1: {
-        fontSize: 14,
+        fontSize: 15,
+        lineHeight: 1.5 //add new line
       },
       body2: {
         fontSize: 12,
