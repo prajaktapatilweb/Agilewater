@@ -12,7 +12,7 @@ export default function Imagepara(props) {
             <Herosection
                 img={
                     <Image
-                        alt='Mountains'
+                        alt='Safelogo'
                         src={'/assets/images/Safe/SAFe-Agilist-Logo.png'}
                         height='80%'
                         width='100%'

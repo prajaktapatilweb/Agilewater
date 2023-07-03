@@ -10,6 +10,7 @@ import { Container } from '@mui/material';
 import Safeaccord from './Safeaccord';
 import { AppCard } from '@crema';
 import Herocontainer from './Herocontainer';
+import Whatsappnew from 'modules/commanmodules/Whatsappnew';
 
 export default function SafeAgileCert() {
     return (
@@ -40,11 +41,14 @@ export default function SafeAgileCert() {
                             <Safetest />
 
                             <RelatedCourses />
+
                             {/* <SlideBasicTwo /> */}
                         </Grid>
                     </Grid>
                 </Container>
+
             </Grid>
+            <Whatsappnew />
         </>
     );
 }

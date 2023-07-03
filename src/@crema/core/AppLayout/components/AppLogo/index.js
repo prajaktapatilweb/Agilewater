@@ -3,7 +3,7 @@ import { useThemeContext } from '../../../../utility/AppContextProvider/ThemeCon
 import PropTypes from 'prop-types';
 import { alpha, Box } from '@mui/material';
 import Image from "next/image"
-import logo1 from '../../../../../assets/icon/AWlogo.png';
+import logo1 from '../../../../../assets/icon/AWlogo1.png';
 // import Logo from '../../../../../assets/icon/logo.svg';
 import LogoText from '../../../../../assets/icon/logo_text.svg';
 
@@ -14,21 +14,23 @@ const AppLogo = () => {
 
 
     <Box
-      sx={{
-        height: { xs: 56, sm: 70 },
-        padding: 2.5,
-        display: 'flex',
-        flexDirection: 'row',
-        cursor: 'pointer',
-        alignItems: 'center',
-        justifyContent: 'center',
-        '& svg': {
-          height: { xs: 30, sm: 40 },
-        },
-      }}
-      className='app-logo'
+    // sx={{
+    //   height: { xs: 56, sm: 70 },
+    //   padding: 2.5,
+    //   display: 'flex',
+    //   flexDirection: 'row',
+    //   cursor: 'pointer',
+    //   alignItems: 'center',
+    //   justifyContent: 'center',
+    //   // '& svg': {
+    //   //   height: { xs: 30, sm: 40 },
+    //   // },
+    // }}
+
     >
-      <Image src={logo1} />
+      <Image src={logo1}
+
+      />
 
       {/* <Logo fill={theme.palette.primary.main} /> */}
       {/* <Box
