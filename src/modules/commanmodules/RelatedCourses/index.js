@@ -11,21 +11,21 @@ const RelatedCourses = () => {
   var relatedCourses = [
     {
 
-      image: '/assets/images/AboutUs.png',
-      title: "Our strong development team will never ",
+      image: '/assets/images/safe/ICP-ACC.webp',
+      title: "Agile Coaching",
       views: '1.8k',
     },
     {
 
-      image: '/assets/images/AboutUs.png',
-      title: "Our strong development team will never ",
-      views: 'gfdhgd',
+      image: '/assets/images/safe/ScrumAtScale-Badge-Practitioner.png',
+      title: "Scrum@Scale Practitioner",
+      views: '1.5k',
     },
     {
 
-      image: '/assets/images/AboutUs.png',
-      title: "Our strong development team will never ",
-      views: 'gfdhgd',
+      image: '/assets/images/safe/CSM-Logo.webp',
+      title: "Scrum Master",
+      views: '1.2k',
     },
 
   ]

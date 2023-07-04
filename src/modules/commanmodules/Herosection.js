@@ -10,7 +10,8 @@ import { Fonts } from 'shared/constants/AppEnums';
 export default function Herosection(props) {
     return (
         <div>
-            <Grid className="section section-lg section-shaped " style={{ backgroundImage: "linear-gradient(90deg, #05445e 35%, #189ab4 90%)", position: "relative" }}>
+            {/* <Grid className="section section-lg section-shaped " style={{ backgroundImage: "linear-gradient(90deg, #05445e 35%, #189ab4 90%)", position: "relative" }}> */}
+            <Grid className="section section-lg section-shaped">
                 <div className="shape shape-style-u1 shape-dark">
                     <span className="span-150" />
                     <span className="span-50" />
@@ -24,7 +25,7 @@ export default function Herosection(props) {
                     <span className="span-100" />
                 </div>
                 <Container sx={{ maxWidth: { xl: 1400 } }}>
-                    <Grid container spacing={7} alignItems='center' sx={{ position: "relative", zIndex: 1 }}>
+                    <Grid container spacing={7} alignItems='center' sx={{ position: "relative", zIndex: 1 }} mt={{ xs: 5, md: 0 }}>
                         <Grid item xs={12} md={4}>
                             <Box sx={{ border: "2px solid white", background: "white" }}>
                                 {props.img}

@@ -221,6 +221,7 @@ export default function EnhancedTable({ rows, headCells, TableTitle, mainColumn,
                                                         < TableCell                                                        >
                                                             <Button
                                                                 variant="contained"
+                                                                sx={{ backgroundImage: "linear-gradient(to right, #3e2bce 0%, #2dd3aa 100%, #2dd3aa 100%, #2dd3aa 100%)" }}
                                                                 onClick={() => {
                                                                     // setSelected(row)
                                                                     setSelectedRow(row);

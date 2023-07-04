@@ -11,7 +11,7 @@ export default function Courseinfo(props) {
             <Box>
                 {props.DetailObject.map((item, i) => (
                     <h5>
-                        <Typography variant='h2' key={i} gutterBottom>
+                        <Typography variant='h2' sx={{ color: "#20509e" }} key={i} gutterBottom>
                             {item.subtitle}
                         </Typography>
                         <Typography variant='body1' gutterBottom>{item.para}</Typography>

@@ -1,8 +1,8 @@
 import React from 'react';
-import {alpha, Box} from '@mui/material';
+import { alpha, Box } from '@mui/material';
 import PropsTypes from 'prop-types';
 
-const FooterWrapper = ({children, ...rest}) => {
+const FooterWrapper = ({ children, ...rest }) => {
   return (
     <Box
       sx={{
@@ -18,11 +18,14 @@ const FooterWrapper = ({children, ...rest}) => {
           alignItems: 'center',
           flexDirection: 'row',
           display: 'flex',
-          padding: {xs: '5px 20px', md: '5px 32px', xl: '10px 32px'},
+          padding: { xs: '5px 20px', md: '5px 32px', xl: '10px 32px' },
+          // border: "1px solid grey"
         },
       }}
       {...rest}
+
     >
+      <hr style={{ color: "#ebebeb", backgroundColor: "#ebebeb", width: "90%", marginLeft: 50, marginRight: 50 }}></hr>
       {children}
     </Box>
   );

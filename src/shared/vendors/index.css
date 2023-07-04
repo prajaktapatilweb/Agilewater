@@ -167,8 +167,10 @@
   );
 }
 .section-shaped .shape-style-u1.shape-dark {
+  
+  background: linear-gradient(to right, #3e2bce 0%, #2dd3aa 100%, #2dd3aa 100%, #2dd3aa 100%);
   /* background: linear-gradient(90deg, #251e47 10%, #3b2450 25%, #713267  50%, #3b2450 75%, #251e47 90%); */
-  background: linear-gradient(90deg, #05445e 35%, #189ab4 90%);
+  /* background: linear-gradient(90deg, #05445e 35%, #189ab4 90%); */
   /* linear-gradient(150deg, #250e62 15%, #250e62 70%, #680182 94%); */
 }
 .section-shaped .shape-style-u1.shape-darks {
