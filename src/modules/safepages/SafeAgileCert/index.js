@@ -11,6 +11,7 @@ import Safeaccord from './Safeaccord';
 import { AppCard } from '@crema';
 import Whatsappnew from 'modules/commanmodules/Whatsappnew';
 import Userfooter from '@crema/User/Userfooter';
+import MainSafeaccord from './MainSafeaccord';
 
 export default function SafeAgileCert() {
     return (
@@ -25,7 +26,8 @@ export default function SafeAgileCert() {
                             <AppCard sxStyle={{ p: 5 }} >
                                 {/* <Courseinfo /> */}
                                 <Safeinfo />
-                                <Safeaccord />
+                                {/* <Safeaccord /> */}
+                                <MainSafeaccord />
 
                             </AppCard>
                         </Grid>
@@ -34,6 +36,7 @@ export default function SafeAgileCert() {
                             <Safetest />
                             <RelatedCourses />
 
+                            BOOST YOUR CAREER WITH THE CSM CERTIFICATION
                             {/* <SlideBasicTwo /> */}
                         </Grid>
                     </Grid>
