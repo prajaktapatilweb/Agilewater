@@ -40,8 +40,8 @@ const routesConfig = [
         id: 'menu11',
         messageId: 'menu.coach.agile',
         type: 'item',
-        url: '/trialpages/homepage',
-        // url: '/agile-coaching/'
+        // url: '/trialpages/homepage',
+        url: '/agile-coaching/'
       },
       {
         id: 'menu12',
@@ -64,6 +64,7 @@ const routesConfig = [
     ],
   },
   {
+
     id: "menu2",
     messageId: "menu.cert",
     type: "group",

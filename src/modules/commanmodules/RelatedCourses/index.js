@@ -5,13 +5,15 @@ import Slider from 'react-slick';
 import CourseItem from './CourseItem';
 import PropTypes from 'prop-types';
 import CourseSlider from './CourseSlider';
-import { Container } from '@mui/material';
+import Image from 'next/image';
 
 const RelatedCourses = () => {
   var relatedCourses = [
     {
 
-      image: '/assets/images/safe/ICP-ACC.webp',
+      image: '/assets/images/safe/ICP-ACC.webp'
+      ,
+
       title: "Agile Coaching",
       views: '1.8k',
     },

@@ -109,11 +109,13 @@ const AppHeader = () => {
               <Box
                 sx={{
                   ml: 5,
+
                   '& .navbarNav': {
                     display: 'flex',
                     padding: 0,
-                    mx: { xs: -4, lg: -5 },
-                    marginRight: -16,
+
+                    // mx: { xs: -4, lg: -5 },
+                    // marginRight: -16,
                   },
                   '& .navItem': {
                     width: 'auto',
@@ -121,6 +123,7 @@ const AppHeader = () => {
                     px: { xs: 4, lg: 5 },
                     py: 1,
                     borderRadius: 1,
+
                     '&.active': {
                       color: sidebarMenuSelectedTextColor,
                       backgroundColor: alpha(sidebarMenuSelectedBgColor, 0.8),

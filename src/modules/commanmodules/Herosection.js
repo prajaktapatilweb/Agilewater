@@ -4,8 +4,9 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
-import { AppBar, Box, Card, Container } from '@mui/material';
+import { AppBar, Box, Card, Container, Typography } from '@mui/material';
 import { Fonts } from 'shared/constants/AppEnums';
+import Videodemo from 'modules/safepages/SafeAgileCert/Videodemo';
 
 export default function Herosection(props) {
     return (
@@ -24,10 +25,24 @@ export default function Herosection(props) {
                     <span className="span-50" />
                     <span className="span-100" />
                 </div>
-                <Container sx={{ maxWidth: { xl: 1400 } }}>
+                <Container sx={{ maxWidth: { xl: 1400 }, textAlign: 'center' }}>
+                    <Box
+                        component='h1'
+                        sx={{
+                            mb: 4,
+                            fontWeight: Fonts.BOLD,
+                            color: "wheat",
+                            position: "relative", zIndex: 1
+                            // fontSize: 16,
+                        }}
+                    >
+                        {props.heading}
+                    </Box>
+
                     <Grid container spacing={7} alignItems='center' sx={{ position: "relative", zIndex: 1 }} mt={{ xs: 5, md: 0 }}>
-                        <Grid item xs={12} md={4}>
-                            <Box sx={{ border: "2px solid white", background: "white" }}>
+
+                        <Grid item xs={12} md={3}>
+                            <Box sx={{ border: "2px solid white", borderRadius: "5px", background: "white" }}>
                                 {props.img}
                             </Box>
 
@@ -35,12 +50,12 @@ export default function Herosection(props) {
                         <Grid
                             item
                             xs={12}
-                            md={8}
+                            md={5}
                             alignItems='center'
                             justifyContent='center'
 
                         >
-                            <Box
+                            {/* <Box
                                 component='h1'
                                 sx={{
                                     mb: 4,
@@ -50,7 +65,7 @@ export default function Herosection(props) {
                                 }}
                             >
                                 {props.heading}
-                            </Box>
+                            </Box> */}
 
                             <Box component='p' sx={{ mb: 5 }}>
                                 <List sx={{ color: "white" }}>
@@ -63,10 +78,21 @@ export default function Herosection(props) {
                                 </List>
                             </Box>
                         </Grid>
+                        <Grid
+                            item
+                            xs={12}
+                            md={4}
+                            alignItems='center'
+                            justifyContent='center'
+
+                        >
+                            <Videodemo videoPromo={'sd'} />
+                        </Grid>
+
                     </Grid>
                 </Container>
                 {/* SVG separator */}
-                <div className="separator separator-bottom separator-skew zindex-100">
+                {/* <div className="separator separator-bottom separator-skew zindex-100">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         preserveAspectRatio="none"
@@ -77,7 +103,7 @@ export default function Herosection(props) {
                     >
                         <polygon className="fill-white" points="2560 0 2560 100 0 100" />
                     </svg>
-                </div>
+                </div> */}
             </Grid>
         </div>
     );

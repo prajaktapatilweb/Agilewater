@@ -28,9 +28,14 @@ const AppLogo = () => {
     // }}
 
     >
-      <Image src={logo1}
+      <Image
+        src={logo1}
 
+        width={350}
+        height={60}
+      // layout='fill'
       />
+
 
       {/* <Logo fill={theme.palette.primary.main} /> */}
       {/* <Box

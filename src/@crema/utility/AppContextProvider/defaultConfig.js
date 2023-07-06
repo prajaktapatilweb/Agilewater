@@ -122,7 +122,8 @@ export const defaultTheme = {
         lineHeight: 1.5 //add new line
       },
       body2: {
-        fontSize: 12,
+        fontSize: 16,
+        lineHeight: 1.7
       },
     },
     components: {

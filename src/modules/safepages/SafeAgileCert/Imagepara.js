@@ -14,13 +14,14 @@ export default function Imagepara(props) {
                     <Image
                         alt='Safelogo'
                         src={'/assets/images/Safe/SAFe-Agilist-Logo.png'}
-                        height='80%'
-                        width='100%'
-                        sizes='100vw'
-                        // fill
-                        // style={{ width: '100%', height: "auto" }}
-                        // layout='fill'
-                        objectFit='contain'
+                        height={80}
+                        width={80}
+                        layout='responsive'
+                    // sizes='100vw'
+                    // fill
+                    // style={{ width: '100%', height: "auto" }}
+                    // layout='fill'
+                    // objectFit='contain'
                     />
                 }
                 heading=' Leading SAFe® 6.0 / SAFe® 6.0 Agilist Certification'
@@ -52,6 +53,7 @@ export default function Imagepara(props) {
                     '  1 year membership to the SAFe Community Platform',
                 ]}
             />
+
         </div>
     );
 }
