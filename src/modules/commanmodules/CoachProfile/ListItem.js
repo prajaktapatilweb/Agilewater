@@ -2,9 +2,6 @@ import React from 'react';
 import Card from '@mui/material/Card';
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
-import { Fonts } from 'shared/constants/AppEnums';
-import IntlMessages from '@crema/utility/IntlMessages';
-import PropTypes from 'prop-types';
 import { grey } from '@mui/material/colors';
 import Chip from '@mui/material/Chip';
 import Button from '@mui/material/Button';
@@ -16,71 +13,300 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import LanguageIcon from '@mui/icons-material/Language';
 
+import { Fonts } from '../../../shared/constants/AppEnums';
+import IntlMessages from '../../../@crema/utility/IntlMessages';
+import PropTypes from 'prop-types';
 
-
-
-const ListItem = ({ user }) => {
-  // const { user } = props;
-  // console.log("avc", user)
+const ListItem = (props) => {
+  const { user } = props;
   return (
-    <>
-      {/* {user.map((item, i) => ( */}
-      <Box sx={{ mb: 8 }} className='item-hover' >
-        <Card>
+    <Box sx={{ mb: 8 }} className='item-hover'>
+      <Card>
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: { xs: 'column', sm: 'row' },
+          }}
+        >
           <Box
             sx={{
+              color: 'primary.contrastText',
+              width: { xs: '100%', sm: 200, xl: 256 },
+              p: { xs: 3, lg: 5 },
+              bgcolor: 'primary.main',
               display: 'flex',
-              flexDirection: { xs: 'column', sm: 'row' },
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Box sx={{ mb: 3 }}>
+              <Avatar
+                src={user.img}
+                sx={{
+                  // height: 85, original
+                  // width: 85,
+                  height: 100,
+                  width: 100,
+                }}
+              />
+            </Box>
+            <Box
+              component='h3'
+              sx={{
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+                whiteSpace: 'nowrap',
+                width: '100%',
+                textAlign: 'center',
+                mb: 3,
+                fontSize: 16,
+                fontWeight: Fonts.BOLD,
+              }}
+            >
+              {user.name}
+            </Box>
+            <Chip
+              label={`@${user.charge}/Hour`}
+              sx={{
+                backgroundColor: (theme) => theme.palette.primary.contrastText,
+                color: '#484848',
+                paddingRight: 4,
+                paddingLeft: 4,
+                fontWeight: Fonts.MEDIUM,
+              }}
+            />
+          </Box>
+
+          <Box
+            sx={{
+              p: 5,
+              flex: 1,
             }}
           >
             <Box
               sx={{
-                color: 'primary.contrastText',
-                width: { xs: '100%', sm: 200, xl: 256 },
-                p: { xs: 3, lg: 5 },
-                bgcolor: 'primary.main',
+                mb: { xs: 2, xl: 3 },
+                color: 'grey.600',
                 display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'center',
+                flexDirection: { xs: 'column', lg: 'row' },
+                alignItems: { lg: 'center' },
               }}
             >
-              <Box sx={{ mb: 3 }}>
-                <Avatar
-
-
-                  sx={{
-                    height: 100,
-                    width: 100,
-                  }}>
-                  {user.img}
-                </Avatar>
-              </Box>
               <Box
-                component='h3'
                 sx={{
-                  overflow: 'hidden',
-                  textOverflow: 'ellipsis',
-                  whiteSpace: 'nowrap',
-                  width: '100%',
-                  textAlign: 'center',
-                  mb: 3,
-                  fontSize: 16,
-                  fontWeight: Fonts.BOLD,
+                  mx: -3,
+                  mb: 2,
+                  color: 'text.primary',
+                  pr: { xl: 32 },
+                  display: 'flex',
+                  flex: 1,
+                  fontSize: { xs: 14, xl: 16 },
+                  flexWrap: 'wrap',
+                  justifyContent: 'space-between',
                 }}
               >
-                {user.name}
-                {/* {user.para} */}
+                <Box
+                  sx={{
+                    px: 3,
+                    display: 'flex',
+                    alignItems: 'center',
+                    cursor: 'pointer',
+                  }}
+                >
+                  {/* <MailIcon /> */}
+                  <Box
+                    sx={{
+                      ml: 2,
+                    }}
+                  >
+                    {user.name}
+                  </Box>
+                </Box>
+
+                <Box
+                  sx={{
+                    px: 3,
+                    display: 'flex',
+                    alignItems: 'center',
+                    cursor: 'pointer',
+                  }}
+                >
+                  <LanguageIcon />
+                  <Box
+                    sx={{
+                      ml: 2,
+                    }}
+                  >
+                    {user.location}
+                  </Box>
+                </Box>
+
+                {/* <Box
+                  sx={{
+                    px: 3,
+                    display: 'flex',
+                    alignItems: 'center',
+                    cursor: 'pointer',
+                  }}
+                >
+                  <PhoneIcon />
+                  <Box
+                    sx={{
+                      ml: 2,
+                    }}
+                  >
+                    {user.phone}
+                  </Box>
+                </Box> */}
               </Box>
 
+              {/* <Box
+                sx={{
+                  mx: { xs: -1, xl: -4 },
+                  mb: 2,
+                  pl: { lg: 6, xl: 10 },
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: { xs: 'space-between', sm: 'flex-start' },
+                  color: 'text.primary',
+                }}
+              > */}
+              {/* <Box
+                  component='span'
+                  sx={{
+                    cursor: 'pointer',
+                    mx: { xs: 1, xl: 4 },
+                  }}
+                >
+                  <FacebookIcon />
+                </Box> */}
+              {/* <Box
+                  component='span'
+                  sx={{
+                    cursor: 'pointer',
+                    mx: { xs: 1, xl: 4 },
+                  }}
+                >
+                  <LinkedInIcon />
+                </Box> */}
+              {/* <Box
+                  component='span'
+                  sx={{
+                    cursor: 'pointer',
+                    mx: { xs: 1, xl: 4 },
+                  }}
+                >
+                  <InstagramIcon />
+                </Box> */}
+              {/* <Box
+                  component='span'
+                  sx={{
+                    cursor: 'pointer',
+                    mx: { xs: 1, xl: 4 },
+                  }}
+                >
+                  <TwitterIcon />
+                </Box> */}
+              {/* </Box> */}
             </Box>
 
+            <Box
+              sx={{
+                pr: { lg: 6, xl: 16 },
+              }}
+            >
+              <Box
+                component='p'
+                sx={{
+                  color: 'text.secondary',
+                  mb: 4,
+                  fontSize: 14,
+                  fontWeight: Fonts.LIGHT,
+                }}
+              >
+                {user.info1}
+              </Box>
+            </Box>
+
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: { md: 'center' },
+                flexDirection: { xs: 'column', md: 'row' },
+              }}
+            >
+              <Box
+                sx={{
+                  mx: { xs: -1, xl: -2 },
+                }}
+              >
+                {user.info2}
+                {/* {user.skills.map((skill, index) => {
+                  return (
+                    <Chip
+                      key={index}
+                      label={skill}
+                      sx={{
+                        backgroundColor: (theme) =>
+                          theme.palette.type === 'dark'
+                            ? theme.palette.grey[700]
+                            : theme.palette.grey[200],
+                        padding: '4px 12px',
+                        marginTop: 2,
+                        marginRight: { xs: 1, xl: 2 },
+                        marginLeft: { xs: 1, xl: 2 },
+                        border: '1px solid',
+                        borderColor: grey[500],
+                        borderRadius: 2,
+                      }}
+                    />
+                  );
+                })} */}
+              </Box>
+
+              {/* <Box
+                sx={{
+                  ml: { md: 'auto' },
+                }}
+              > */}
+              {/* <Button
+                  variant='contained'
+                  color='primary'
+                  sx={{
+                    marginRight: 5,
+                    marginTop: 2,
+                    padding: '9px 12px',
+                    lineHeight: 1,
+                    width: 96,
+                    fontWeight: Fonts.MEDIUM,
+                  }}
+                >
+                  <IntlMessages id='common.hire' />
+                </Button> */}
+              {/* <Button
+                  variant='contained'
+                  sx={{
+                    backgroundColor: (theme) =>
+                      theme.palette.primary.contrastText,
+                    color: 'grey.500',
+                    marginTop: 2,
+                    border: '1px solid',
+                    borderColor: 'grey.500',
+                    width: 96,
+                    fontWeight: Fonts.MEDIUM,
+                    padding: '9px 12px',
+                    lineHeight: 1,
+                  }}
+                >
+                  <IntlMessages id='mailApp.remove' />
+                </Button> */}
+              {/* </Box> */}
+            </Box>
           </Box>
-        </Card>
-      </Box>
-      {/* )) */}
-      {/* } */}
-    </>
+        </Box>
+      </Card>
+    </Box>
   );
 };
 
