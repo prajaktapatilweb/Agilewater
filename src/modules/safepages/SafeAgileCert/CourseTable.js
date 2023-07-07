@@ -44,66 +44,123 @@ export default function CourseTable() {
   // };
 
   const rows = [
-    createData('Cupcake', 305, 3.7, 67, 4.3),
-    createData('Donut', 452, 25.0, 51, 4.9),
-    createData('Eclair', 262, 16.0, 24, 6.0),
-    createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-    createData('Gingerbread', 356, 16.0, 49, 3.9),
-    createData('Honeycomb', 408, 3.2, 87, 6.5),
-    createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-    createData('Jelly Bean', 375, 0.0, 94, 0.0),
-    createData('KitKat', 518, 26.0, 65, 7.0),
-    createData('Lollipop', 392, 0.2, 98, 0.0),
-    createData('Marshmallow', 318, 0, 81, 2.0),
-    createData('Nougat', 360, 19.0, 9, 37.0),
-    createData('Oreo', 437, 18.0, 63, 4.0),
+    createData(
+      'SAFE',
+      '25 - 26 Jul 2023',
+      'Online',
+      '9:30 AM - 5:30 pm',
+      305,
+      'DEF',
+    ),
+    createData(
+      'Agile',
+      '5 - 6 Jul 2023',
+      'Online',
+      '9:30 AM - 5:30 pm',
+      452,
+      'xYZ',
+    ),
+    createData(
+      'Agile Certification',
+      '11 - 12 Jul 2023',
+      'Online',
+      '9:30 AM - 5:30 pm',
+      262,
+      'ABC',
+    ),
+    createData(
+      'Safe',
+      '10 - 16 Jul 2023',
+      'Online',
+      '9:30 AM - 5:30 pm',
+      159,
+      'ABC',
+    ),
   ];
-  function createData(name, calories, fat, carbs, protein) {
+  function createData(Course, date1, City, Time, Cost, Trainer) {
     return {
-      name,
-      calories,
-      fat,
-      carbs,
-      protein,
+      Course,
+      date1,
+      City,
+      Time,
+      Cost,
+      Trainer,
       action: 'Register',
     };
   }
-  const columns = [
+  //   const columns = [
+  //     {
+  //       id: 'name',
+  //       numeric: false,
+  //       label: 'Dessert (100g serving)',
+  //     },
+  //     {
+  //       id: 'calories',
+  //       numeric: true,
+  //       label: 'Calories',
+  //     },
+  //     {
+  //       id: 'fat',
+  //       numeric: true,
+  //       label: 'Fat (g)',
+  //     },
+  //     {
+  //       id: 'carbs',
+  //       numeric: true,
+  //       label: 'Carbs (g)',
+  //     },
+  //     {
+  //       id: 'protein',
+  //       numeric: true,
+  //       label: 'Protein (g)',
+  //     },
+  //     {
+  //       id: 'action',
+  //       numeric: false,
+  //       label: 'Action',
+  //     },
+  //   ];
+  var columns = [
     {
-      id: 'name',
+      id: 'Course',
       numeric: false,
-      label: 'Dessert (100g serving)',
+      label: 'Course',
     },
     {
-      id: 'calories',
-      numeric: true,
-      label: 'Calories',
+      id: 'date1',
+      numeric: false,
+      label: 'Date',
     },
     {
-      id: 'fat',
-      numeric: true,
-      label: 'Fat (g)',
+      id: 'City',
+      numeric: false,
+      label: 'City',
     },
     {
-      id: 'carbs',
-      numeric: true,
-      label: 'Carbs (g)',
+      id: 'Time',
+      numeric: false,
+      label: 'Time (IST)',
     },
     {
-      id: 'protein',
+      id: 'Cost',
       numeric: true,
-      label: 'Protein (g)',
+      label: 'Cost (INR)',
+    },
+    {
+      id: 'Trainer',
+      numeric: false,
+      label: 'Trainer',
     },
     {
       id: 'action',
       numeric: false,
-      label: 'Action',
+      label: 'Registeration',
     },
   ];
   console.log('second', rows, columns);
   return (
     <Container sx={{maxWidth: {xl: 1450}, marginTop: 10}}>
-      {rows1 && columns1 && (
+      {rows && columns && (
         <>
           <AppGridContainer>
             <Grid item xs={12} md={12}>
@@ -122,8 +179,8 @@ export default function CourseTable() {
                   Approved
                 </Typography>
                 <EnhancedTable
-                  rows={rows1}
-                  headCells={columns1}
+                  rows={rows}
+                  headCells={columns}
                   TableTitle='Enhanced Table On Nutrition'
                   mainColumn='name'
                   orderByColumn='calories'

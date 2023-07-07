@@ -68,7 +68,7 @@ router.get('/googlesheet', async (req, res) => {
         label: 'Trainer',
       },
       {
-        id: 'Registeration',
+        id: 'action',
         numeric: false,
         label: 'Registeration',
       },
@@ -89,20 +89,19 @@ router.get('/googlesheet', async (req, res) => {
         } else {
           switch (colItem.label) {
             case 'Cost (INR)':
-              console.log('first');
               // rowObject[colItem.label] = {
               //   1: arrayElement[6],
               //   2: arrayElement[7],
               // };
               break;
             case 'Cost (USD)':
-              console.log('seconf');
               // rowObject[colItem.label] = {
               //   1: arrayElement[7],
               //   2: arrayElement[8],
               // };
               break;
-            case 'Registration':
+            case 'Registeration':
+              rowObject.action = 'Registratoin';
               break;
             default:
               break;
@@ -111,6 +110,7 @@ router.get('/googlesheet', async (req, res) => {
       });
       rows.push(rowObject);
     }
+    console.log(rowObject);
     // logger.info('User List Request Successful', { by: req.user.gid, for: [0], info: {} })
     return res.status(200).json({rows, columns});
   } catch (err) {
