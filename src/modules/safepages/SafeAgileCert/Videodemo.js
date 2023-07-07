@@ -11,7 +11,7 @@ export default function Videodemo() {
             <AppCard sxStyle={{ height: 10 }} sx={{}}>
                 <Box
                     sx={{
-                        m: -1,
+                        m: -2,
 
                         '& .react-player': {
                             width: '100% !important',

@@ -12,7 +12,7 @@ const CourseSlider = ({ children }) => {
           mx: { sm: -3 },
           '& .slick-slide': {
             '&  img': {
-              // width: '100%',
+
               height: 'auto',
             },
           },

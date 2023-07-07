@@ -1,4 +1,4 @@
-import {AppCard, AppGridContainer, AppInfoView} from '@crema';
+import { AppCard, AppGridContainer, AppInfoView } from '@crema';
 import AppDialog from '@crema/core/AppDialog';
 import IntlMessages from '@crema/utility/IntlMessages';
 import {
@@ -9,14 +9,14 @@ import {
   Grid,
   Typography,
 } from '@mui/material';
-import React, {useEffect, useState} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   CourseData,
   getLectureRateData,
   onGetAnalyticsData,
 } from 'redux/actions';
-import {Fonts} from 'shared/constants/AppEnums';
+import { Fonts } from 'shared/constants/AppEnums';
 import EnhancedTable from '../../commanmodules/EnhancedTable';
 // import UserTableComman from "modules/commanmodules/UserTableComman";
 
@@ -29,7 +29,7 @@ export default function CourseTable() {
     dispatch(onGetAnalyticsData());
   }, [dispatch]);
 
-  const analyticsData = useSelector(({dashboard}) => dashboard.analyticsData);
+  const analyticsData = useSelector(({ dashboard }) => dashboard.analyticsData);
 
   // const CourseData = useSelector((state) => state.PayRelated.lectureRate);
 
@@ -42,6 +42,7 @@ export default function CourseTable() {
   //     setisDialogOpen(!isDialogOpen)
   //     setSelectedRow()
   // };
+
 
   const rows = [
     createData(
@@ -159,7 +160,7 @@ export default function CourseTable() {
   ];
   console.log('second', rows, columns);
   return (
-    <Container sx={{maxWidth: {xl: 1450}, marginTop: 10}}>
+    <Container >
       {rows && columns && (
         <>
           <AppGridContainer>
@@ -168,12 +169,12 @@ export default function CourseTable() {
                 title={
                   <>
                     <h3>Teachers and Lecture Category wise Rates</h3>
-                    <Box component='p' sx={{color: 'text.secondary'}}>
+                    <Box component='p' sx={{ color: 'text.secondary' }}>
                       Standared Lecture Rates are given in heading
                     </Box>
                   </>
                 }
-                contentStyle={{px: 0, textAlign: 'center'}}
+                contentStyle={{ px: 0, textAlign: 'center' }}
               >
                 <Typography variant='h2' p={2}>
                   Approved
@@ -184,9 +185,9 @@ export default function CourseTable() {
                   TableTitle='Enhanced Table On Nutrition'
                   mainColumn='name'
                   orderByColumn='calories'
-                  // selectedRow={selectedRow}
-                  // setSelectedRow={setSelectedRow}
-                  // setisDialogOpen={setisDialogOpen}
+                // selectedRow={selectedRow}
+                // setSelectedRow={setSelectedRow}
+                // setisDialogOpen={setisDialogOpen}
                 />
               </AppCard>
             </Grid>

@@ -161,6 +161,14 @@ export default function Userfooter() {
                                     width='60%'
                                 />
                             </Box>
+                            <Box sx={{ pt: 0 }}>
+                                <Image
+                                    alt='Safelogo'
+                                    src={'/assets/images/Safe/ICAgile-Logo.jpeg'}
+                                    height='80%'
+                                    width='100%'
+                                />
+                            </Box>
                         </Grid>
                     </Grid>
                 </Container>

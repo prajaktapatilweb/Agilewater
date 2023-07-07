@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 import Image from 'next/image';
 
 const CourseItem = ({ data }) => {
-
   return (
     <Box
       sx={{
@@ -18,10 +17,15 @@ const CourseItem = ({ data }) => {
           mb: 2,
         }}
       >
-        <Image src={data.image} alt={data.title} width="80%" height="50%" layout='responsive' />
+        <Image
+          src={data.image}
+          alt={data.title}
+          width={100}
+          height={90}
+          layout='responsive'
+        />
 
         {/* <img src={data.image} alt={data.title} /> */}
-
       </Box>
       <Box
         component='p'

@@ -65,6 +65,7 @@ export default function Accordioninfo(props) {
                         </Typography>
 
                     </AccordionDetails>
+                    {item.comp}
                 </Accordion>))}
             {/* // <Accordion */}
             {/* //     expanded={expanded === 'panel2'}

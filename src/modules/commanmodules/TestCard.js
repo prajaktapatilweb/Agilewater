@@ -8,7 +8,7 @@ import { Container } from '@mui/material';
 const Testcard = (props) => {
     return (
 
-        <AppCard sxStyle={{ height: 1, backgroundColor: '#0A8FDC', marginBottom: 5, marginTop: 5 }}>
+        <AppCard sxStyle={{ height: 1, backgroundColor: '#0A8FDC', marginTop: 5 }}>
             <Box
                 sx={{
                     display: 'flex',
