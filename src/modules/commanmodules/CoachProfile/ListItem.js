@@ -2,85 +2,196 @@ import React from 'react';
 import Card from '@mui/material/Card';
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
-import { Fonts } from 'shared/constants/AppEnums';
-import IntlMessages from '@crema/utility/IntlMessages';
-import PropTypes from 'prop-types';
+import LocationOnTwoToneIcon from '@mui/icons-material/LocationOnTwoTone';
 import { grey } from '@mui/material/colors';
-import Chip from '@mui/material/Chip';
 import Button from '@mui/material/Button';
-import MailIcon from '@mui/icons-material/Mail';
-import PhoneIcon from '@mui/icons-material/Phone';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import LanguageIcon from '@mui/icons-material/Language';
+import { Fonts } from '../../../shared/constants/AppEnums';
+import PropTypes from 'prop-types';
+import { Grid } from '@mui/material'
 
-
-
-
-const ListItem = ({ user }) => {
-  // const { user } = props;
-  // console.log("avc", user)
+const ListItem = (props) => {
+  const { user } = props;
   return (
-    <>
-      {/* {user.map((item, i) => ( */}
-      <Box sx={{ mb: 8 }} className='item-hover' >
-        <Card>
+    <Card style={{ display: 'flex', width: '100%' }}>
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: { xs: 'column', sm: 'row' },
+          justifyContent: 'space-between'
+
+        }}
+      >
+        <Box
+          sx={{
+            color: 'primary.contrastText',
+            width: { xs: '100%', sm: 200, xl: 200 },
+            p: { xs: 3, lg: 3 },
+            bgcolor: 'primary.main',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <Box sx={{ mb: 3 }}>
+            <Avatar
+              src={user.img}
+              sx={{
+                height: 85,
+                width: 85,
+                // height: 100,
+                // width: 100,
+              }}
+            />
+          </Box>
+
+          <Button
+            variant='contained'
+            sx={{
+              backgroundColor: (theme) =>
+                theme.palette.primary.contrastText,
+              color: 'grey.500',
+              marginTop: 2,
+              border: '1px solid',
+              borderColor: 'grey.500',
+              width: 96,
+              fontWeight: Fonts.MEDIUM,
+              padding: '9px 12px',
+              lineHeight: 1,
+            }}
+
+          >
+
+            {user.button}
+          </Button>
+
+        </Box>
+
+        <Box
+          sx={{
+            p: 4,
+            flex: 1,
+          }}
+        >
           <Box
             sx={{
+              mb: { xs: 2, xl: 3 },
+              color: 'grey.600',
               display: 'flex',
-              flexDirection: { xs: 'column', sm: 'row' },
+              flexDirection: { xs: 'column', lg: 'row' },
+              alignItems: { lg: 'center' },
             }}
           >
             <Box
               sx={{
-                color: 'primary.contrastText',
-                width: { xs: '100%', sm: 200, xl: 256 },
-                p: { xs: 3, lg: 5 },
-                bgcolor: 'primary.main',
+                mx: -3,
+                mb: 2,
+                color: 'text.primary',
+                // pr: { xl: 32 },
                 display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'center',
+                flex: 1,
+                fontSize: { xs: 14, xl: 16 },
+                flexWrap: 'wrap',
+                justifyContent: 'space-between',
               }}
             >
-              <Box sx={{ mb: 3 }}>
-                <Avatar
-
-
-                  sx={{
-                    height: 100,
-                    width: 100,
-                  }}>
-                  {user.img}
-                </Avatar>
-              </Box>
               <Box
-                component='h3'
+                variant="h1"
                 sx={{
-                  overflow: 'hidden',
-                  textOverflow: 'ellipsis',
-                  whiteSpace: 'nowrap',
-                  width: '100%',
-                  textAlign: 'center',
-                  mb: 3,
-                  fontSize: 16,
+                  px: 3,
+                  display: 'flex',
+                  alignItems: 'center',
+                  cursor: 'pointer',
+                  color: "#20509e",
                   fontWeight: Fonts.BOLD,
                 }}
               >
-                {user.name}
-                {/* {user.para} */}
+                {/* <MailIcon /> */}
+                <Box
+                  sx={{
+                    // ml: 2,
+                  }}
+                >
+                  {user.name}
+                </Box>
               </Box>
+
+              <Box
+                sx={{
+                  px: 3,
+                  display: 'flex',
+                  alignItems: 'center',
+                  cursor: 'pointer',
+                }}
+              >
+                <LocationOnTwoToneIcon></LocationOnTwoToneIcon>
+                {/* <LanguageIcon /> */}
+                <Box
+                  sx={{
+                    // ml: 2,
+                  }}
+                >
+                  {user.location}
+                </Box>
+              </Box>
+
 
             </Box>
 
+
           </Box>
-        </Card>
+
+          <Box
+            sx={{
+              pr: { lg: 2, xl: 2 },
+            }}
+          >
+            <Box
+
+              sx={{
+                color: 'grey.700',
+                mb: 4,
+                // fontSize: 14,
+                // fontWeight: Fonts.LIGHT,
+              }}
+            >
+              {user.info1}
+            </Box>
+          </Box>
+          <Box
+            sx={{
+              color: "#e31a15",
+              // mx: { xs: -1, xl: -2 },
+            }}
+          >
+            {user.infohead}
+          </Box>
+          <Box
+            sx={{
+              display: 'flex',
+              alignItems: { md: 'center' },
+              flexDirection: { xs: 'column', md: 'row' },
+            }}
+          >
+
+
+            <Box
+              sx={{
+                color: 'grey.700',
+
+              }}
+            >
+              {user.info2}
+
+            </Box>
+
+
+          </Box>
+        </Box>
       </Box>
-      {/* )) */}
-      {/* } */}
-    </>
+    </Card>
+
+
   );
 };
 
