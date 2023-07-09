@@ -89,5 +89,5 @@ const RelatedCourses = () => {
 export default RelatedCourses;
 
 RelatedCourses.propTypes = {
-  relatedCourses: PropTypes.array,
+  relatedCourses1: PropTypes.array,
 };

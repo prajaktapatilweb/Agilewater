@@ -9,7 +9,7 @@ import Image from 'next/image';
 import {Fonts} from 'shared/constants/AppEnums';
 import Videodemo from 'modules/safepages/SafeAgileCert/Videodemo';
 
-export default function Herosection({heading, list1}) {
+export default function Herosection({image1, heading, list1}) {
   return (
     <div>
       {/* <Grid className="section section-lg section-shaped " style={{ backgroundImage: "linear-gradient(90deg, #05445e 35%, #189ab4 90%)", position: "relative" }}> */}
@@ -59,7 +59,7 @@ export default function Herosection({heading, list1}) {
               >
                 <Image
                   alt='Safelogo'
-                  src='/assets/images/safe/ICP-ACC.webp'
+                  src={image1}
                   //   /assets/images/Safe/SAFe-Agilist-Logo.png'
                   height={80}
                   width={80}
@@ -135,6 +135,7 @@ export default function Herosection({heading, list1}) {
 }
 
 Herosection.propTypes = {
+  image1: PropTypes.string,
   heading: PropTypes.string,
   list1: PropTypes.array,
 };
