@@ -2,6 +2,8 @@ import React from 'react'
 import AppCard from '@crema/core/AppCard';
 import { Box } from '@mui/material'
 import { Typography } from '@mui/material';
+import Image from 'next/image';
+
 
 export default function PricingCard(props) {
     return (
@@ -12,7 +14,15 @@ export default function PricingCard(props) {
                     {props.heading}
                 </Typography>
                 <Box>
-                    {props.img}
+                    <Image
+                        src={props.img}
+                        width={200}
+                        height={80}
+                        layout="responsive"
+                        alt=""
+                    />
+
+
                 </Box>
             </AppCard>
         </div>

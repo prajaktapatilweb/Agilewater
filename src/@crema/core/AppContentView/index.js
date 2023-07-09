@@ -5,6 +5,7 @@ import AppErrorBoundary from '../AppErrorBoundary';
 import Box from '@mui/material/Box';
 import PropTypes from 'prop-types';
 import AppContentViewWrapper from './AppContentViewWrapper';
+import Userfooter from '@crema/User/Userfooter';
 
 // const TransitionWrapper = ({children}) => {
 //   const {rtAnim} = useContext(AppContext);
@@ -46,6 +47,7 @@ const AppContentView = ({ children, sxStyle }) => {
           <AppErrorBoundary>{children}</AppErrorBoundary>
         </AppSuspense>
       </Box>
+      <Userfooter />
       <AppFooter />
     </AppContentViewWrapper>
   );

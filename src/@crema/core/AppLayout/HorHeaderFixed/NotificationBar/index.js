@@ -5,14 +5,13 @@ import { Box, alpha, Container } from '@mui/material';
 import Alert from '@mui/material/Alert';
 import CloseIcon from '@mui/icons-material/Close';
 import { useSidebarContext } from '../../../../utility/AppContextProvider/SidebarContextProvider';
-import CallTwoToneIcon from '@mui/icons-material/CallTwoTone';
-import EmailTwoToneIcon from '@mui/icons-material/EmailTwoTone';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import Grid from '@mui/material';
+import CallBack from 'modules/commanmodules/CallBack';
 
 const NotificationBar = () => {
   const [open, setOpen] = React.useState(true);
@@ -54,7 +53,12 @@ const NotificationBar = () => {
 
         }}
       >
-        <Container sx={{ maxWidth: { xl: 1400 } }}>
+        <Container sx={{
+          maxWidth: { xl: 1400 }, textAlign: {
+            xs: 'center',
+            sm: 'left',
+          }
+        }} >
           <Box
             sx={{
               display: 'flex',
@@ -75,13 +79,17 @@ const NotificationBar = () => {
 
               }}
             >
-              <IconButton> <CallTwoToneIcon></CallTwoToneIcon></IconButton> +91 9421809846 / +91 9405045060
-              <IconButton><EmailTwoToneIcon></EmailTwoToneIcon> </IconButton>Support@AgileWaters.com
+              <CallBack />
             </Box>
             <Box
               sx={{
                 width: '100%',
-                textAlign: 'right',
+                textAlign: {
+                  xs: 'center',
+                  sm: 'center',
+                  md: "right"
+                },
+                // textAlign: 'right',
                 '@media (min-width: 768px)': {
                   width: '50%',
 
@@ -118,17 +126,17 @@ const NotificationBar = () => {
 
           </Alert> */}
               <IconButton > <a href="https://www.facebook.com/AgileWatersConsulting/" target='_blank'><FacebookIcon sx={{ color: "#1b4e9b" }} /> </a></IconButton>
-              <IconButton ><a href="https://twitter.com/AgilewatersCo"><TwitterIcon sx={{ color: "#00aeef" }}></TwitterIcon></a></IconButton>
-              <IconButton ><a href="https://www.instagram.com/agilewatersconsulting/"><InstagramIcon sx={{ color: "#f26f37" }}></InstagramIcon></a></IconButton>
-              <IconButton ><a href='https://www.linkedin.com/company/agilewaters-consulting/'><LinkedInIcon sx={{ color: "#0277bd" }}> </LinkedInIcon></a></IconButton>
-              <IconButton ><a href='https://www.youtube.com/channel/UCaHUj0eP9LiEK5zL7QrNbNw'><YouTubeIcon sx={{ color: "#d50000" }}></YouTubeIcon></a></IconButton>
+              <IconButton ><a href="https://twitter.com/AgilewatersCo" target='_blank'><TwitterIcon sx={{ color: "#00aeef" }}></TwitterIcon></a></IconButton>
+              <IconButton ><a href="https://www.instagram.com/agilewatersconsulting/" target='_blank'><InstagramIcon sx={{ color: "#f26f37" }}></InstagramIcon></a></IconButton>
+              <IconButton ><a href='https://www.linkedin.com/company/agilewaters-consulting/' target='_blank'><LinkedInIcon sx={{ color: "#0277bd" }}> </LinkedInIcon></a></IconButton>
+              <IconButton ><a href='https://www.youtube.com/channel/UCaHUj0eP9LiEK5zL7QrNbNw' target='_blank'><YouTubeIcon sx={{ color: "#d50000" }}></YouTubeIcon></a></IconButton>
             </Box>
           </Box>
         </Container>
 
       </Box>
 
-    </Collapse>
+    </Collapse >
 
   );
 };

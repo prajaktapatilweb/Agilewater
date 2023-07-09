@@ -4,7 +4,9 @@ import Lifedetails from './Lifedetails'
 import CoachProfile from 'modules/commanmodules/CoachProfile'
 import { usersList1 } from 'modules/Constant/Coachdata'
 
-export default function index() {
+export default function LifeCoching() {
+    console.log('dddd', usersList1)
+
     return (
         <div>
             <LifeHeader />
