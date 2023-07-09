@@ -8,9 +8,12 @@ export default function Coachingdetail(props) {
 
             <Container sx={{ maxWidth: { xl: 1400 }, marginTop: 10 }}>
                 <AppCard>
-                    <Typography variant='h1' sx={{ color: "#20509e", textAlign: "center" }} gutterBottom>{props.heading}</Typography>
-                    <Typography variant='body2'>{props.para}</Typography>
-
+                    {props.DetailObject.map((item, i) => (
+                        <span key={i}>
+                            <Typography variant='h1' sx={{ color: "#20509e", textAlign: "center", mt: 3 }} gutterBottom>{item.heading}</Typography>,
+                            <Typography variant='body2'>{item.para}</Typography>
+                        </span>
+                    ))}
                 </AppCard>
             </Container>
         </div>

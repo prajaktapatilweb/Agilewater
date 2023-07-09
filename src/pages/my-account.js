@@ -4,9 +4,8 @@
 
 // const Account = asyncComponent(() => import('modules/extraPages/Account'));
 // export default AppPage(() => <Account />);
-
 import React from 'react';
 
 export default function myaccount() {
-  return <div>my-account</div>;
+    return <div>my-account</div>;
 }

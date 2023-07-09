@@ -6,6 +6,5 @@
 // export default AppPage(() => <Crypto />);
 import React from 'react';
 
-export default function index() {
-  return <div>index</div>;
-}
+const Crypto = asyncComponent(() => import('../../modules/safepages/SafeAgileCert'));
+export default AppPage(() => <Crypto />);

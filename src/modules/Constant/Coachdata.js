@@ -1,124 +1,88 @@
-var usersList = [
-    {
-        img:
-            <Image src='/assets/images/coach/Vijay-Wade1.webp' width={100}
-                height={90}
-                layout='fill'>
-
-            </Image>,
-        name: "Vijay",
-        para: <span>Agile Coach,Career Coach,Life Coach
-            Experience : 21+ Years India
-            COACH SPECIALIZATIONS
-            Corporate Coaching
-            Leadership Coaching
-            Organizational Development Coaching
-            Work Life Balance Coaching</span>
+const userData = {
+    Vijay: {
+        img: '/assets/images/coach/Vijay-Wade1.webp',
+        name: 'Vijay Wade',
+        expertise: 'Agile Coach,Career Coach,Life Coach',
+        experience: '21+ Years',
+        location: 'India ',
+        specifications: ['Corporate Coaching', 'Leadership Coaching', 'Organizational Development Coaching', 'Work Life Balance Coaching']
     },
-    {
-        img: <Image src='/assets/images/coach/RahulShah.webp' width={100}
-            height={90}
-            layout='fill'>
-
-        </Image>,
-        name: "Vijay wade",
-        para: <span>Agile Coach,Career Coach,Life Coach
-            Experience : 21+ Years India
-            COACH SPECIALIZATIONS
-            Corporate Coaching
-            Leadership Coaching
-            Organizational Development Coaching
-            Work Life Balance Coaching</span>
+    Rahul: {
+        img: '/assets/images/coach/RahulShah.webp',
+        name: 'Rahul Shah',
+        expertise: 'Agile Coach',
+        experience: '20+ Years',
+        location: 'India ',
+        specifications: ['Corporate Coaching', 'Enterprise Agile Coaching', 'Organizational Development Coaching', 'SAFe Agile Coaching']
     },
-    {
-        img: <Image src='/assets/images/coach/mk-e.webp' width={100}
-            height={90}
-            layout='fill'>
-
-        </Image>,
-        name: "Vijay wade",
-        para: <span>Agile Coach,Career Coach,Life Coach
-            Experience : 21+ Years India
-            COACH SPECIALIZATIONS
-            Corporate Coaching
-            Leadership Coaching
-            Organizational Development Coaching
-            Work Life Balance Coaching</span>
+    Mandar: {
+        img: '/assets/images/coach/mk-e.webp',
+        name: 'Mandar',
+        expertise: 'Agile Coach, Career Coach',
+        experience: '17+ Years',
+        location: 'USA ',
+        specifications: ['Agile Transformation Expert', 'Career Reinvention Coachg', 'Enterprise Agile Coachin', 'SAFe Agile Coaching']
     },
-    {
-        img: <Image src='/assets/images/coach/jeff.webp' width={100}
-            height={90}
-            layout='fill'>
-
-        </Image>,
-        name: "Vijay wade",
-        para: <span>Agile Coach,Career Coach,Life Coach
-            Experience : 21+ Years India
-            COACH SPECIALIZATIONS
-            Corporate Coaching
-            Leadership Coaching
-            Organizational Development Coaching
-            Work Life Balance Coaching</span>
-    },
-    {
-        img: <Image src='/assets/images/coach/ali-sohail.webp' width={100}
-            height={90}
-            layout='fill'>
-
-        </Image>,
-        name: "Vijay wade",
-        para: <span>Agile Coach,Career Coach,Life Coach
-            Experience : 21+ Years India
-            COACH SPECIALIZATIONS
-            Corporate Coaching
-            Leadership Coaching
-            Organizational Development Coaching
-            Work Life Balance Coaching</span>
-    },
-    {
-        img: <Image src='/assets/images/coach/rahul-mukh.webp' width={100}
-            height={90}
-            layout='fill'>
-
-        </Image>,
-        name: "Vijay wade",
-        para: <span>Agile Coach,Career Coach,Life Coach
-            Experience : 21+ Years India
-            COACH SPECIALIZATIONS
-            Corporate Coaching
-            Leadership Coaching
-            Organizational Development Coaching
-            Work Life Balance Coaching</span>
-    },
-    {
-        img: <Image src='/assets/images/coach/viji-menon.webp' width={100}
-            height={90}
-            layout='fill'>
-
-        </Image>,
-        name: "Vijay wade",
-        para: <span>Agile Coach,Career Coach,Life Coach
-            Experience : 21+ Years India
-            COACH SPECIALIZATIONS
-            Corporate Coaching
-            Leadership Coaching
-            Organizational Development Coaching
-            Work Life Balance Coaching</span>
-    },
-    {
-        img: <Image src='/assets/images/coach/shijo-paul.webp' width={100}
-            height={90}
-            layout='fill'>
-
-        </Image>,
-        name: "Vijay wade",
-        para: <span>Agile Coach,Career Coach,Life Coach
-            Experience : 21+ Years India
-            COACH SPECIALIZATIONS
-            Corporate Coaching
-            Leadership Coaching
-            Organizational Development Coaching
-            Work Life Balance Coaching</span>
+    Jeff: {
+        img: '/assets/images/coach/jeff.webp',
+        name: 'Jeff',
+        expertise: 'Agile Coach',
+        experience: '21+ Years',
+        location: 'USA ',
+        specifications: ['Corporate Coaching', 'Enterprise Agile Coaching', 'Organizational Development Coaching']
     },
 
-]
+    Ali: {
+        img: '/assets/images/coach/ali-sohail.webp',
+        name: 'Ali',
+        expertise: 'Agile Coach',
+        experience: '12+ Years',
+        location: 'United Kingdom ',
+        specifications: ['Enterprise Agile Coaching', 'Professional Development Coaching', 'Organizational Development Coaching', 'SAFe 5 Program Consultant']
+    },
+    Rahulmukh: {
+        img: '/assets/images/coach/rahul-mukh.webp',
+        name: ' Rahul Mukh.',
+        expertise: 'Agile Coach',
+        experience: '16+ Years',
+        location: 'USA',
+        specifications: ['Agile Transformation Expert', 'Enterprise Agile Coaching', 'Organizational Development Coaching', 'Leadership Coaching']
+    },
+
+    Viji: {
+        img: '/assets/images/coach/viji-menon.webp',
+        name: 'Viji',
+        expertise: 'Agile Coach',
+        experience: '18+ Years',
+        location: 'India',
+        specifications: ['Agile Transformation Expert', 'Corporate Coaching', 'Enterprise Agile Coaching']
+    },
+
+    Shijo: {
+        img: '/assets/images/coach/shijo-paul.webp',
+        name: 'Shijo',
+        expertise: 'Agile Coach',
+        experience: '23+ Years',
+        location: 'India',
+        specifications: ['Agile Transformation Expert', 'Corporate Coaching', 'nterprise Agile Coaching', 'Organizational Development Coaching']
+    },
+
+};
+
+export const usersList = [
+    userData.Vijay,
+    userData.Rahul,
+    userData.Mandar,
+    userData.Jeff,
+    userData.Ali,
+    userData.Rahulmukh,
+    userData.Viji,
+    userData.Shijo,
+];
+export const usersList1 = [
+    userData.Vijay,
+    userData.Bhalchandra,
+    userData.Kayalvizhi,
+    userData.Vivek,
+    userData.Astha
+];

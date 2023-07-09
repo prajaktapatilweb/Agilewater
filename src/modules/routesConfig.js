@@ -47,7 +47,7 @@ const routesConfig = [
         id: 'menu12',
         messageId: "menu.coach.life",
         type: 'item',
-        url: '/safepages/safe-agile-certification'
+        url: '/life-coaching/'
       },
       {
         id: 'menu13',
@@ -82,7 +82,7 @@ const routesConfig = [
             messageId: "menu.cert.safe.agile",
             type: "item",
 
-            url: "/safe-agile-certification/"
+            url: "/safepages/safe-agile-certification"
           },
           {
             id: "menu212",
