@@ -11,15 +11,16 @@ export default function Whatsappnew() {
       <FloatingWhatsApp
         phoneNumber='+919860313171'
         // phoneNumber={contactdetail.contactno}
-        accountName='Agilewaters Consulting'
-        statusMessage='We will reply within short time'
-        chatMessage='Welcome to Agilewaters Consulting'
+        accountName='Agilewaters'
+        statusMessage='We will get back to you'
+        chatMessage='Welcome'
         allowClickAway='true'
         // avatar={avt}
         allowEsc='true'
         notification='true'
         notificationDelay='30000'
-        // styles={{zIndex:"10"}}
+        style={{float: 'left'}}
+        // styles={{zIndex:"-1"}}
         // height="1000"
       />
       {/* <div className="alwaysonTop" style={{left:"12px",bottom:"80px"}}>

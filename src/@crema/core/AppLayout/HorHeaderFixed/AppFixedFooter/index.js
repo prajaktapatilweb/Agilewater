@@ -5,6 +5,7 @@ import {useLayoutContext} from '../../../../utility/AppContextProvider/LayoutCon
 import Typography from '@mui/material/Typography';
 import FooterWrapper from './FooterWrapper';
 import CallBack from 'modules/commanmodules/CallBack';
+import Whatsappnew from 'modules/commanmodules/Whatsappnew';
 
 const AppFixedFooter = () => {
   const {footer, footerType} = useLayoutContext();
@@ -24,6 +25,7 @@ const AppFixedFooter = () => {
             <Box sx={{ml: 'auto'}}>
               {/* <Button color='primary'>Request a Call Back </Button> */}
             </Box>
+            <Whatsappnew />
           </div>
         </FooterWrapper>
       ) : null}
