@@ -8,6 +8,7 @@ import {AppBar, Box, Card, Container, Typography} from '@mui/material';
 import Image from 'next/image';
 import {Fonts} from 'shared/constants/AppEnums';
 import Videodemo from 'modules/safepages/SafeAgileCert/Videodemo';
+import PropTypes from 'prop-types';
 
 export default function Herosection({image1, heading, list1}) {
   return (
@@ -61,14 +62,14 @@ export default function Herosection({image1, heading, list1}) {
                   alt='Safelogo'
                   //   src={image1}
                   src='/assets/images/Safe/SAFe-Agilist-Logo.png'
-                  height='100%'
-                  width='100%'
-                  layout='responsive'
+                  //   height={500}
+                  //   width={500}
+                  //   layout='responsive'
                   // sizes='100vw'
-                  // fill
+                  //   fill={true}
                   // style={{ width: '100%', height: "auto" }}
-                  // layout='fill'
-                  // objectFit='contain'
+                  layout='fill'
+                  //   objectFit='contain'
                 />
               </Box>
             </Grid>

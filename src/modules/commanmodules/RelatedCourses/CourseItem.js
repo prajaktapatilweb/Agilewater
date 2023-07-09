@@ -1,15 +1,15 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import VisibilityIcon from '@mui/icons-material/Visibility';
-import { Fonts } from 'shared/constants/AppEnums';
+import {Fonts} from 'shared/constants/AppEnums';
 import PropTypes from 'prop-types';
 import Image from 'next/image';
 
-const CourseItem = ({ data }) => {
+const CourseItem = ({data}) => {
   return (
     <Box
       sx={{
-        px: { sm: 3 },
+        px: {sm: 3},
       }}
     >
       <Box
@@ -21,7 +21,7 @@ const CourseItem = ({ data }) => {
           src={data.image}
           alt={data.title}
           width={100}
-          height={90}
+          height={100}
           layout='responsive'
         />
 
