@@ -24,11 +24,6 @@ const RelatedCourses = () => {
       title: 'Scrum Master',
       views: '1.2k',
     },
-    {
-      image: '/assets/images/Safe/SAFe-Agilist-Logo.png',
-      title: 'Scrum Master 2',
-      views: '1.2k',
-    },
   ];
   const {messages} = useIntl();
 
