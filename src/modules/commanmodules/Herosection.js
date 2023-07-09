@@ -57,8 +57,7 @@ export default function Herosection(props) {
                                 // style={{ width: '100%', height: "auto" }}
                                 // layout='fill'
                                 // objectFit='contain'
-                                >
-                                </Image>
+                                />
                             </Box>
 
                         </Grid>
