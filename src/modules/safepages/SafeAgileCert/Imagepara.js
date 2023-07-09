@@ -3,27 +3,14 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
-import Image from 'next/image';
 import Herosection from 'modules/commanmodules/Herosection';
 
-export default function Imagepara(props) {
+export default function Imagepara() {
     return (
         <div>
             <Herosection
-                img={
-                    <Image
-                        alt='Safelogo'
-                        src={'/assets/images/Safe/SAFe-Agilist-Logo.png'}
-                        height={80}
-                        width={80}
-                        layout='responsive'
-                    // sizes='100vw'
-                    // fill
-                    // style={{ width: '100%', height: "auto" }}
-                    // layout='fill'
-                    // objectFit='contain'
-                    />
-                }
+                img='/assets/images/Safe/SAFe-Agilist-Logo.png'
+
                 heading=' Leading SAFe® 6.0 / SAFe® 6.0 Agilist Certification'
                 list={
                     <List sx={{ bgcolor: 'background.paper' }}>

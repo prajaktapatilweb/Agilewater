@@ -8,12 +8,15 @@ import Button from '@mui/material/Button';
 import { Fonts } from '../../../shared/constants/AppEnums';
 import PropTypes from 'prop-types';
 import { Grid } from '@mui/material'
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
+import StarIcon from '@mui/icons-material/Star';
 
-const ListItem = (props) => {
-  const { user } = props;
+const ListItem1 = ({ user }) => {
   return (
     <Card style={{ display: 'flex', width: '100%' }}>
-      <Box
+      {user && <Box
         sx={{
           display: 'flex',
           flexDirection: { xs: 'column', sm: 'row' },
@@ -61,8 +64,7 @@ const ListItem = (props) => {
             }}
 
           >
-
-            {user.button}
+            Contact
           </Button>
 
         </Box>
@@ -155,7 +157,8 @@ const ListItem = (props) => {
                 // fontWeight: Fonts.LIGHT,
               }}
             >
-              {user.info1}
+              {user.expertise}<br /> <b>Experience : </b>{user.experience}
+              {/* {user.info1} */}
             </Box>
           </Box>
           <Box
@@ -164,7 +167,7 @@ const ListItem = (props) => {
               // mx: { xs: -1, xl: -2 },
             }}
           >
-            {user.infohead}
+            Coach Specializations :
           </Box>
           <Box
             sx={{
@@ -181,22 +184,37 @@ const ListItem = (props) => {
 
               }}
             >
-              {user.info2}
+              {/* {user.info2} */}
+              < span >
+                <List>
+                  {user.specifications.map(item =>
+                    <ListItem
+                      sx={{
+                        m: 0,
+                        padding: 0,
+                      }}
+                    >
+                      <StarIcon fontSize='1px' sx={{ mr: 2 }}></StarIcon>
+                      <ListItemText primary={item} />
+                    </ListItem>)}
+
+                </List>
+              </span >
 
             </Box>
 
 
           </Box>
         </Box>
-      </Box>
+      </Box>}
     </Card>
 
 
   );
 };
 
-export default ListItem;
+export default ListItem1;
 
-ListItem.propTypes = {
+ListItem1.propTypes = {
   user: PropTypes.object.isRequired,
 };

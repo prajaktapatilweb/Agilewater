@@ -1,9 +1,10 @@
 import React from 'react';
 import Box from '@mui/material/Box';
-import { Button, Link } from '@mui/material';
+import { Button, Container, Link } from '@mui/material';
 import { useLayoutContext } from '../../../../utility/AppContextProvider/LayoutContextProvider';
 import Typography from '@mui/material/Typography';
 import FooterWrapper from './FooterWrapper';
+import CallBack from 'modules/commanmodules/CallBack';
 
 const AppFixedFooter = () => {
   const { footer, footerType } = useLayoutContext();
@@ -13,11 +14,10 @@ const AppFixedFooter = () => {
       {footer && footerType === 'fixed' ? (
         <FooterWrapper className='footer fixed-footer'>
           <div className='footerContainer'>
-            <Typography>Copy right @crema 2021</Typography>
-
-            {/* <Link href='/safepages/safe-agile-certification' >Safe</Link> */}
+            <Button color='primary'>Request a Call Back </Button>
+            <Typography><CallBack /></Typography>
             <Box sx={{ ml: 'auto' }}>
-              <Button color='primary'>Buy Now</Button>
+              {/* <Button color='primary'>Request a Call Back </Button> */}
             </Box>
           </div>
         </FooterWrapper>

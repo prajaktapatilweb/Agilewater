@@ -5,6 +5,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 import { AppBar, Box, Card, Container, Typography } from '@mui/material';
+import Image from 'next/image';
 import { Fonts } from 'shared/constants/AppEnums';
 import Videodemo from 'modules/safepages/SafeAgileCert/Videodemo';
 
@@ -29,12 +30,14 @@ export default function Herosection(props) {
                     <Box
                         component='h1'
                         sx={{
-                            mb: 4,
+
                             fontWeight: Fonts.BOLD,
                             color: "wheat",
-                            position: "relative", zIndex: 1
+                            position: "relative", zIndex: 1,
+
                             // fontSize: 16,
                         }}
+                        mt={{ xs: 9, md: 0 }}
                     >
                         {props.heading}
                     </Box>
@@ -43,7 +46,19 @@ export default function Herosection(props) {
 
                         <Grid item xs={12} md={3}>
                             <Box sx={{ border: "2px solid white", borderRadius: "5px", background: "white" }}>
-                                {props.img}
+                                <Image
+                                    alt='Safelogo'
+                                    src={props.img}
+                                    height={80}
+                                    width={80}
+                                    layout='responsive'
+                                // sizes='100vw'
+                                // fill
+                                // style={{ width: '100%', height: "auto" }}
+                                // layout='fill'
+                                // objectFit='contain'
+                                >
+                                </Image>
                             </Box>
 
                         </Grid>

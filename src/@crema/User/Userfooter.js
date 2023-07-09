@@ -4,15 +4,16 @@ import { Grid } from '@mui/material';
 import { Typography, Box } from '@mui/material';
 import Image from 'next/image';
 import { Button } from '@mui/material';
+import AppGridContainer from '@crema/core/AppGridContainer';
 
 export default function Userfooter() {
     return (
         <div>
-            <Grid container className='section' style={{ background: '#ffffff' }}>
+            <Grid container className='section' style={{ background: '#ffffff' }} >
                 {/* backgroundImage: "linear-gradient(180deg,#9c27b0,#540162 )" */}
                 <Container sx={{ maxWidth: { xl: 1450 } }}>
-                    <Grid container>
-                        <Grid item xs={12} md={3} sx={{ color: 'white' }}>
+                    <AppGridContainer>
+                        <Grid item xs={12} sm={6} md={3} sx={{ color: 'white' }} ml={{ xs: 10, sm: 0 }}>
                             <Link
                                 href='/safepages/safe-agile-certification'
                                 sx={{ color: '#00a1ff', textDecoration: 'none' }}
@@ -69,7 +70,7 @@ export default function Userfooter() {
                                 PMI – ACP
                             </Link>
                         </Grid>
-                        <Grid item xs={12} md={3}>
+                        <Grid item xs={12} sm={6} md={3} mb={{ xs: 5, sm: 5, md: 0 }} ml={{ xs: 10, sm: 0 }}>
                             <Typography variant='h2' color='#20509e' gutterBottom>
                                 Corporate Office
                             </Typography>
@@ -95,12 +96,13 @@ export default function Userfooter() {
                                         'linear-gradient(to right, #3e2bce 0%, #2dd3aa 100%, #2dd3aa 100%, #2dd3aa 100%)',
                                 }}
 
+
                             >
                                 Contact Us
                             </Button>
 
                         </Grid>
-                        <Grid item xs={12} md={3}>
+                        <Grid item xs={12} sm={6} md={3} ml={{ xs: 10, sm: 0 }}>
 
                             <Typography variant='h2' color='#20509e' gutterBottom>
                                 Reach Us
@@ -132,7 +134,7 @@ export default function Userfooter() {
                             </Link>
                             <br></br>
                         </Grid>
-                        <Grid item xs={12} md={3}>
+                        <Grid item xs={12} sm={6} md={3} ml={{ xs: 10, sm: 0 }}>
                             <Typography variant='h2' color='#20509e' gutterBottom>
                                 Legal
                             </Typography>
@@ -146,9 +148,13 @@ export default function Userfooter() {
                             </Typography>
                             <Image
                                 alt='Safelogo'
-                                src={
-                                    '/assets/images/Safe/safe-Bronze-partnership-bagde-logo.webp'
-                                }
+                                src='/assets/images/Safe/safe-Bronze-partnership-bagde-logo.webp'
+                                height='100%'
+                                width='100%'
+                            />
+                            <Image
+                                alt='Safelogo'
+                                src='/assets/images/Safe/ICAgile-Logo.jpeg'
                                 height='100%'
                                 width='100%'
                             />
@@ -156,21 +162,14 @@ export default function Userfooter() {
                             <Box sx={{ pl: 5, pt: 2 }}>
                                 <Image
                                     alt='Safelogo'
-                                    src={'/assets/images/Safe/EXIN-Logo-e1625802522731.webp'}
+                                    src='/assets/images/Safe/EXIN-Logo-e1625802522731.webp'
                                     height='30%'
                                     width='60%'
                                 />
-                            </Box>
-                            <Box sx={{ pt: 0 }}>
-                                <Image
-                                    alt='Safelogo'
-                                    src={'/assets/images/Safe/ICAgile-Logo.jpeg'}
-                                    height='80%'
-                                    width='100%'
-                                />
+
                             </Box>
                         </Grid>
-                    </Grid>
+                    </AppGridContainer>
                 </Container>
 
                 <hr />

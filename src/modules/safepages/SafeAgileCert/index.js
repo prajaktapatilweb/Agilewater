@@ -7,13 +7,11 @@ import Safetest from './Safetest';
 import Safeinfo from './Safeinfo.js';
 import { Grid, Link } from '@mui/material';
 import { Container } from '@mui/material';
-import Safeaccord from './Safeaccord';
 import { AppCard } from '@crema';
 import Whatsappnew from 'modules/commanmodules/Whatsappnew';
 import Userfooter from '@crema/User/Userfooter';
 import MainSafeaccord from './MainSafeaccord';
 import SafePricingcard from './SafePricingcard';
-import SlideBasicTwo from 'modules/commanmodules/SlideBasicTwo';
 import SlideBasicArrow from 'modules/commanmodules/SlideBasicArrow';
 
 export default function SafeAgileCert() {
@@ -38,7 +36,6 @@ export default function SafeAgileCert() {
                         <Grid item xs={12} md={8} sx={{ pb: 7 }}>
                             <AppCard sxStyle={{ p: 5 }}>
                                 <Safeinfo />
-
                                 <MainSafeaccord />
                             </AppCard>
                         </Grid>
@@ -57,7 +54,7 @@ export default function SafeAgileCert() {
                     </Grid>
                 </Container>
             </Grid>
-            <Userfooter />
+            {/* <Userfooter /> */}
             <Whatsappnew />
         </>
     );
