@@ -59,7 +59,8 @@ export default function Herosection({heading, list1}) {
               >
                 <Image
                   alt='Safelogo'
-                  src='/assets/images/Safe/SAFe-Agilist-Logo.png'
+                  src='/assets/images/safe/ICP-ACC.webp'
+                  //   /assets/images/Safe/SAFe-Agilist-Logo.png'
                   height={80}
                   width={80}
                   layout='responsive'
