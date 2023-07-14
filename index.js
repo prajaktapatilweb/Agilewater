@@ -41,6 +41,7 @@ app.use(helmet());
 // app.use(limiter)
 // Define Route
 app.use('/api/studentdata', require('./server/routes/api/courses'));
+app.use('/api/auth', require('./server/routes/api/auth'));
 
 app.listen(PORT, (err) => {
   if (err) {

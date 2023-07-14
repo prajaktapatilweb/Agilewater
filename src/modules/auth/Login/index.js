@@ -1,12 +1,11 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import AuthWrapper from '../AuthWrapper';
-import SigninFirebase from './SigninFirebase';
 import AppLogo from '../../../@crema/core/AppLayout/components/AppLogo';
+import SigninJwtAuth from './SigninJwtAuth';
 
 const Signin = () => {
-  console.log('dddxxx3');
-
+  console.log('dddxxx');
   return (
     <AuthWrapper>
       <Box sx={{width: '100%'}}>
@@ -21,8 +20,8 @@ const Signin = () => {
             <AppLogo />
           </Box>
         </Box>
-
-        <SigninFirebase />
+        <SigninJwtAuth />
+        {/* <SigninFirebase /> */}
       </Box>
     </AuthWrapper>
   );

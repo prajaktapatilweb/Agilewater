@@ -1,6 +1,6 @@
 export const authRole = {
   admin: ['admin'],
-  user: ['user', 'admin'],
+  user: ['user'],
 };
 
 export const RoutePermittedRole = {
@@ -16,3 +16,4 @@ export const defaultUser = {
 };
 // export const initialUrl = '/dashboards/crypto'; // this url will open after login
 export const initialUrl = '/safepages/safe-agile-certification'; // this url will open after login
+export const JWTInitialUrl = '/auth/'; // this url will open after login
