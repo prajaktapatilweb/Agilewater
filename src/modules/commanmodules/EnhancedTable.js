@@ -172,86 +172,92 @@ export default function EnhancedTable({ rows, headCells, TableTitle, mainColumn,
     return (
         <Box sx={{ width: '100%' }}>
             <Paper sx={{ width: '100%', mb: 2 }}>
-                <EnhancedTableToolbar TableTitle={TableTitle} />
-                <TableContainer>
-                    <Table
-                        sx={{ minWidth: 750 }}
-                        aria-labelledby='tableTitle'
-                        size={dense ? 'small' : 'medium'}
-                        stickyHeader
-                        aria-label='sticky table'
-                    >
-                        <EnhancedTableHead
-                            order={order}
-                            orderBy={orderBy}
-                            onRequestSort={handleRequestSort}
-                            headCells={headCells}
-                        />
-                        <TableBody>
-                            {/* if you don't need to support IE11, you can replace the `stableSort` call with:
-                 rows.slice().sort(getComparator(order, orderBy)) */}
-                            {stableSort(rows, getComparator(order, orderBy))
-                                .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                                .map((row, index) => {
-                                    const isItemSelected = isSelected(row[mainColumn]);
-                                    const labelId = `enhanced-table-checkbox-${index}`;
+                {/* <EnhancedTableToolbar TableTitle={TableTitle} /> */}
 
-                                    return (
-                                        <TableRow
-                                            hover
-                                            // onClick={(event) => handleClick(event, row[mainColumn])}
-                                            role='checkbox'
-                                            aria-checked={isItemSelected}
-                                            tabIndex={-1}
-                                            key={row[mainColumn]}
-                                            selected={isItemSelected}
-                                        >
-                                            {/*  */}
-                                            {headCells.map(item =>
-                                                item.id === mainColumn ?
-                                                    < TableCell
-                                                        component='th'
-                                                        id={labelId}
-                                                        scope='row'
-                                                        padding='normal'
-                                                    >
-                                                        {row[mainColumn]}
-                                                    </TableCell> :
-                                                    (item.id === 'action' ?
-                                                        < TableCell                                                        >
-                                                            <Button
-                                                                variant="contained"
-                                                                sx={{ backgroundImage: "linear-gradient(to right, #3e2bce 0%, #2dd3aa 100%, #2dd3aa 100%, #2dd3aa 100%)" }}
-                                                                onClick={() => {
-                                                                    // setSelected(row)
-                                                                    setSelectedRow(row);
-                                                                    setisDialogOpen(true);
-                                                                }}
+                <TableContainer>
+                    <Typography variant='h3' sx={{ py: 4, textAlign: "center" }}>Course Table</Typography>
+                    <div id="cards">
+                        <Table
+                            // sx={{ minWidth: 750 }}
+                            // aria-labelledby='tableTitle'
+                            // size={dense ? 'small' : 'medium'}
+                            // stickyHeader
+                            // aria-label='sticky table'
+
+                            id="table11"
+                        >
+                            <EnhancedTableHead
+                                order={order}
+                                orderBy={orderBy}
+                                onRequestSort={handleRequestSort}
+                                headCells={headCells}
+                            />
+                            <TableBody>
+                                {/* if you don't need to support IE11, you can replace the `stableSort` call with:
+                 rows.slice().sort(getComparator(order, orderBy)) */}
+                                {stableSort(rows, getComparator(order, orderBy))
+                                    .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                                    .map((row, index) => {
+                                        const isItemSelected = isSelected(row[mainColumn]);
+                                        const labelId = `enhanced-table-checkbox-${index}`;
+
+                                        return (
+                                            <TableRow
+                                                hover
+                                                // onClick={(event) => handleClick(event, row[mainColumn])}
+                                                role='checkbox'
+                                                aria-checked={isItemSelected}
+                                                tabIndex={-1}
+                                                key={row[mainColumn]}
+                                                selected={isItemSelected}
+                                            >
+                                                {/*  */}
+                                                {headCells.map(item =>
+                                                    item.id === mainColumn ?
+                                                        <TableCell
+                                                            component='th'
+                                                            id={labelId}
+                                                            scope='row'
+                                                            padding='normal'
+                                                        >
+                                                            {row[mainColumn]}
+                                                        </TableCell> :
+                                                        (item.id === 'action' ?
+                                                            <TableCell                                                       >
+                                                                <Button
+                                                                    variant="contained"
+                                                                    sx={{ backgroundImage: "linear-gradient(to right, #3e2bce 0%, #2dd3aa 100%, #2dd3aa 100%, #2dd3aa 100%)" }}
+                                                                    onClick={() => {
+                                                                        // setSelected(row)
+                                                                        setSelectedRow(row);
+                                                                        setisDialogOpen(true);
+                                                                    }}
+                                                                >
+                                                                    {row[item.id]}
+                                                                </Button>
+                                                            </TableCell> :
+                                                            <TableCell align={item?.numeric ? 'right' : 'left'
+                                                            }
                                                             >
                                                                 {row[item.id]}
-                                                            </Button>
-                                                        </TableCell> :
-                                                        < TableCell align={item?.numeric ? 'right' : 'left'
-                                                        }
-                                                        >
-                                                            {row[item.id]}
-                                                        </TableCell>
-                                                    )
-                                            )}
-                                        </TableRow>
-                                    );
-                                })}
-                            {emptyRows > 0 && (
-                                <TableRow
-                                    style={{
-                                        height: (dense ? 33 : 53) * emptyRows,
-                                    }}
-                                >
-                                    <TableCell colSpan={6} />
-                                </TableRow>
-                            )}
-                        </TableBody>
-                    </Table>
+                                                            </TableCell>
+                                                        )
+                                                )}
+                                            </TableRow>
+                                        );
+                                    })}
+                                {emptyRows > 0 && (
+                                    <TableRow
+                                        style={{
+                                            height: (dense ? 33 : 53) * emptyRows,
+                                        }}
+                                    >
+                                        <td colSpan={6} />
+                                    </TableRow>
+                                )}
+                            </TableBody>
+                        </Table>
+                    </div>
                 </TableContainer>
                 <TablePagination
                     rowsPerPageOptions={[5, 10, 25]}

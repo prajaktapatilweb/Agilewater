@@ -1,4 +1,4 @@
-import {AppCard, AppGridContainer, AppInfoView} from '@crema';
+import { AppCard, AppGridContainer, AppInfoView } from '@crema';
 import AppDialog from '@crema/core/AppDialog';
 import IntlMessages from '@crema/utility/IntlMessages';
 import {
@@ -9,14 +9,14 @@ import {
   Grid,
   Typography,
 } from '@mui/material';
-import React, {useEffect, useState} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   CourseData,
   getLectureRateData,
   onGetAnalyticsData,
 } from 'redux/actions';
-import {Fonts} from 'shared/constants/AppEnums';
+import { Fonts } from 'shared/constants/AppEnums';
 import EnhancedTable from '../../commanmodules/EnhancedTable';
 // import UserTableComman from "modules/commanmodules/UserTableComman";
 
@@ -29,7 +29,7 @@ export default function CourseTable() {
     dispatch(onGetAnalyticsData());
   }, [dispatch]);
 
-  const analyticsData = useSelector(({dashboard}) => dashboard.analyticsData);
+  const analyticsData = useSelector(({ dashboard }) => dashboard.analyticsData);
 
   // const CourseData = useSelector((state) => state.PayRelated.lectureRate);
 
@@ -164,31 +164,30 @@ export default function CourseTable() {
         <>
           <AppGridContainer>
             <Grid item xs={12} md={12}>
-              <AppCard
+
+              {/* <AppCard
                 title={
                   <>
                     {/* <h3>Teachers and Lecture Category wise Rates</h3>
                     <Box component='p' sx={{ color: 'text.secondary' }}>
                       Standared Lecture Rates are given in heading
-                    </Box> */}
+                    </Box> *
                   </>
                 }
-                contentStyle={{px: 0, textAlign: 'center'}}
-              >
-                <Typography variant='h2' p={2}>
-                  {/* Approved */}
-                </Typography>
-                <EnhancedTable
-                  rows={rows}
-                  headCells={columns}
-                  // TableTitle='Agile'
-                  mainColumn='name'
-                  orderByColumn='calories'
-                  // selectedRow={selectedRow}
-                  // setSelectedRow={setSelectedRow}
-                  // setisDialogOpen={setisDialogOpen}
-                />
-              </AppCard>
+                contentStyle={{ px: 0, textAlign: 'center' }}
+              > */}
+
+              <EnhancedTable
+                rows={rows}
+                headCells={columns}
+                // TableTitle='Agile'
+                mainColumn='name'
+                orderByColumn='calories'
+              // selectedRow={selectedRow}
+              // setSelectedRow={setSelectedRow}
+              // setisDialogOpen={setisDialogOpen}
+              />
+              {/* </AppCard> */}
             </Grid>
           </AppGridContainer>
           {/* <AppDialog

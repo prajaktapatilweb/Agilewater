@@ -4,13 +4,13 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
-import {AppBar, Box, Card, Container, Typography} from '@mui/material';
+import { AppBar, Box, Card, Container, Typography } from '@mui/material';
 import Image from 'next/image';
-import {Fonts} from 'shared/constants/AppEnums';
+import { Fonts } from 'shared/constants/AppEnums';
 import Videodemo from 'modules/safepages/SafeAgileCert/Videodemo';
 import PropTypes from 'prop-types';
 
-export default function Herosection({image1, heading, list1}) {
+export default function Herosection({ image1, heading, list1 }) {
   return (
     <div>
       {/* <Grid className="section section-lg section-shaped " style={{ backgroundImage: "linear-gradient(90deg, #05445e 35%, #189ab4 90%)", position: "relative" }}> */}
@@ -27,7 +27,7 @@ export default function Herosection({image1, heading, list1}) {
           <span className='span-50' />
           <span className='span-100' />
         </div>
-        <Container sx={{maxWidth: {xl: 1400}, textAlign: 'center'}}>
+        <Container sx={{ maxWidth: { xl: 1400 }, textAlign: 'center' }}>
           <Box
             component='h1'
             sx={{
@@ -38,7 +38,7 @@ export default function Herosection({image1, heading, list1}) {
 
               // fontSize: 16,
             }}
-            mt={{xs: 9, md: 0}}
+            mt={{ xs: 9, md: 0 }}
           >
             {heading}
           </Box>
@@ -47,11 +47,13 @@ export default function Herosection({image1, heading, list1}) {
             container
             spacing={7}
             alignItems='center'
-            sx={{position: 'relative', zIndex: 1}}
-            mt={{xs: 5, md: 0}}
+            sx={{ position: 'relative', zIndex: 1 }}
+            mt={{ xs: 5, md: 0 }}
           >
-            <Grid item xs={12} md={3}>
+            <Grid item xs={12} sm={6} md={3}>
               <Box
+                px={{ xs: 10, sm: 0, md: 0 }}
+                mx={{ xs: 10, sm: 0, md: 0 }}
                 sx={{
                   border: '2px solid white',
                   borderRadius: '5px',
@@ -62,20 +64,21 @@ export default function Herosection({image1, heading, list1}) {
                   alt='Safelogo'
                   //   src={image1}
                   src='/assets/images/safe/SAFe-Agilist-Logo.png'
-                  height={500}
-                  width={500}
+                  height={100}
+                  width={100}
                   layout='responsive'
-                  // sizes='100vw'
-                  //   fill={true}
-                  // style={{ width: '100%', height: "auto" }}
-                  //   layout='fill'
-                  //   objectFit='contain'
+                // sizes='100vw'
+                //   fill={true}
+                // style={{ width: '100%', height: "auto" }}
+                //   layout='fill'
+                //   objectFit='contain'
                 />
               </Box>
             </Grid>
             <Grid
               item
               xs={12}
+              sm={6}
               md={5}
               alignItems='center'
               justifyContent='center'
@@ -92,14 +95,14 @@ export default function Herosection({image1, heading, list1}) {
                                 {props.heading}
                             </Box> */}
 
-              <Box component='p' sx={{mb: 5}}>
-                <List sx={{color: 'white'}}>
+              <Box component='p' sx={{ mb: 5 }}>
+                <List sx={{ color: 'white' }}>
                   {list1.map((item, i) => (
                     <ListItem key={i}>
                       <KeyboardDoubleArrowRightIcon></KeyboardDoubleArrowRightIcon>
                       <ListItemText
                         primary={item}
-                        primaryTypographyProps={{fontSize: '18px'}}
+                        primaryTypographyProps={{ fontSize: '18px' }}
                       />
                     </ListItem>
                   ))}
@@ -109,6 +112,7 @@ export default function Herosection({image1, heading, list1}) {
             <Grid
               item
               xs={12}
+              sm={12}
               md={4}
               alignItems='center'
               justifyContent='center'

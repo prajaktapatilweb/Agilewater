@@ -1,8 +1,8 @@
 import React from 'react';
 import PropsTypes from 'prop-types';
-import {Box} from '@mui/material';
+import { Box } from '@mui/material';
 
-const MediaSlider = ({children}) => {
+const MediaSlider = ({ children }) => {
   return (
     <Box
       sx={{
@@ -47,8 +47,8 @@ const MediaSlider = ({children}) => {
         },
         '& .slick-prev, & .slick-next': {
           backgroundColor: (theme) => theme.palette.common.white,
-          width: 30,
-          height: 30,
+          width: 20,
+          height: 20,
           borderRadius: '50%',
           display: 'flex !important',
           alignItems: 'center',

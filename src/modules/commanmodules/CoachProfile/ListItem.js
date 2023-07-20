@@ -5,7 +5,8 @@ import Box from '@mui/material/Box';
 import LocationOnTwoToneIcon from '@mui/icons-material/LocationOnTwoTone';
 import { grey } from '@mui/material/colors';
 import Button from '@mui/material/Button';
-import { Fonts } from '../../../shared/constants/AppEnums';
+import { Fonts } from 'shared/constants/AppEnums';
+// import { Fonts } from '../../../shared/constants/AppEnums';
 import PropTypes from 'prop-types';
 import { Grid } from '@mui/material'
 import List from '@mui/material/List';
@@ -15,39 +16,51 @@ import StarIcon from '@mui/icons-material/Star';
 
 const ListItem1 = ({ user }) => {
   return (
-    <Card style={{ display: 'flex', width: '100%' }}>
+    <Card sx={{ width: '100%', mx: { xs: 4, sm: 2, md: 0 } }} className='cards'>
+      <div className='lines'></div>
       {user && <Box
+
         sx={{
           display: 'flex',
-          flexDirection: { xs: 'column', sm: 'row' },
-          justifyContent: 'space-between'
+          flexDirection: { xs: 'column', sm: 'column' },
+          justifyContent: 'space-between',
 
         }}
       >
+
         <Box
           sx={{
             color: 'primary.contrastText',
-            width: { xs: '100%', sm: 200, xl: 200 },
-            p: { xs: 3, lg: 3 },
+
+            p: 5,
             bgcolor: 'primary.main',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
+            zIndex: 1
           }}
         >
-          <Box sx={{ mb: 3 }}>
-            <Avatar
-              src={user.img}
-              sx={{
-                height: 85,
-                width: 85,
-                // height: 100,
-                // width: 100,
-              }}
-            />
-          </Box>
 
+          <Box sx={{ mb: 3 }}>
+          </Box>
+          <div className='imgbox'>
+            <div className='content'>
+              <Avatar
+                src={user.img}
+
+                sx={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  height: '100%',
+                  width: '100%',
+                  objectFit: 'cover',
+                  transition: 0.5
+                }}
+              />
+            </div>
+          </div>
           <Button
             variant='contained'
             sx={{
@@ -206,6 +219,7 @@ const ListItem1 = ({ user }) => {
 
           </Box>
         </Box>
+
       </Box>}
     </Card>
 
