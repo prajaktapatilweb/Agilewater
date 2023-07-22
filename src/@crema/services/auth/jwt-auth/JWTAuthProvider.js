@@ -15,7 +15,7 @@ export const useJWTAuth = () => useContext(JWTAuthContext);
 
 export const useJWTAuthActions = () => useContext(JWTAuthActionsContext);
 
-const JWTAuthAuthProvider = ({children}) => {
+const JWTAuthProvider = ({children}) => {
   const [firebaseData, setJWTAuthData] = useState({
     user: null,
     isAuthenticated: false,
@@ -62,9 +62,11 @@ const JWTAuthAuthProvider = ({children}) => {
     dispatch({type: FETCH_START});
     try {
       const {data} = await jwtAxios.post('auth', {email, password});
+      console.log('first', data);
       localStorage.setItem('token', data.token);
       setAuthToken(data.token);
       const res = await jwtAxios.get('/auth');
+      console.log('first', res);
       setJWTAuthData({
         user: res.data,
         isAuthenticated: true,
@@ -112,6 +114,7 @@ const JWTAuthAuthProvider = ({children}) => {
   };
 
   const logout = async () => {
+    console.log('In logouts');
     localStorage.removeItem('token');
     setAuthToken();
     setJWTAuthData({
@@ -139,8 +142,8 @@ const JWTAuthAuthProvider = ({children}) => {
     </JWTAuthContext.Provider>
   );
 };
-export default JWTAuthAuthProvider;
+export default JWTAuthProvider;
 
-JWTAuthAuthProvider.propTypes = {
+JWTAuthProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };

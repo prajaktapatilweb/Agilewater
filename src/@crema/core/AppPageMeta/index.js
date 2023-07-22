@@ -5,9 +5,12 @@ import {NextSeo} from 'next-seo';
 const SITE_URL =
   process.env.NODE_ENV === 'development'
     ? 'http://localhost:3000'
-    : 'https://qa-blog.mastersindia.co';
+    : 'https://agilewaters.in';
+// : 'https://qa-blog.mastersindia.co';
 
-const defaultTitle = 'Crema- React Material Admin Template';
+// const defaultTitle = 'Crema- React Material Admin Template';
+const defaultTitle =
+  'Scrum at Scaled Agile Certification Online Certification Training';
 const defaultDescription =
   'Crema is purely based on Material UI components and follows Google’s Material Design guidelines.';
 const defaultImage =

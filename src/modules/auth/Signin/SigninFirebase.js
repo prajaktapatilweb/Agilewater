@@ -28,6 +28,8 @@ const validationSchema = yup.object({
 });
 
 const SigninFirebase = () => {
+  console.log('dddxxx30');
+
   const {signInWithEmailAndPassword, signInWithPopup} = useAuthMethod();
   const history = useRouter();
 
@@ -43,8 +45,8 @@ const SigninFirebase = () => {
         <Formik
           validateOnChange={true}
           initialValues={{
-            email: 'crema.demo@gmail.com',
-            password: 'Pass@1!@all',
+            email: 'abc@abc.com',
+            password: 'abc123',
           }}
           validationSchema={validationSchema}
           onSubmit={(data, {setSubmitting}) => {
@@ -57,9 +59,9 @@ const SigninFirebase = () => {
             <Form style={{textAlign: 'left'}} noValidate autoComplete='off'>
               <Box sx={{mb: {xs: 5, xl: 8}}}>
                 <AppTextField
-                  placeholder={messages['common.email']}
+                  placeholder={messages['email']}
                   name='email'
-                  label={<IntlMessages id='common.email' />}
+                  label={<IntlMessages id='email' />}
                   variant='outlined'
                   sx={{
                     width: '100%',
@@ -73,8 +75,8 @@ const SigninFirebase = () => {
               <Box sx={{mb: {xs: 3, xl: 4}}}>
                 <AppTextField
                   type='password'
-                  placeholder={messages['common.password']}
-                  label={<IntlMessages id='common.password' />}
+                  placeholder={messages['password']}
+                  label={<IntlMessages id='password' />}
                   name='password'
                   variant='outlined'
                   sx={{
@@ -104,7 +106,7 @@ const SigninFirebase = () => {
                       color: 'grey.500',
                     }}
                   >
-                    <IntlMessages id='common.rememberMe' />
+                    <IntlMessages id='common.remember' />
                   </Box>
                 </Box>
                 <Box
@@ -136,7 +138,7 @@ const SigninFirebase = () => {
                     padding: '4px 16px 8px',
                   }}
                 >
-                  <IntlMessages id='common.login' />
+                  <IntlMessages id='login' />
                 </Button>
               </div>
             </Form>

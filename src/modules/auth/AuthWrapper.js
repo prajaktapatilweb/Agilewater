@@ -64,12 +64,9 @@ const AuthWrapper = ({children}) => {
                 mb: 4,
               }}
             >
-              Welcome to Crema!
+              Welcome to Agile Waters!
             </Typography>
-            <Typography>
-              Crema is purely based on Material ui components and follows
-              Material ui guidelines.
-            </Typography>
+            <Typography>Agile Waters is Agile Consultants.</Typography>
           </Box>
         </Box>
       </Card>

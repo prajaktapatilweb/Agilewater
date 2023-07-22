@@ -17,9 +17,9 @@ export const getUserFromAuth0 = (user) => {
 export const getUserFromFirebase = (user) => {
   if (user) {
     return {
-      id: 1,
+      // id: 1,
       uid: user.uid,
-      displayName: user.displayName ? user.displayName : 'Crema User',
+      displayName: user.displayName ? user.displayName : 'Guest User',
       email: user.email,
       photoURL: user.photoURL ? user.photoURL : '/assets/images/avatar/A11.jpg',
       role: authRole.user,
@@ -49,7 +49,7 @@ export const getUserFromJwtAuth = (user) => {
       displayName: user.name,
       email: user.email,
       photoURL: user.avatar,
-      role: authRole.user,
+      role: authRole.admin,
     };
   }
   return user;

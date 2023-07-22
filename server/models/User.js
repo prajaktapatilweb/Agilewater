@@ -9,6 +9,7 @@ const UserSchema = new mongoose.Schema({
   Status: {
     type: String,
     required: true,
+    default: 'Active',
   },
   Name: {
     type: String,
@@ -19,15 +20,16 @@ const UserSchema = new mongoose.Schema({
     required: true,
     unique: true,
   },
-  Mobilenumber: {
+  Password: {
     type: String,
     required: true,
   },
+  Mobilenumber: {
+    type: String,
+    // required: true,
+  },
   Avatar: {
     type: String,
-  },
-  IsTrainer: {
-    type: Boolean,
   },
 });
 

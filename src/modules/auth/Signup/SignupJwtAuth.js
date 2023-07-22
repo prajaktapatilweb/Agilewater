@@ -8,7 +8,7 @@ import AppInfoView from '@crema/core/AppInfoView';
 import Box from '@mui/material/Box';
 import IntlMessages from '@crema/utility/IntlMessages';
 import AppTextField from '@crema/core/AppFormComponents/AppTextField';
-import {useAuthMethod} from '@crema/utility/AuthHooks';
+import {useAuthMethod, useJWTAuthMethod} from '@crema/utility/AuthHooks';
 import {Fonts} from '../../../shared/constants/AppEnums';
 import Link from 'next/link';
 
@@ -24,7 +24,7 @@ const validationSchema = yup.object({
 });
 
 const SignupJwtAuth = () => {
-  const {signUpUser} = useAuthMethod();
+  const {signUpUser} = useJWTAuthMethod();
 
   return (
     <Box sx={{flex: 1, display: 'flex', flexDirection: 'column'}}>
@@ -66,7 +66,7 @@ const SignupJwtAuth = () => {
 
               <Box sx={{mb: {xs: 4, xl: 5}}}>
                 <AppTextField
-                  label={<IntlMessages id='common.email' />}
+                  label={<IntlMessages id='email' />}
                   name='email'
                   variant='outlined'
                   sx={{
@@ -80,7 +80,7 @@ const SignupJwtAuth = () => {
 
               <Box sx={{mb: {xs: 4, xl: 5}}}>
                 <AppTextField
-                  label={<IntlMessages id='common.password' />}
+                  label={<IntlMessages id='password' />}
                   name='password'
                   type='password'
                   variant='outlined'

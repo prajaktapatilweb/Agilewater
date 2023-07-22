@@ -77,6 +77,8 @@ const AppsContainer = (props) => {
               fontSize: 16,
               color: 'text.primary',
               fontWeight: Fonts.SEMI_BOLD,
+              ml: 5,
+              mt: 2,
             }}
           >
             {title}

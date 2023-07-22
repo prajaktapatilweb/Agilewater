@@ -5,6 +5,8 @@ import SigninFirebase from './SigninFirebase';
 import AppLogo from '../../../@crema/core/AppLayout/components/AppLogo';
 
 const Signin = () => {
+  console.log('dddxxx3');
+
   return (
     <AuthWrapper>
       <Box sx={{width: '100%'}}>

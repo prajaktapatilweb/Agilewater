@@ -3,8 +3,10 @@ import {
   FETCH_ERROR,
   FETCH_START,
   FETCH_SUCCESS,
+  SHOW_MESSAGE,
+  ADD_NEW_COURSE,
   GET_ACADEMY_DATA,
-  GET_ANALYTICS_DATA,
+  GET_COURSE_LIST,
   GET_CRM_DATA,
   GET_CRYPTO_DATA,
   GET_ECOMMERCE_DATA,
@@ -15,17 +17,17 @@ import {
 import IntlMessages from '@crema/utility/IntlMessages';
 import jwtAxios from '@crema/services/auth/jwt-auth';
 
-export const onGetAnalyticsData = () => {
+export const onGetCourseList = () => {
+  console.log('Redux Get Cours List ');
   return (dispatch) => {
     dispatch({type: FETCH_START});
     jwtAxios
-      // .get('/dashboard/analytics')
-      .get('/studentdata/googlesheet')
+      .get('/courses/getcourslist')
       .then((data) => {
         console.log('Data Rece REdux', data.data);
         if (data.status === 200) {
           dispatch({type: FETCH_SUCCESS});
-          dispatch({type: GET_ANALYTICS_DATA, payload: data.data});
+          dispatch({type: GET_COURSE_LIST, payload: data.data});
         } else {
           dispatch({
             type: FETCH_ERROR,
@@ -39,15 +41,20 @@ export const onGetAnalyticsData = () => {
   };
 };
 
-export const onGetECommerceData = () => {
+export const onPostNewCourseData = ({data, resetForm}) => {
   return (dispatch) => {
     dispatch({type: FETCH_START});
     jwtAxios
-      .get('/dashboard/ecommerce')
+      .post('/courses/addnewcourse', {data})
       .then((data) => {
         if (data.status === 200) {
           dispatch({type: FETCH_SUCCESS});
-          dispatch({type: GET_ECOMMERCE_DATA, payload: data.data});
+          dispatch({type: ADD_NEW_COURSE, payload: data.data});
+          dispatch({
+            type: SHOW_MESSAGE,
+            payload: 'Data Added Succefully',
+          });
+          resetForm();
         } else {
           dispatch({
             type: FETCH_ERROR,

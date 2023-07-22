@@ -7,6 +7,8 @@ export const HIDE_MESSAGE = 'hide_message';
 export const TOGGLE_APP_DRAWER = 'toggle_app_drawer';
 export const UPDATING_CONTENT = 'updating_content';
 export const GET_COURSE_DATA = 'get_course_data';
+export const ADD_NEW_COURSE = 'add_new_course';
+export const GET_COURSE_LIST = 'get_course_list';
 
 // APP SETTING
 export const TOGGLE_NAV_COLLAPSED = 'toggle_nav_collapsed';

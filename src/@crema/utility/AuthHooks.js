@@ -1,12 +1,12 @@
 // ForJWT Auth
-/* import { getUserFromJwtAuth } from "./helper/AuthHelper";
+import {getUserFromJwtAuth} from './helper/AuthHelper';
 import {
   useJWTAuth,
   useJWTAuthActions,
-} from "../services/auth/jwt-auth/JWTAuthProvider";
+} from '../services/auth/jwt-auth/JWTAuthProvider';
 
-export const useAuthUser = () => {
-  const { user, isAuthenticated, isLoading } = useJWTAuth();
+export const useJWTAuthUser = () => {
+  const {user, isAuthenticated, isLoading} = useJWTAuth();
   return {
     isLoading,
     isAuthenticated,
@@ -14,15 +14,15 @@ export const useAuthUser = () => {
   };
 };
 
-export const useAuthMethod = () => {
-  const { signInUser, signUpUser, logout } = useJWTAuthActions();
+export const useJWTAuthMethod = () => {
+  const {signInUser, signUpUser, logout} = useJWTAuthActions();
 
   return {
     signInUser,
     logout,
     signUpUser,
   };
-};*/
+};
 // For Firebase Auth
 import {
   useFirebase,
@@ -32,6 +32,7 @@ import {getUserFromFirebase} from './helper/AuthHelper';
 
 export const useAuthUser = () => {
   const {user, isAuthenticated, isLoading} = useFirebase();
+  console.log('Authhooks', user);
   return {
     isLoading,
     isAuthenticated,
@@ -40,6 +41,8 @@ export const useAuthUser = () => {
 };
 
 export const useAuthMethod = () => {
+  console.log('dddxxx2');
+
   const {
     signInWithEmailAndPassword,
     createUserWithEmailAndPassword,
