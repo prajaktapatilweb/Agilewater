@@ -5,7 +5,6 @@ import Box from '@mui/material/Box';
 import LocationOnTwoToneIcon from '@mui/icons-material/LocationOnTwoTone';
 import { grey } from '@mui/material/colors';
 import Button from '@mui/material/Button';
-import { Fonts } from '../../../shared/constants/AppEnums';
 import PropTypes from 'prop-types';
 import { Grid } from '@mui/material';
 import List from '@mui/material/List';
@@ -13,6 +12,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import StarIcon from '@mui/icons-material/Star';
 import zIndex from '@mui/material/styles/zIndex';
+import { Fonts } from 'shared/constants/AppEnums';
 
 const ListItem1 = ({ user }) => {
     return (
@@ -123,12 +123,13 @@ const ListItem1 = ({ user }) => {
                                 >
                                     <span>
                                         <List>
-                                            {user.specifications.map((item) => (
+                                            {user.specifications.map((item, i) => (
                                                 <ListItem
                                                     sx={{
                                                         m: 0,
                                                         padding: 0,
                                                     }}
+                                                    key={i}
                                                 >
                                                     <StarIcon fontSize='1px' sx={{ mr: 2 }}></StarIcon>
                                                     <ListItemText primary={item} />
