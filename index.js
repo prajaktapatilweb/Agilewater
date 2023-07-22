@@ -40,7 +40,8 @@ app.use(helmet());
 // Apply the rate limiting middleware to all requests
 // app.use(limiter)
 // Define Route
-app.use('/api/studentdata', require('./server/routes/api/courses'));
+app.use('/api/studentdata', require('./server/routes/api/googleSheetCourse'));
+app.use('/api/courses', require('./server/routes/api/courses'));
 app.use('/api/auth', require('./server/routes/api/auth'));
 
 app.listen(PORT, (err) => {

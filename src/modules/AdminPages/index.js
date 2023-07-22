@@ -1,13 +1,15 @@
 import {useJWTAuthMethod} from '@crema/utility/AuthHooks';
-import {Button} from '@mui/material';
-import React from 'react';
+import {Button, Typography} from '@mui/material';
+import React, {useState} from 'react';
+import TopHeading from './TopHeading';
 
 export default function AdminPage() {
-  const {logout} = useJWTAuthMethod();
   return (
-    <div>
-      Admin PageList
-      <Button onClick={logout}>Logout</Button>
-    </div>
+    <>
+      <TopHeading title='Dashboard' />
+      <Typography variant='h1' m={5}>
+        Welcome Admin{' '}
+      </Typography>
+    </>
   );
 }

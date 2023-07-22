@@ -25,13 +25,17 @@ const CoursesListSchema = new mongoose.Schema({
     type: String,
   },
   Cost: {
-    type: Number,
+    Actual: {type: Number},
+    Discounted: {type: Number},
   },
-  UserID: {
+  Trainer: {
     type: String,
   },
   Place: {
     type: String,
+  },
+  EventDeleteDate: {
+    type: Date,
   },
   Created: {
     ByID: {
@@ -71,7 +75,7 @@ const CoursesListSchema = new mongoose.Schema({
     },
     OnDate: {
       type: Date,
-      default: Date.now,
+      // default: Date.now,
     },
     DeleteReason: {
       type: String,

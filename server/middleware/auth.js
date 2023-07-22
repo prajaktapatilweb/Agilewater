@@ -4,11 +4,10 @@ const logger = require('../services/Logger');
 // const config = require('config');
 
 module.exports = function (req, res, next) {
-  console.log('Auth Middleware', req.headers);
+  console.log('Auth Middleware');
   // Get token from header
   // const token1 = req.headers.authtoken;
   const token = req.headers.authorization;
-  console.log('Auth Middleware', token);
   // Check if not token
   if (!token) {
     logger.warn('Token Not Available', {

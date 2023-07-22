@@ -77,6 +77,7 @@
   "email": "Email",
   "password": "Password",
   "login": "Login",
+  "course": "Course Name",
   "common.remember": "Remember Me",
   "common.forgetPassword": " Forgot Password",
   "validation.emailFormat": "The Email you entered is not a valid format!",
@@ -90,5 +91,13 @@
   "common.signup": "Signup",
   "common.signInHere": "Sign in here",
   "common.orLoginWith": "Or Login With",
-  "common.dontHaveAccount": "Don't have account?"
+  "common.dontHaveAccount": "Don't have account?",
+  "common.startDate": "Start Date",
+  "common.endDate": "End Date",
+  "common.delDate": "Date on which the event will be deleted",
+  "Course.actualcost": "Actual Price",
+  "Course.discost": "Offer Price",
+  "Course.place": "Place",
+  "Course.time": "Time (IST)",
+  "Course.trainer": "Trainer Name"
 }

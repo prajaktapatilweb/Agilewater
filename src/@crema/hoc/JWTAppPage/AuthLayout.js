@@ -1,6 +1,9 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import PropTypes from 'prop-types';
+import SideBarContent from 'modules/AdminPages/SideBarContent';
+import AppsContainer from '@crema/core/AppsContainer';
+import AppScrollbar from '@crema/core/AppScrollbar';
 
 export default function AuthLayout({children}) {
   return (
@@ -27,7 +30,12 @@ export default function AuthLayout({children}) {
         },
       }}
     >
-      {children}
+      <AppsContainer
+        // title={'Admin User'}
+        sidebarContent={<SideBarContent />}
+      >
+        <AppScrollbar className='scroll-app-sidebar'>{children}</AppScrollbar>
+      </AppsContainer>
     </Box>
   );
 }
