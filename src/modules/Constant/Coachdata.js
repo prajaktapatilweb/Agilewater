@@ -2,7 +2,7 @@ const userData = {
     Vijay: {
         img: '/assets/images/coach/Vijay-Wade1.webp',
         name: 'Vijay Wade',
-        expertise: 'Agile Coach,Career Coach,Life Coach',
+        expertise: 'Agile Coach, Career Coach, Life Coach',
         experience: '21+ Years',
         location: 'India ',
         specifications: ['Corporate Coaching', 'Leadership Coaching', 'Organizational Development Coaching', 'Work Life Balance Coaching']
@@ -64,7 +64,41 @@ const userData = {
         expertise: 'Agile Coach',
         experience: '23+ Years',
         location: 'India',
-        specifications: ['Agile Transformation Expert', 'Corporate Coaching', 'nterprise Agile Coaching', 'Organizational Development Coaching']
+        specifications: ['Agile Transformation Expert', 'Corporate Coaching', 'Enterprise Agile Coaching', 'Organizational Development Coaching']
+    },
+    Bhalchandra: {
+        img: '/assets/images/coach/bhalchndra.webp',
+        name: 'Bhalchandra',
+        expertise: ' Career Coach, Life Coach',
+        experience: '26+ Years',
+        location: 'India',
+        specifications: ['Career Reinvention Coach', 'Corporate Coaching', 'Leadership Coaching', 'Work Life Balance Coaching']
+    },
+
+    Kayalvizhi: {
+        img: '/assets/images/coach/kal.webp',
+        name: 'Kayalvizhi',
+        expertise: 'Life Coach',
+        experience: '7+ Years',
+        location: 'India',
+        specifications: ['Alternate Medicine Expert', 'Lifestyle Coaching', 'Psychotherapy &Psychosomatic therapist', 'Work Life Balance Coaching']
+    },
+
+    Vivek: {
+        img: '/assets/images/coach/vivek.webp',
+        name: 'Vivek',
+        expertise: 'Career Coach,Life Coach',
+        experience: '16+ Years',
+        location: 'India',
+        specifications: ['Career Reinvention Coach', 'Lifestyle Coaching', 'Certified ACC by LightHouse Coaching', 'Work Life Balance Coaching']
+    },
+    Astha: {
+        img: '/assets/images/coach/astha-sharma.webp',
+        name: 'Astha',
+        expertise: 'Career Coach,Life Coach',
+        experience: '20+ Years',
+        location: 'Singapore',
+        specifications: ['Career Reinvention Coach', 'Dilemma Coaching', 'MBTI Certified Personality Assessor', 'Professional Development Coaching']
     },
 
 };
@@ -81,11 +115,17 @@ export const usersList = [
 ];
 export const usersList1 = [
     userData.Vijay,
-    userData.Rahul,
-    userData.Mandar,
-    userData.Jeff,
     userData.Bhalchandra,
     userData.Kayalvizhi,
     userData.Vivek,
     userData.Astha
+
+];
+export const usersList2 = [
+    userData.Vijay,
+    userData.Bhalchandra,
+    userData.Mandar,
+    userData.Vivek,
+    userData.Astha
+
 ];

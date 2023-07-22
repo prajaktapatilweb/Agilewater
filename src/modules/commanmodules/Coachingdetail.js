@@ -7,12 +7,12 @@ export default function Coachingdetail(props) {
         <div>
 
             <Container sx={{ maxWidth: { xl: 1400 }, marginTop: 10 }}>
-                <AppCard>
+                <AppCard sx={{ mb: 7 }}>
                     {props.DetailObject.map((item, i) => (
-                        <span key={i}>
+                        <Typography key={i}>
                             <Typography variant='h1' sx={{ color: "#20509e", textAlign: "center", mt: 3 }} gutterBottom>{item.heading}</Typography>,
                             <Typography variant='body2'>{item.para}</Typography>
-                        </span>
+                        </Typography>
                     ))}
                 </AppCard>
             </Container>

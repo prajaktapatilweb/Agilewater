@@ -6,7 +6,6 @@
   padding: 0;
 }
 
-
 /* ========================= */
 
 
@@ -602,11 +601,10 @@
   }
 
   /*end*/
+  /* coach card css*/
 
   .cards{
     position: relative;
-   
- 
     transition: 0.5s;
   }
  
@@ -614,7 +612,7 @@
   {
     position: absolute;
     inset: 0;
-    background: black;
+    background: #3d35cb;
 
   }
   .cards .lines::before{
@@ -622,7 +620,7 @@
     position: absolute;
     top:50%;
     left: 50%;
-    width: 500px;
+    width: 700px;
     height: 120px;
     transform: translate(-50%,-50%);
     background: linear-gradient(transparent,#45f3ff,#45f3ff,#45f3ff,transparent);
@@ -647,7 +645,7 @@
     /* background-color: #1fa2ff; */
     
   }
-
+/*coach photo behind border*/
   
   .imgbox
   {
@@ -662,8 +660,10 @@
   .imgbox::before{
     content: '';
     position: absolute;
-    inset: -10px;
-    background: linear-gradient(315deg,#ff3c7b,#083898);
+    inset: -5px;
+    background: linear-gradient(255deg,white,#45f3ff,white);
+
+    /* background: linear-gradient(355deg,#ff3c7b,#45f3ff); */
     transition: 0.5s;
     animation: animate 2s linear infinite;
     
@@ -680,7 +680,7 @@
  .imgbox::after{
   content: '';
   position: absolute;
-  inset:3px;
+  inset:5px;
   background-color: #292929;
   border-radius: 50%;
   z-index: 1;
@@ -688,11 +688,13 @@
 }
 .content{
   position: absolute;
-  inset: 3px;
-  border:6px solid #32325d;
+  inset: 5px;
+  /* border:2px solid white; */
   z-index: 3;
   border-radius: 50%;
 }
+
+ /*end  coach card css*/
 
 
 

@@ -108,8 +108,12 @@ export const defaultTheme = {
         fontWeight: 500,
       },
       h6: {
-        fontSize: 12,
-        fontWeight: 500,
+        fontSize: 50,
+        fontWeight: 600,
+      },
+      hed: {
+        fontSize: 20,
+        fontWeight: 600,
       },
       subtitle1: {
         fontSize: 14,

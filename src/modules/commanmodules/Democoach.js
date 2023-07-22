@@ -3,10 +3,8 @@ import Card from '@mui/material/Card';
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
 import LocationOnTwoToneIcon from '@mui/icons-material/LocationOnTwoTone';
-import { grey } from '@mui/material/colors';
 import Button from '@mui/material/Button';
 import { Fonts } from 'shared/constants/AppEnums';
-// import { Fonts } from '../../../shared/constants/AppEnums';
 import PropTypes from 'prop-types';
 import { Grid } from '@mui/material'
 import List from '@mui/material/List';
@@ -29,14 +27,18 @@ const ListItem1 = ({ user }) => {
 
                 <Box
                     sx={{
+
                         color: 'primary.contrastText',
                         width: { xs: '100%', sm: 200, xl: 200 },
                         p: { xs: 3, lg: 3 },
+
                         bgcolor: 'primary.main',
                         display: 'flex',
                         flexDirection: 'column',
                         alignItems: 'center',
                         justifyContent: 'center',
+
+
 
 
                     }}

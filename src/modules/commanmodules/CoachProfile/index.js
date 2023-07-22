@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import ListItem1 from './ListItem';
 import AppInfoView from '@crema/core/AppInfoView';
 import { Grid } from '@mui/material';
