@@ -82,7 +82,7 @@ const routesConfig = [
             messageId: "menu.cert.safe.agile",
             type: "item",
 
-            url: "/safepages/safe-agile-certification"
+            url: "/safe-agile-certification"
           },
           {
             id: "menu212",

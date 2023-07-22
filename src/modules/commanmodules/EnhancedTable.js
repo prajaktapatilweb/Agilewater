@@ -175,7 +175,7 @@ export default function EnhancedTable({ rows, headCells, TableTitle, mainColumn,
                 {/* <EnhancedTableToolbar TableTitle={TableTitle} /> */}
 
                 <TableContainer>
-                    <Typography variant='h3' sx={{ py: 4, textAlign: "center" }}>Course Table</Typography>
+                    <Typography variant='h3' sx={{ py: 4, textAlign: "center", color: 'white', background: '#20509e' }}>SAFe Agilist Certification Training</Typography>
                     <div id="cards">
                         <Table
                             // sx={{ minWidth: 750 }}

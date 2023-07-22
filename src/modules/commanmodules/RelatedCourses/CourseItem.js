@@ -1,15 +1,16 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import VisibilityIcon from '@mui/icons-material/Visibility';
-import {Fonts} from 'shared/constants/AppEnums';
+import { Fonts } from 'shared/constants/AppEnums';
 import PropTypes from 'prop-types';
 import Image from 'next/image';
 
-const CourseItem = ({data}) => {
+const CourseItem = ({ data }) => {
   return (
     <Box
       sx={{
-        px: {sm: 3},
+        px: { sm: 3 },
+        textAlign: 'center'
       }}
     >
       <Box
@@ -32,6 +33,9 @@ const CourseItem = ({data}) => {
         sx={{
           fontSize: 14,
           fontWeight: Fonts.MEDIUM,
+          alignItems: 'center',
+          justifyContent: 'center',
+
           mb: 2,
         }}
       >
@@ -41,10 +45,12 @@ const CourseItem = ({data}) => {
         sx={{
           display: 'flex',
           alignItems: 'center',
+          justifyContent: 'center',
           color: 'text.secondary',
+
         }}
       >
-        <Box component='p'>{data.author}</Box>
+        {/* <Box component='p' sx={{ textAlign: 'center' }}>{data.author}</Box> */}
         <Box
           sx={{
             ml: 3,
@@ -60,6 +66,7 @@ const CourseItem = ({data}) => {
             component='p'
             sx={{
               ml: 2,
+
             }}
           >
             {data.views} views

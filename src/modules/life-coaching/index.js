@@ -7,7 +7,7 @@ import { usersList1 } from 'modules/Constant/Coachdata';
 import Democoach from 'modules/commanmodules/Democoach';
 
 export default function LifeCoching() {
-    console.log('dddd', usersList1);
+    // console.log('dddd', usersList1);
 
     return (
         <div>
