@@ -1,5 +1,10 @@
 import Coachingdetail from 'modules/commanmodules/Coachingdetail';
 import React from 'react';
+import { Grid } from '@mui/material';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
+import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 
 export default function Lifedetails() {
     var DetailObject = [
@@ -32,13 +37,34 @@ export default function Lifedetails() {
         {
             heading: "Benefits of Life Coaching",
             para: <span>
-                Identifying aims and objectives.
-                Creating executive and distinctive extension plan
-                Recognizing faith & confidence
-                Functioning with regard to monetory freedom
-                Acquiring job/living stability
-                Learning to communicate further more concisely and productively
-                Promoting more stronger relationships professionally & personally
+
+                <List>
+                    <ListItem>
+                        <KeyboardDoubleArrowRightIcon></KeyboardDoubleArrowRightIcon>
+                        <ListItemText primary=' Identifying aims and objectives.' />
+                    </ListItem>
+                    <ListItem>
+                        <KeyboardDoubleArrowRightIcon></KeyboardDoubleArrowRightIcon>
+                        <ListItemText primary='Creating executive and distinctive extension plan'></ListItemText></ListItem>
+                    <ListItem>
+                        <KeyboardDoubleArrowRightIcon></KeyboardDoubleArrowRightIcon>
+                        <ListItemText primary='Recognizing faith & confidence'></ListItemText></ListItem>
+                    <ListItem>
+                        <KeyboardDoubleArrowRightIcon></KeyboardDoubleArrowRightIcon>
+                        <ListItemText primary='Functioning with regard to monetory freedom'></ListItemText></ListItem>
+
+                    <ListItem>
+
+                        <KeyboardDoubleArrowRightIcon></KeyboardDoubleArrowRightIcon>
+                        <ListItemText primary='Acquiring job/living stability'></ListItemText></ListItem>
+                    <ListItem>
+                        <KeyboardDoubleArrowRightIcon></KeyboardDoubleArrowRightIcon>
+                        <ListItemText primary='Learning to communicate further more concisely and productively'></ListItemText></ListItem>
+                    <ListItem>
+                        <KeyboardDoubleArrowRightIcon></KeyboardDoubleArrowRightIcon>
+                        <ListItemText primary='Promoting more stronger relationships professionally & personally'></ListItemText></ListItem>
+                </List>
+
             </span>
         }
 

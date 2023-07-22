@@ -87,6 +87,7 @@ export const defaultTheme = {
       fontFamily: ['Poppins', 'sans-serif'].join(','),
       fontSize: 14,
       fontWeight: 400,
+      color: 'black',
       h1: {
         fontSize: 22,
         fontWeight: 600,
@@ -110,6 +111,12 @@ export const defaultTheme = {
       h6: {
         fontSize: 50,
         fontWeight: 600,
+      },
+      h7: {
+        fontSize: 25,
+        fontWeight: 600,
+        color: '#20509e',
+
       },
       hed: {
         fontSize: 20,
