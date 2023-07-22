@@ -25,9 +25,9 @@ export default function CourseTable() {
   // React.useEffect(() => {
   //     dispatch(CourseData);
   // }, [dispatch])
-  useEffect(() => {
-    dispatch(onGetAnalyticsData());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(onGetAnalyticsData());
+  // }, [dispatch]);
 
   const analyticsData = useSelector(({ dashboard }) => dashboard.analyticsData);
 
