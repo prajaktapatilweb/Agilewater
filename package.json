@@ -104,7 +104,7 @@
   "scripts": {
     "dev": "next -p 3002",
     "build": "next build",
-    "start": "next start",
+    "start": "node index",
     "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest",
     "lint": "eslint \"src/**/*.+(js|jsx)\"",
     "lint:fix": "eslint --fix \"src/**/*.+(js|jsx)\"",
