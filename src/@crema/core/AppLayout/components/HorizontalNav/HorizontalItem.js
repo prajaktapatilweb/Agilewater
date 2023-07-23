@@ -52,7 +52,8 @@ function HorizontalItem(props) {
           padding: '4px 12px',
           color: (theme) => theme.palette.text.primary,
           textDecoration: 'none!important',
-          minWidth: 160,
+          // Below line is commented to remove the space between two menu items on navbar
+          // minWidth: 160,
           '&.active': {
             backgroundColor: sidebarMenuSelectedBgColor,
             color: sidebarMenuSelectedTextColor + '!important',

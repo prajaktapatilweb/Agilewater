@@ -1,6 +1,6 @@
 import React from 'react';
-import AppPage from '../@crema/hoc/DefaultPage/index';
+import AppPage from '../@crema/hoc/UserPage/index';
 import asyncComponent from '../@crema/utility/asyncComponent';
 
-const SignIn = asyncComponent(() => import('../modules/auth/Signin/index'));
-export default AppPage(() => <SignIn />);
+const MainPage = asyncComponent(() => import('../modules/career-coaching'));
+export default AppPage(() => <MainPage />);
