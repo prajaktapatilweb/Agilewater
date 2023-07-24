@@ -1,17 +1,17 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import CssBaseline from '@mui/material/CssBaseline';
-import {CacheProvider} from '@emotion/react';
+import { CacheProvider } from '@emotion/react';
 import createEmotionCache from '../createEmotionCache';
 import AppContextProvider from '../@crema/utility/AppContextProvider';
-import {Provider} from 'react-redux';
+import { Provider } from 'react-redux';
 import AppThemeProvider from '../@crema/utility/AppThemeProvider';
 import AppStyleProvider from '../@crema/utility/AppStyleProvider';
 import AppLocaleProvider from '../@crema/utility/AppLocaleProvider';
 import FirebaseAuthProvider from '../@crema/services/auth/firebase/FirebaseAuthProvider';
 import AuthRoutes from '../@crema/utility/AuthRoutes';
 
-import {useStore} from '../redux/store'; // Client-side cache, shared for the whole session of the user in the browser.
+import { useStore } from '../redux/store'; // Client-side cache, shared for the whole session of the user in the browser.
 
 import '../@crema/services/index';
 import '../shared/vendors/index.css';
@@ -23,8 +23,9 @@ import JWTAuthProvider from '@crema/services/auth/jwt-auth/JWTAuthProvider';
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
 
+
 export default function MyApp(props) {
-  const {Component, emotionCache = clientSideEmotionCache, pageProps} = props;
+  const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
   const store = useStore(pageProps.initialReduxState);
 
   return (

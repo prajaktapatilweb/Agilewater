@@ -94,7 +94,8 @@ const routesConfig = [
             id: "menu213",
             messageId: "menu.cert.ascm",
             type: "item",
-            url: "/safe-advanced-scrum-master/"
+            url: '/indexfile/'
+            // url: "/safe-advanced-scrum-master/"
           },
           {
             id: "menu214",

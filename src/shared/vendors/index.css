@@ -696,6 +696,43 @@
 
  /*end  coach card css*/
 
+ /* Parallox Section */ 
+ .events1 {
+  background-image: url('/assets/images/globalmap.jpg') ;
+  /* background: url("../public/vision.jpg") center center no-repeat; */
+  background-size: cover;
+  position: relative;
+  height: 100vh;
+ 
+}
+.events1::before {
+  content: '';
+  /* background-image:linear-gradient(to right, rgba(58,37,109,0.6), rgba(23,43,77,0.9)); */
+  /* background-image:linear-gradient(to right, rgba(54,30,80,0.8), rgba(58,37,109,0.9)); */
+  /* background-color:rgba(54,30,80,0.6); */
+  /* background-color: rgba(12, 11, 10, 0.6); */
+  position: absolute;
+  /* z-index:- 1; */
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.events1 .container {
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .events1 {
+    background-attachment: fixed;
+  }
+}
+
+/* end parallox section */
+
+
+
 
 
 

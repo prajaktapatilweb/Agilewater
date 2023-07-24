@@ -16,17 +16,17 @@ export default function CourseTable() {
   // React.useEffect(() => {
   //     dispatch(CourseData);
   // }, [dispatch])
-  useEffect(() => {
-    dispatch(onGetAnalyticsData());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(onGetAnalyticsData());
+  // }, [dispatch]);
 
-  const analyticsData = useSelector(({ dashboard }) => dashboard.analyticsData);
+  // const analyticsData = useSelector(({ dashboard }) => dashboard.analyticsData);
 
   // const CourseData = useSelector((state) => state.PayRelated.lectureRate);
 
-  const rows1 = analyticsData?.rows;
-  const columns1 = analyticsData?.columns;
-  console.log('first12', rows1, columns1);
+  // const rows1 = analyticsData?.rows;
+  // const columns1 = analyticsData?.columns;
+  // console.log('first12', rows1, columns1);
   // const [selectedRow, setSelectedRow] = useState()
   // const [isDialogOpen, setisDialogOpen] = useState(false)
   // const toggleDialogOpen = () => {

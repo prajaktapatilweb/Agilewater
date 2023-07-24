@@ -35,6 +35,7 @@ export const backgroundLight = {
 };
 
 const cardRadius = ThemeStyleRadius.STANDARD;
+
 export const defaultTheme = {
   theme: {
     spacing: 4,
