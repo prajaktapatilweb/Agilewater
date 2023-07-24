@@ -1,5 +1,4 @@
 import {
-  GET_ACADEMY_DATA,
   GET_COURSE_LIST,
   GET_CRM_DATA,
   GET_CRYPTO_DATA,
@@ -7,11 +6,13 @@ import {
   GET_HC_DATA,
   GET_METRICS_DATA,
   GET_WIDGETS_DATA,
+  GET_INDIV_COURSE_DATA,
 } from 'shared/constants/ActionTypes';
 
 const initialState = {
   courselist: null,
   result: null,
+  Coursedata: null,
   crmData: null,
   cryptoData: null,
   metricsData: null,
@@ -34,10 +35,10 @@ const dashboardReducer = (state = initialState, action) => {
         result: action.payload,
       };
 
-    case GET_ACADEMY_DATA:
+    case GET_INDIV_COURSE_DATA:
       return {
         ...state,
-        academyData: action.payload,
+        Coursedata: action.payload,
       };
 
     case GET_CRM_DATA:

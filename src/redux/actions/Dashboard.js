@@ -5,7 +5,7 @@ import {
   FETCH_SUCCESS,
   SHOW_MESSAGE,
   ADD_NEW_COURSE,
-  GET_ACADEMY_DATA,
+  GET_INDIV_COURSE_DATA,
   GET_COURSE_LIST,
   GET_CRM_DATA,
   GET_CRYPTO_DATA,
@@ -68,15 +68,17 @@ export const onPostNewCourseData = ({data, resetForm}) => {
   };
 };
 
-export const onGetAcademyData = () => {
+export const onGetIndivCourseData = ({CourseID}) => {
+  console.log('Redux Get  Indiv Course', CourseID);
   return (dispatch) => {
     dispatch({type: FETCH_START});
     jwtAxios
-      .get('/dashboard/academy')
+      .get('/courses/getindividualcourse', {params: {CourseID: CourseID}})
       .then((data) => {
+        console.log('Data Rece REdux', data.data);
         if (data.status === 200) {
           dispatch({type: FETCH_SUCCESS});
-          dispatch({type: GET_ACADEMY_DATA, payload: data.data});
+          dispatch({type: GET_INDIV_COURSE_DATA, payload: data.data});
         } else {
           dispatch({
             type: FETCH_ERROR,
@@ -90,102 +92,28 @@ export const onGetAcademyData = () => {
   };
 };
 
-export const onGetHCData = () => {
+export const onUpdateCourseData = ({CourseID, data}) => {
+  console.log('In Redux', data);
   return (dispatch) => {
     dispatch({type: FETCH_START});
     jwtAxios
-      .get('/dashboard/health_care')
-      .then((data) => {
-        if (data.status === 200) {
+      .put(`/courses/updatecourse/${CourseID}`, {data})
+      .then((recdata) => {
+        if (recdata.status === 200) {
+          // console.log('Data from Redux Students LEads', data.data, deleteID);
           dispatch({type: FETCH_SUCCESS});
-          dispatch({type: GET_HC_DATA, payload: data.data});
-        } else {
-          dispatch({
-            type: FETCH_ERROR,
-            payload: <IntlMessages id='message.somethingWentWrong' />,
-          });
-        }
-      })
-      .catch((error) => {
-        dispatch({type: FETCH_ERROR, payload: error.message});
-      });
-  };
-};
-export const onGetCryptoData = () => {
-  return (dispatch) => {
-    dispatch({type: FETCH_START});
-    jwtAxios
-      .get('/dashboard/crypto')
-      .then((data) => {
-        if (data.status === 200) {
-          dispatch({type: FETCH_SUCCESS});
-          dispatch({type: GET_CRYPTO_DATA, payload: data.data});
-        } else {
-          dispatch({
-            type: FETCH_ERROR,
-            payload: <IntlMessages id='message.somethingWentWrong' />,
-          });
-        }
-      })
-      .catch((error) => {
-        dispatch({type: FETCH_ERROR, payload: error.message});
-      });
-  };
-};
-
-export const onGetCrmData = () => {
-  return (dispatch) => {
-    dispatch({type: FETCH_START});
-    jwtAxios
-      .get('/dashboard/crm')
-      .then((data) => {
-        if (data.status === 200) {
-          dispatch({type: FETCH_SUCCESS});
-          dispatch({type: GET_CRM_DATA, payload: data.data});
-        } else {
-          dispatch({
-            type: FETCH_ERROR,
-            payload: <IntlMessages id='message.somethingWentWrong' />,
-          });
-        }
-      })
-      .catch((error) => {
-        dispatch({type: FETCH_ERROR, payload: error.message});
-      });
-  };
-};
-
-export const onGetMetricsData = () => {
-  return (dispatch) => {
-    dispatch({type: FETCH_START});
-    jwtAxios
-      .get('/dashboard/metrics')
-      .then((data) => {
-        if (data.status === 200) {
-          dispatch({type: FETCH_SUCCESS});
-          dispatch({type: GET_METRICS_DATA, payload: data.data});
-        } else {
-          dispatch({
-            type: FETCH_ERROR,
-            payload: <IntlMessages id='message.somethingWentWrong' />,
-          });
-        }
-      })
-      .catch((error) => {
-        dispatch({type: FETCH_ERROR, payload: error.message});
-      });
-  };
-};
-
-export const onGetWidgetsData = () => {
-  return (dispatch) => {
-    dispatch({type: FETCH_START});
-    jwtAxios
-      .get('/dashboard/widgets')
-      .then((data) => {
-        if (data.status === 200) {
-          dispatch({type: FETCH_SUCCESS});
-          dispatch({type: GET_WIDGETS_DATA, payload: data.data});
+          if (recdata.data === 'Nothing to update') {
+            dispatch({
+              type: SHOW_MESSAGE,
+              payload: 'Nothing to update',
+            });
+          } else {
+            dispatch({type: GET_COURSE_LIST, payload: recdata.data});
+            dispatch({
+              type: SHOW_MESSAGE,
+              payload: `Data of ${CourseID} Updated`,
+            });
+          }
         } else {
           dispatch({
             type: FETCH_ERROR,

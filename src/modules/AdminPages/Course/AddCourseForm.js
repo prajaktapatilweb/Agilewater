@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Button from '@mui/material/Button';
 import {
   FormControl,
@@ -38,8 +38,12 @@ import {
 import DateTimePicker from '@mui/lab/DateTimePicker';
 import moment from 'moment';
 import {DatePicker} from '@mui/lab';
-import {onPostNewCourseData} from 'redux/actions';
-import {useDispatch} from 'react-redux';
+import {
+  onGetIndivCourseData,
+  onPostNewCourseData,
+  onUpdateCourseData,
+} from 'redux/actions';
+import {useDispatch, useSelector} from 'react-redux';
 
 // import Notistack from 'modules/Testing/Notistack';
 // import ReactTostify from 'modules/Testing/ReactTostify';
@@ -111,43 +115,62 @@ const validationSchema = yup.object({
     }),
 });
 
-const AddCourseForm = () => {
+const AddCourseForm = ({CourseID, closefn}) => {
   // console.log('Begining of SignupJWTAuth');
+  console.log('sds', CourseID);
   // Varibles and Function for alert dialogue
   const [open, setOpen] = React.useState(false);
   const [msg, setMsg] = React.useState('');
   const [dialogaction, setDialogaction] = React.useState('');
-  const dispatch = useDispatch();
   const handleClose = () => {
     setOpen(false);
   };
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(onGetIndivCourseData({CourseID}));
+  }, [dispatch]);
+  const CourseData = useSelector(
+    (state) => state?.dashboard?.Coursedata?.CourseData,
+  );
+  console.log('Signup Form Submission', CourseData);
+
   // Varible for checkbox It is use to store the earlier field data
   // Form Submission Function
   const onSubmit = async (data, {setSubmitting, resetForm}) => {
     console.log('Signup Form Submission', data);
     setSubmitting(true);
-    dispatch(onPostNewCourseData({data, resetForm}));
+    CourseID
+      ? dispatch(onUpdateCourseData({CourseID, data}))
+      : dispatch(onPostNewCourseData({data, resetForm}));
+    CourseID ? closefn() : null;
     setSubmitting(false);
   };
   const initialValues = {
-    CourseName: '',
-    StartDate: '',
-    EndDate: '',
-    Time: '9:30 am to 05:30 pm',
-    Cost: {Actual: '', Discounted: ''},
-    Place: '',
-    Trainer: '',
-    EventDeleteDate: '',
+    CourseName: CourseData?.CourseName || '',
+    StartDate: CourseData?.StartDate || '',
+    EndDate: CourseData?.EndDate || '',
+    Time: CourseData?.Time || '9:30 am to 05:30 pm',
+    Cost: {
+      Actual: CourseData?.Cost?.Actual || '',
+      Discounted: CourseData?.Cost?.Discounted || '',
+    },
+    Place: CourseData?.Place || '',
+    Trainer: CourseData?.Trainer || '',
+    EventDeleteDate: CourseData?.EventDeleteDate || '',
   };
 
   return (
     <Box sx={{flex: 1, display: 'flex', flexDirection: 'column'}}>
-      <Box sx={{flex: 1, display: 'flex', flexDirection: 'column', m: 15}}>
+      {CourseID ? (
+        <Typography variant='h1'>Update the data of {CourseID}</Typography>
+      ) : null}
+      <Box sx={{flex: 1, display: 'flex', flexDirection: 'column', m: 10}}>
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
           validateOnChange={true}
           onSubmit={onSubmit}
+          enableReinitialize={true}
         >
           {({
             values,
@@ -406,3 +429,8 @@ const AddCourseForm = () => {
 };
 
 export default AddCourseForm;
+
+AddCourseForm.propTypes = {
+  CourseID: PropTypes.string,
+  closefn: PropTypes.function,
+};

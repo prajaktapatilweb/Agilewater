@@ -9,6 +9,7 @@ export const UPDATING_CONTENT = 'updating_content';
 export const GET_COURSE_DATA = 'get_course_data';
 export const ADD_NEW_COURSE = 'add_new_course';
 export const GET_COURSE_LIST = 'get_course_list';
+export const GET_INDIV_COURSE_DATA = 'get_indiv_cours_data';
 
 // APP SETTING
 export const TOGGLE_NAV_COLLAPSED = 'toggle_nav_collapsed';

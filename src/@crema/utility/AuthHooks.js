@@ -32,7 +32,7 @@ import {getUserFromFirebase} from './helper/AuthHelper';
 
 export const useAuthUser = () => {
   const {user, isAuthenticated, isLoading} = useFirebase();
-  console.log('Authhooks', user);
+  // console.log('Authhooks', user);
   return {
     isLoading,
     isAuthenticated,

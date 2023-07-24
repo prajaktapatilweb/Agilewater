@@ -7,8 +7,8 @@ export default function AdminPage() {
   return (
     <>
       <TopHeading title='Dashboard' />
-      <Typography variant='h1' m={5}>
-        Welcome Admin{' '}
+      <Typography variant='h1' m={5} align='center'>
+        Welcome Admin
       </Typography>
     </>
   );
