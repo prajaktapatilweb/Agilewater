@@ -27,6 +27,8 @@ import AppDialog from '@crema/core/AppDialog';
 import {useState} from 'react';
 import moment from 'moment';
 import AddCourseForm from 'modules/AdminPages/Course/AddCourseForm';
+import {AppConfirmDialog} from '@crema';
+import DeleteDialoug from 'modules/AdminPages/Course/DeleteDialoug';
 
 function descendingComparator(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
@@ -208,9 +210,12 @@ export default function EnhancedTable({
 
   const [selectedRow, setSelectedRow] = useState();
   const [isDialogOpen, setisDialogOpen] = useState(false);
+  const [isDeleteDialogOpen, setisDeleteDialogOpen] = useState(false);
   const toggleDialogOpen = () => {
     setisDialogOpen(!isDialogOpen);
-    setSelectedRow();
+  };
+  const toggleDeleteDialogOpen = () => {
+    setisDeleteDialogOpen(!isDeleteDialogOpen);
   };
 
   const handleRequestSort = (event, property) => {
@@ -323,7 +328,11 @@ export default function EnhancedTable({
                               variant='outlined'
                               onClick={() => {
                                 setSelectedRow(row);
-                                setisDialogOpen(true);
+                                <DeleteDialoug
+                                  DD={true}
+                                  CourseID={selectedRow?.CourseID}
+                                />;
+                                // setisDeleteDialogOpen(true);
                               }}
                               startIcon={<DeleteIcon />}
                               color='error'
@@ -380,6 +389,16 @@ export default function EnhancedTable({
         <AddCourseForm
           CourseID={selectedRow?.CourseID}
           closefn={toggleDialogOpen}
+        />
+      </AppDialog>
+      <AppDialog
+        open={isDeleteDialogOpen}
+        onClose={toggleDeleteDialogOpen}
+        // title={`${ActionLabel}  for ${selectedRow?.CourseID}`}
+      >
+        <AddCourseForm
+          CourseID={selectedRow?.CourseID}
+          closefn={toggleDeleteDialogOpen}
         />
       </AppDialog>
     </Box>
