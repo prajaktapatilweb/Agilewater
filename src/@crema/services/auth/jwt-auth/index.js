@@ -6,7 +6,7 @@ const jwtAxios = axios.create({
   baseURL:
     process.env.NODE_ENV === 'development'
       ? 'http://localhost:4000/api/'
-      : 'https://agilewaterback.vercel.app/api', // YOUR_API_URL HERE
+      : 'http://agilewaterback.vercel.app/api', // YOUR_API_URL HERE
   headers: {
     'Content-Type': 'application/json',
   },

@@ -5,32 +5,31 @@ import CourseTable from './CourseTable';
 import RelatedCourses from 'modules/commanmodules/RelatedCourses';
 import Safetest from './Safetest';
 import Safeinfo from './Safeinfo.js';
-import { Grid, Link } from '@mui/material';
-import { Container } from '@mui/material';
-import { AppCard } from '@crema';
+import {Grid, Link} from '@mui/material';
+import {Container} from '@mui/material';
+import {AppCard} from '@crema';
 import MainSafeaccord from './MainSafeaccord';
 import SafePricingcard from './SafePricingcard';
 import SlideBasicArrow from 'modules/commanmodules/SlideBasicArrow';
-import { courseList2 } from 'modules/Constant/Relatecoursedata';
+import {courseList2} from 'modules/Constant/Relatecoursedata';
+import CityFilterOption from 'modules/commanmodules/CityFilterOption';
 
 export default function SafeAgileCert() {
   return (
     <>
       <Imagepara />
       <Grid container>
-        <Container sx={{ maxWidth: { xl: 1450 }, marginTop: 10 }}>
-
-          <Grid container spacing={{ xs: 4, md: 8 }}>
+        <Container sx={{maxWidth: {xl: 1450}, marginTop: 10}}>
+          <Grid container spacing={{xs: 4, md: 8}}>
             <Grid item xs={12} md={8}>
-              <CourseTable />
-
+              <CourseTable PageCourseName='Ms.' />
             </Grid>
             <Grid item xs={12} md={4}>
               <SlideBasicArrow />
             </Grid>
 
             <Grid item xs={12} md={8}>
-              <AppCard sxStyle={{ p: 5 }}>
+              <AppCard sxStyle={{p: 5}}>
                 <Safeinfo />
                 <MainSafeaccord />
               </AppCard>
@@ -40,11 +39,11 @@ export default function SafeAgileCert() {
               <Safetest />
             </Grid>
           </Grid>
-          <Grid container spacing={{ xs: 4, md: 8 }}>
-            <Grid item xs={12} md={8} sx={{ pb: 7 }}>
+          <Grid container spacing={{xs: 4, md: 8}}>
+            <Grid item xs={12} md={8} sx={{pb: 7}}>
               <SafePricingcard />
             </Grid>
-            <Grid item xs={12} md={4} sx={{ pb: 7 }}>
+            <Grid item xs={12} md={4} sx={{pb: 7}}>
               <RelatedCourses data={courseList2} />
             </Grid>
           </Grid>

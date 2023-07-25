@@ -1,28 +1,37 @@
-import { AppCard, AppGridContainer, AppInfoView } from '@crema';
-import {
-  Container,
-  Grid,
-} from '@mui/material';
+import {AppCard, AppGridContainer, AppInfoView} from '@crema';
+import {Container, Grid} from '@mui/material';
+import CityFilterOption from 'modules/commanmodules/CityFilterOption';
 import EnhancedTable from 'modules/commanmodules/EnhancedTable2';
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { onGetCourseList, } from 'redux/actions';
+import React, {useEffect, useState} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import {onGetCourseList} from 'redux/actions';
 
-export default function CourseTable() {
+export default function CourseTable({PageCourseName}) {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(onGetCourseList());
   }, [dispatch]);
-  const CourseList = useSelector((state) => state?.dashboard?.courselist?.List);
+  const FullCourseList = useSelector(
+    (state) => state?.dashboard?.courselist?.List,
+  );
+  console.log('first Full', FullCourseList);
+  let CourseList = PageCourseName
+    ? FullCourseList?.filter((item) => item.CourseName === PageCourseName)
+    : FullCourseList;
   console.log('first 2225', CourseList);
-
+  const [citySelection, setCitySelction] = useState('All');
+  console.log('sdfdsfds', citySelection);
+  CourseList =
+    citySelection !== 'All'
+      ? CourseList?.filter((item) => item.Place === citySelection)
+      : CourseList;
   return (
     <Container>
+      <CityFilterOption setCitySelction={setCitySelction} />
       {CourseList && (
         <>
           <AppGridContainer>
             <Grid item xs={12} md={12}>
-
               {/* <AppCard
                 title={
                   <>
@@ -62,3 +71,7 @@ export default function CourseTable() {
     </Container>
   );
 }
+
+CourseTable.propTypes = {
+  PageCourseName: PropTypes.string,
+};
