@@ -20,7 +20,7 @@ export default function CourseinfoCopy({ DetailObject }) {
                             switch (item.type) {
                                 case 'title':
                                     return (
-                                        <Typography variant='h2' sx={{ color: "#20509e" }} gutterBottom>{item.text} </Typography>
+                                        <Typography variant='h2' sx={{ color: "#20509e", py: 2 }}>{item.text} </Typography>
                                     );
                                 case 'para':
                                     return (
@@ -30,7 +30,7 @@ export default function CourseinfoCopy({ DetailObject }) {
                                                     <Typography variant='body1' display='inline' gutterBottom>
                                                         <Link href={item?.link?.link}>{item2}</Link>
                                                     </Typography>
-                                                    : <Typography variant='body1' display='inline' gutterBottom> {item2} </Typography>))
+                                                    : <Typography variant='body1' display='inline'> {item2} </Typography>))
                                             : item.text.map((item2, ii) => (
                                                 <Typography variant='body1' gutterBottom textAlign='justify'>{item2} </Typography>))
                                     );
@@ -41,7 +41,7 @@ export default function CourseinfoCopy({ DetailObject }) {
                                                 <ListItemText>
                                                     {item.text.map((item2, ii) => (
                                                         ii === item.link.elemNo ?
-                                                            <Link href={item?.link?.link}> {item2}</Link >
+                                                            <Link href={item?.link?.link} sx={{ textDecoration: 'none' }}> {item2}</Link >
                                                             : <> {item2}</>
                                                     ))}
                                                 </ListItemText>

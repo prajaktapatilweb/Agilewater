@@ -20,9 +20,7 @@ export default function SafeAgileCert() {
       <Grid container>
         <Container sx={{ maxWidth: { xl: 1450 }, marginTop: 10 }}>
 
-          <Grid container direction="row"
-            justifyContent="space-evenly"
-            alignItems="center" spacing={{ xs: 4, md: 8 }}>
+          <Grid container spacing={{ xs: 4, md: 8 }}>
             <Grid item xs={12} md={8}>
               <CourseTable />
 

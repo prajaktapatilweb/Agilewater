@@ -15,6 +15,7 @@ import Safetest from 'modules/SafeAgileCert/Safetest.js';
 import Safeinfo from 'modules/SafeAgileCert/Safeinfo';
 import Safescruminfo from './Safescruminfo';
 import { courseList2 } from 'modules/Constant/Relatecoursedata';
+import SafePricingcard from 'modules/SafeAgileCert/SafePricingcard';
 
 export default function index() {
     return (
@@ -22,9 +23,7 @@ export default function index() {
             <SafescrumHero />
             <Container sx={{ maxWidth: { xl: 1450 }, marginTop: 10 }}>
 
-                <Grid container direction="row"
-                    justifyContent="space-evenly"
-                    alignItems="center" spacing={{ xs: 4, md: 8 }}>
+                <Grid container spacing={{ xs: 4, md: 8 }}>
                     <Grid item xs={12} md={8}>
                         <CourseTable />
 
@@ -43,16 +42,15 @@ export default function index() {
                     <Grid item xs={12} md={4}>
                         <Videodemo videoPromo={'sd'} />
                         <Safetest />
-                    </Grid>
-                </Grid>
-                <Grid container spacing={{ xs: 4, md: 8 }}>
-                    {/* <Grid item xs={12} md={8} sx={{ pb: 7 }}>
-                        <SafePricingcard />
-                    </Grid> */}
-                    <Grid item xs={12} md={4} sx={{ pb: 7 }}>
                         <RelatedCourses data={courseList2} />
                     </Grid>
                 </Grid>
+                {/* <Grid container spacing={{ xs: 4, md: 8 }}>
+                    <Grid item xs={12} md={8} sx={{ pb: 7 }}>
+                        <SafePricingcard />
+                    </Grid>
+                  
+                </Grid> */}
             </Container>
 
         </div>
