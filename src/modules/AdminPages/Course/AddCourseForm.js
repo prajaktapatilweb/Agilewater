@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import Button from '@mui/material/Button';
 import {
   FormControl,
@@ -7,7 +7,7 @@ import {
   TextField,
   Typography,
 } from '@mui/material';
-import {Formik, Field, Form} from 'formik';
+import { Formik, Field, Form } from 'formik';
 // import FormikRadioGroup from '../../formik/FormikRadioGroup';
 // import CustomizedSelectFormik from '../../formik/CustomizedSelectFormik';
 // import CustomizedCheckboxFormik from '../../formik/CustomizedCheckboxFormik';
@@ -16,7 +16,7 @@ import AppInfoView from '@crema/core/AppInfoView';
 import Box from '@mui/material/Box';
 import AppTextField from '@crema/core/AppFormComponents/AppTextField';
 // import { useAuthUser } from '@crema/utility/AuthHooks';
-import {Fonts} from '../../../shared/constants/AppEnums';
+import { Fonts } from '../../../shared/constants/AppEnums';
 // import CheckboxGroup from '../../formik/CheckboxGroup';
 // import { useJWTAuth, userDefJWTRoleAuth, } from '@crema/services/auth/jwt-auth/JWTAuthProvider';
 // import { userDefJWTRoleuser } from '@crema/utility/AuthHooks';
@@ -28,7 +28,7 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import IntlMessages from '@crema/utility/IntlMessages';
 import CircularProgress from '@mui/material/CircularProgress';
-import {green} from '@mui/material/colors';
+import { green } from '@mui/material/colors';
 import CustomizedSelectFormik from 'modules/commanmodules/Formik/CustomizedSelectFormik';
 import {
   CourseOptions,
@@ -37,13 +37,14 @@ import {
 } from 'modules/Constant/CommanConst';
 import DateTimePicker from '@mui/lab/DateTimePicker';
 import moment from 'moment';
-import {DatePicker} from '@mui/lab';
+import { DatePicker } from '@mui/lab';
 import {
   onGetIndivCourseData,
   onPostNewCourseData,
   onUpdateCourseData,
 } from 'redux/actions';
-import {useDispatch, useSelector} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
 
 // import Notistack from 'modules/Testing/Notistack';
 // import ReactTostify from 'modules/Testing/ReactTostify';
@@ -115,7 +116,7 @@ const validationSchema = yup.object({
     }),
 });
 
-const AddCourseForm = ({CourseID, closefn}) => {
+const AddCourseForm = ({ CourseID, closefn }) => {
   // console.log('Begining of SignupJWTAuth');
   console.log('sds', CourseID);
   // Varibles and Function for alert dialogue
@@ -127,7 +128,7 @@ const AddCourseForm = ({CourseID, closefn}) => {
   };
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(onGetIndivCourseData({CourseID}));
+    dispatch(onGetIndivCourseData({ CourseID }));
   }, [dispatch]);
   const CourseData = useSelector(
     (state) => state?.dashboard?.Coursedata?.CourseData,
@@ -136,12 +137,12 @@ const AddCourseForm = ({CourseID, closefn}) => {
 
   // Varible for checkbox It is use to store the earlier field data
   // Form Submission Function
-  const onSubmit = async (data, {setSubmitting, resetForm}) => {
+  const onSubmit = async (data, { setSubmitting, resetForm }) => {
     console.log('Signup Form Submission', data);
     setSubmitting(true);
     CourseID
-      ? dispatch(onUpdateCourseData({CourseID, data}))
-      : dispatch(onPostNewCourseData({data, resetForm}));
+      ? dispatch(onUpdateCourseData({ CourseID, data }))
+      : dispatch(onPostNewCourseData({ data, resetForm }));
     CourseID ? closefn() : null;
     setSubmitting(false);
   };
@@ -160,11 +161,11 @@ const AddCourseForm = ({CourseID, closefn}) => {
   };
 
   return (
-    <Box sx={{flex: 1, display: 'flex', flexDirection: 'column'}}>
+    <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
       {CourseID ? (
         <Typography variant='h1'>Update the data of {CourseID}</Typography>
       ) : null}
-      <Box sx={{flex: 1, display: 'flex', flexDirection: 'column', m: 10}}>
+      <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column', m: 10 }}>
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
@@ -181,14 +182,14 @@ const AddCourseForm = ({CourseID, closefn}) => {
             isSubmitting,
           }) => (
             // {/* {(data, errors, isValidating, isSubmitting) => ( */}
-            <Form style={{textAlign: 'left'}} noValidate autoComplete='off'>
+            <Form style={{ textAlign: 'left' }} noValidate autoComplete='off'>
               {/* <pre>{JSON.stringify(values, null, 2)}</pre> */}
-              <Grid container sx={{mb: {xs: 4, xl: 5}}} spacing={2}>
+              <Grid container sx={{ mb: { xs: 4, xl: 5 } }} spacing={2}>
                 <Grid item xs={12} md={6}>
                   <FormControl
                     sx={{
                       width: '100%',
-                      '&.MuiInputBase-input': {fontSize: 14},
+                      '&.MuiInputBase-input': { fontSize: 14 },
                     }}
                   >
                     <InputLabel id='demo-simple-select-label'>
@@ -206,7 +207,7 @@ const AddCourseForm = ({CourseID, closefn}) => {
                   <FormControl
                     sx={{
                       width: '100%',
-                      '&.MuiInputBase-input': {fontSize: 14},
+                      '&.MuiInputBase-input': { fontSize: 14 },
                     }}
                   >
                     <InputLabel id='demo-simple-select-label'>
@@ -337,7 +338,7 @@ const AddCourseForm = ({CourseID, closefn}) => {
                     variant='outlined'
                     sx={{
                       width: '100%',
-                      '&.MuiInputBase-input': {fontSize: 14},
+                      '&.MuiInputBase-input': { fontSize: 14 },
                     }}
                   />
                 </Grid>
@@ -349,7 +350,7 @@ const AddCourseForm = ({CourseID, closefn}) => {
                     variant='outlined'
                     sx={{
                       width: '100%',
-                      '&.MuiInputBase-input': {fontSize: 14},
+                      '&.MuiInputBase-input': { fontSize: 14 },
                     }}
                   />
                 </Grid>
@@ -361,7 +362,7 @@ const AddCourseForm = ({CourseID, closefn}) => {
                     variant='outlined'
                     sx={{
                       width: '100%',
-                      '&.MuiInputBase-input': {fontSize: 14},
+                      '&.MuiInputBase-input': { fontSize: 14 },
                     }}
                   />
                 </Grid>
@@ -386,7 +387,7 @@ const AddCourseForm = ({CourseID, closefn}) => {
                   color='primary'
                   disabled={values.isValidating || values.isSubmitting}
                   sx={{
-                    mt: {xs: 5, xl: 6},
+                    mt: { xs: 5, xl: 6 },
                     minWidth: 160,
                     fontWeight: Fonts.REGULAR,
                     fontSize: 16,
@@ -404,20 +405,20 @@ const AddCourseForm = ({CourseID, closefn}) => {
         </Formik>
       </Box>
 
-      <Box sx={{color: 'grey.500'}}></Box>
+      <Box sx={{ color: 'grey.500' }}></Box>
       <Dialog
         open={open}
         onClose={handleClose}
         aria-labelledby='alert-dialog-title'
         aria-describedby='alert-dialog-description'
       >
-        <DialogTitle sx={{color: 'white', backgroundColor: `${dialogaction}`}}>
+        <DialogTitle sx={{ color: 'white', backgroundColor: `${dialogaction}` }}>
           <h2>
             Form submission {dialogaction === 'red' ? 'Failed' : 'Success'}
           </h2>
         </DialogTitle>
         <DialogContent>
-          <DialogContentText sx={{mt: 5}}>{msg} Thank you !</DialogContentText>
+          <DialogContentText sx={{ mt: 5 }}>{msg} Thank you !</DialogContentText>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Ok</Button>
