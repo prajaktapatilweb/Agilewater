@@ -44,6 +44,7 @@ import {
   onUpdateCourseData,
 } from 'redux/actions';
 import {useDispatch, useSelector} from 'react-redux';
+import PropTypes from 'prop-types';
 
 // import Notistack from 'modules/Testing/Notistack';
 // import ReactTostify from 'modules/Testing/ReactTostify';
