@@ -14,7 +14,7 @@ export default function Herosection({ image1, heading, list1 }) {
   return (
     <div>
       {/* <Grid className="section section-lg section-shaped " style={{ backgroundImage: "linear-gradient(90deg, #05445e 35%, #189ab4 90%)", position: "relative" }}> */}
-      <Grid className='section section-lg section-shaped'>
+      <Grid className='section section-lg section-shaped' sx={{ justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}>
         <div className='shape shape-style-u1 shape-dark'>
           <span className='span-150' />
           <span className='span-50' />
@@ -27,7 +27,7 @@ export default function Herosection({ image1, heading, list1 }) {
           <span className='span-50' />
           <span className='span-100' />
         </div>
-        <Container sx={{ maxWidth: { xl: 1400 }, textAlign: 'center' }}>
+        <Container sx={{ maxWidth: { xl: 1400 } }}>
           <Box
             component='h1'
             sx={{
@@ -44,24 +44,20 @@ export default function Herosection({ image1, heading, list1 }) {
             {heading}
           </Box>
 
-          <Grid
-            container
-            direction="row"
-            justifyContent="center"
-            alignItems="center"
-            spacing={7}
+          <Grid container spacing={3} sx={{ position: 'relative', zIndex: 1 }} direction="row"
+            justifyContent="space-evenly"
+            alignItems="center">
 
-            sx={{ position: 'relative', zIndex: 1 }}
-          // mt={{ xs: 5, md: 0 }}
-          >
             <Grid item xs={12} sm={6} md={3}>
               <Box
                 px={{ xs: 10, sm: 0, md: 0 }}
                 mx={{ xs: 10, sm: 0, md: 0 }}
                 sx={{
-                  border: '2px solid white',
+                  padding: '2px',
+                  border: '3px solid black',
                   borderRadius: '5px',
-                  background: 'white',
+                  background: '#fff',
+                  justifyContent: 'center', alignItems: 'center', textAlign: 'center'
                 }}
               >
                 <Image
@@ -71,21 +67,11 @@ export default function Herosection({ image1, heading, list1 }) {
                   height={100}
                   width={100}
                   layout='responsive'
-                // sizes='100vw'
-                //   fill={true}
-                // style={{ width: '100%', height: "auto" }}
-                //   layout='fill'
-                //   objectFit='contain'
-                />
+                  objectFit='contain'
+                ></Image>
               </Box>
             </Grid>
-            <Grid
-              item
-              xs={12}
-              sm={6}
-              md={5}
-
-            >
+            <Grid item xs={12} sm={6} md={4}>
               {/* <Box
                                 component='h1'
                                 sx={{
@@ -98,8 +84,8 @@ export default function Herosection({ image1, heading, list1 }) {
                                 {props.heading}
                             </Box> */}
 
-              <Box component='p' sx={{ mb: 5 }}>
-                <List sx={{ color: 'white' }}>
+              <Box sx={{ p: 5 }}>
+                <List sx={{ color: 'white', }}>
                   {list1.map((item, i) => (
                     <ListItem key={i}>
                       <KeyboardDoubleArrowRightIcon></KeyboardDoubleArrowRightIcon>
@@ -112,12 +98,7 @@ export default function Herosection({ image1, heading, list1 }) {
                 </List>
               </Box>
             </Grid>
-            <Grid
-              item
-              xs={12}
-              sm={12}
-              md={4}
-            >
+            <Grid item xs={12} sm={12} md={5}>
               <Videodemo videoPromo={'sd'} />
             </Grid>
           </Grid>

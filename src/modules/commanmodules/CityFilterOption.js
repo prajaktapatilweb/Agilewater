@@ -1,11 +1,13 @@
 import IntlMessages from '@crema/utility/IntlMessages';
-import {Box, Button, FormControl, InputLabel} from '@mui/material';
-import {Field, Form, Formik} from 'formik';
-import {CityOptions, CourseOptions} from 'modules/Constant/CommanConst';
-import React, {useState} from 'react';
+import { Box, Button, FormControl, InputLabel } from '@mui/material';
+import { Field, Form, Formik } from 'formik';
+import { CityOptions, CourseOptions } from 'modules/Constant/CommanConst';
+import React, { useState } from 'react';
 import CustomizedSelectFormik from './Formik/CustomizedSelectFormik';
+import PropTypes from 'prop-types';
 
-export default function CityFilterOption({setCitySelction}) {
+
+export default function CityFilterOption({ setCitySelction }) {
   const setSelection = (changedValues) => {
     setCitySelction(changedValues);
   };
@@ -17,14 +19,14 @@ export default function CityFilterOption({setCitySelction}) {
           City: '',
         }}
       >
-        {({values, isSubmitting}) => (
-          <Form style={{textAlign: 'left'}}>
-            <Box sx={{mb: {xs: 5, lg: 8}}}>
+        {({ values, isSubmitting }) => (
+          <Form style={{ textAlign: 'left' }}>
+            <Box sx={{ mb: { xs: 5, lg: 8 } }}>
               {/* <pre>{JSON.stringify(values, null, 2)}</pre> */}
               <FormControl
                 sx={{
                   width: '100%',
-                  '&.MuiInputBase-input': {fontSize: 14},
+                  '&.MuiInputBase-input': { fontSize: 14 },
                 }}
               >
                 <InputLabel id='demo-simple-select-label'>

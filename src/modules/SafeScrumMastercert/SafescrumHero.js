@@ -8,7 +8,7 @@ export default function SafescrumHero() {
             <Herosection
                 image1='/assets/images/courselogo/SSM-logo.png'
                 // /assets/images/Safe/SAFe-Agilist-Logo.png'
-                heading='SAFe Scrum Master Certification'
+                heading='SAFe Advanced Scrum Master Certification'
                 list1={[
                     '2 Days of Classroom Training',
                     '  100% Assured Results',

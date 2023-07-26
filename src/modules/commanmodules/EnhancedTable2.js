@@ -1,6 +1,6 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import {alpha} from '@mui/material/styles';
+import { alpha } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -20,14 +20,14 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
 import DeleteIcon from '@mui/icons-material/Delete';
 import FilterListIcon from '@mui/icons-material/FilterList';
-import {visuallyHidden} from '@mui/utils';
-import {Button, Icon} from '@mui/material';
-import {Delete, Edit} from '@mui/icons-material';
+import { visuallyHidden } from '@mui/utils';
+import { Button, Icon } from '@mui/material';
+import { Delete, Edit } from '@mui/icons-material';
 import AppDialog from '@crema/core/AppDialog';
-import {useState} from 'react';
+import { useState } from 'react';
 import moment from 'moment';
 import AddCourseForm from 'modules/AdminPages/Course/AddCourseForm';
-import {AppConfirmDialog} from '@crema';
+import { AppConfirmDialog } from '@crema';
 import DeleteDialoug from 'modules/AdminPages/Course/DeleteDialoug';
 
 function descendingComparator(a, b, orderBy) {
@@ -61,7 +61,7 @@ function stableSort(array, comparator) {
 }
 
 function EnhancedTableHead(props) {
-  const {order, orderBy, onRequestSort, headCells} = props;
+  const { order, orderBy, onRequestSort, headCells } = props;
   const createSortHandler = (property) => (event) => {
     onRequestSort(event, property);
   };
@@ -119,7 +119,7 @@ function EnhancedTableHead(props) {
                 ) : null}
               </TableSortLabel>
             </TableCell>
-          ),
+          )
         )}
       </TableRow>
     </TableHead>
@@ -133,16 +133,16 @@ EnhancedTableHead.propTypes = {
   headCells: PropTypes.array.isRequired,
 };
 
-const EnhancedTableToolbar = ({TableTitle}) => {
+const EnhancedTableToolbar = ({ TableTitle }) => {
   return (
     <Toolbar
       sx={{
-        pl: {sm: 2},
-        pr: {xs: 1, sm: 1},
+        pl: { sm: 2 },
+        pr: { xs: 1, sm: 1 },
       }}
     >
       <Typography
-        sx={{flex: '1 1 100%'}}
+        sx={{ flex: '1 1 100%' }}
         variant='h6'
         id='tableTitle'
         component='div'
@@ -240,8 +240,8 @@ export default function EnhancedTable({
     page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
 
   return (
-    <Box sx={{width: '100%'}}>
-      <Paper sx={{width: '100%', mb: 2}}>
+    <Box sx={{ width: '100%' }}>
+      <Paper sx={{ width: '100%', mb: 2 }}>
         {/* <EnhancedTableToolbar TableTitle={TableTitle} /> */}
 
         <TableContainer>
@@ -384,7 +384,7 @@ export default function EnhancedTable({
       <AppDialog
         open={isDialogOpen}
         onClose={toggleDialogOpen}
-        // title={`${ActionLabel}  for ${selectedRow?.CourseID}`}
+      // title={`${ActionLabel}  for ${selectedRow?.CourseID}`}
       >
         <AddCourseForm
           CourseID={selectedRow?.CourseID}
@@ -394,7 +394,7 @@ export default function EnhancedTable({
       <AppDialog
         open={isDeleteDialogOpen}
         onClose={toggleDeleteDialogOpen}
-        // title={`${ActionLabel}  for ${selectedRow?.CourseID}`}
+      // title={`${ActionLabel}  for ${selectedRow?.CourseID}`}
       >
         <AddCourseForm
           CourseID={selectedRow?.CourseID}
@@ -406,11 +406,10 @@ export default function EnhancedTable({
 }
 
 EnhancedTable.propTypes = {
-  headCells: PropTypes.array.isRequired,
-  rows: PropTypes.array.isRequired,
-  TableTitle: PropTypes.string.isRequired,
-  mainColumn: PropTypes.string.isRequired,
-  orderByColumn: PropTypes.string.isRequired,
-  ActionLabel: PropTypes.string.isRequired,
+  rows: PropTypes.array,
+  TableTitle: PropTypes.string,
+  mainColumn: PropTypes.string,
+  orderByColumn: PropTypes.string,
+  ActionLabel: PropTypes.string,
   // children: PropTypes.node,
 };

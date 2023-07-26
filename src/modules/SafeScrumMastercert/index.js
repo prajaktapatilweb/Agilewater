@@ -25,7 +25,7 @@ export default function index() {
 
                 <Grid container spacing={{ xs: 4, md: 8 }}>
                     <Grid item xs={12} md={8}>
-                        <CourseTable />
+                        {/* <CourseTable /> */}
 
                     </Grid>
                     <Grid item xs={12} md={4}>
@@ -34,7 +34,7 @@ export default function index() {
 
                     <Grid item xs={12} md={8}>
                         <AppCard sxStyle={{ p: 5 }}>
-                            <Safescruminfo />
+                            {/* <Safescruminfo /> */}
 
 
                         </AppCard>
