@@ -7,6 +7,7 @@ export default function Coachingheader(props) {
         <div>
             <Grid container className='section' style={{ background: '#edeff3' }}>
                 <Container sx={{ maxWidth: { xl: 1400 }, textAlign: 'center', marginTop: 6 }}>
+
                     <Box>
                         {/* <Card variant='outlined'> */}
                         <CardContent>

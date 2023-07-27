@@ -12,12 +12,12 @@ export default function MainpageCard(props) {
     return (
 
         <Grid container spacing={3} sx={{ mb: 7 }}>
-            <Grid item lg={12} sx={{ p: 3, textAlign: 'center' }}>
+            <Grid item xs={12} sx={{ p: 3, textAlign: 'center' }}>
                 <Typography variant='h1' sx={{ fontSize: { xs: 30, md: 35 } }}>Master Courses</Typography>
             </Grid>
 
             {props.DetailObject.map((item, i) => (
-                <Grid item xs={1} sm={2} lg={3} sx={{ justifyContent: 'stretch' }} key={i}>
+                <Grid item xs={12} sm={6} md={3} lg={3} sx={{ justifyContent: 'stretch' }} key={i}>
                     <Card>
                         <CardMedia
                             // component='img'

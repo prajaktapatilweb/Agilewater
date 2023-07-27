@@ -17,6 +17,7 @@ export default function SafeAgileCert() {
   return (
     <>
       <Imagepara />
+
       <Grid container>
         <Container sx={{ maxWidth: { xl: 1450 }, marginTop: 10 }}>
           <Grid container spacing={{ xs: 4, md: 8 }}>

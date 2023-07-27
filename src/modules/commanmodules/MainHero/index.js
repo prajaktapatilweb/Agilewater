@@ -79,9 +79,9 @@ export default function MainHero() {
                                     alt='Safelogo'
                                     //   src={image1}
                                     src='/assets/images/safe/SAFe-Agilist-Logo.png'
-                                    height={100}
-                                    width={100}
-                                    layout='responsive'
+                                    height={250}
+                                    width={250}
+                                // layout='responsive'
                                 />
                             </Box>
                         </Grid>
