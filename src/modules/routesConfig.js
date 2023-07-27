@@ -112,7 +112,7 @@ const routesConfig = [
       },
       {
         id: "menu22",
-        messageId: "menu.cert.ScrumScale",
+        messageId: "menu.cert.ScrumAtScale",
         type: "item",
         url: "/scrum-at-scale/"
       },

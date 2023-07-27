@@ -37,7 +37,7 @@ export default function CourseinfoCopy({ DetailObject }) {
                                 case 'items':
                                     return (
                                         item?.link?.bool ?
-                                            <ListItem> <KeyboardDoubleArrowRightIcon />
+                                            <ListItem alignItems='flex-start'> <KeyboardDoubleArrowRightIcon />
                                                 <ListItemText>
                                                     {item.text.map((item2, ii) => (
                                                         ii === item.link.elemNo ?
@@ -48,7 +48,7 @@ export default function CourseinfoCopy({ DetailObject }) {
                                             </ListItem>
                                             :
                                             item.text.map((item2, ii) => (
-                                                <ListItem> <KeyboardDoubleArrowRightIcon />
+                                                <ListItem alignItems='flex-start'> <KeyboardDoubleArrowRightIcon />
                                                     <ListItemText>
                                                         {item2}
                                                     </ListItemText>
