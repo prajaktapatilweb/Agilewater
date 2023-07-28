@@ -11,7 +11,7 @@ function TopHeading({title}) {
         alignItems='center'
         justifyContent='center'
         sx={{
-          mb: 3,
+          m: 3,
           display: 'flex',
           alignItems: 'center',
           // boxShadow: 1,
