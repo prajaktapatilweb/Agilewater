@@ -4,12 +4,12 @@ import { Container } from '@mui/material';
 import HeroSasm from './HeroSasm';
 import Safeadvinfo from './Safeadvinfo';
 import { AppCard } from '@crema';
-import MainSafeaccord from 'modules/SafeAgileCert/MainSafeaccord';
 import MainSafeadvaccord from './MainSafeadvaccord';
 import Videodemo from 'modules/SafeAgileCert/Videodemo';
 import Safetest from 'modules/SafeAgileCert/Safetest';
 import RelatedCourses from 'modules/commanmodules/RelatedCourses';
 import Innerlink from 'modules/commanmodules/Innerlink';
+import { courseList2 } from 'modules/Constant/Relatecoursedata';
 
 
 export default function index() {
@@ -30,7 +30,7 @@ export default function index() {
                     <Grid item xs={12} md={4}>
                         <Videodemo videoPromo={'sd'} />
                         <Safetest />
-                        <RelatedCourses />
+                        <RelatedCourses data={courseList2} />
                     </Grid>
                 </Grid>
             </Container>

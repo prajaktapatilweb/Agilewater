@@ -1,4 +1,4 @@
-const courseData = {
+const data = {
 
     Icp: {
         image: '/assets/images/courselogo/ICP-ACC.jpg',
@@ -20,21 +20,33 @@ const courseData = {
         title: 'Product Owner',
         views: '1.2k',
     },
+    IcpCat: {
+        image: '/assets/images/courselogo/ICP-CAT.jpg',
+        title: 'ICP-CAT',
+        views: '1.2k',
+    }
 
 };
 
 
 export const courseList2 = [
-    courseData.Icp,
-    courseData.Scrumatscale,
-    courseData.Csm,
-    courseData.Prowner
+    data.Icp,
+    data.Scrumatscale,
+    data.Csm,
+    data.Prowner
 
 ];
 export const safeadvList = [
-    courseData.Icp,
-    courseData.Scrumatscale,
-    courseData.Csm,
-    courseData.Prowner
+    data.Icp,
+    data.Scrumatscale,
+    data.Csm,
+    data.Prowner
+
+];
+export const atscale = [
+    data.Icp,
+    data.Csm,
+    data.Prowner,
+    data.IcpCat,
 
 ];

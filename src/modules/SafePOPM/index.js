@@ -8,6 +8,7 @@ import MainPopmaccord from './MainPopmaccord'
 import Safetest from 'modules/SafeAgileCert/Safetest'
 import RelatedCourses from 'modules/commanmodules/RelatedCourses'
 import Videodemo from 'modules/SafeAgileCert/Videodemo'
+import { courseList2 } from 'modules/Constant/Relatecoursedata'
 
 export default function SafePOPM() {
     return (
@@ -25,7 +26,7 @@ export default function SafePOPM() {
                     <Grid item xs={12} md={4}>
                         <Videodemo videoPromo={'sd'} />
                         <Safetest />
-                        <RelatedCourses />
+                        <RelatedCourses data={courseList2} />
                     </Grid>
 
                 </Grid>
