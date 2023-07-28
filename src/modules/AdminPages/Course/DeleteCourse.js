@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import TopHeading from '../TopHeading';
 import {useDispatch, useSelector} from 'react-redux';
-import EnhancedTable from 'modules/commanmodules/EnhancedTable2';
+import EnhancedTable from 'modules/commanmodules/EnhancedTable3';
 import {onGetCourseList} from 'redux/actions';
 import {AppCard} from '@crema';
 

@@ -1,5 +1,4 @@
 import {Box, Card, Container} from '@mui/material';
-import EnhancedTable from 'modules/commanmodules/EnhancedTable';
 import React from 'react';
 import TopHeading from '../TopHeading';
 import AddCourseForm from './AddCourseForm';

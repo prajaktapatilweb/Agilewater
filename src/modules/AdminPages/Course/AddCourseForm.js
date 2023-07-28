@@ -71,18 +71,16 @@ const validationSchema = yup.object({
       <IntlMessages id='Course.trainer' /> required !
     </>,
   ),
-  Cost: yup.object().shape({
-    Actual: yup.string().required(
-      <>
-        <IntlMessages id='Course.actualcost' /> required !
-      </>,
-    ),
-    Discounted: yup.string().required(
-      <>
-        <IntlMessages id='Course.discost' /> required !
-      </>,
-    ),
-  }),
+  ActualCost: yup.string().required(
+    <>
+      <IntlMessages id='Course.actualcost' /> required !
+    </>,
+  ),
+  DiscountedCost: yup.string().required(
+    <>
+      <IntlMessages id='Course.discost' /> required !
+    </>,
+  ),
   StartDate: yup.date().required(
     <>
       <IntlMessages id='common.startDate' /> required !
@@ -151,10 +149,8 @@ const AddCourseForm = ({CourseID, closefn}) => {
     StartDate: CourseData?.StartDate || '',
     EndDate: CourseData?.EndDate || '',
     Time: CourseData?.Time || '9:30 am to 05:30 pm',
-    Cost: {
-      Actual: CourseData?.Cost?.Actual || '',
-      Discounted: CourseData?.Cost?.Discounted || '',
-    },
+    ActualCost: CourseData?.ActualCost || '',
+    DiscountedCost: CourseData?.DiscountedCost || '',
     Place: CourseData?.Place || '',
     Trainer: CourseData?.Trainer || '',
     EventDeleteDate: CourseData?.EventDeleteDate || '',
@@ -334,7 +330,8 @@ const AddCourseForm = ({CourseID, closefn}) => {
                   <AppTextField
                     label={<IntlMessages id='Course.actualcost' />}
                     disabled={values.isSubmitting}
-                    name='Cost.Actual'
+                    // name='Cost.Actual'
+                    name='ActualCost'
                     variant='outlined'
                     sx={{
                       width: '100%',
@@ -345,7 +342,8 @@ const AddCourseForm = ({CourseID, closefn}) => {
                 <Grid item xs={6} md={3}>
                   <AppTextField
                     label={<IntlMessages id='Course.discost' />}
-                    name='Cost.Discounted'
+                    name='DiscountedCost'
+                    // name='`Cost`.Discounted'
                     disabled={values.isSubmitting}
                     variant='outlined'
                     sx={{

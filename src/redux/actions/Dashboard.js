@@ -126,3 +126,27 @@ export const onUpdateCourseData = ({CourseID, data}) => {
       });
   };
 };
+
+export const onDeleteIndivCourseData = ({CourseID}) => {
+  console.log('Redux Delete  Indiv Course', CourseID);
+  return (dispatch) => {
+    dispatch({type: FETCH_START});
+    jwtAxios
+      .delete(`/courses/DeleteCourse/${CourseID}`)
+      .then((data) => {
+        console.log('Data Rece REdux', data.data);
+        if (data.status === 200) {
+          dispatch({type: FETCH_SUCCESS});
+          dispatch({type: GET_COURSE_LIST, payload: data.data});
+        } else {
+          dispatch({
+            type: FETCH_ERROR,
+            payload: <IntlMessages id='message.somethingWentWrong' />,
+          });
+        }
+      })
+      .catch((error) => {
+        dispatch({type: FETCH_ERROR, payload: error.message});
+      });
+  };
+};

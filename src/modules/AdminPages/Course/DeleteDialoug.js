@@ -7,39 +7,39 @@ import {
   DialogTitle,
 } from '@mui/material';
 import React from 'react';
+import PropTypes from 'prop-types';
+import {onDeleteIndivCourseData} from 'redux/actions';
+import {useDispatch} from 'react-redux';
 
-export default function DeleteDialoug({DD, CourseID}) {
-  console.log('0sdsd', DD);
-  const [open, setOpen] = React.useState(DD);
-  const handleClose = () => {
-    setOpen(false);
-  };
+export default function DeleteDialoug({CourseID, closefn}) {
+  console.log('0sdsd');
+  const dispatch = useDispatch();
   return (
     <>
-      <Dialog
-        open={open}
-        onClose={handleClose}
-        aria-labelledby='alert-dialog-title'
-        aria-describedby='alert-dialog-description'
-      >
-        <DialogTitle sx={{color: 'white', backgroundColor: `${dialogaction}`}}>
-          <h2>
-            DeleteDialoug {CourseID}
-            Form submission {dialogaction === 'red' ? 'Failed' : 'Success'}
-          </h2>
-        </DialogTitle>
-        <DialogContent>
-          <DialogContentText sx={{mt: 5}}>{msg} Thank you !</DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose}>Ok</Button>
-        </DialogActions>
-      </Dialog>
+      <DialogContent>
+        <DialogContentText sx={{mt: 5}}>
+          Do you really want to delete the course {CourseID}
+        </DialogContentText>
+      </DialogContent>
+      <DialogActions>
+        <Button variant='contained' onClick={() => closefn()}>
+          No
+        </Button>
+        <Button
+          variant='contained'
+          color='error'
+          onClick={() =>
+            dispatch(onDeleteIndivCourseData({CourseID}), closefn())
+          }
+        >
+          Yes
+        </Button>
+      </DialogActions>
     </>
   );
 }
 
 DeleteDialoug.propTypes = {
   CourseID: PropTypes.string,
-  DD: PropTypes.boolean,
+  closefn: PropTypes.func,
 };
