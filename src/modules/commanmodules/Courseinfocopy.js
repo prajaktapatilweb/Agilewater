@@ -10,7 +10,7 @@ import { Container } from '@mui/material';
 import { Typography } from '@mui/material';
 
 export default function CourseinfoCopy({ DetailObject }) {
-    console.log('first', DetailObject)
+    // console.log('first', DetailObject)
     return (
         <>
             <Box>

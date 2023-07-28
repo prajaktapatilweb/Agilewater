@@ -24,9 +24,10 @@ const FreeCourseSlider = ({ images }) => {
       <CourseSlider>
         <Slider {...settings}>
           {images.map((item, index) => (
-            <Box key={index} sx={{ alignItems: 'center', justifyContent: 'center', textAlign: 'center', p: 3 }}>
-              <Image src={item.img} width={100} height={100} alt={item.title} />
-              <Typography variant='h3'>{item.subtitle}</Typography>
+            <Box key={index} sx={{ alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
+              <Image src={item.img} width={460} height={200} layout='responsive' alt={item.title} />
+              <br></br>
+              <Typography variant='h2'>{item.subtitle}</Typography>
 
             </Box>
 

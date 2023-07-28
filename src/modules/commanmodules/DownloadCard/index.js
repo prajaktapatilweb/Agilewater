@@ -9,33 +9,29 @@ import { Container } from '@mui/material';
 
 const DownloadCard = (props) => {
     return (
-        <AppCard
-            sxStyle={{ height: 1 }}
-            contentStyle={{ padding: 0, display: 'flex', flexDirection: 'column' }}
-        >
+        <AppCard contentStyle={{ padding: 0, display: 'flex', flexDirection: 'column' }} >
             <Box
                 sx={{
-                    py: 2,
-                    px: 6,
+                    px: 4,
                     display: 'flex',
                     // justifyContent: 'space-between',
                     alignItems: 'center',
                     justifyContent: 'center',
                 }}
             >
-                <Image src={props.img} height={200} width={200}></Image>
+                <Image src={props.img} height={180} width={180}></Image>
             </Box>
             <Box
                 sx={{
-                    py: 5,
-                    px: 6,
+                    py: 4,
+                    px: 4,
                     color: 'primary.contrastText',
                     flex: 1,
                     backgroundColor: teal[500],
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
-                    justifyContent: 'center',
+
                 }}
             >
 
@@ -50,9 +46,9 @@ const DownloadCard = (props) => {
 
 
                 <Box
-                    component='h3'
+                    variant='subtitle'
                     sx={{
-                        fontWeight: Fonts.BOLD,
+                        // fontWeight: Fonts.BOLD,
                         fontSize: 15,
                         textAlign: 'center'
                     }}

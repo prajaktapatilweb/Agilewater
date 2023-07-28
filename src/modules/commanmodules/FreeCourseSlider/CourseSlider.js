@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 
-const CourseSlider = ({children}) => {
+const CourseSlider = ({ children }) => {
   return (
     <Box
       sx={{
@@ -13,10 +13,10 @@ const CourseSlider = ({children}) => {
           width: '100%',
         },
         '& .slick-dots': {
-          padding: '0 16px',
+          padding: '0 20px',
         },
         '& .slick-dots li': {
-          width: '33%',
+          width: '10%',
           height: 'auto',
           margin: 0,
         },

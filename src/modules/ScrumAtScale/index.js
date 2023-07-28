@@ -31,7 +31,7 @@ export default function ScrumAtScale() {
                         <Safetest />
                         <RelatedCourses data={atscale} />
                     </Grid>
-                    <Grid item xs={12} md={4}>
+                    <Grid item xs={12} md={4} sx={{ mb: 5 }}>
                         <Atscaledownload />
 
                     </Grid>
