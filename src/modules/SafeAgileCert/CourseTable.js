@@ -1,13 +1,13 @@
-import { AppCard, AppGridContainer, AppInfoView } from '@crema';
-import { Container, Grid } from '@mui/material';
+import {AppCard, AppGridContainer, AppInfoView} from '@crema';
+import {Container, Grid} from '@mui/material';
 import CityFilterOption from 'modules/commanmodules/CityFilterOption';
-import EnhancedTable from 'modules/commanmodules/EnhancedTable2';
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { onGetCourseList } from 'redux/actions';
+import EnhancedTable from 'modules/commanmodules/EnhancedTable3';
+import React, {useEffect, useState} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import {onGetCourseList} from 'redux/actions';
 import PropTypes from 'prop-types';
 
-export default function CourseTable({ PageCourseName }) {
+export default function CourseTable({PageCourseName}) {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(onGetCourseList());

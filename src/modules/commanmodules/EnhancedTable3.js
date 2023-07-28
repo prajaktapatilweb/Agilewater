@@ -21,11 +21,10 @@ import Switch from '@mui/material/Switch';
 import DeleteIcon from '@mui/icons-material/Delete';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import {visuallyHidden} from '@mui/utils';
-import {Button, Icon} from '@mui/material';
-import {Delete, Edit} from '@mui/icons-material';
+import {Button} from '@mui/material';
+import {Edit} from '@mui/icons-material';
 import AppDialog from '@crema/core/AppDialog';
 import {useState} from 'react';
-import moment from 'moment';
 import AddCourseForm from 'modules/AdminPages/Course/AddCourseForm';
 import DeleteDialoug from 'modules/AdminPages/Course/DeleteDialoug';
 
@@ -64,7 +63,6 @@ function EnhancedTableHead(props) {
   const createSortHandler = (property) => (event) => {
     onRequestSort(event, property);
   };
-
   return (
     <TableHead>
       <TableRow>
@@ -129,6 +127,7 @@ EnhancedTableToolbar.propTypes = {
 };
 export default function EnhancedTable({
   rows,
+  // headCells,
   TableTitle,
   mainColumn,
   orderByColumn,
@@ -156,7 +155,12 @@ export default function EnhancedTable({
       label: 'Time (IST)',
     },
     {
-      id: 'Cost',
+      id: 'ActualCost',
+      numeric: false,
+      label: 'Cost (INR)',
+    },
+    {
+      id: 'DiscountedCost',
       numeric: false,
       label: 'Cost (INR)',
     },
@@ -184,6 +188,7 @@ export default function EnhancedTable({
   const [isDeleteDialogOpen, setisDeleteDialogOpen] = useState(false);
   const toggleDialogOpen = () => {
     setisDialogOpen(!isDialogOpen);
+    setSelectedRow();
   };
   const toggleDeleteDialogOpen = () => {
     setisDeleteDialogOpen(!isDeleteDialogOpen);
@@ -225,8 +230,7 @@ export default function EnhancedTable({
               background: '#20509e',
             }}
           >
-            {TableTitle}
-            {/* SAFe Agilist Certification Training */}
+            SAFe Agilist Certification Training
           </Typography>
           <div id='cards'>
             <Table
@@ -274,10 +278,12 @@ export default function EnhancedTable({
                         <TableCell align='left'>{row.Date}</TableCell>
                         <TableCell align='left'>{row.Place}</TableCell>
                         <TableCell align='left'>{row.Time}</TableCell>
-                        <TableCell align='center'>{row.Cost.Actual}</TableCell>
+                        <TableCell align='center'>
+                          {row.ActualCost || row.Cost.Actual}
+                        </TableCell>
                         <TableCell align='left'>
                           <Typography variant='h1'>
-                            {row.Cost.Discounted}
+                            {row.DiscountedCost || row.Cost.Discounted}
                           </Typography>
                         </TableCell>
                         <TableCell align='left'>{row.Trainer}</TableCell>
@@ -298,17 +304,15 @@ export default function EnhancedTable({
                             <Button
                               variant='outlined'
                               onClick={() => {
+                                console.log('Clicked');
                                 setSelectedRow(row);
-                                <DeleteDialoug
-                                  DD={true}
-                                  CourseID={selectedRow?.CourseID}
-                                />;
-                                // setisDeleteDialogOpen(true);
+                                setisDeleteDialogOpen(true);
+                                console.log('Clicked', isDeleteDialogOpen);
                               }}
                               startIcon={<DeleteIcon />}
                               color='error'
                             >
-                              Delete
+                              Delete {row.CourseID}
                             </Button>
                           ) : (
                             <Button
@@ -326,6 +330,39 @@ export default function EnhancedTable({
                             </Button>
                           )}
                         </TableCell>
+                        {/* {headCells.map((item) =>
+                          item.id === mainColumn ? (
+                            <TableCell
+                              component='th'
+                              id={labelId}
+                              scope='row'
+                              padding='normal'
+                            >
+                              {row[mainColumn]}
+                            </TableCell>
+                          ) : item.id === 'action' ? (
+                            <TableCell>
+                              <Button
+                                variant='contained'
+                                sx={{
+                                  backgroundImage:
+                                    'linear-gradient(to right, #3e2bce 0%, #2dd3aa 100%, #2dd3aa 100%, #2dd3aa 100%)',
+                                }}
+                                onClick={() => {
+                                  // setSelected(row)
+                                  setSelectedRow(row);
+                                  setisDialogOpen(true);
+                                }}
+                              >
+                                {row[item.id]}
+                              </Button>
+                            </TableCell>
+                          ) : (
+                            <TableCell align={item?.numeric ? 'right' : 'left'}>
+                              {row[item.id]}
+                            </TableCell>
+                          ),
+                        )} */}
                       </TableRow>
                     );
                   })}
@@ -367,7 +404,7 @@ export default function EnhancedTable({
         onClose={toggleDeleteDialogOpen}
         // title={`${ActionLabel}  for ${selectedRow?.CourseID}`}
       >
-        <AddCourseForm
+        <DeleteDialoug
           CourseID={selectedRow?.CourseID}
           closefn={toggleDeleteDialogOpen}
         />
@@ -375,7 +412,6 @@ export default function EnhancedTable({
     </Box>
   );
 }
-
 EnhancedTable.propTypes = {
   rows: PropTypes.array,
   TableTitle: PropTypes.string,

@@ -1,4 +1,4 @@
-import { AppCard, AppGridContainer, AppInfoView } from '@crema';
+import {AppCard, AppGridContainer, AppInfoView} from '@crema';
 import AppDialog from '@crema/core/AppDialog';
 import IntlMessages from '@crema/utility/IntlMessages';
 import {
@@ -9,15 +9,15 @@ import {
   Grid,
   Typography,
 } from '@mui/material';
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React, {useEffect, useState} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
 import {
   CourseData,
   getLectureRateData,
   onGetAnalyticsData,
 } from 'redux/actions';
-import { Fonts } from 'shared/constants/AppEnums';
-import EnhancedTable from '../../commanmodules/EnhancedTable';
+import {Fonts} from 'shared/constants/AppEnums';
+import EnhancedTable from '../../commanmodules/EnhancedTable3';
 // import UserTableComman from "modules/commanmodules/UserTableComman";
 
 export default function CourseTable() {
@@ -29,7 +29,7 @@ export default function CourseTable() {
   //   dispatch(onGetAnalyticsData());
   // }, [dispatch]);
 
-  const analyticsData = useSelector(({ dashboard }) => dashboard.analyticsData);
+  const analyticsData = useSelector(({dashboard}) => dashboard.analyticsData);
 
   // const CourseData = useSelector((state) => state.PayRelated.lectureRate);
 
@@ -164,7 +164,6 @@ export default function CourseTable() {
         <>
           <AppGridContainer>
             <Grid item xs={12} md={12}>
-
               {/* <AppCard
                 title={
                   <>
@@ -183,9 +182,9 @@ export default function CourseTable() {
                 // TableTitle='Agile'
                 mainColumn='name'
                 orderByColumn='calories'
-              // selectedRow={selectedRow}
-              // setSelectedRow={setSelectedRow}
-              // setisDialogOpen={setisDialogOpen}
+                // selectedRow={selectedRow}
+                // setSelectedRow={setSelectedRow}
+                // setisDialogOpen={setisDialogOpen}
               />
               {/* </AppCard> */}
             </Grid>
