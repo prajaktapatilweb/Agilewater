@@ -734,17 +734,19 @@
 /*cross ribbon card*/
 .box {
   position: relative;
+  border-radius: 5;
+  
   /* max-width: 600px; */
-  width: 90%;
+  /* width: 90%; */
   /* height: 400px; */
-  background: #fff;
+  /* background: #fff; */
   box-shadow: 0 0 15px rgba(0,0,0,.1);
 }
 
 /* common */
 .ribbon {
-  width: 150px;
-  height: 150px;
+  width: 140px;
+  height: 140px;
   overflow: hidden;
   position: absolute;
 }
@@ -760,11 +762,11 @@
   position: absolute;
   display: block;
   width: 225px;
-  padding: 10px 0;
+  padding: 9px 0;
   background-color: #3498db;
   box-shadow: 0 5px 10px rgba(0,0,0,.1);
   color: #fff;
-  font: 700 16px/1 'Lato', sans-serif;
+  font: 700 14px/1 'Lato', sans-serif;
   text-shadow: 0 1px 1px rgba(0,0,0,.2);
   text-transform: uppercase;
   text-align: center;

@@ -7,23 +7,17 @@ import Image from 'next/image';
 import Box from '@mui/material/Box';
 import PropTypes from 'prop-types';
 import { Fonts } from '../../../shared/constants/AppEnums';
+import { AppCard } from '@crema';
 
 const OtherCards = ({ data }) => {
 
     return (
-        <Grid container spacing={3} alignItems='stretch'>
+        <Grid container spacing={3}>
             {data.map((item, index) => (
-                <Grid item sx={12} sm={6} md={4} lg={4}>
-                    <div className="box">
+                <Grid item xs={12} sm={12} md={4} lg={4} key={index}>
+                    <div className="box"  >
 
-                        <Card
-                            sx={{
-                                padding: 5,
-                                textAlign: 'center',
-                            }}
-
-                            key={index}
-                        >
+                        <AppCard sx={{ textAlign: 'center', width: "100%", mb: 5, xs: { m: 2 } }}  >
                             <div className='ribbon ribbon-top-left'>
                                 <span>{item.strip}</span>
                             </div>
@@ -71,7 +65,7 @@ const OtherCards = ({ data }) => {
                                 {item.links}
                                 {/* <IntlMessages id='dashboard.readMore' /> */}
                             </Button>
-                        </Card>
+                        </AppCard>
 
 
                     </div>
