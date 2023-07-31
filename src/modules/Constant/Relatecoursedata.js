@@ -11,7 +11,7 @@ const data = {
         views: '1.2k',
     },
     Scrumatscale: {
-        image: '/assets/images/safe/ScrumAtScale-Badge-Practitioner.png',
+        image: '/assets/images/courselogo/ScrumAtScale.jpg',
         title: 'Scrum@Scale Practitioner',
         views: '1.5k',
     },

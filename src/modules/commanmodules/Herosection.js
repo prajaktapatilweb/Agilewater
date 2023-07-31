@@ -87,7 +87,7 @@ export default function Herosection({ image1, heading, list1 }) {
               <Box sx={{ p: 5 }}>
                 <List sx={{ color: 'white', }}>
                   {list1.map((item, i) => (
-                    <ListItem key={i}>
+                    <ListItem key={i} alignItems='flex-start'>
                       <KeyboardDoubleArrowRightIcon></KeyboardDoubleArrowRightIcon>
                       <ListItemText
                         primary={item}

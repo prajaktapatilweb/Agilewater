@@ -45,12 +45,12 @@ export default function index() {
                         <RelatedCourses data={courseList2} />
                     </Grid>
                 </Grid>
-                {/* <Grid container spacing={{ xs: 4, md: 8 }}>
+                <Grid container spacing={{ xs: 4, md: 8 }}>
                     <Grid item xs={12} md={8} sx={{ pb: 7 }}>
                         <SafePricingcard />
                     </Grid>
-                  
-                </Grid> */}
+
+                </Grid>
             </Container>
 
         </div>
