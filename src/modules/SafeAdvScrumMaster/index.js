@@ -10,6 +10,8 @@ import Safetest from 'modules/SafeAgileCert/Safetest';
 import RelatedCourses from 'modules/commanmodules/RelatedCourses';
 import Innerlink from 'modules/commanmodules/Innerlink';
 import { courseList2 } from 'modules/Constant/Relatecoursedata';
+import { testList1 } from 'modules/Constant/OthershortConst';
+import Testcard from 'modules/commanmodules/TestCard';
 
 
 export default function index() {
@@ -29,7 +31,7 @@ export default function index() {
                     </Grid>
                     <Grid item xs={12} md={4}>
                         <Videodemo videoPromo={'sd'} />
-                        <Safetest />
+                        <Testcard data={testList1} />
                         <RelatedCourses data={courseList2} />
                     </Grid>
                 </Grid>

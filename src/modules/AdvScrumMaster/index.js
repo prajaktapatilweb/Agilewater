@@ -5,19 +5,19 @@ import { AppCard } from '@crema'
 import AdvScruminfo from './AdvScruminfo'
 import MainAdvSMaccord from './MainAdvSMaccord'
 import VideoMain from 'modules/commanmodules/VideoMain'
-import SideCard from 'modules/ScrumMasterCert/SideCard'
-import { sideList1 } from 'modules/Constant/OtherCardsConst'
-import Safetest from 'modules/SafeAgileCert/Safetest'
 import FreeCourseSlider from 'modules/commanmodules/FreeCourseSlider'
 import { freecourseList } from 'modules/Constant/FreeCourseConst'
-import Atscaledownload from 'modules/ScrumAtScale/Atscaledownload'
 import RelatedCourses from 'modules/commanmodules/RelatedCourses'
 import { safeadvList } from 'modules/Constant/Relatecoursedata'
+import Innerlink from 'modules/commanmodules/Innerlink'
+import Testcard from 'modules/commanmodules/TestCard'
+import { testList2 } from 'modules/Constant/OthershortConst'
 
 export default function AdvScrumMaster() {
     return (
         <div>
             <HeroAdvScrum />
+            <Innerlink />
             <Container sx={{ maxWidth: { xl: 1450 }, marginTop: 10 }}>
                 <Grid container spacing={{ xs: 4, md: 8 }}>
                     <Grid item xs={12} md={8}>
@@ -28,13 +28,9 @@ export default function AdvScrumMaster() {
                     </Grid>
                     <Grid item xs={12} md={4}>
                         <VideoMain links="https://www.youtube.com/watch?v=rB9dlx8V480&t=2s" videoPromo={'sd'} />
-                        <br></br>
-
-                        <Safetest /><br></br>
+                        <Testcard data={testList2} />
                         <FreeCourseSlider images={freecourseList}></FreeCourseSlider>
-                        <br></br>
                         <RelatedCourses data={safeadvList} />
-
                     </Grid>
                 </Grid>
             </Container>

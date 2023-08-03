@@ -16,6 +16,8 @@ import Safeinfo from 'modules/SafeAgileCert/Safeinfo';
 import Safescruminfo from './Safescruminfo';
 import { courseList2 } from 'modules/Constant/Relatecoursedata';
 import SafePricingcard from 'modules/SafeAgileCert/SafePricingcard';
+import { testList1 } from 'modules/Constant/OthershortConst';
+import Testcard from 'modules/commanmodules/TestCard';
 
 export default function index() {
     return (
@@ -41,7 +43,7 @@ export default function index() {
                     </Grid>
                     <Grid item xs={12} md={4}>
                         <Videodemo videoPromo={'sd'} />
-                        <Safetest />
+                        <Testcard data={testList1} />
                         <RelatedCourses data={courseList2} />
                     </Grid>
                 </Grid>

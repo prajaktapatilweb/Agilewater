@@ -6,9 +6,10 @@ import { AppCard } from '@crema'
 import SafeArchinfo from './SafeArchinfo'
 import MainArchaccord from './MainArchaccord'
 import Videodemo from 'modules/SafeAgileCert/Videodemo'
-import Safetest from 'modules/SafeAgileCert/Safetest'
 import RelatedCourses from 'modules/commanmodules/RelatedCourses'
 import { courseList2 } from 'modules/Constant/Relatecoursedata'
+import { testList1 } from 'modules/Constant/OthershortConst'
+import Testcard from 'modules/commanmodules/TestCard'
 
 export default function SafeArch() {
     return (
@@ -26,7 +27,7 @@ export default function SafeArch() {
                     </Grid>
                     <Grid item xs={12} md={4}>
                         <Videodemo videoPromo={'sd'} />
-                        <Safetest />
+                        <Testcard data={testList1} />
                         <RelatedCourses data={courseList2} />
                     </Grid>
                 </Grid>

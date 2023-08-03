@@ -12,6 +12,8 @@ import MainSafeaccord from './MainSafeaccord';
 import SafePricingcard from './SafePricingcard';
 import SlideBasicArrow from 'modules/commanmodules/SlideBasicArrow';
 import { courseList2 } from 'modules/Constant/Relatecoursedata';
+import { testList1 } from 'modules/Constant/OthershortConst';
+import Testcard from 'modules/commanmodules/TestCard';
 
 export default function SafeAgileCert() {
   return (
@@ -36,7 +38,8 @@ export default function SafeAgileCert() {
             </Grid>
             <Grid item xs={12} md={4}>
               <Videodemo videoPromo={'sd'} />
-              <Safetest />
+              <Testcard data={testList1} />
+
             </Grid>
           </Grid>
           <Grid container spacing={{ xs: 4, md: 8 }}>

@@ -15,6 +15,8 @@ import FreeCourseSlider from 'modules/commanmodules/FreeCourseSlider'
 import { freecourseList } from 'modules/Constant/FreeCourseConst'
 import RelatedCourses from 'modules/commanmodules/RelatedCourses'
 import { safeadvList } from 'modules/Constant/Relatecoursedata'
+import Testcard from 'modules/commanmodules/TestCard'
+import { testList2 } from 'modules/Constant/OthershortConst'
 
 export default function CertScrumMaster() {
     return (
@@ -50,7 +52,7 @@ export default function CertScrumMaster() {
                         <VideoMain links="https://www.youtube.com/watch?v=rB9dlx8V480&t=2s" videoPromo={'sd'} />
                         <br></br>
                         <SideCard data={sideList1} />
-                        <Safetest /><br></br>
+                        <Testcard data={testList2} />
                         <FreeCourseSlider images={freecourseList}></FreeCourseSlider>
                         <br></br>
                         <Atscaledownload />

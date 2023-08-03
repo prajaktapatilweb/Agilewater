@@ -179,7 +179,7 @@ const routesConfig = [
           },
           {
             id: "menu2310",
-            messageId: "menu.certmessageId:.SMC",
+            messageId: "menu.cert.SMC",
             type: "item",
             url: "/scrum-master-certified-smc-certification-training/"
           },

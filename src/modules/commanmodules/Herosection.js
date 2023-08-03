@@ -53,7 +53,7 @@ export default function Herosection({ image1, heading, list1 }) {
                 px={{ xs: 10, sm: 0, md: 0 }}
                 mx={{ xs: 10, sm: 0, md: 0 }}
                 sx={{
-                  padding: '2px',
+                  // padding: '2px',
                   border: '3px solid black',
                   borderRadius: '5px',
                   background: '#fff',
@@ -91,7 +91,7 @@ export default function Herosection({ image1, heading, list1 }) {
                       <KeyboardDoubleArrowRightIcon></KeyboardDoubleArrowRightIcon>
                       <ListItemText
                         primary={item}
-                        primaryTypographyProps={{ fontSize: '18px' }}
+                        primaryTypographyProps={{ fontSize: '18px', mt: -1 }}
                       />
                     </ListItem>
                   ))}
