@@ -1,39 +1,40 @@
 import React from 'react'
-import HeroSMInter from './HeroSMInter'
+import HeroCSPO from './HeroCSPO'
 import Innerlink from 'modules/commanmodules/Innerlink'
 import { Container, Grid } from '@mui/material'
-import HeroCard from './HeroCard'
-import AnotherCard from './AnotherCard'
+import { AppCard } from '@crema'
+import CSPOinfo from './CSPOinfo'
+import MainCSPOaccord from './MainCSPOaccord'
 import VideoMain from 'modules/commanmodules/VideoMain'
 import FreeCourseSlider from 'modules/commanmodules/FreeCourseSlider'
-import { freecourseList } from 'modules/Constant/FreeCourseConst'
 import RelatedCourses from 'modules/commanmodules/RelatedCourses'
+import { freecourseList } from 'modules/Constant/FreeCourseConst'
 import { safeadvList } from 'modules/Constant/Relatecoursedata'
-import Testcard from 'modules/commanmodules/TestCard'
-import { testList2 } from 'modules/Constant/OthershortConst'
+import DownloadCard from 'modules/commanmodules/DownloadCard'
+import Atscaledownload from 'modules/ScrumAtScale/Atscaledownload'
 
-export default function SMInterview() {
+export default function CSPO() {
     return (
         <div>
-            <HeroSMInter />
+            <HeroCSPO />
             <Innerlink />
             <Container sx={{ maxWidth: { xl: 1450 }, marginTop: 10 }}>
-                <HeroCard />
                 <Grid container spacing={{ xs: 4, md: 8 }}>
                     <Grid item xs={12} md={8}>
-                        <AnotherCard />
+                        <AppCard sxStyle={{ p: 5 }}>
+                            <CSPOinfo />
+                            <MainCSPOaccord />
+                        </AppCard>
                     </Grid>
                     <Grid item xs={12} md={4}>
-                        <Testcard data={testList2} />
-                        <FreeCourseSlider images={freecourseList}></FreeCourseSlider>
+                        <VideoMain links="https://www.youtube.com/watch?v=B_CaH1XBhYQ" videoPromo={'sd'} />
 
-                    </Grid>
-                    <Grid item xs={12} md={4}>
+                        <Atscaledownload />
+                        <FreeCourseSlider images={freecourseList}></FreeCourseSlider>
                         <RelatedCourses data={safeadvList} />
                     </Grid>
                 </Grid>
             </Container>
-
         </div>
     )
 }
