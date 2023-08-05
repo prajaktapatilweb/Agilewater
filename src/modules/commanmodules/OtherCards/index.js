@@ -23,7 +23,7 @@ const OtherCards = ({ data }) => {
                             </div>
 
                             <Box sx={{ my: 4 }}>
-                                <Image src={item.img} width={100} height={100}></Image>
+                                <Image src={item.img} width={140} height={140}></Image>
                                 {/* <Avatar
                                     sx={{
                                         height: { xs: 60, xl: 80 },

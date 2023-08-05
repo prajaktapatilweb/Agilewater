@@ -30,7 +30,7 @@ const otherCard = {
         strip: 'INSTRUCTOR-LED',
     },
     course4: {
-        img: '/assets/images/courselogo/wt1.jpg',
+        img: '/assets/images/courselogo/ACSPO1.jpg',
         title: 'Advanced Certified Scrum Product Owner®',
         subtitle: ' ',
         links: 'Click For Details',
@@ -60,6 +60,27 @@ const otherCard = {
     course8: {
         img: '/assets/images/courselogo/ICP-ENT.jpg',
         title: 'Enterprise Coaching Certification',
+        subtitle: ' ',
+        links: 'Click For Details',
+        strip: 'INSTRUCTOR-LED',
+    },
+    course9: {
+        img: '/assets/images/courselogo/ICP-ACC-ENT2.png',
+        title: ' Enterprise Agile Coaching MasterClass',
+        subtitle: ' ',
+        links: 'Click For Details',
+        strip: 'INSTRUCTOR-LED',
+    },
+    course10: {
+        img: '/assets/images/courselogo/ICP-LEA.png',
+        title: 'Leading with Agility Certification',
+        subtitle: ' ',
+        links: 'Click For Details',
+        strip: 'INSTRUCTOR-LED',
+    },
+    course11: {
+        img: '/assets/images/courselogo/ICP-APM.jpg',
+        title: 'Agile Project & Delivery Management',
         subtitle: ' ',
         links: 'Click For Details',
         strip: 'INSTRUCTOR-LED',
@@ -158,6 +179,15 @@ export const otherCardList3 = [
     otherCard.course7,
     otherCard.course8,
 ];
+export const otherCardList4 = [
+    otherCard.course6,
+    otherCard.course7,
+    otherCard.course8,
+    otherCard.course9,
+    otherCard.course10,
+    otherCard.course11
+];
+
 export const maindata1 = [otherCardMain.main1];
 export const maindata2 = [otherCardMain.main2];
 export const maindata3 = [otherCardMain.main3];
