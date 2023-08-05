@@ -15,6 +15,8 @@ import { useStore } from '../redux/store'; // Client-side cache, shared for the 
 
 import '../@crema/services/index';
 import '../shared/vendors/index.css';
+// CSS for REACT Toastify 
+import 'react-toastify/dist/ReactToastify.css';
 
 
 import AppPageMeta from '../@crema/core/AppPageMeta';

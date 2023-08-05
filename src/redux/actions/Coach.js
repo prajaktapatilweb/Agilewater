@@ -4,24 +4,24 @@ import {
   FETCH_START,
   FETCH_SUCCESS,
   SHOW_MESSAGE,
-  ADD_NEW_COURSE,
-  GET_INDIV_COURSE_DATA,
-  GET_COURSE_LIST,
+  ADD_NEW_COACH,
+  GET_INDIV_COACH_DATA,
+  GET_COACH_LIST,
 } from 'shared/constants/ActionTypes';
 import IntlMessages from '@crema/utility/IntlMessages';
 import jwtAxios from '@crema/services/auth/jwt-auth';
 
-export const onGetCourseList = () => {
+export const onGetCoachList = () => {
   console.log('Redux Get Cours List ');
   return (dispatch) => {
     dispatch({type: FETCH_START});
     jwtAxios
-      .get('/courses/getcourslist')
+      .get('/Coaches/getcourslist')
       .then((data) => {
         console.log('Data Rece REdux', data.data);
         if (data.status === 200) {
           dispatch({type: FETCH_SUCCESS});
-          dispatch({type: GET_COURSE_LIST, payload: data.data});
+          dispatch({type: GET_COACH_LIST, payload: data.data});
         } else {
           dispatch({
             type: FETCH_ERROR,
@@ -35,15 +35,16 @@ export const onGetCourseList = () => {
   };
 };
 
-export const onPostNewCourseData = ({data, resetForm}) => {
+export const onPostNewCoachData = ({data, resetForm}) => {
+ console.log('first redux',data)
   return (dispatch) => {
     dispatch({type: FETCH_START});
     jwtAxios
-      .post('/courses/addnewcourse', {data})
+      .post('/coaches/addnewcoach', {data})
       .then((data) => {
         if (data.status === 200) {
           dispatch({type: FETCH_SUCCESS});
-          dispatch({type: ADD_NEW_COURSE, payload: data.data});
+          dispatch({type: ADD_NEW_COACH, payload: data.data});
           dispatch({
             type: SHOW_MESSAGE,
             payload: 'Data Added Succefully',
@@ -62,17 +63,17 @@ export const onPostNewCourseData = ({data, resetForm}) => {
   };
 };
 
-export const onGetIndivCourseData = ({CourseID}) => {
-  console.log('Redux Get  Indiv Course', CourseID);
+export const onGetIndivCoachData = ({CoachID}) => {
+  console.log('Redux Get  Indiv Coach', CoachID);
   return (dispatch) => {
     dispatch({type: FETCH_START});
     jwtAxios
-      .get('/courses/getindividualcourse', {params: {CourseID: CourseID}})
+      .get('/Coaches/getindividualCoach', {params: {CoachID: CoachID}})
       .then((data) => {
         console.log('Data Rece REdux', data.data);
         if (data.status === 200) {
           dispatch({type: FETCH_SUCCESS});
-          dispatch({type: GET_INDIV_COURSE_DATA, payload: data.data});
+          dispatch({type: GET_INDIV_COACH_DATA, payload: data.data});
         } else {
           dispatch({
             type: FETCH_ERROR,
@@ -86,12 +87,12 @@ export const onGetIndivCourseData = ({CourseID}) => {
   };
 };
 
-export const onUpdateCourseData = ({CourseID, data}) => {
+export const onUpdateCoachData = ({CoachID, data}) => {
   console.log('In Redux', data);
   return (dispatch) => {
     dispatch({type: FETCH_START});
     jwtAxios
-      .put(`/courses/updatecourse/${CourseID}`, {data})
+      .put(`/Coaches/updateCoach/${CoachID}`, {data})
       .then((recdata) => {
         if (recdata.status === 200) {
           // console.log('Data from Redux Students LEads', data.data, deleteID);
@@ -102,10 +103,10 @@ export const onUpdateCourseData = ({CourseID, data}) => {
               payload: 'Nothing to update',
             });
           } else {
-            dispatch({type: GET_COURSE_LIST, payload: recdata.data});
+            dispatch({type: GET_COACH_LIST, payload: recdata.data});
             dispatch({
               type: SHOW_MESSAGE,
-              payload: `Data of ${CourseID} Updated`,
+              payload: `Data of ${CoachID} Updated`,
             });
           }
         } else {
@@ -121,17 +122,17 @@ export const onUpdateCourseData = ({CourseID, data}) => {
   };
 };
 
-export const onDeleteIndivCourseData = ({CourseID}) => {
-  console.log('Redux Delete  Indiv Course', CourseID);
+export const onDeleteIndivCoachData = ({CoachID}) => {
+  console.log('Redux Delete  Indiv Coach', CoachID);
   return (dispatch) => {
     dispatch({type: FETCH_START});
     jwtAxios
-      .delete(`/courses/DeleteCourse/${CourseID}`)
+      .delete(`/Coaches/DeleteCoach/${CoachID}`)
       .then((data) => {
         console.log('Data Rece REdux', data.data);
         if (data.status === 200) {
           dispatch({type: FETCH_SUCCESS});
-          dispatch({type: GET_COURSE_LIST, payload: data.data});
+          dispatch({type: GET_COACH_LIST, payload: data.data});
         } else {
           dispatch({
             type: FETCH_ERROR,

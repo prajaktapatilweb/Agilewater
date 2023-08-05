@@ -15,13 +15,12 @@ import SidebarPlaceholder from '@crema/core/AppSkeleton/SidebarListSkeleton';
 import AddIcon from '@mui/icons-material/Add';
 import {Typography, Zoom} from '@mui/material';
 // import { labelList, GradeList, folderList } from 'shared/constants/LabelConstant';
-const StudentLead = 'Sd';
 import Link from 'next/link';
 import {useRouter} from 'next/router';
 import {useJWTAuthMethod} from '@crema/utility/AuthHooks';
 import {Logout} from '@mui/icons-material';
 import JWTUserInfo from '@crema/core/AppLayout/components/UserInfo/JWTUserInfo';
-import {labelList} from 'modules/Constant/AdminPageConst';
+import { roterList} from 'modules/Constant/AdminPageConst';
 // import {Fonts} from 'shared/constants/AppEnums';
 
 const SideBarContent = () => {
@@ -83,44 +82,47 @@ const SideBarContent = () => {
               Dashboard
             </Box>
           </Link>
-
-          <Box
-            component='h4'
-            sx={{
-              mt: {xs: 4, xl: 5},
-              px: {xs: 4, md: 5, lg: 6.2},
-              fontWeight: Fonts.SEMI_BOLD,
-            }}
-          >
-            Courses
-            {/* <IntlMessages id='common.labels' /> */}
-          </Box>
-          {/* <List component='nav' aria-label='main mailbox folders'> */}
-          <AppList
-            animation='transition.slideLeftIn'
-            data={labelList}
-            ListEmptyComponent={
-              <ListEmptyResult
-                loading={true}
-                placeholder={
-                  <Box
-                    sx={{
-                      px: {xs: 4, md: 5, lg: 6.2},
-                    }}
-                  >
-                    <SidebarPlaceholder />
-                  </Box>
+          {roterList.map((item) => (
+            <>
+              <Box
+                component='h4'
+                sx={{
+                  mt: {xs: 4, xl: 5},
+                  px: {xs: 4, md: 5, lg: 6.2},
+                  fontWeight: Fonts.SEMI_BOLD,
+                }}
+              >
+                {item.heading}
+              </Box>
+              <AppList
+                animation='transition.slideLeftIn'
+                data={item.labels}
+                ListEmptyComponent={
+                  <ListEmptyResult
+                    loading={true}
+                    placeholder={
+                      <Box
+                        sx={{
+                          px: {xs: 4, md: 5, lg: 6.2},
+                        }}
+                      >
+                        <SidebarPlaceholder />
+                      </Box>
+                    }
+                  />
                 }
+                renderRow={(label) => (
+                  <LabelItem key={label.id} label={label} />
+                )}
               />
-            }
-            renderRow={(label) => <LabelItem key={label.id} label={label} />}
-          />
+            </>
+          ))}
+          {/* <List component='nav' aria-label='main mailbox folders'> */}
           {/* </List> */}
-
           {/* <CreateContact
-            isAddContact={isAddContact}
-            handleAddContactClose={handleAddContactClose}
-          /> */}
+          //   isAddContact={isAddContact}
+          //   handleAddContactClose={handleAddContactClose}
+          // /> */}
         </Box>
       </AppScrollbar>
     </>
