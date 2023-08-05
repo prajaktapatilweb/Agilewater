@@ -259,64 +259,71 @@ const routesConfig = [
           },
           {
             id: "menu253",
+            messageId: "menu.cert.AgileCoach13",
+            type: "item",
+            url: "/cat-ent-acc/"
+          },
+          {
+            id: "menu254",
             messageId: "menu.cert.AgileCoach3",
             type: "item",
             url: "/agile-coaching-certification/"
           },
           {
-            id: "menu254",
+            id: "menu255",
             messageId: "menu.cert.AgileCoach4",
             type: "item",
             url: "/icagile-apm-certification/"
           },
           {
-            id: "menu255",
+            id: "menu256",
             messageId: "menu.cert.AgileCoach5",
             type: "item",
             url: "/icp-cat-agile-coaching-transition-certification/"
           },
           {
-            id: "menu256",
+            id: "menu257",
             messageId: "menu.cert.AgileCoach6",
             type: "item",
             url: "/icp-ent-enterprise-agile-coaching-certification/"
           },
           {
-            id: "menu257",
+            id: "menu258",
             messageId: "menu.cert.AgileCoach7",
             type: "item",
             url: "/psychological-safety/"
           },
           {
-            id: "menu258",
+            id: "menu259",
             messageId: "menu.cert.AgileCoach8",
             type: "item",
             url: "/agile-leadership-journey/"
           },
           {
-            id: "menu259",
+            id: "menu2510",
             messageId: "menu.cert.AgileCoach9",
             type: "item",
             url: "/icp-atf-certification/"
           },
           {
-            id: "menu2510",
+            id: "menu2511",
             messageId: "menu.cert.AgileCoach10",
             type: "item",
             url: "/icagile-lea-certification/"
           },
           {
-            id: "menu2511",
+            id: "menu2512",
             messageId: "menu.cert.AgileCoach11",
             type: "item",
             url: "/business-agility-foundation-training/"
           },
           {
-            id: "menu2512",
+            id: "menu2513",
             messageId: "menu.cert.AgileCoach12",
             type: "item",
             url: "/icagile-fundamentals/"
           },
+
 
         ]
       },

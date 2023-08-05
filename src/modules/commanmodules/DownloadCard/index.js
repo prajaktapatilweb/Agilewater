@@ -9,7 +9,7 @@ import { Container } from '@mui/material';
 
 const DownloadCard = (props) => {
     return (
-        <AppCard contentStyle={{ padding: 0, display: 'flex', flexDirection: 'column' }} >
+        <AppCard contentStyle={{ padding: 0, display: 'flex', flexDirection: 'column', }} sx={{ mt: 5 }} >
             <Box
                 sx={{
                     px: 4,
