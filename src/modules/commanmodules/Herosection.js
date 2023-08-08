@@ -48,12 +48,11 @@ export default function Herosection({ image1, heading, list1 }) {
             justifyContent="space-evenly"
             alignItems="center">
 
-            <Grid item xs={12} sm={6} md={3}>
+            <Grid item xs={12} sm={6} md={4}>
               <Box
                 px={{ xs: 10, sm: 0, md: 0 }}
                 mx={{ xs: 10, sm: 0, md: 0 }}
                 sx={{
-                  // padding: '2px',
                   border: '3px solid black',
                   borderRadius: '5px',
                   background: '#fff',
@@ -64,10 +63,11 @@ export default function Herosection({ image1, heading, list1 }) {
                   alt='Safelogo'
                   src={image1}
                   // src='/assets/images/safe/SAFe-Agilist-Logo.png'
-                  height={100}
-                  width={100}
-                  layout='responsive'
-                  objectFit='contain'
+                  height={300}
+                  width={300}
+
+                // layout='responsive'
+                // objectFit='contain'
                 ></Image>
               </Box>
             </Grid>
@@ -98,7 +98,7 @@ export default function Herosection({ image1, heading, list1 }) {
                 </List>
               </Box>
             </Grid>
-            <Grid item xs={12} sm={12} md={5}>
+            <Grid item xs={12} sm={12} md={4}>
               <Videodemo videoPromo={'sd'} />
             </Grid>
           </Grid>
