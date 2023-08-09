@@ -1,21 +1,18 @@
 import Accordioninfo from 'modules/commanmodules/Accordianinfo'
 import React from 'react'
-import Safeinfo from './Safeinfo'
-import Safeaccord from './Safeaccord'
+import SafeTeamaccord from './SafeTeamaccord'
 
-
-export default function MainSafeaccord() {
-
+export default function MainSafeTeamaccord() {
     var DetailObject = [
         {
             heading: "FAQ :",
             para: '',
-            comp: <Safeaccord />
+            comp: <SafeTeamaccord />
         },
     ]
     return (
         <div>
-            <Accordioninfo DetailObject={DetailObject} ></Accordioninfo>
+            <Accordioninfo DetailObject={DetailObject}></Accordioninfo>
         </div>
     )
 }

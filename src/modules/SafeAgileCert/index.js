@@ -19,39 +19,39 @@ export default function SafeAgileCert() {
     <>
       <Imagepara />
 
-      <Grid container>
-        <Container sx={{ maxWidth: { xl: 1450 }, marginTop: 10 }}>
-          <Grid container spacing={{ xs: 4, md: 8 }}>
-            <Grid item xs={12} md={8}>
-              <CourseTable PageCourseName='Ms.' />
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <SlideBasicArrow />
-            </Grid>
 
-            <Grid item xs={12} md={8}>
-              <AppCard sxStyle={{ p: 5 }}>
-                <Safeinfo />
-                <MainSafeaccord />
-              </AppCard>
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <VideoMain links='https://www.youtube.com/watch?v=-M-R3Lc-V74' videoPromo={'sd'}></VideoMain>
-
-              <Testcard data={testList1} />
-
-            </Grid>
+      <Container sx={{ maxWidth: { xl: 1450 }, marginTop: 10 }}>
+        <Grid container spacing={{ xs: 4, md: 8 }}>
+          <Grid item xs={12} md={8}>
+            <CourseTable PageCourseName='Ms.' />
           </Grid>
-          <Grid container spacing={{ xs: 4, md: 8 }}>
-            <Grid item xs={12} md={8} sx={{ pb: 7 }}>
-              <SafePricingcard />
-            </Grid>
-            <Grid item xs={12} md={4} sx={{ pb: 7 }}>
-              <RelatedCourses data={courseList2} />
-            </Grid>
+          <Grid item xs={12} md={4}>
+            <SlideBasicArrow />
           </Grid>
-        </Container>
-      </Grid>
+
+          <Grid item xs={12} md={8}>
+            <AppCard sxStyle={{ p: 5 }}>
+              <Safeinfo />
+              <MainSafeaccord />
+            </AppCard>
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <VideoMain links='https://www.youtube.com/watch?v=-M-R3Lc-V74' videoPromo={'sd'}></VideoMain>
+
+            <Testcard data={testList1} />
+
+          </Grid>
+        </Grid>
+        <Grid container spacing={{ xs: 4, md: 8 }}>
+          <Grid item xs={12} md={8} sx={{ pb: 7 }}>
+            <SafePricingcard />
+          </Grid>
+          <Grid item xs={12} md={4} sx={{ pb: 7 }}>
+            <RelatedCourses data={courseList2} />
+          </Grid>
+        </Grid>
+      </Container>
+
       {/* <Userfooter /> */}
       {/* <Whatsappnew /> */}
     </>
