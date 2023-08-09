@@ -108,6 +108,12 @@ const routesConfig = [
             type: "item",
             url: "/safe-for-architects/"
           },
+          {
+            id: "menu216",
+            messageId: "menu.cert.team",
+            type: "item",
+            url: "/safe-for-teams/"
+          },
         ]
       },
       {

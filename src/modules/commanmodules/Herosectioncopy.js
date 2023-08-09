@@ -10,7 +10,7 @@ import { Fonts } from 'shared/constants/AppEnums';
 import PropTypes from 'prop-types';
 import VideoMain from './VideoMain';
 
-export default function Herosection({ image1, heading, list1 }) {
+export default function Herosectioncopy({ image1, heading, list1 }) {
   return (
     <div>
       {/* <Grid className="section section-lg section-shaped " style={{ backgroundImage: "linear-gradient(90deg, #05445e 35%, #189ab4 90%)", position: "relative" }}> */}
@@ -59,6 +59,7 @@ export default function Herosection({ image1, heading, list1 }) {
                   justifyContent: 'center', alignItems: 'center', textAlign: 'center'
                 }}
               >
+
                 <Image
                   alt='Safelogo'
                   src={image1}

@@ -1,23 +1,16 @@
 import React from 'react'
-// import Videodemo from './Videodemo';
-// import CourseTable from './CourseTable';
 import RelatedCourses from 'modules/commanmodules/RelatedCourses';
-// import Safetest from './Safetest';
-// import Safeinfo from './Safeinfo.js';
 import { Grid, Link } from '@mui/material';
 import { Container } from '@mui/material';
 import { AppCard } from '@crema';
 import SlideBasicArrow from 'modules/commanmodules/SlideBasicArrow';
 import SafescrumHero from './SafescrumHero'
-import Videodemo from 'modules/SafeAgileCert/Videodemo';
-import CourseTable from 'modules/SafeAgileCert/CourseTable';
-import Safetest from 'modules/SafeAgileCert/Safetest.js';
-import Safeinfo from 'modules/SafeAgileCert/Safeinfo';
-import Safescruminfo from './Safescruminfo';
 import { courseList2 } from 'modules/Constant/Relatecoursedata';
 import SafePricingcard from 'modules/SafeAgileCert/SafePricingcard';
 import { testList1 } from 'modules/Constant/OthershortConst';
 import Testcard from 'modules/commanmodules/TestCard';
+import VideoMain from 'modules/commanmodules/VideoMain';
+import Safescruminfo from './Safescruminfo';
 
 export default function index() {
     return (
@@ -36,13 +29,11 @@ export default function index() {
 
                     <Grid item xs={12} md={8}>
                         <AppCard sxStyle={{ p: 5 }}>
-                            {/* <Safescruminfo /> */}
-
-
+                            <Safescruminfo />
                         </AppCard>
                     </Grid>
                     <Grid item xs={12} md={4}>
-                        <Videodemo videoPromo={'sd'} />
+                        <VideoMain links='https://www.youtube.com/watch?v=-M-R3Lc-V74' videoPromo={'sd'}></VideoMain>
                         <Testcard data={testList1} />
                         <RelatedCourses data={courseList2} />
                     </Grid>

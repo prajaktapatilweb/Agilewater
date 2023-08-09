@@ -5,12 +5,11 @@ import { AppCard } from '@crema'
 import { Container, Grid } from '@mui/material'
 import Popmdetails from './Popmdetails'
 import MainPopmaccord from './MainPopmaccord'
-import Safetest from 'modules/SafeAgileCert/Safetest'
 import RelatedCourses from 'modules/commanmodules/RelatedCourses'
-import Videodemo from 'modules/SafeAgileCert/Videodemo'
 import { courseList2 } from 'modules/Constant/Relatecoursedata'
 import { testList1 } from 'modules/Constant/OthershortConst'
 import Testcard from 'modules/commanmodules/TestCard'
+import VideoMain from 'modules/commanmodules/VideoMain'
 
 export default function SafePOPM() {
     return (
@@ -26,7 +25,7 @@ export default function SafePOPM() {
                         </AppCard>
                     </Grid>
                     <Grid item xs={12} md={4}>
-                        <Videodemo videoPromo={'sd'} />
+                        <VideoMain links='https://www.youtube.com/watch?v=-M-R3Lc-V74' videoPromo={'sd'}></VideoMain>
                         <Testcard data={testList1} />
                         <RelatedCourses data={courseList2} />
                     </Grid>
