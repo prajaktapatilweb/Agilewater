@@ -1,13 +1,8 @@
 import React from 'react';
 import Grid from '@mui/material/Grid';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
-import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 import { AppBar, Box, Card, Container, Typography } from '@mui/material';
 import Image from 'next/image';
 import { Fonts } from 'shared/constants/AppEnums';
-import Videodemo from 'modules/safepages/SafeAgileCert/Videodemo';
 import PropTypes from 'prop-types';
 
 export default function MainHero() {
@@ -79,9 +74,9 @@ export default function MainHero() {
                                     alt='Safelogo'
                                     //   src={image1}
                                     src='/assets/images/safe/SAFe-Agilist-Logo.png'
-                                    height={100}
-                                    width={100}
-                                    layout='responsive'
+                                    height={250}
+                                    width={250}
+                                // layout='responsive'
                                 />
                             </Box>
                         </Grid>

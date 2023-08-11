@@ -4,41 +4,59 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import { Fonts } from 'shared/constants/AppEnums';
 import { Container } from '@mui/material';
+import Image from 'next/image';
 
-const Testcard = (props) => {
+const Testcard = ({ data }) => {
     return (
+        <Box>
+            {data.map((item, index) => (
+                <AppCard sxStyle={{ backgroundColor: '#0A8FDC', mt: 5 }} key={index}>
+                    <Box
+                        sx={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            height: 1,
+                        }}
+                    >
+                        <Box
+                            sx={{
+                                mb: 2,
+                            }}
+                        >
+                            <Image
+                                src={'/assets/images/dashboard/academy/promo.png'}
+                                width={130}
+                                height={130}
+                            ></Image>
+                            {/* {props.img} */}
+                            {/* <img src={'/assets/images/dashboard/academy/promo.png'} alt='promo' /> */}
+                        </Box>
+                        <Box
+                            component='h2'
+                            sx={{
+                                mb: 2,
 
-        <AppCard sxStyle={{ height: 1, backgroundColor: '#0A8FDC', marginTop: 5 }}>
-            <Box
-                sx={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    height: 1,
-
-                }}
-            >
-                <Box
-                    sx={{
-                        mb: 2,
-                    }}
-                >
-                    {props.img}
-                    {/* <img src={'/assets/images/dashboard/academy/promo.png'} alt='promo' /> */}
-                </Box>
-                <Box
-                    component='p'
-                    sx={{
-                        mb: 2,
-                        fontSize: 14,
-                        fontWeight: Fonts.MEDIUM,
-                        color: '#fff',
-                    }}
-                >
-                    {props.testpara}
-                </Box>
-                {/* <Box
+                                fontWeight: Fonts.BOLD,
+                                color: '#fff',
+                            }}
+                        >
+                            {item.title}
+                        </Box>
+                        <Box
+                            component='p'
+                            sx={{
+                                mb: 3,
+                                fontSize: 14,
+                                textAlign: 'center',
+                                // fontWeight: Fonts.MEDIUM,
+                                color: '#fff',
+                            }}
+                        >
+                            {item.testpara}
+                        </Box>
+                        {/* <Box
                         component='p'
                         sx={{
                             mb: 3,
@@ -47,26 +65,27 @@ const Testcard = (props) => {
                     >
 
                     </Box> */}
-                <Box>
-                    <Button
-                        variant='contained'
-                        size='small'
-                        sx={{
-                            backgroundColor: '#fff',
-                            color: '#000',
-                            textTransform: 'capitalize',
-                            '&:hover, &:focus': {
-                                backgroundColor: '#fff',
-                                color: '#000',
-                            },
-                        }}
-                    >
-                        {props.testbutton}
-                    </Button>
-                </Box>
-            </Box>
-        </AppCard>
-
+                        <Box>
+                            <Button
+                                variant='contained'
+                                size='small'
+                                sx={{
+                                    backgroundColor: '#fff',
+                                    color: '#000',
+                                    textTransform: 'capitalize',
+                                    '&:hover, &:focus': {
+                                        backgroundColor: '#fff',
+                                        color: '#000',
+                                    },
+                                }}
+                            >
+                                {item.testbutton}
+                            </Button>
+                        </Box>
+                    </Box>
+                </AppCard>
+            ))}
+        </Box>
     );
 };
 

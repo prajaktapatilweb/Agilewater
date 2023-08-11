@@ -14,13 +14,8 @@ export default function MainSafeaccord() {
         },
     ]
     return (
-
-
-
         <div>
-            <Accordioninfo DetailObject={DetailObject} >
-
-            </Accordioninfo>
+            <Accordioninfo DetailObject={DetailObject} ></Accordioninfo>
         </div>
     )
 }

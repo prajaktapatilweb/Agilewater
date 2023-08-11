@@ -64,6 +64,7 @@ const AppsContainer = (props) => {
                 sx={{
                   width: 35,
                   height: 35,
+                  m: 3,
                 }}
               />
             </IconButton>

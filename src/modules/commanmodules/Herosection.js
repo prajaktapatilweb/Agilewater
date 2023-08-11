@@ -7,8 +7,8 @@ import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArro
 import { AppBar, Box, Card, Container, Typography } from '@mui/material';
 import Image from 'next/image';
 import { Fonts } from 'shared/constants/AppEnums';
-import Videodemo from 'modules/safepages/SafeAgileCert/Videodemo';
 import PropTypes from 'prop-types';
+import VideoMain from './VideoMain';
 
 export default function Herosection({ image1, heading, list1 }) {
   return (
@@ -48,12 +48,11 @@ export default function Herosection({ image1, heading, list1 }) {
             justifyContent="space-evenly"
             alignItems="center">
 
-            <Grid item xs={12} sm={6} md={3}>
+            <Grid item xs={12} sm={6} md={4}>
               <Box
-                px={{ xs: 10, sm: 0, md: 0 }}
-                mx={{ xs: 10, sm: 0, md: 0 }}
+                px={{ xs: 10, sm: 0, md: 5 }}
+                mx={{ xs: 10, sm: 0, md: 5 }}
                 sx={{
-                  padding: '2px',
                   border: '3px solid black',
                   borderRadius: '5px',
                   background: '#fff',
@@ -87,19 +86,19 @@ export default function Herosection({ image1, heading, list1 }) {
               <Box sx={{ p: 5 }}>
                 <List sx={{ color: 'white', }}>
                   {list1.map((item, i) => (
-                    <ListItem key={i}>
+                    <ListItem key={i} alignItems='flex-start'>
                       <KeyboardDoubleArrowRightIcon></KeyboardDoubleArrowRightIcon>
                       <ListItemText
                         primary={item}
-                        primaryTypographyProps={{ fontSize: '18px' }}
+                        primaryTypographyProps={{ fontSize: '18px', mt: -1 }}
                       />
                     </ListItem>
                   ))}
                 </List>
               </Box>
             </Grid>
-            <Grid item xs={12} sm={12} md={5}>
-              <Videodemo videoPromo={'sd'} />
+            <Grid item xs={12} sm={12} md={4}>
+              <VideoMain links='https://www.youtube.com/watch?v=-M-R3Lc-V74' videoPromo={'sd'}></VideoMain>
             </Grid>
           </Grid>
         </Container>

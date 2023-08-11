@@ -278,12 +278,10 @@ export default function EnhancedTable({
                         <TableCell align='left'>{row.Date}</TableCell>
                         <TableCell align='left'>{row.Place}</TableCell>
                         <TableCell align='left'>{row.Time}</TableCell>
-                        <TableCell align='center'>
-                          {row.ActualCost || row.Cost.Actual}
-                        </TableCell>
+                        <TableCell align='center'>{row?.ActualCost}</TableCell>
                         <TableCell align='left'>
                           <Typography variant='h1'>
-                            {row.DiscountedCost || row.Cost.Discounted}
+                            {row?.DiscountedCost}
                           </Typography>
                         </TableCell>
                         <TableCell align='left'>{row.Trainer}</TableCell>
