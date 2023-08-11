@@ -35,16 +35,19 @@ export const onGetCoachList = () => {
   };
 };
 
-export const onPostNewCoachData = ({data, resetForm}) => {
- console.log('first redux',data)
+export const onPostNewCoachData = ({formData, resetForm}) => {
+  console.log('first redux', formData);
   return (dispatch) => {
     dispatch({type: FETCH_START});
     jwtAxios
-      .post('/coaches/addnewcoach', {data})
+      .post('/coaches/addnewcoach', formData)
       .then((data) => {
         if (data.status === 200) {
+          console.log('Action ', data);
           dispatch({type: FETCH_SUCCESS});
-          dispatch({type: ADD_NEW_COACH, payload: data.data});
+          console.log('Action 2', data);
+          dispatch({type: ADD_NEW_COACH, payload: data.data.data});
+          console.log('Action 3', data);
           dispatch({
             type: SHOW_MESSAGE,
             payload: 'Data Added Succefully',
@@ -87,12 +90,12 @@ export const onGetIndivCoachData = ({CoachID}) => {
   };
 };
 
-export const onUpdateCoachData = ({CoachID, data}) => {
+export const onUpdateCoachData = ({CoachID, formData}) => {
   console.log('In Redux', data);
   return (dispatch) => {
     dispatch({type: FETCH_START});
     jwtAxios
-      .put(`/Coaches/updateCoach/${CoachID}`, {data})
+      .put(`/Coaches/updateCoach/${CoachID}`, formData)
       .then((recdata) => {
         if (recdata.status === 200) {
           // console.log('Data from Redux Students LEads', data.data, deleteID);

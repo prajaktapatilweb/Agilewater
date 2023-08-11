@@ -45,6 +45,7 @@ import PropTypes from 'prop-types';
 import CustomizedCheckboxFormik from 'modules/commanmodules/Formik/CustomizedCheckboxFormik';
 import CustomizedFieldArray from 'modules/commanmodules/Formik/CustomizedFieldArray';
 import ProfilePhoto from './ProfilePhoto';
+import {useJWTAuthUser} from '@crema/utility/AuthHooks';
 
 // import Notistack from 'modules/Testing/Notistack';
 // import ReactTostify from 'modules/Testing/ReactTostify';
@@ -98,7 +99,9 @@ const validationSchema = yup.object({
 
 const AddCoachForm = ({CoachID, closefn}) => {
   // console.log('Begining of SignupJWTAuth');
-  console.log('sds', CoachID);
+  // const {user} = useJWTAuthUser();
+  // console.log('sds bnnnnn', user);
+
   // Varibles and Function for alert dialogue
   const [open, setOpen] = React.useState(false);
   const [msg, setMsg] = React.useState('');
@@ -122,10 +125,20 @@ const AddCoachForm = ({CoachID, closefn}) => {
   const onSubmit = async (data, {setSubmitting, resetForm}) => {
     console.log('Signup Form Submission', data);
     setSubmitting(true);
+    const formData = new FormData();
+    for (let value in data) {
+      formData.append(value, data[value]);
+    }
+    //TODO Api Call here to save user info
+    // formData.append('ImgFileData', data.Avatar);
+    // formData.append('AllData', data);
+    // const tmpe = formData.get('ImgFileData');
+    // jwtAxios.put(`coaches/photo/ID-4`, formData)
+    // jwtAxios.post(`coaches/formdata`, data)
 
     CoachID
-      ? dispatch(onUpdateCoachData({CoachID, data}))
-      : dispatch(onPostNewCoachData({data, resetForm}));
+      ? dispatch(onUpdateCoachData({CoachID, formData}))
+      : dispatch(onPostNewCoachData({formData, resetForm}));
     CoachID ? closefn() : null;
     setSubmitting(false);
   };
@@ -156,7 +169,7 @@ const AddCoachForm = ({CoachID, closefn}) => {
           <Grid item xs={12} sm={8}> */}
         <Formik
           initialValues={initialValues}
-          validationSchema={validationSchema}
+          // validationSchema={validationSchema}
           validateOnChange={true}
           onSubmit={onSubmit}
           enableReinitialize={true}
@@ -170,7 +183,12 @@ const AddCoachForm = ({CoachID, closefn}) => {
             isSubmitting,
           }) => (
             // {/* {(data, errors, isValidating, isSubmitting) => ( */}
-            <Form style={{textAlign: 'left'}} noValidate autoComplete='off'>
+            <Form
+              style={{textAlign: 'left'}}
+              noValidate
+              autoComplete='off'
+              encType='multipart/form-data'
+            >
               {/* <pre>{JSON.stringify(values, null, 2)}</pre> */}
               <Grid container sx={{mb: {xs: 4, xl: 5}}} spacing={15}>
                 <Grid item xs={12} sm={4}>
@@ -185,10 +203,7 @@ const AddCoachForm = ({CoachID, closefn}) => {
                       <InputLabel id='demo-simple-select-label'>
                         <IntlMessages id='Course.trainer' />
                       </InputLabel>
-                      <Field
-                        name='Avatar'
-                        component={ProfilePhoto}
-                      />
+                      <Field name='Avatar' component={ProfilePhoto} />
                     </FormControl>
                   </Card>
                 </Grid>
