@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import { useBottomScrollListener } from 'react-bottom-scroll-listener';
+import React, {useEffect, useState} from 'react';
+import {useBottomScrollListener} from 'react-bottom-scroll-listener';
 import PropTypes from 'prop-types';
-import { Box } from '@mui/material';
+import {Box} from '@mui/material';
 import AppAnimateGroup from '../AppAnimateGroup';
-import { useWidth } from '../../utility/helper/Utils';
-import { useThemeContext } from '../../utility/AppContextProvider/ThemeContextProvider';
+import {useWidth} from '../../utility/helper/Utils';
+import {useThemeContext} from '../../utility/AppContextProvider/ThemeContextProvider';
 
 const getEmptyContainer = (ListEmptyComponent) => {
   if (ListEmptyComponent) {
@@ -42,8 +42,8 @@ const GridView = ({
   ListFooterComponent,
   ListEmptyComponent,
 }) => {
-  const { theme } = useThemeContext();
-  console.log('theme: ', theme);
+  const {theme} = useThemeContext();
+  // console.log('theme: ', theme);
 
   const width = useWidth();
   const borderStyle = {
@@ -55,7 +55,7 @@ const GridView = ({
 
   const [displayColumn, setColumn] = useState(column);
   if (!onEndReached) {
-    onEndReached = () => { };
+    onEndReached = () => {};
   }
 
   useEffect(() => {
@@ -98,7 +98,7 @@ const GridView = ({
 
   let style = containerStyle;
   if (border) {
-    style = { ...style, ...borderStyle };
+    style = {...style, ...borderStyle};
   }
   useBottomScrollListener(onEndReached, 200);
   return (
@@ -122,19 +122,19 @@ const GridView = ({
       >
         {data.length > 0
           ? data.map((item, index) => (
-            <Box
-              style={{
-                flexGrow: 0,
-                maxWidth: `${100 / displayColumn}%`,
-                flexBasis: `${100 / displayColumn}%`,
-                padding: itemPadding,
-                boxSizing: 'border-box',
-              }}
-              key={'grid-' + index}
-            >
-              {renderRow(item, index)}
-            </Box>
-          ))
+              <Box
+                style={{
+                  flexGrow: 0,
+                  maxWidth: `${100 / displayColumn}%`,
+                  flexBasis: `${100 / displayColumn}%`,
+                  padding: itemPadding,
+                  boxSizing: 'border-box',
+                }}
+                key={'grid-' + index}
+              >
+                {renderRow(item, index)}
+              </Box>
+            ))
           : null}
       </AppAnimateGroup>
       {data.length === 0 ? getEmptyContainer(ListEmptyComponent) : null}

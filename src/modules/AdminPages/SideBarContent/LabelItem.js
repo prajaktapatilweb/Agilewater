@@ -7,6 +7,8 @@ import PropTypes from 'prop-types';
 
 import {alpha, styled} from '@mui/material/styles';
 import {Fonts} from 'shared/constants/AppEnums';
+import {useJWTAuthUser} from '@crema/utility/AuthHooks';
+import {RouteLinks} from 'modules/Constant/AdminPageConst';
 // import {StudentLead} from 'modules/commonComponents/Link';
 
 const ContactSidebarListItemWrapper = styled(ListItem)(({theme}) => {
@@ -49,20 +51,25 @@ const ContactSidebarListItemWrapper = styled(ListItem)(({theme}) => {
 });
 
 const LabelItem = ({label}) => {
+  const {user} = useJWTAuthUser();
   return (
-    <Link href={`/adminpages/${label.link}`}>
-      <ContactSidebarListItemWrapper button activeClassName='active'>
-        <LabelOutlinedIcon style={{color: `${label.color}`}} />
-        <ListItemText
-          sx={{
-            '& .MuiTypography-body1': {
-              fontSize: 14,
-            },
-          }}
-          primary={label.name}
-        />
-      </ContactSidebarListItemWrapper>
-    </Link>
+    <>
+      {RouteLinks[label.linkID].allowedRole.includes(user?.role) ? (
+        <Link href={`${RouteLinks[label.linkID].link}`}>
+          <ContactSidebarListItemWrapper button activeClassName='active'>
+            <LabelOutlinedIcon style={{color: `${label.color}`}} />
+            <ListItemText
+              sx={{
+                '& .MuiTypography-body1': {
+                  fontSize: 14,
+                },
+              }}
+              primary={label.name}
+            />
+          </ContactSidebarListItemWrapper>
+        </Link>
+      ) : null}
+    </>
   );
 };
 

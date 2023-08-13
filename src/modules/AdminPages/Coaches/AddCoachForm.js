@@ -194,12 +194,7 @@ const AddCoachForm = ({CoachID, closefn}) => {
                 <Grid item xs={12} sm={4}>
                   <Card sx={{alignItems: 'center', p: {xs: 15, sm: 5, lg: 3}}}>
                     {/* <ProfilePhoto CoachData={CoachData} /> */}
-                    <FormControl
-                      sx={{
-                        width: '100%',
-                        '&.MuiInputBase-input': {fontSize: 14},
-                      }}
-                    >
+                    <FormControl sx={{width: '100%'}}>
                       <InputLabel id='demo-simple-select-label'>
                         <IntlMessages id='Course.trainer' />
                       </InputLabel>
@@ -215,10 +210,6 @@ const AddCoachForm = ({CoachID, closefn}) => {
                         disabled={values.isSubmitting}
                         name='CoachName'
                         variant='outlined'
-                        sx={{
-                          width: '100%',
-                          '&.MuiInputBase-input': {fontSize: 14},
-                        }}
                       />
                     </Grid>
                     <Grid item xs={6}>
@@ -228,10 +219,6 @@ const AddCoachForm = ({CoachID, closefn}) => {
                         // name='Cost.Actual'
                         name='Experience'
                         variant='outlined'
-                        sx={{
-                          width: '100%',
-                          '&.MuiInputBase-input': {fontSize: 14},
-                        }}
                       />
                     </Grid>
                     <Grid item xs={6}>
@@ -241,10 +228,6 @@ const AddCoachForm = ({CoachID, closefn}) => {
                         // name='Cost.Actual'
                         name='Country'
                         variant='outlined'
-                        sx={{
-                          width: '100%',
-                          '&.MuiInputBase-input': {fontSize: 14},
-                        }}
                       />
                     </Grid>
                     <Grid item xs={12}>

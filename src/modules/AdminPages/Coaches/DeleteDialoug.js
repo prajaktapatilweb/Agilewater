@@ -10,6 +10,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {onDeleteIndivCourseData} from 'redux/actions';
 import {useDispatch} from 'react-redux';
+import IntlMessages from '@crema/utility/IntlMessages';
 
 export default function DeleteDialoug({CourseID, closefn}) {
   console.log('0sdsd');
@@ -18,7 +19,7 @@ export default function DeleteDialoug({CourseID, closefn}) {
     <>
       <DialogContent>
         <DialogContentText sx={{mt: 5}}>
-          Do you really want to delete the course {CourseID}
+          <IntlMessages id='common.delete' /> course {CourseID} ?
         </DialogContentText>
       </DialogContent>
       <DialogActions>

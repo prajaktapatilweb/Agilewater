@@ -11,6 +11,10 @@ const AppTextField = (props) => {
       {...field}
       helperText={errorText}
       error={!!errorText}
+      sx={{
+        width: '100%',
+        '&.MuiInputBase-input': {fontSize: 14},
+      }}
     />
   );
 };

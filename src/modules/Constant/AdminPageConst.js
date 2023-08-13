@@ -1,18 +1,69 @@
+export const RouteLinks = {
+  id101: {link: '/adminpages', allowedRole: ['Admin', 'Employee']},
+  id201: {link: '/adminpages/users/view', allowedRole: ['Admin', 'Employee']},
+  id301: {link: '/adminpages/course/add', allowedRole: ['Admin', 'Employee']},
+  id302: {link: '/adminpages/course/edit', allowedRole: ['Admin', 'Employee']},
+  id303: {link: '/adminpages/course/delete', allowedRole: ['Admin']},
+  id401: {link: '/adminpages/coaches/add', allowedRole: ['Admin', 'Employee']},
+  id402: {link: '/adminpages/coaches/edit', allowedRole: ['Admin', 'Employee']},
+  id403: {link: '/adminpages/coaches/delete', allowedRole: ['Admin']},
+};
 export const roterList = [
+  {
+    heading: 'Users',
+    labels: [
+      {
+        linkID: 'id201',
+        color: '#00ff00',
+        id: 201,
+        name: 'Users List',
+      },
+    ],
+  },
   {
     heading: 'Courses',
     labels: [
-      {link: 'course/add', color: '#00ff00', id: 201, name: 'Add Course'},
-      {link: 'course/edit', color: '#0000ff', id: 202, name: 'Edit Course'},
-      {link: 'course/delete', color: '#ff0000', id: 203, name: 'Delete Course'},
+      {
+        linkID: 'id301',
+        color: '#00ff00',
+        id: 201,
+        name: 'Add Course',
+      },
+      {
+        linkID: 'id302',
+        color: '#0000ff',
+        id: 202,
+        name: 'Edit Course',
+      },
+      {
+        linkID: 'id303',
+        color: '#ff0000',
+        id: 203,
+        name: 'Delete Course',
+      },
     ],
   },
   {
     heading: 'Coach',
     labels: [
-      {link: 'coaches/add', color: '#00ff00', id: 201, name: 'Add Coach'},
-      {link: 'coaches/edit', color: '#0000ff', id: 202, name: 'Edit Coach'},
-      {link: 'coaches/delete', color: '#ff0000', id: 203, name: 'Delete Coach'},
+      {
+        linkID: 'id401',
+        color: '#00ff00',
+        id: 201,
+        name: 'Add Coach',
+      },
+      {
+        linkID: 'id402',
+        color: '#0000ff',
+        id: 202,
+        name: 'Edit Coach',
+      },
+      {
+        linkID: 'id403',
+        color: '#ff0000',
+        id: 203,
+        name: 'Delete Coach',
+      },
     ],
   },
 ];
