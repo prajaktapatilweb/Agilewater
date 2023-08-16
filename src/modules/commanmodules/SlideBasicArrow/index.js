@@ -17,30 +17,12 @@ const settings = {
   slidesToScroll: 1,
 };
 
-const SlideBasicArrow = ({ }) => {
-  const slideBasicArrow = [
-    {
-
-      image: '/assets/images/safeslide/KMP2-scaled.jpg',
-      title: 'KMP2-scaled'
-
-    },
-    {
-
-      image: '/assets/images/safeslide/KMP2-scaled.jpg',
-      title: 'ghjgfghkj'
-    },
-    {
-
-      image: '/assets/images/safeslide/KMP2-scaled.jpg',
-      title: 'ghjgfghkj'
-    },
-  ]
+const SlideBasicArrow = ({ data }) => {
   return (
     <Card sx={{ padding: 3 }}>
       <MediaSlider>
         <Slider {...settings}>
-          {slideBasicArrow.map((slide, index) => (
+          {data.map((slide, index) => (
             <Box
               key={index}
               sx={{

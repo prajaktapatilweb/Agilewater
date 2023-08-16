@@ -163,6 +163,66 @@ const otherSideMain = {
 
 
 };
+const otherHeroMain = {
+    heromain1: {
+        heading: <span style={{ color: 'white' }}>Schedule personal Meetings with mentor</span>,
+        subheading: (
+            <span style={{ color: 'wheat' }}>
+                <b>We Are Ready To Help You. Let us know What Help Are You Looking For?</b>
+            </span>
+        )
+    }
+}
+const otherCardCopy = {
+    card1: {
+        img: '/assets/images/cards/agile1.png',
+        title: 'Scrum',
+
+
+    },
+    card2: {
+        img: '/assets/images/cards/agile2.png',
+        title: 'Agility',
+
+
+    },
+    card3: {
+        img: '/assets/images/cards/career-path.png',
+        title: 'Career',
+
+
+    },
+    card4: {
+        img: '/assets/images/cards/certificate.png',
+        title: 'Certificates',
+
+
+    },
+    card5: {
+        img: '/assets/images/cards/growth.png',
+        title: 'Growth',
+
+
+    },
+    card6: {
+        img: '/assets/images/cards/goal.png',
+        title: 'Life Goals',
+
+
+    },
+    card7: {
+        img: '/assets/images/cards/meditation.png',
+        title: 'Self Care',
+
+
+    },
+    card8: {
+        img: '/assets/images/cards/daily-tasks.png',
+        title: 'Other',
+
+
+    },
+}
 
 export const otherCardList = [
     otherCard.course,
@@ -188,6 +248,7 @@ export const otherCardList4 = [
     otherCard.course11
 ];
 
+
 export const maindata1 = [otherCardMain.main1];
 export const maindata2 = [otherCardMain.main2];
 export const maindata3 = [otherCardMain.main3];
@@ -197,4 +258,18 @@ export const sideList2 = [otherSideMain.sideMain2];
 export const sideList3 = [otherSideMain.sideMain3];
 export const sideList4 = [otherSideMain.sideMain4];
 export const sideList5 = [otherSideMain.sideMain5];
+
+export const otherHeroList = [
+    otherHeroMain.heromain1,
+]
+export const otherCardCopyList = [
+    otherCardCopy.card1,
+    otherCardCopy.card2,
+    otherCardCopy.card3,
+    otherCardCopy.card4,
+    otherCardCopy.card5,
+    otherCardCopy.card6,
+    otherCardCopy.card7,
+    otherCardCopy.card8
+]
 

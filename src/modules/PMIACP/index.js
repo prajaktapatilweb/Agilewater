@@ -41,28 +41,6 @@ export default function PMIACP() {
 
                 </Container>
             </Grid>
-
-            {/* <Grid className='section section-lg section-shaped' sx={{ justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}>
-                <div className='shape shape-style-u1 shape-dark'>
-                    <span className='span-150' />
-                    <span className='span-50' />
-                    <span className='span-50' />
-                    <span className='span-75' />
-                    <span className='span-200' />
-                    <span className='span-75' />
-                    <span className='span-50' />
-                    <span className='span-100' />
-                    <span className='span-50' />
-                    <span className='span-100' />
-                </div>
-                <Container sx={{ maxWidth: { xl: 1450 }, marginTop: 10, textAlign: 'center', zIndex: 1, }}>
-                    <Box sx={{ zIndex: '1' }}>
-                        <Image src="/assets/images/courselogo/ICP-ACC.jpg" height={100} width={100}></Image>
-                        <h1>PMI – ACP Certification</h1>
-                        <Typography variant='h3'>Coming Soon With Description.</Typography>
-                    </Box>
-                </Container>
-            </Grid> */}
         </div>
     )
 }

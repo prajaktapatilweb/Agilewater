@@ -13,6 +13,7 @@ import { courseList2 } from 'modules/Constant/Relatecoursedata';
 import { testList1 } from 'modules/Constant/OthershortConst';
 import Testcard from 'modules/commanmodules/TestCard';
 import VideoMain from 'modules/commanmodules/VideoMain';
+import { usersPhotoList } from 'modules/Constant/Photoslider';
 
 export default function SafeAgileCert() {
   return (
@@ -26,7 +27,7 @@ export default function SafeAgileCert() {
             <CourseTable PageCourseName='Ms.' />
           </Grid>
           <Grid item xs={12} md={4}>
-            <SlideBasicArrow />
+            <SlideBasicArrow data={usersPhotoList} />
           </Grid>
 
           <Grid item xs={12} md={8}>
