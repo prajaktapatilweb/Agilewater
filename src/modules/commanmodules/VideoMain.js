@@ -1,9 +1,6 @@
-import React, { useState } from 'react';
-import AppCard from '@crema/core/AppCard';
-import Card from '@mui/material';
+import React from 'react';
 import Box from '@mui/material/Box';
 import ReactPlayer from 'react-player';
-import { Container } from '@mui/material';
 
 export default function VideoMain(props) {
     return (

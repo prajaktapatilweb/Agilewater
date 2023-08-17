@@ -1,6 +1,6 @@
 const data = {
 
-    Icp: {
+    IcpACC: {
         image: '/assets/images/courselogo/ICP-ACC.jpg',
         title: 'Agile Coaching',
         views: '1.8k',
@@ -24,29 +24,50 @@ const data = {
         image: '/assets/images/courselogo/ICP-CAT.jpg',
         title: 'ICP-CAT',
         views: '1.2k',
+    },
+    PSM1: {
+        image: '/assets/images/courselogo/PSM1.jpg',
+        title: 'PSM1',
+        views: '1.2k',
+    },
+    PSM1: {
+        image: '/assets/images/courselogo/FreeImg.png',
+        title: 'Free Session',
+        views: '1.2k',
     }
+
 
 };
 
 
 export const courseList2 = [
-    data.Icp,
+    data.IcpACC,
     data.Scrumatscale,
     data.Csm,
     data.Prowner
 
 ];
 export const safeadvList = [
-    data.Icp,
+    data.IcpACC,
     data.Scrumatscale,
     data.Csm,
     data.Prowner
 
 ];
 export const atscale = [
-    data.Icp,
+    data.IcpACC,
     data.Csm,
     data.Prowner,
     data.IcpCat,
+
+];
+// apgi data
+export const apgiList = [
+    data.IcpACC,
+    data.Scrumatscale,
+    data.Csm,
+    data.Prowner,
+    data.IcpCat,
+    data.PSM1
 
 ];

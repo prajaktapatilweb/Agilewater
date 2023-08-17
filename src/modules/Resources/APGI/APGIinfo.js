@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { Fonts } from 'shared/constants/AppEnums';
 import PropTypes from 'prop-types';
 
-export default function APGIinfo({ image1, heading, list1 }) {
+export default function APGIinfo() {
     return (
         <div>
             {/* <Grid className="section section-lg section-shaped " style={{ backgroundImage: "linear-gradient(90deg, #05445e 35%, #189ab4 90%)", position: "relative" }}> */}
@@ -24,7 +24,7 @@ export default function APGIinfo({ image1, heading, list1 }) {
                 </div>
                 <Container sx={{ maxWidth: { xl: 1400 } }}>
                     <Grid container spacing={0} sx={{ position: 'relative', zIndex: 1 }} alignItems="center">
-                        <Grid item xs={12} sm={6} md={8}>
+                        <Grid item xs={12} sm={12} md={8}>
                             <Box>
                                 <Image
                                     alt='Safelogo'
@@ -35,7 +35,7 @@ export default function APGIinfo({ image1, heading, list1 }) {
                                 </Image>
                             </Box>
                         </Grid>
-                        <Grid item xs={12} sm={6} md={4}>
+                        <Grid item xs={12} sm={12} md={4}>
                             <Box sx={{ p: 3 }}>
                                 <Typography variant='h1' sx={{ color: 'white' }} gutterBottom> For more details visit <Link href="https://www.apgionline.com/" sx={{ color: 'yellow', textDecoration: 'none' }}> here</Link></Typography>
                                 <Typography variant='h2' sx={{ color: 'wheat' }} gutterBottom>A Conference for the People, by the People</Typography>
