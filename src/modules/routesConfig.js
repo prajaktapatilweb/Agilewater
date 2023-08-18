@@ -487,7 +487,7 @@ const routesConfig = [
             id: "menu431",
             messageId: "menu.cert.Resourses31",
             type: "item",
-            url: "/safe-quiz/SAFe"
+            url: "/safe-quiz/"
           },
           {
             id: "menu432",
