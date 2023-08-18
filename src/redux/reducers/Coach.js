@@ -15,7 +15,7 @@ const coachReducer = (state = initialState, action) => {
     case GET_COACH_LIST:
       return {
         ...state,
-        Coachlist: action.payload,
+        Coachlist: action.payload.List,
       };
 
     case ADD_NEW_COACH:

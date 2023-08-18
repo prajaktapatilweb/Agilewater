@@ -125,7 +125,7 @@ const JWTUserInfo = ({color}) => {
                   color: 'inherit',
                 }}
               >
-                System Manager
+                {user ? user?.role : 'System Manager'}
               </Box>
             </Box>
           </Box>

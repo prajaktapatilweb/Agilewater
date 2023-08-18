@@ -97,7 +97,7 @@ const validationSchema = yup.object({
     ),
 });
 
-const AddCoachForm = ({CoachID, closefn}) => {
+const AddCoachForm = ({CoachData, closefn}) => {
   // console.log('Begining of SignupJWTAuth');
   // const {user} = useJWTAuthUser();
   // console.log('sds bnnnnn', user);
@@ -110,14 +110,9 @@ const AddCoachForm = ({CoachID, closefn}) => {
     setOpen(false);
   };
   const [checked, setChecked] = React.useState('');
-
+  const CoachID = CoachData ? CoachData?.CoachID : null;
   const dispatch = useDispatch();
-  useEffect(() => {
-    // dispatch(onGetIndivCoachData({CoachID}));
-  }, [dispatch]);
-  const CoachData = useSelector(
-    (state) => state?.dashboard?.Coachdata?.CoachData,
-  );
+
   console.log('Signup Form Submission', CoachData);
 
   // Varible for checkbox It is use to store the earlier field data
@@ -127,8 +122,18 @@ const AddCoachForm = ({CoachID, closefn}) => {
     setSubmitting(true);
     const formData = new FormData();
     for (let value in data) {
-      formData.append(value, data[value]);
+      console.log('FormData', typeof data[value], data[value]);
+      if (value === 'Specialization' || value === 'Expertise') {
+        for (let value2 in data[value]) {
+          console.log('FormData2', value2, data[value][value2]);
+          value === 'Specialization'
+            ? formData.append('Specialization[]', data[value][value2])
+            : formData.append('Expertise[]', data[value][value2]);
+        }
+      } else formData.append(value, data[value]);
     }
+    console.log(formData.getAll('Specialization[]'));
+    console.log(formData.getAll('[Expertise]'));
     //TODO Api Call here to save user info
     // formData.append('ImgFileData', data.Avatar);
     // formData.append('AllData', data);
@@ -140,6 +145,7 @@ const AddCoachForm = ({CoachID, closefn}) => {
       ? dispatch(onUpdateCoachData({CoachID, formData}))
       : dispatch(onPostNewCoachData({formData, resetForm}));
     CoachID ? closefn() : null;
+    Router.push('/adminpages/coaches/list');
     setSubmitting(false);
   };
   const initialValues = {
@@ -156,9 +162,9 @@ const AddCoachForm = ({CoachID, closefn}) => {
 
   return (
     <Box sx={{flex: 1, display: 'flex', flexDirection: 'column'}}>
-      {CoachID ? (
+      {/* {CoachID ? (
         <Typography variant='h1'>Update the data of {CoachID}</Typography>
-      ) : null}
+      ) : null} */}
       <Box sx={{flex: 1, display: 'flex', flexDirection: 'column', m: 10}}>
         {/* <Grid container sx={{mb: {xs: 4, xl: 5}}} spacing={15}>
           <Grid item xs={12} sm={4}>
@@ -290,7 +296,7 @@ const AddCoachForm = ({CoachID, closefn}) => {
                       Submit
                     </Button>
                   </Grid>
-                  <pre>{JSON.stringify(values, null, 4)}</pre>
+                  {/* <pre>{JSON.stringify(values, null, 4)}</pre> */}
                 </Grid>
               </Grid>
             </Form>
@@ -327,6 +333,6 @@ const AddCoachForm = ({CoachID, closefn}) => {
 export default AddCoachForm;
 
 AddCoachForm.propTypes = {
-  CoachID: PropTypes.string,
+  CoachData: PropTypes.object,
   closefn: PropTypes.function,
 };

@@ -54,10 +54,10 @@ export const TrainerList = [
   {key: 2, text: 'Shijo'},
   {key: 3, text: 'Hiren'},
   {key: 4, text: 'Manjunatha MS'},
+  {key: 5, text: 'Vijaywade'},
 ];
 export const CocheSubject = [
-  {key: 1, text: 'Agile Coach', value:'Agile Coach'},
-  {key: 2, text: 'Career Coach', value:'Career Coach'},
-  {key: 3, text: 'Life Coach', value:'Life Coach'},
+  {key: 1, text: 'Agile Coach', value: 'Agile Coach'},
+  {key: 2, text: 'Career Coach', value: 'Career Coach'},
+  {key: 3, text: 'Life Coach', value: 'Life Coach'},
 ];
-

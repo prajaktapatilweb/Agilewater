@@ -15,6 +15,7 @@ import {styled} from '@mui/material/styles';
 import {useDispatch} from 'react-redux';
 import AppDialog from '@crema/core/AppDialog';
 import {Badge} from '@mui/material';
+import {useJWTAuthUser} from '@crema/utility/AuthHooks';
 
 const ContactActionHoverWrapper = styled('div')(() => {
   return {
@@ -33,16 +34,17 @@ const ContactActionHoverWrapper = styled('div')(() => {
 });
 
 const ItemMenu = (props) => {
-  const {onSelectContactsForDelete, contact, onOpenEditContact} = props;
-
-  const onDeleteContact = (e) => {
-    onSelectContactsForDelete(contact);
+  const {data, onClickButtonEdit, onClickButtonDelete} = props;
+  const {user} = useJWTAuthUser();
+  const onClickButtonDeleteOption = (e) => {
+    console.log('Delete button clicked', data);
+    onClickButtonDelete(data);
     e.stopPropagation();
   };
 
-  const onClickEditOption = (e) => {
-    console.log('Edit button clicked', contact);
-    onOpenEditContact(contact);
+  const onClickButtonEditOption = (e) => {
+    console.log('Edit button clicked', data);
+    onClickButtonEdit(data);
     e.stopPropagation();
   };
 
@@ -82,48 +84,28 @@ const ItemMenu = (props) => {
               fontSize: 22,
             },
           }}
-          onClick={onClickEditOption}
+          onClick={onClickButtonEditOption}
           size='large'
         >
           <EditOutlinedIcon />
         </IconButton>
 
-        <IconButton
-          sx={{
-            color: (theme) => theme.palette.error.main,
-            padding: 2,
-            '& .MuiSvgIcon-root': {
-              fontSize: 22,
-            },
-          }}
-          onClick={onDeleteContact}
-          size='large'
-        >
-          <DeleteOutlinedIcon />
-        </IconButton>
+        {user.role === 'Admin' ? (
+          <IconButton
+            sx={{
+              color: (theme) => theme.palette.error.main,
+              padding: 2,
+              '& .MuiSvgIcon-root': {
+                fontSize: 22,
+              },
+            }}
+            onClick={onClickButtonDeleteOption}
+            size='large'
+          >
+            <DeleteOutlinedIcon />
+          </IconButton>
+        ) : null}
       </ContactActionHoverWrapper>
-      {/* <AppDialog
-        sxStyle={{
-          '& .btn-action-view': {
-            opacity: 1,
-            visibility: 'visible',
-          },
-        }}
-        onClose={ScheduleDemo}
-        open={isFindTeacherOpen}
-        title='View Student Details'
-        maxWidth
-      >
-        <DataGridTeacher
-          studentdata={{
-            Grade: contact.Grade,
-            Subject: contact.Subjects[0],
-          }}
-          searchSID='true'
-          flagAssigneTeacher='false'
-          toggleFindTeacher={ScheduleDemo}
-        />
-      </AppDialog> */}
     </Box>
   );
 };
@@ -131,7 +113,7 @@ const ItemMenu = (props) => {
 export default ItemMenu;
 
 ItemMenu.propTypes = {
-  onSelectContactsForDelete: PropTypes.func,
-  contact: PropTypes.object.isRequired,
-  onOpenEditContact: PropTypes.func,
+  onClickButtonEdit: PropTypes.func,
+  data: PropTypes.object.isRequired,
+  onClickButtonDelete: PropTypes.func,
 };

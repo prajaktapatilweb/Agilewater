@@ -1,10 +1,11 @@
 import AppTextField from '@crema/core/AppFormComponents/AppTextField';
 import IntlMessages from '@crema/utility/IntlMessages';
-import { Grid } from '@mui/material';
-import { FieldArray } from 'formik';
+import {Grid} from '@mui/material';
+import {FieldArray} from 'formik';
 import ButtonAdd from './ButtonAdd';
 import ButtonRemove from './ButtonRemove';
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function CustomizedFieldArray(props) {
   const arrayName = props.arrayName;
@@ -14,15 +15,15 @@ function CustomizedFieldArray(props) {
       <FieldArray name={arrayName}>
         {(fieldArrayProps) => {
           // console.log({ fieldArrayProps })
-          const { push, remove, form } = fieldArrayProps;
+          const {push, remove, form} = fieldArrayProps;
           // console.log('2', { form })
-          const { values } = form;
+          const {values} = form;
           // console.log({values});
-          let { [arrayName]: arrayName1 } = values;
+          let {[arrayName]: arrayName1} = values;
           // const { arrayName } = values;
           return (
             <div>
-              <Grid container>
+              <Grid container spacing={4}>
                 {arrayName1.map((individual, index) => (
                   <>
                     <Grid item lg={8} md={8} sm={8} xs={8}>
@@ -30,9 +31,9 @@ function CustomizedFieldArray(props) {
                         key={index}
                         label={
                           index === 0 &&
-                            (arrayName === 'email' ||
-                              arrayName === 'phNumbers' ||
-                              arrayName === 'mobilenumber') ? null : (
+                          (arrayName === 'email' ||
+                            arrayName === 'phNumbers' ||
+                            arrayName === 'mobilenumber') ? null : (
                             <>
                               <IntlMessages id={props.fieldName} /> {''}
                               {index + 1}
@@ -42,9 +43,9 @@ function CustomizedFieldArray(props) {
                         // disabled={form.isSubmitting}
                         disabled={
                           index === 0 &&
-                            (arrayName === 'email' ||
-                              arrayName === 'phNumbers' ||
-                              arrayName === 'mobilenumber')
+                          (arrayName === 'email' ||
+                            arrayName === 'phNumbers' ||
+                            arrayName === 'mobilenumber')
                             ? 'true'
                             : form.isSubmitting
                         }
@@ -75,3 +76,8 @@ function CustomizedFieldArray(props) {
 }
 
 export default CustomizedFieldArray;
+
+CustomizedFieldArray.propTypes = {
+  arrayName: PropTypes.string,
+  fieldName: PropTypes.string,
+};

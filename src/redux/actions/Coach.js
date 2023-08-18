@@ -16,7 +16,7 @@ export const onGetCoachList = () => {
   return (dispatch) => {
     dispatch({type: FETCH_START});
     jwtAxios
-      .get('/coaches/getcourslist')
+      .get('/coaches/getcoachlist')
       .then((data) => {
         console.log('Data Rece REdux', data.data);
         if (data.status === 200) {
@@ -91,11 +91,11 @@ export const onGetIndivCoachData = ({CoachID}) => {
 };
 
 export const onUpdateCoachData = ({CoachID, formData}) => {
-  console.log('In Redux', data);
+  console.log('In Redux', CoachID);
   return (dispatch) => {
     dispatch({type: FETCH_START});
     jwtAxios
-      .put(`/coaches/updateCoach/${CoachID}`, formData)
+      .put(`/coaches/updatecoach/${CoachID}`, formData)
       .then((recdata) => {
         if (recdata.status === 200) {
           // console.log('Data from Redux Students LEads', data.data, deleteID);
@@ -125,12 +125,12 @@ export const onUpdateCoachData = ({CoachID, formData}) => {
   };
 };
 
-export const onDeleteIndivCoachData = ({CoachID}) => {
+export const onDeleteIndivCoachData = (CoachID) => {
   console.log('Redux Delete  Indiv Coach', CoachID);
   return (dispatch) => {
     dispatch({type: FETCH_START});
     jwtAxios
-      .delete(`/coaches/DeleteCoach/${CoachID}`)
+      .delete(`/coaches/deletecoach/${CoachID}`)
       .then((data) => {
         console.log('Data Rece REdux', data.data);
         if (data.status === 200) {

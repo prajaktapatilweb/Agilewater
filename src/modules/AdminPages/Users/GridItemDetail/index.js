@@ -1,90 +1,15 @@
 import React from 'react';
-import {Card} from '@mui/material';
 import Avatar from '@mui/material/Avatar';
 import PhoneOutlinedIcon from '@mui/icons-material/PhoneOutlined';
 import Box from '@mui/material/Box';
 import PropTypes from 'prop-types';
 import {blue} from '@mui/material/colors';
 import {Fonts} from 'shared/constants/AppEnums';
-import ItemMenu from '../ItemMenu';
-
-import {styled} from '@mui/material/styles';
 import {EmailOutlined} from '@mui/icons-material';
 
-const GridCard = styled(Card)(({theme}) => {
-  return {
-    borderRadius: theme.cardRadius,
-    border: `solid 1px ${theme.palette.grey[300]}`,
-    position: 'relative',
-    padding: 16,
-    cursor: 'pointer',
-    height: '100%',
-    [theme.breakpoints.up('md')]: {
-      padding: 20,
-    },
-    '&:hover': {
-      '& .conActionHoverRoot': {
-        opacity: 1,
-        visibility: 'visible',
-        right: 0,
-      },
-      '& .conActionHoverHideRoot': {
-        opacity: 0,
-        visibility: 'hidden',
-      },
-    },
-  };
-});
-
-const ContactGridItem = (props) => {
-  const {
-    contact,
-    checkedContacts,
-    // onChangeStarred,
-    onSelectContactsForDelete,
-    onOpenEditContact,
-    // onViewContactDetail,
-    // onOpenCallingDetail,
-  } = props;
-
+const GridItemDetail = ({contact}) => {
   return (
-    <GridCard
-      className='card-hover'
-      // onClick={() => onViewContactDetail(contact)}
-    >
-      <Box
-        sx={{
-          mb: 1,
-          mt: -3,
-          display: 'flex',
-          justifyContent: 'space-between',
-        }}
-      >
-        {/* <Box
-          sx={{
-            ml: -2,
-          }}
-          component='span'
-          onClick={(event) => event.stopPropagation()}
-        >
-          <Checkbox
-            checked={checkedContacts.includes(contact.UserID)}
-            onChange={(event) =>
-              onChangeCheckedContacts(event, contact.UserID)
-            }
-            color='primary'
-          />
-        </Box> */}
-
-        <ItemMenu
-          contact={contact}
-          // onChangeStarred={onChangeStarred}
-          onOpenEditContact={onOpenEditContact}
-          onSelectContactsForDelete={onSelectContactsForDelete}
-          // onOpenCallingDetail={onOpenCallingDetail}
-        />
-      </Box>
-
+    <>
       <Box
         sx={{
           mb: {xs: 3, lg: 4, xl: 5},
@@ -217,22 +142,12 @@ const ContactGridItem = (props) => {
           </Box>
         </Box>
       </Box>
-    </GridCard>
+    </>
   );
 };
 
-export default ContactGridItem;
+export default GridItemDetail;
 
-ContactGridItem.defaultProps = {
-  checkedContacts: [],
-};
-
-ContactGridItem.propTypes = {
+GridItemDetail.propTypes = {
   contact: PropTypes.object.isRequired,
-  onChangeCheckedContacts: PropTypes.func,
-  checkedContacts: PropTypes.array,
-  onChangeStarred: PropTypes.func,
-  onSelectContactsForDelete: PropTypes.func,
-  onOpenEditContact: PropTypes.func,
-  onViewContactDetail: PropTypes.func,
 };
