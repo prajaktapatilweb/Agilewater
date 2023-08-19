@@ -20,9 +20,9 @@ export default function Herosectioncopy1({ heading, image1, para, btn }) {
           <span className='span-50' />
           <span className='span-100' />
         </div>
-        <Container sx={{ maxWidth: { xl: 1400 } }}>
+        <Container sx={{ maxWidth: { xl: 1450 } }}>
 
-          <Grid container sx={{ position: 'relative', zIndex: 1, justifyContent: 'center', alignItems: 'center' }} spacing={4}>
+          <Grid container sx={{ position: 'relative', zIndex: 1, justifyContent: 'center', alignItems: 'center' }} spacing={0}>
 
             <Grid item xs={12} sm={6} md={4} order={2}>
 

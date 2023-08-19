@@ -185,6 +185,17 @@ const otherHeroMain1 = {
         subheading: ''
     }
 }
+const otherContactMain = {
+    contactuscareermain1: {
+        heading: <span style={{ color: 'white' }}>About Us</span>,
+        subheading: (
+            <span style={{ color: 'wheat' }}>
+                <b>We Build Your Career And Team</b>
+            </span>
+        )
+    }
+}
+
 const otherCardCopy = {
     card1: {
         img: '/assets/images/cards/agile1.png',
@@ -278,6 +289,9 @@ export const otherHeroList = [
 ]
 export const otherHeroList1 = [
     otherHeroMain1.herocareermain1
+]
+export const othercontactusList = [
+    otherContactMain.contactuscareermain1
 ]
 
 export const otherCardCopyList = [

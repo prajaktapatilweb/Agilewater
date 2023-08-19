@@ -1,19 +1,11 @@
 import React from "react";
-import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-import Container from "@mui/material/Container";
 import { Card, Typography } from "@mui/material";
 import CountUp from "react-countup";
-import { AppGridContainer } from "@crema";
 
 export default function Countup() {
 
     var Details = [
-        // {
-        //     numbers: "2000",
-        //     title: "Happy Patients"
-
-        // },
         {
             numbers: "10600",
             title: "Students",
