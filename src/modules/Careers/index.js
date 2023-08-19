@@ -1,27 +1,28 @@
 import React from 'react'
-import HeroScrumQuiz from './HeroScrumQuiz'
+import HeroCareers from './HeroCareers'
 import { Container, Grid } from '@mui/material'
-import SafeQuizinfo from '../SafeQuiz/SafeQuizinfo'
-import { scrumquizList } from 'modules/Constant/QuizConst'
 import RelatedCourses from 'modules/commanmodules/RelatedCourses'
-import { courseList2 } from 'modules/Constant/Relatecoursedata'
-import ScrumQuizaccord from './ScrumQuizaccord'
+import { careerlist, courseList2 } from 'modules/Constant/Relatecoursedata'
 import { AppCard } from '@crema'
+import SideCard from 'modules/ScrumMasterCert/SideCard'
+import { sideList1, sideList6 } from 'modules/Constant/OtherCardsConst'
+import Careersidecard from './Careersidecard'
 
-export default function ScrumQuiz() {
+export default function Careers() {
     return (
         <div>
-            <HeroScrumQuiz></HeroScrumQuiz>
+            <HeroCareers />
             <Container sx={{ maxWidth: { xl: 1450 }, marginTop: 10 }}>
                 <Grid container spacing={{ xs: 4, md: 8 }}>
                     <Grid item xs={12} md={8}>
-                        <SafeQuizinfo data={scrumquizList} />
                         <AppCard>
-                            <ScrumQuizaccord></ScrumQuizaccord>
+                            <h1>Job Opportunities</h1>
                         </AppCard>
                     </Grid>
                     <Grid item xs={12} md={4}>
-                        <RelatedCourses data={courseList2}></RelatedCourses>
+                        <Careersidecard></Careersidecard>
+                        <RelatedCourses data={careerlist}></RelatedCourses>
+                        <SideCard data={sideList6} />
                     </Grid>
                 </Grid>
             </Container>

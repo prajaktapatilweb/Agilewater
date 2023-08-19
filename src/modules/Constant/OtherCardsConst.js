@@ -160,6 +160,12 @@ const otherSideMain = {
             'Enroll in any paid course and get access to 30+ free Courses and Certifications.',
         buttons: 'Explore Free Courses',
     },
+    sideMain6: {
+        img: '/assets/images/cards/interview-prepration.png',
+        title:
+            'Prepare for your next interview with experts. Book session to talk one to one with our industry experts and get your all doubts/queries cleared.',
+        buttons: 'Register Now',
+    },
 
 
 };
@@ -171,6 +177,12 @@ const otherHeroMain = {
                 <b>We Are Ready To Help You. Let us know What Help Are You Looking For?</b>
             </span>
         )
+    }
+}
+const otherHeroMain1 = {
+    herocareermain1: {
+        heading: <span style={{ color: 'white' }}>Opportunities don't happen We create it for you.</span>,
+        subheading: ''
     }
 }
 const otherCardCopy = {
@@ -224,6 +236,7 @@ const otherCardCopy = {
     },
 }
 
+
 export const otherCardList = [
     otherCard.course,
     otherCard.course1,
@@ -258,10 +271,15 @@ export const sideList2 = [otherSideMain.sideMain2];
 export const sideList3 = [otherSideMain.sideMain3];
 export const sideList4 = [otherSideMain.sideMain4];
 export const sideList5 = [otherSideMain.sideMain5];
+export const sideList6 = [otherSideMain.sideMain6];
 
 export const otherHeroList = [
     otherHeroMain.heromain1,
 ]
+export const otherHeroList1 = [
+    otherHeroMain1.herocareermain1
+]
+
 export const otherCardCopyList = [
     otherCardCopy.card1,
     otherCardCopy.card2,

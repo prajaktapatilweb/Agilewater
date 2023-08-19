@@ -506,7 +506,8 @@ const routesConfig = [
             messageId: "menu.cert.Resourses34",
             type: "item",
             url: "/scrum-quiz/"
-          },]
+          },
+        ]
       },
       {
         id: "menu44",
@@ -520,12 +521,7 @@ const routesConfig = [
         type: "item",
         url: "/free-agile-workshop/"
       },
-      {
-        id: "menu5",
-        messageId: "menu.cert.Recruitment",
-        type: "item",
-        url: "/careers/"
-      },
+
     ]
   },
   {

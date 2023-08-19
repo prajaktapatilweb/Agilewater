@@ -31,6 +31,8 @@ export default function Herosectioncopy1({ heading, image1, para, btn }) {
                 src={image1}
                 height={330}
                 width={400}
+                layout='responsive'
+                objectFit='contain'
 
               ></Image>
 

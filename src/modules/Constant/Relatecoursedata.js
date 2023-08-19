@@ -30,11 +30,22 @@ const data = {
         title: 'PSM1',
         views: '1.2k',
     },
-    PSM1: {
+    Freeimg: {
         image: '/assets/images/courselogo/FreeImg.png',
         title: 'Free Session',
         views: '1.2k',
+    },
+    IcpEnt: {
+        image: '/assets/images/courselogo/ICP-ENT.jpg',
+        title: 'ICP-ENT',
+        views: '1.2k',
+    },
+    ACSM: {
+        image: '/assets/images/courselogo/ACSM1.png',
+        title: 'ACSM',
+        views: '1.2k',
     }
+
 
 
 };
@@ -68,6 +79,18 @@ export const apgiList = [
     data.Csm,
     data.Prowner,
     data.IcpCat,
-    data.PSM1
+    data.PSM1,
+    data.Freeimg
+
+];
+export const careerlist = [
+    data.IcpACC,
+    data.Scrumatscale,
+    data.Csm,
+    data.Prowner,
+    data.IcpCat,
+    data.PSM1,
+    data.IcpEnt,
+    data.ACSM
 
 ];

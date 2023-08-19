@@ -1,9 +1,9 @@
 import { Container, Grid } from '@mui/material'
-import { otherHeroList } from 'modules/Constant/OtherCardsConst'
+import { otherHeroList1 } from 'modules/Constant/OtherCardsConst'
 import HeroforOther from 'modules/commanmodules/HeroforOther'
 import React from 'react'
 
-export default function HeroMentor() {
+export default function HeroCareers() {
     return (
         <div>
             <Grid className='section section-lg section-shaped' sx={{ justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}>
@@ -20,9 +20,7 @@ export default function HeroMentor() {
                     <span className='span-100' />
                 </div>
                 <Container sx={{ maxWidth: { xl: 1400 } }}>
-                    <HeroforOther data={otherHeroList} />
-
-
+                    <HeroforOther data={otherHeroList1} />
                 </Container>
             </Grid>
         </div>
