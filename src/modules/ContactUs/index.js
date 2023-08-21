@@ -3,9 +3,11 @@ import HeroContactus from './HeroContactus'
 import { Container, Grid, Typography } from '@mui/material'
 import { AppCard } from '@crema'
 import Contactusinfo from './Contactusinfo'
-import Testcard from 'modules/commanmodules/TestCard'
-import { testList1 } from 'modules/Constant/OthershortConst'
 import ContactService from './ContactService'
+import ContactValues from './ContactValues'
+import Contactcourses from './Contactcourses'
+import Contactprinciple from './Contactprinciple'
+import TeamMember from './TeamMember'
 
 export default function ContactUs() {
     return (
@@ -23,8 +25,19 @@ export default function ContactUs() {
             </Grid>
             <Container sx={{ maxWidth: { xl: 1450 } }}>
                 <ContactService />
+                <ContactValues />
             </Container>
+            <Contactcourses />
+            <Grid className='section' sx={{ background: 'white' }}>
+                <Container sx={{ maxWidth: { xl: 1450 } }}>
+                    <Contactprinciple />
 
+                </Container>
+
+            </Grid>
+            <Container sx={{ maxWidth: { xl: 1450 } }}>
+                <TeamMember></TeamMember>
+            </Container>
         </div>
     )
 }
