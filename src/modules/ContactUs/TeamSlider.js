@@ -7,8 +7,7 @@ import { useTheme, styled } from "@mui/material/styles";
 import { IconButton, useMediaQuery } from "@mui/material";
 import IconArrowBack from "@mui/icons-material/ArrowBack";
 import IconArrowForward from "@mui/icons-material/ArrowForward";
-import CourseCardItem from "./CourseCardItem";
-import { data } from "modules/Constant/CourseSliderdata";
+import TeamMember from "./TeamMember";
 const SliderArrow = (props) => {
     const { onClick, type, className } = props;
     return (
@@ -63,7 +62,7 @@ const StyledDots = styled("ul")(({ theme }) => ({
         },
     },
 }));
-const CardSlider = () => {
+const TeamSlider = () => {
     const { breakpoints } = useTheme();
     const matchMobileView = useMediaQuery(breakpoints.down("sm"));
     const matchMobileView1 = useMediaQuery(breakpoints.down("md"));
@@ -90,6 +89,54 @@ const CardSlider = () => {
             />
         ),
     };
+
+
+
+    var details = [
+        {
+            id: 1,
+            img: '/assets/images/courselogo/FreeImg.png',
+            nm: 'vijay',
+            info: 'ufdyh h uyh hrtiygu hrityu rtiyu',
+            post: 'gfh h hj'
+        },
+        {
+            id: 2,
+            img: '/assets/images/courselogo/FreeImg.png',
+            nm: 'Hema',
+            info: 'ufdyh h uyh hrtiygu hrityu rtiyu',
+            post: 'gfh h hj'
+        },
+        {
+            id: 3,
+            img: '/assets/images/courselogo/FreeImg.png',
+            nm: 'Vijji',
+            info: 'ufdyh h uyh hrtiygu hrityu rtiyu',
+            post: 'gfh h hj'
+        },
+        {
+            id: 4,
+            img: '/assets/images/courselogo/FreeImg.png',
+            nm: 'Vij',
+            info: 'ufdyh h uyh hrtiygu hrityu rtiyu',
+            post: 'gfh h hj'
+        },
+        {
+            id: 5,
+            img: '/assets/images/courselogo/FreeImg.png',
+            nm: 'Vijji',
+            info: 'ufdyh h uyh hrtiygu hrityu rtiyu',
+            post: 'gfh h hj'
+        },
+        {
+            id: 6,
+            img: '/assets/images/courselogo/FreeImg.png',
+            nm: 'Viji',
+            info: 'ufdyh gfgtf h uyh hrtiygu hrityu rtiyu',
+            post: 'gfh h hj'
+        }
+    ]
+
     return (
         <Box
             id="treatments"
@@ -101,26 +148,19 @@ const CardSlider = () => {
         >
             {/* <Container maxWidth="lg"> */}
             <Grid container spacing={2}>
-                <Grid item xs={12} md={12}>
-                    <Box
-                        sx={{
-                            height: "100%",
-                            width: { xs: "100%", md: "90%" },
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: 'center',
-                        }}
-                    >
-                        <Typography variant="h1" sx={{ fontSize: { xs: 30, md: 35 } }}>
-                            Our Popular Courses
-                        </Typography>
-                    </Box>
+                <Grid item xs={12} md={12} sx={{ textAlign: 'center' }}>
+
+                    <Typography variant="h7">
+                        Our Popular Courses
+                    </Typography>
+
                 </Grid>
 
                 <Grid item xs={12} md={12}>
                     <Slider {...sliderConfig}>
-                        {data.map((item) => (
-                            <CourseCardItem key={String(item.id)} item={item} />
+                        {details.map((item) => (
+                            <TeamMember key={(item.id)} item={item} ></TeamMember>
+                            // <CourseCardItem key={String(item.id)} item={item} />
                         ))}
                     </Slider>
                 </Grid>
@@ -129,4 +169,4 @@ const CardSlider = () => {
         </Box>
     );
 };
-export default CardSlider;
+export default TeamSlider;

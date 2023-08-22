@@ -1,131 +1,51 @@
-import { Container, Grid } from '@mui/material'
 import Image from 'next/image'
+import FacebookIcon from '@mui/icons-material/Facebook';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
 import React from 'react'
 
-export default function TeamMember() {
+const TeamMember = ({ item }) => {
     return (
         <div>
             <section id="team" className="team-area section">
-                <Container>
-                    <Grid container spacing={3}>
-                        <Grid xs={12}>
-
-                            <h2>Our <span>Team</span></h2>
-
-
-                        </Grid>
-
-                        <Grid xs={12} md={4}>
-                            <div className="item">
-                                <div className="thumb">
-                                    <Image className="img-fluid" src='/assets/images/coach/ali-sohail.webp' width={200} height={200} layout='responsive' alt="Thumb"></Image>
-                                    <div className="overlay">
-                                        <h4>Lorem Ipsum</h4>
-                                        <p>
-                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                        </p>
-                                        <div className="social">
-                                            <ul>
-                                                <li className="twitter">
-                                                    <a href="#"><i className="fab fa-twitter"></i></a>
-                                                </li>
-                                                <li className="pinterest">
-                                                    <a href="#"><i className="fab fa-pinterest"></i></a>
-                                                </li>
-                                                <li className="instagram">
-                                                    <a href="#"><i className="fab fa-instagram"></i></a>
-                                                </li>
-                                                <li className="vimeo">
-                                                    <a href="#"><i className="fab fa-vimeo-v"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="info">
-                                    <span className="message">
-                                        <a href="#"><i className="fas fa-envelope-open"></i></a>
-                                    </span>
-                                    <h4>Lorem Ipsum</h4>
-                                    <span>Project Manager</span>
-                                </div>
+                <div className="item">
+                    <div className="thumb">
+                        <Image className="img-fluid" src={item.img} alt={'Course ' + item.id} width={200} height={200} layout='responsive'></Image>
+                        <div className="overlay">
+                            <h4>{item.nm}</h4>
+                            <p>
+                                {item.info}
+                            </p>
+                            <div className="social">
+                                <ul>
+                                    <li className="twitter">
+                                        <a href="#"><TwitterIcon /></a>
+                                    </li>
+                                    <li className="pinterest">
+                                        <a href="#"><FacebookIcon /></a>
+                                    </li>
+                                    <li className="instagram">
+                                        <a href="#"><InstagramIcon /></a>
+                                    </li>
+                                    <li className="vimeo">
+                                        <a href="#"><LinkedInIcon /></a>
+                                    </li>
+                                </ul>
                             </div>
-                        </Grid>
-                        <Grid xs={12} md={4}>
-                            <div className="item">
-                                <div className="thumb">
-                                    <Image className="img-fluid" src='/assets/images/coach/ali-sohail.webp' width={200} height={200} layout='responsive' alt="Thumb"></Image>
-                                    <div className="overlay">
-                                        <h4>Lorem Ipsum</h4>
-                                        <p>
-                                            kING.
-                                        </p>
-                                        <div className="social">
-                                            <ul>
-                                                <li className="twitter">
-                                                    <a href="#"><i className="fab fa-twitter"></i></a>
-                                                </li>
-                                                <li className="pinterest">
-                                                    <a href="#"><i className="fab fa-pinterest"></i></a>
-                                                </li>
-                                                <li className="instagram">
-                                                    <a href="#"><i className="fab fa-instagram"></i></a>
-                                                </li>
-                                                <li className="vimeo">
-                                                    <a href="#"><i className="fab fa-vimeo-v"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="info">
-                                    <span className="message">
-                                        <a href="#"><i className="fas fa-envelope-open"></i></a>
-                                    </span>
-                                    <h4>Lorem Ipsum</h4>
-                                    <span>App Developer</span>
-                                </div>
-                            </div>
-                        </Grid>
-                        <Grid xs={12} md={4}>
-                            <div className="item">
-                                <div className="thumb">
-                                    <Image className="img-fluid" src='/assets/images/coach/ali-sohail.webp' width={200} height={200} layout='responsive' alt="Thumb"></Image>
-                                    <div className="overlay">
-                                        <h4>Lorem Ipsum</h4>
-                                        <p>
-                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                        </p>
-                                        <div className="social">
-                                            <ul>
-                                                <li className="twitter">
-                                                    <a href="#"><i className="fab fa-twitter"></i></a>
-                                                </li>
-                                                <li className="pinterest">
-                                                    <a href="#"><i className="fab fa-pinterest"></i></a>
-                                                </li>
-                                                <li className="instagram">
-                                                    <a href="#"><i className="fab fa-instagram"></i></a>
-                                                </li>
-                                                <li className="vimeo">
-                                                    <a href="#"><i className="fab fa-vimeo-v"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="info">
-                                    <span className="message">
-                                        <a href="#"><i className="fas fa-envelope-open"></i></a>
-                                    </span>
-                                    <h4>Lorem Ipsum</h4>
-                                    <span>Web designer</span>
-                                </div>
-                            </div>
-                        </Grid>
-                    </Grid>
-                </Container>
+                        </div>
+                    </div>
+                    <div className="info">
+                        <span className="message">
+                            <a href="#"><ArrowCircleUpIcon /></a>
+                        </span>
+                        <h4>{item.nm}</h4>
+                        <span>{item.post}</span>
+                    </div>
+                </div>
             </section>
         </div>
     )
-}
+};
+export default TeamMember;

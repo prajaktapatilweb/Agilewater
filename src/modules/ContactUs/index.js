@@ -7,7 +7,10 @@ import ContactService from './ContactService'
 import ContactValues from './ContactValues'
 import Contactcourses from './Contactcourses'
 import Contactprinciple from './Contactprinciple'
-import TeamMember from './TeamMember'
+import TeamSlider from './TeamSlider'
+import Clients from './Clients'
+import Contact from 'modules/commanmodules/Contact'
+
 
 export default function ContactUs() {
     return (
@@ -31,13 +34,15 @@ export default function ContactUs() {
             <Grid className='section' sx={{ background: 'white' }}>
                 <Container sx={{ maxWidth: { xl: 1450 } }}>
                     <Contactprinciple />
-
                 </Container>
-
             </Grid>
             <Container sx={{ maxWidth: { xl: 1450 } }}>
-                <TeamMember></TeamMember>
+                {/* <TeamMember></TeamMember> */}
+                <TeamSlider></TeamSlider>
+                <Clients></Clients>
+                <Contact></Contact>
             </Container>
+
 
         </div>
     )

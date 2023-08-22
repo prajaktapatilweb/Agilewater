@@ -1,5 +1,5 @@
 import { AppCard } from '@crema'
-import { Grid, Typography } from '@mui/material'
+import { Box, Grid, Typography } from '@mui/material'
 import Image from 'next/dist/client/image'
 import React from 'react'
 
@@ -20,6 +20,9 @@ export default function ContactValues() {
     ]
     return (
         <div>
+            <Box sx={{ textAlign: 'center' }}>
+                <Typography variant='h7' >Our Values</Typography>
+            </Box>
             <Grid container spacing={3} className='section' alignItems='center' sx={{ textAlign: 'center' }}>
                 {Details.map((item, i) => (
                     <Grid item xs={12} md={4} key={i}>
