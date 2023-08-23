@@ -535,6 +535,12 @@ const routesConfig = [
     messageId: "menu.cert.Career",
     type: "item",
     url: "/careers/"
+  },
+  {
+    id: "menu7",
+    messageId: "menu.cert.Refer",
+    type: "item",
+    url: "/refer-and-earn/"
   }
 ];
 
