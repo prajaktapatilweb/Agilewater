@@ -7,12 +7,6 @@ import {
   ADD_NEW_COURSE,
   GET_INDIV_COURSE_DATA,
   GET_COURSE_LIST,
-  GET_CRM_DATA,
-  GET_CRYPTO_DATA,
-  GET_ECOMMERCE_DATA,
-  GET_HC_DATA,
-  GET_METRICS_DATA,
-  GET_WIDGETS_DATA,
 } from 'shared/constants/ActionTypes';
 import IntlMessages from '@crema/utility/IntlMessages';
 import jwtAxios from '@crema/services/auth/jwt-auth';

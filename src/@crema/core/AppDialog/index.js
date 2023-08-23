@@ -1,5 +1,5 @@
 import React from 'react';
-import {Dialog, DialogTitle, Slide} from '@mui/material';
+import {Dialog, DialogTitle, Slide, Typography} from '@mui/material';
 import PropTypes from 'prop-types';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
@@ -43,14 +43,10 @@ const AppDialog = ({
       open={open}
       onClose={onClose}
     >
-      <DialogTitle
-        sx={{
-          fontSize: 14,
-          fontWeight: Fonts.MEDIUM,
-        }}
-        id='app-dialog-title'
-      >
-        {title}
+      <DialogTitle>
+        <Typography variant='h1' id='alert-dialog-title' color='primary'>
+          {title}
+        </Typography>
         {hideClose ? null : (
           <IconButton
             aria-label='close'

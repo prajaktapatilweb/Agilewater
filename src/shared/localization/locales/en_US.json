@@ -91,6 +91,7 @@
   "validation.passwordMisMatch": "The two passwords you entered did not match!",
   "validation.enterOldPassword": "Please enter previous password!",
   "validation.enterNewPassword": "Please enter new password!",
+  "common.cancel": "Cancel",
   "common.signup": "Signup",
   "common.signInHere": "Sign in here",
   "common.orLoginWith": "Or Login With",
@@ -102,5 +103,14 @@
   "Course.discost": "Offer Price",
   "Course.place": "Place",
   "Course.time": "Time (IST)",
-  "Course.trainer": "Trainer Name"
+  "Course.trainer": "Trainer Name",
+  "Coach.Name": "Coach Name",
+  "Coach.expertise": "Expertise in",
+  "Coach.experience": "Experience in Years",
+  "Coach.Specil": "Coach Specialization",
+  "Coach.photo": "Coach Profile Photo",
+  "Coach.country": "Country",
+  "common.yes": "Yes",
+  "common.no": "No",
+  "common.delete": "Are you sure, you want to delete the"
 }

@@ -39,9 +39,9 @@ const JWTAuthProvider = ({children}) => {
       setAuthToken(token);
       jwtAxios
         .get('/auth')
-        .then(({data}) =>
+        .then((res) =>
           setJWTAuthData({
-            user: data,
+            user: res.data.user,
             isLoading: false,
             isAuthenticated: true,
           }),
@@ -68,7 +68,7 @@ const JWTAuthProvider = ({children}) => {
       const res = await jwtAxios.get('/auth');
       console.log('first', res);
       setJWTAuthData({
-        user: res.data,
+        user: res.data.user,
         isAuthenticated: true,
         isLoading: false,
       });
@@ -94,7 +94,7 @@ const JWTAuthProvider = ({children}) => {
       setAuthToken(data.token);
       const res = await jwtAxios.get('/auth');
       setJWTAuthData({
-        user: res.data,
+        user: res.data.user,
         isAuthenticated: true,
         isLoading: false,
       });

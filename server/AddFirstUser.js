@@ -15,6 +15,7 @@ async function firstuser() {
   console.log({totalNumber});
   // const UserID = 'AW-10001'
   const password = 'Agile@AW20**';
+  const Role = 'Admin';
   const salt = await bcrypt.genSalt(10);
   const Password = await bcrypt.hash(password, salt);
   user = new User({
@@ -23,6 +24,7 @@ async function firstuser() {
     Email,
     Mobilenumber,
     Password,
+    Role,
   });
 
   console.log({user});

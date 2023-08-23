@@ -182,12 +182,7 @@ const AddCourseForm = ({CourseID, closefn}) => {
               {/* <pre>{JSON.stringify(values, null, 2)}</pre> */}
               <Grid container sx={{mb: {xs: 4, xl: 5}}} spacing={2}>
                 <Grid item xs={12} md={6}>
-                  <FormControl
-                    sx={{
-                      width: '100%',
-                      '&.MuiInputBase-input': {fontSize: 14},
-                    }}
-                  >
+                  <FormControl sx={{width: '100%'}}>
                     <InputLabel id='demo-simple-select-label'>
                       <IntlMessages id='course' />
                     </InputLabel>
@@ -200,12 +195,7 @@ const AddCourseForm = ({CourseID, closefn}) => {
                   </FormControl>
                 </Grid>
                 <Grid item md={6} xs={12}>
-                  <FormControl
-                    sx={{
-                      width: '100%',
-                      '&.MuiInputBase-input': {fontSize: 14},
-                    }}
-                  >
+                  <FormControl sx={{width: '100%'}}>
                     <InputLabel id='demo-simple-select-label'>
                       <IntlMessages id='Course.trainer' />
                     </InputLabel>
@@ -333,10 +323,6 @@ const AddCourseForm = ({CourseID, closefn}) => {
                     // name='Cost.Actual'
                     name='ActualCost'
                     variant='outlined'
-                    sx={{
-                      width: '100%',
-                      '&.MuiInputBase-input': {fontSize: 14},
-                    }}
                   />
                 </Grid>
                 <Grid item xs={6} md={3}>
@@ -346,10 +332,6 @@ const AddCourseForm = ({CourseID, closefn}) => {
                     // name='`Cost`.Discounted'
                     disabled={values.isSubmitting}
                     variant='outlined'
-                    sx={{
-                      width: '100%',
-                      '&.MuiInputBase-input': {fontSize: 14},
-                    }}
                   />
                 </Grid>
                 <Grid item xs={6} md={3}>
@@ -358,10 +340,6 @@ const AddCourseForm = ({CourseID, closefn}) => {
                     disabled={values.isSubmitting}
                     name='Time'
                     variant='outlined'
-                    sx={{
-                      width: '100%',
-                      '&.MuiInputBase-input': {fontSize: 14},
-                    }}
                   />
                 </Grid>
                 <Grid item xs={6} md={3}>

@@ -31,6 +31,7 @@ const AppConfirmDialog = ({open, onDeny, onConfirm, title, dialogTitle}) => {
             fontWeight: Fonts.SEMI_BOLD,
           }}
           id='alert-dialog-title'
+          color='error'
         >
           {dialogTitle}
         </Typography>
@@ -53,7 +54,7 @@ const AppConfirmDialog = ({open, onDeny, onConfirm, title, dialogTitle}) => {
             fontWeight: Fonts.MEDIUM,
           }}
           onClick={onConfirm}
-          color='primary'
+          color='secondary'
           autoFocus
         >
           <IntlMessages id='common.yes' />
@@ -64,7 +65,7 @@ const AppConfirmDialog = ({open, onDeny, onConfirm, title, dialogTitle}) => {
             fontWeight: Fonts.MEDIUM,
           }}
           onClick={() => onDeny(false)}
-          color='secondary'
+          color='primary'
         >
           <IntlMessages id='common.no' />
         </Button>

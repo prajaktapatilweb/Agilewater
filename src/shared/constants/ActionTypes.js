@@ -10,6 +10,11 @@ export const GET_COURSE_DATA = 'get_course_data';
 export const ADD_NEW_COURSE = 'add_new_course';
 export const GET_COURSE_LIST = 'get_course_list';
 export const GET_INDIV_COURSE_DATA = 'get_indiv_cours_data';
+export const ADD_NEW_COACH = 'add_new_coach';
+export const ADD_NEW_USER = 'add_new_user';
+export const GET_INDIV_USER_DATA = 'get_indiv_user_data';
+export const GET_USERS_LIST = 'get_users_list';
+export const GET_COACH_LIST = 'get_coach_list';
 
 // APP SETTING
 export const TOGGLE_NAV_COLLAPSED = 'toggle_nav_collapsed';
