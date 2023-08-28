@@ -7,6 +7,7 @@ import {
   ADD_NEW_COURSE,
   GET_INDIV_COURSE_DATA,
   GET_COURSE_LIST,
+  GET_BLOG_LIST,
 } from 'shared/constants/ActionTypes';
 import IntlMessages from '@crema/utility/IntlMessages';
 import jwtAxios from '@crema/services/auth/jwt-auth';
@@ -132,6 +133,39 @@ export const onDeleteIndivCourseData = ({CourseID}) => {
         if (data.status === 200) {
           dispatch({type: FETCH_SUCCESS});
           dispatch({type: GET_COURSE_LIST, payload: data.data});
+        } else {
+          dispatch({
+            type: FETCH_ERROR,
+            payload: <IntlMessages id='message.somethingWentWrong' />,
+          });
+        }
+      })
+      .catch((error) => {
+        dispatch({type: FETCH_ERROR, payload: error.message});
+      });
+  };
+};
+
+import {createClient} from 'next-sanity';
+
+const client = createClient({
+  projectId: 'smjl4qzv',
+  dataset: 'production',
+  apiVersion: '2021-10-21',
+  useCdn: false,
+});
+
+export const onGetBlogData = () => {
+  console.log('Redux Get Blog List ');
+  return (dispatch) => {
+    dispatch({type: FETCH_START});
+    client
+      .fetch(`*[_type == "post"]`)
+      .then((data) => {
+        console.log('Blog Data Rece REdux', data.data);
+        if (data.status === 200) {
+          dispatch({type: FETCH_SUCCESS});
+          dispatch({type: GET_BLOG_LIST, payload: data.data});
         } else {
           dispatch({
             type: FETCH_ERROR,
