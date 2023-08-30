@@ -185,6 +185,22 @@ const otherHeroMain1 = {
         subheading: ''
     }
 }
+const otherReferMain1 = {
+    herorefermain1: {
+        heading: <span style={{ color: 'white' }}>Refer a Friend and Earn</span>,
+        subheading: ''
+    }
+}
+const otherReferMain = {
+    main1: {
+        heading: 'How the Refer and Earn program Works',
+        subheading: (
+            <span>
+                Start earning rewards in 3 easy steps
+            </span>
+        ),
+    },
+}
 const otherContactMain = {
     contactuscareermain1: {
         heading: <span style={{ color: 'white' }}>About Us</span>,
@@ -277,6 +293,9 @@ export const maindata1 = [otherCardMain.main1];
 export const maindata2 = [otherCardMain.main2];
 export const maindata3 = [otherCardMain.main3];
 
+export const referdata1 = [otherReferMain.main1];
+
+
 export const sideList1 = [otherSideMain.sideMain1];
 export const sideList2 = [otherSideMain.sideMain2];
 export const sideList3 = [otherSideMain.sideMain3];
@@ -289,6 +308,9 @@ export const otherHeroList = [
 ]
 export const otherHeroList1 = [
     otherHeroMain1.herocareermain1
+]
+export const otherReferList1 = [
+    otherReferMain1.herorefermain1
 ]
 export const othercontactusList = [
     otherContactMain.contactuscareermain1
