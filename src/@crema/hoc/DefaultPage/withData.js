@@ -10,7 +10,9 @@ const withData = (ComposedComponent) => (props) => {
   const queryParams = asPath.split('?')[1];
   useEffect(() => {
     if (user) {
-      Router.push(initialUrl + (queryParams ? '?' + queryParams : ''));
+      asPath === '/login'
+        ? Router.push(initialUrl + (queryParams ? '?' + queryParams : ''))
+        : Router.push(asPath);
     }
   }, [user]);
   if (isLoading) return <AppLoader />;

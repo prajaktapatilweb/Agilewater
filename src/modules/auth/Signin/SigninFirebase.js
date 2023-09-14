@@ -16,6 +16,7 @@ import {AiOutlineGoogle, AiOutlineTwitter} from 'react-icons/ai';
 import {FaFacebookF} from 'react-icons/fa';
 import {BsGithub} from 'react-icons/bs';
 import {useRouter} from 'next/router';
+import AppLogo from '@crema/core/AppLayout/components/AppLogo';
 
 const validationSchema = yup.object({
   email: yup
@@ -40,210 +41,225 @@ const SigninFirebase = () => {
   const {messages} = useIntl();
 
   return (
-    <Box sx={{flex: 1, display: 'flex', flexDirection: 'column'}}>
-      <Box sx={{flex: 1, display: 'flex', flexDirection: 'column', mb: 5}}>
-        <Formik
-          validateOnChange={true}
-          initialValues={{
-            email: 'abc@abc.com',
-            password: 'abc123',
-          }}
-          validationSchema={validationSchema}
-          onSubmit={(data, {setSubmitting}) => {
-            setSubmitting(true);
-            signInWithEmailAndPassword(data);
-            setSubmitting(false);
-          }}
-        >
-          {({isSubmitting}) => (
-            <Form style={{textAlign: 'left'}} noValidate autoComplete='off'>
-              <Box sx={{mb: {xs: 5, xl: 8}}}>
-                <AppTextField
-                  placeholder={messages['email']}
-                  name='email'
-                  label={<IntlMessages id='email' />}
-                  variant='outlined'
-                  sx={{
-                    width: '100%',
-                    '& .MuiInputBase-input': {
-                      fontSize: 14,
-                    },
-                  }}
-                />
-              </Box>
-
-              <Box sx={{mb: {xs: 3, xl: 4}}}>
-                <AppTextField
-                  type='password'
-                  placeholder={messages['password']}
-                  label={<IntlMessages id='password' />}
-                  name='password'
-                  variant='outlined'
-                  sx={{
-                    width: '100%',
-                    '& .MuiInputBase-input': {
-                      fontSize: 14,
-                    },
-                  }}
-                />
-              </Box>
-
-              <Box
-                sx={{
-                  mb: {xs: 3, xl: 4},
-                }}
-              >
-                <Box
-                  sx={{
-                    display: 'flex',
-                    alignItems: 'center',
-                  }}
-                >
-                  <Checkbox sx={{ml: -3}} />
-                  <Box
-                    component='span'
-                    sx={{
-                      color: 'grey.500',
-                    }}
-                  >
-                    <IntlMessages id='common.remember' />
-                  </Box>
-                </Box>
-                <Box
-                  component='span'
-                  sx={{
-                    color: (theme) => theme.palette.primary.main,
-                    fontWeight: Fonts.MEDIUM,
-                    cursor: 'pointer',
-                    display: 'block',
-                    textAlign: 'right',
-                  }}
-                  onClick={onGoToForgetPassword}
-                >
-                  <IntlMessages id='common.forgetPassword' />
-                </Box>
-              </Box>
-
-              <div>
-                <Button
-                  variant='contained'
-                  color='primary'
-                  type='submit'
-                  disabled={isSubmitting}
-                  sx={{
-                    minWidth: 160,
-                    fontWeight: Fonts.REGULAR,
-                    fontSize: 16,
-                    textTransform: 'capitalize',
-                    padding: '4px 16px 8px',
-                  }}
-                >
-                  <IntlMessages id='login' />
-                </Button>
-              </div>
-            </Form>
-          )}
-        </Formik>
-      </Box>
-
-      <Box
-        sx={{
-          color: 'grey.500',
-          mb: {xs: 5, md: 7},
-        }}
-      >
-        <span style={{marginRight: 4}}>
-          <IntlMessages id='common.dontHaveAccount' />
-        </span>
-        <Box
-          component='span'
-          sx={{
-            fontWeight: Fonts.MEDIUM,
-            '& a': {
-              color: (theme) => theme.palette.primary.main,
-              textDecoration: 'none',
-            },
-          }}
-        >
-          <Link href='/signup'>
-            <a>
-              <IntlMessages id='common.signup' />
-            </a>
-          </Link>
-        </Box>
-      </Box>
-
-      <Box
-        sx={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          backgroundColor: (theme) => theme.palette.background.default,
-          mx: {xs: -5, lg: -10},
-          mb: {xs: -6, lg: -11},
-          mt: 'auto',
-          py: 2,
-          px: {xs: 5, lg: 10},
-        }}
-      >
+    <>
+      <Box sx={{mb: {xs: 6, xl: 8}}}>
         <Box
           sx={{
-            color: (theme) => theme.palette.text.secondary,
-          }}
-        >
-          <IntlMessages id='common.orLoginWith' />
-        </Box>
-        <Box
-          sx={{
+            mb: 5,
             display: 'flex',
             alignItems: 'center',
           }}
         >
-          <IconButton
-            sx={{
-              p: 2,
-              '& svg': {fontSize: 18},
-              color: (theme) => theme.palette.text.secondary,
-            }}
-            onClick={() => signInWithPopup('google')}
-          >
-            <AiOutlineGoogle />
-          </IconButton>
-          <IconButton
-            sx={{
-              p: 1.5,
-              '& svg': {fontSize: 18},
-              color: (theme) => theme.palette.text.secondary,
-            }}
-            onClick={() => signInWithPopup('facebook')}
-          >
-            <FaFacebookF />
-          </IconButton>
-          <IconButton
-            sx={{
-              p: 1.5,
-              '& svg': {fontSize: 18},
-              color: (theme) => theme.palette.text.secondary,
-            }}
-            onClick={() => signInWithPopup('github')}
-          >
-            <BsGithub />
-          </IconButton>
-          <IconButton
-            sx={{
-              p: 1.5,
-              '& svg': {fontSize: 18},
-              color: (theme) => theme.palette.text.secondary,
-            }}
-            onClick={() => signInWithPopup('twitter')}
-          >
-            <AiOutlineTwitter />
-          </IconButton>
+          <AppLogo />
         </Box>
       </Box>
+      <Box sx={{flex: 1, display: 'flex', flexDirection: 'column'}}>
+        <Box sx={{flex: 1, display: 'flex', flexDirection: 'column', mb: 5}}>
+          <Formik
+            validateOnChange={true}
+            initialValues={{
+              email: 'abc@abc.com',
+              password: 'abc123',
+            }}
+            validationSchema={validationSchema}
+            onSubmit={(data, {setSubmitting}) => {
+              setSubmitting(true);
+              signInWithEmailAndPassword(data);
+              setSubmitting(false);
+            }}
+          >
+            {({isSubmitting}) => (
+              <Form style={{textAlign: 'left'}} noValidate autoComplete='off'>
+                <Box sx={{mb: {xs: 5, xl: 8}}}>
+                  <AppTextField
+                    placeholder={messages['email']}
+                    name='email'
+                    label={<IntlMessages id='email' />}
+                    variant='outlined'
+                    sx={{
+                      width: '100%',
+                      '& .MuiInputBase-input': {
+                        fontSize: 14,
+                      },
+                    }}
+                  />
+                </Box>
 
-      <AppInfoView />
-    </Box>
+                <Box sx={{mb: {xs: 3, xl: 4}}}>
+                  <AppTextField
+                    type='password'
+                    placeholder={messages['password']}
+                    label={<IntlMessages id='password' />}
+                    name='password'
+                    variant='outlined'
+                    sx={{
+                      width: '100%',
+                      '& .MuiInputBase-input': {
+                        fontSize: 14,
+                      },
+                    }}
+                  />
+                </Box>
+
+                {history.asPath === '/login' && (
+                  <Box
+                    sx={{
+                      mb: {xs: 3, xl: 4},
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        display: 'flex',
+                        alignItems: 'center',
+                      }}
+                    >
+                      <Checkbox sx={{ml: -3}} />
+                      <Box
+                        component='span'
+                        sx={{
+                          color: 'grey.500',
+                        }}
+                      >
+                        <IntlMessages id='common.remember' />
+                      </Box>
+                    </Box>
+                    <Box
+                      component='span'
+                      sx={{
+                        color: (theme) => theme.palette.primary.main,
+                        fontWeight: Fonts.MEDIUM,
+                        cursor: 'pointer',
+                        display: 'block',
+                        textAlign: 'right',
+                      }}
+                      onClick={onGoToForgetPassword}
+                    >
+                      <IntlMessages id='common.forgetPassword' />
+                    </Box>
+                  </Box>
+                )}
+
+                <div>
+                  <Button
+                    variant='contained'
+                    color='primary'
+                    type='submit'
+                    disabled={isSubmitting}
+                    sx={{
+                      minWidth: 160,
+                      fontWeight: Fonts.REGULAR,
+                      fontSize: 16,
+                      textTransform: 'capitalize',
+                      padding: '4px 16px 8px',
+                    }}
+                  >
+                    <IntlMessages id='login' />
+                  </Button>
+                </div>
+              </Form>
+            )}
+          </Formik>
+        </Box>
+
+        <Box
+          sx={{
+            color: 'grey.500',
+            mb: {xs: 3, md: 3},
+          }}
+        >
+          <span style={{marginRight: 4}}>
+            <IntlMessages id='common.dontHaveAccount' />
+          </span>
+          <Box
+            component='span'
+            sx={{
+              fontWeight: Fonts.MEDIUM,
+              '& a': {
+                color: (theme) => theme.palette.primary.main,
+                textDecoration: 'none',
+              },
+            }}
+          >
+            <Link href='/signup'>
+              <a>
+                <IntlMessages id='common.signup' />
+              </a>
+            </Link>
+          </Box>
+        </Box>
+
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            backgroundColor: (theme) => theme.palette.background.info,
+            mx: {xs: -5, lg: -10},
+            mb: {xs: -1, lg: -1},
+            mt: 'auto',
+            py: 2,
+            px: {xs: 5, lg: 10},
+          }}
+        >
+          <Box
+            sx={{
+              color: (theme) => theme.palette.text.primary,
+            }}
+          >
+            <IntlMessages id='common.orLoginWith' />
+          </Box>
+          <Box
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+            }}
+          >
+            <IconButton
+              sx={{
+                p: 2,
+                '& svg': {fontSize: 18},
+                color: (theme) => theme.palette.text.secondary,
+              }}
+              onClick={() => signInWithPopup('google')}
+            >
+              <AiOutlineGoogle color='#D44638'/>
+            </IconButton>
+            <IconButton
+              sx={{
+                p: 1.5,
+                '& svg': {fontSize: 18},
+                color: (theme) => theme.palette.text.secondary,
+              }}
+              onClick={() => signInWithPopup('facebook')}
+            >
+              <FaFacebookF color='#3b5998'/>
+            </IconButton>
+            <IconButton
+              sx={{
+                p: 1.5,
+                '& svg': {fontSize: 18},
+                color: (theme) => theme.palette.text.secondary,
+              }}
+              onClick={() => signInWithPopup('github')}
+            >
+              <BsGithub color='#171515'/>
+            </IconButton>
+            <IconButton
+              sx={{
+                p: 1.5,
+                '& svg': {fontSize: 18},
+                color: (theme) => theme.palette.text.secondary,
+              }}
+              onClick={() => signInWithPopup('twitter')}
+            >
+              <AiOutlineTwitter color='#00ACEE'/>
+            </IconButton>
+          </Box>
+        </Box>
+
+        <AppInfoView />
+      </Box>
+    </>
   );
 };
 

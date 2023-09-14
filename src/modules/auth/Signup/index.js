@@ -20,8 +20,8 @@ const Signup = () => {
             <AppLogo />
           </Box>
         </Box>
-        {/* <SignupFirebase /> */}
-        <SignupJwtAuth />
+        <SignupFirebase />
+        {/* <SignupJwtAuth /> */}
       </Box>
     </AuthWrapper>
   );

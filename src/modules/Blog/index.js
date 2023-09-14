@@ -8,6 +8,9 @@ import Typography from '@mui/material/Typography';
 import {Container, Grid} from '@mui/material';
 import {createClient} from 'next-sanity';
 import {PortableText} from '@portabletext/react';
+import PropTypes from 'prop-types';
+import {urlForImage} from 'lib/image';
+import Link from 'next/dist/client/link';
 
 export default function Blog({posts}) {
   console.log('BLogs', posts);
@@ -16,41 +19,56 @@ export default function Blog({posts}) {
       <Container sx={{mt: 20}}>
         <Grid container>
           {posts.map((post) => (
-            <Grid item xs={6} sx={{border: '1px solid red'}} key={post._id}>
-              {/* <p>{item.title}</p> */}
-              <Card sx={{maxWidth: 345}}>
-                <CardMedia
-                  component='img'
-                  alt='green iguana'
-                  height='140'
-                  //   image='/assets/images/cards/contemplative-reptile.jpg'
-                  image='/assets/images/cards/contemplative-reptile.jpg'
-                />
-                <CardContent>
-                  <Typography gutterBottom variant='h5' component='div'>
-                    {post.title}
-                  </Typography>
-                  <PortableText value={post.body} />
+            <Link href={`/blog/${post.slug.current}`}>
+              <Grid
+                item
+                xs={4}
+                // sx={{border: '1px solid red'}}
+                key={post._id}
+              >
+                <Card sx={{maxWidth: 345}}>
+                  <CardMedia
+                    component='img'
+                    alt='green iguana'
+                    height='140'
+                    //   image='/assets/images/cards/contemplative-reptile.jpg'
+                    // image='/assets/images/cards/contemplative-reptile.jpg'
+                    image={
+                      urlForImage(post.mainImage)?.options?.source
+                        ? urlForImage(post.mainImage)
+                        : '/assets/images/blog/comman.webp'
+                    }
+                  />
+                  <CardContent>
+                    <Typography gutterBottom variant='h5' component='div'>
+                      {post.title}
+                      {/* <pre>{JSON.stringify(urlForImage(post.mainImage), null, 2)}</pre>  */}
+                      
+                    </Typography>
+                    <Typography gutterBottom variant='p' component='div'>
+                      {post.author.name}
+                    </Typography>
+                    <PortableText value={post.body} />
 
-                  <Typography variant='body2' color='text.secondary'>
-                    Lizards are a widespread group of squamate reptiles, with
-                    over 6,000 species, ranging across all continents except
-                    Antarctica
-                  </Typography>
-                </CardContent>
-                <CardActions>
-                  <Button size='small'>Share</Button>
-                  <Button size='small'>Learn More</Button>
-                </CardActions>
-              </Card>
-            </Grid>
+                    <Typography variant='body2' color='text.secondary'>
+                      {post.excerpt}
+                    </Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Button size='small'>Share</Button>
+                    {/* // react-share or react-web-share module can be used to do this taks */}
+                    <Button size='small'>Learn More</Button>
+                  </CardActions>
+                </Card>
+              </Grid>
+            </Link>
           ))}
         </Grid>
       </Container>
     </>
   );
 }
-import PropTypes from 'prop-types';
+
 Blog.propTypes = {
   posts: PropTypes.object.isRequired,
 };

@@ -16,6 +16,7 @@ export const GET_INDIV_USER_DATA = 'get_indiv_user_data';
 export const GET_USERS_LIST = 'get_users_list';
 export const GET_COACH_LIST = 'get_coach_list';
 export const GET_BLOG_LIST = 'get_blog_data';
+export const GET_COMMENT_LIST = 'get_comment_list'
 // APP SETTING
 export const TOGGLE_NAV_COLLAPSED = 'toggle_nav_collapsed';
 export const SET_INITIAL_PATH = 'set_initial_path';
