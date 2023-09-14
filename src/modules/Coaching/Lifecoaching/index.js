@@ -1,12 +1,11 @@
 import React from 'react';
 import { Container, Box, Typography } from '@mui/material';
 import LifeHeader from './LifeHeader';
-import Lifedetails from './Lifedetails';
 import CoachProfile from 'modules/commanmodules/CoachProfile';
 import { usersList1 } from 'modules/Constant/Coachdata';
-import Democoach from 'modules/commanmodules/Democoach';
+import Lifedetails from './Lifedetails';
 
-export default function LifeCoching() {
+export default function Lifecoching() {
     // console.log('dddd', usersList1);
 
     return (

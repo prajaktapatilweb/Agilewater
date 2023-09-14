@@ -71,8 +71,8 @@ export default function QB() {
 						<div className='question-text'>{questions[currentQuestion].questionText}</div>
 					</div>
 					<div className='answer-section'>
-						{questions[currentQuestion].answerOptions.map((answerOption) => (
-							<button onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
+						{questions[currentQuestion].answerOptions.map((answerOption, i) => (
+							<button onClick={() => handleAnswerOptionClick(answerOption.isCorrect)} key={i}>{answerOption.answerText}</button>
 						))}
 					</div>
 				</>

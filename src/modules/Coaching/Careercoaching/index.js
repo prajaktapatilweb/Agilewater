@@ -1,11 +1,11 @@
 import React from 'react'
 import { Container, Typography, Box } from '@mui/material'
-import CareerHeader from './CareerHeader'
-import Careerdetails from './Careerdetails'
 import { usersList2 } from 'modules/Constant/Coachdata'
 import CoachProfile from 'modules/commanmodules/CoachProfile'
+import Careerdetails from './Careerdetails'
+import CareerHeader from './CareerHeader'
 
-export default function index() {
+export default function Careercoaching() {
     return (
         <div>
             <CareerHeader />

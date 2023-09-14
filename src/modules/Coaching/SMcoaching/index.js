@@ -3,7 +3,7 @@ import { Container, Typography, Box } from '@mui/material'
 import ScrumcoachHeader from './ScrumcoachHeader'
 import ScrumcoachDetails from './ScrumcoachDetails'
 
-export default function index() {
+export default function SMcoaching() {
     return (
         <div>
             <ScrumcoachHeader />

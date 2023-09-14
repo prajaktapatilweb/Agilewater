@@ -13,7 +13,7 @@ import jwtAxios from '@crema/services/auth/jwt-auth';
 const validationSchema = yup.object().shape({
   photoURL: yup.string().required(<IntlMessages id='form.FilePhoto' />),
 });
-const ProfilePhoto = ({CoachData}) => {
+const ProfilePhoto = ({ CoachData }) => {
   const [flagPhotoChanged, setFlagPhotoChanged] = React.useState(false)
 
   // toast.configure({
@@ -71,5 +71,5 @@ const ProfilePhoto = ({CoachData}) => {
 export default ProfilePhoto;
 
 ProfilePhoto.propTypes = {
-  CoachData:PropTypes.object
+  CoachData: PropTypes.object
 };

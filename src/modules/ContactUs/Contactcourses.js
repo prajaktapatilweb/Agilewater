@@ -1,7 +1,6 @@
 import { AppCard } from '@crema'
 import { Container, Grid, Link, Typography } from '@mui/material'
 import React from 'react'
-import { isTemplateExpression } from 'typescript'
 
 export default function Contactcourses() {
     var Coursenm = [

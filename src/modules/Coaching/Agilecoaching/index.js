@@ -1,11 +1,11 @@
 import React from 'react'
 import { Container, Typography, Box } from '@mui/material'
-import AgileHeader from './AgileHeader'
-import Agiledetails from './Agiledetails'
+import AgileHeader from '../Agilecoaching/AgileHeader'
+import Agiledetails from '../Agilecoaching/Agiledetails'
 import CoachProfile from 'modules/commanmodules/CoachProfile'
 import { usersList } from 'modules/Constant/Coachdata'
 
-export default function index() {
+export default function Agilecoaching() {
 
     return (
         <div>

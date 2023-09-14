@@ -2,5 +2,5 @@ import React from 'react';
 import AppPage from '../../@crema/hoc/UserPage';
 import asyncComponent from '../../@crema/utility/asyncComponent';
 
-const Crypto = asyncComponent(() => import('../../modules/life-coaching'));
+const Crypto = asyncComponent(() => import('../../modules/Coaching/Lifecoaching'));
 export default AppPage(() => <Crypto />);
