@@ -1,177 +1,151 @@
-import React from 'react';
-import Avatar from '@mui/material/Avatar';
+import {
+  Grid,
+} from '@mui/material';
+import React, {useEffect} from 'react';
+import CommentIndivCard from './CommentIndivCard';
 import PropTypes from 'prop-types';
-import {Box, Button, Typography} from '@mui/material';
-import clsx from 'clsx';
-import {styled} from '@mui/material/styles';
-import moment from 'moment';
-import WriteComment from '../WriteComment';
-import {useState} from 'react';
+import UseWindowDimensions from 'modules/commanmodules/UseWindowDimensions';
 
-const CommentWrapper = styled(Box)(({theme}) => ({
-  display: 'flex',
-  borderTopRightRadius: theme.cardRadius,
-  borderBottomRightRadius: theme.cardRadius,
-  // margin:'210px',
-  padding: '8px 12px',
-  // minWidth: '80vw',
-  border: `solid 1px ${theme.palette.divider}`,
-  backgroundColor: theme.palette.background.paper,
-  '.last-chat-message &': {
-    borderBottomLeftRadius: theme.cardRadius,
-  },
-  '.reply-chat-message &': {
-    margin: '210px',
-  },
-}));
+// const CommentWrapper = styled(Box)(({theme}) => ({
+//   display: 'flex',
+//   borderTopRightRadius: theme.cardRadius,
+//   borderBottomRightRadius: theme.cardRadius,
+//   // margin:'210px',
+//   padding: '8px 12px',
+//   // minWidth: '80vw',
+//   border: `solid 2px ${theme.palette.divider}`,
+//   backgroundColor: theme.palette.background.paper,
+//   '.last-chat-message &': {
+//     borderBottomLeftRadius: theme.cardRadius,
+//   },
+//   '.reply-chat-message &': {
+//     margin: '210px',
+//   },
+// }));
 
-const CommentsListItem = ({
-  item,
-  isPreviousSender = false,
-  isLast,
-  isItReply,
-  ReplyCommentList,
-}) => {
-  const [replyClicked, setreplyClicked] = useState({id: null, action: false});
-  const replyButtonClicked = () => {
-    console.log('Click', item);
-    setreplyClicked({
-      id: item._id,
-      action: true,
-      mainID: item?.RepliedToSuperParentID
-        ? item?.RepliedToSuperParentID
-        : item._id,
-    });
-  };
-  console.log('in REoly', item._id, isItReply);
+export default function CommentsListItem({item, isItReply, ReplyCommentList,PageAsPath}) {
+  const {height, width} = UseWindowDimensions();
+  console.log('Widnow Dimenstion', height, width);
   return (
-    <Box
-      sx={{
-        marginTop: 1.5,
-        display: 'flex',
-        position: 'relative',
-
-        '&.hideUserInfo': {
-          position: 'relative',
-          marginTop: 1,
-          '& .todo-comment-time, & .todo-comment-user': {
-            display: 'none',
-          },
-          '& .todo-comment-info': {
-            marginLeft: 11.5,
-          },
-        },
-      }}
-      className={clsx(
-        isPreviousSender ? 'hideUserInfo' : 'first-chat-message',
-        isLast ? 'last-chat-message' : '',
-        // isItReply ? 'reply-chat-message' : '',
-      )}
-    >
-      <ShowAvatar data={item} />
-      <Box
-        sx={{
-          position: 'relative',
-        }}
-        className='todo-comment-info'
-      >
-        <CommentTitle data={item} />
-        <CommentWrapper>
-          <Typography>{item.Content}</Typography>
-        </CommentWrapper>
-
-        {replyClicked.action ? (
-          <WriteComment replyClicked={replyClicked} />
-        ) : (
-          <Button
-            variant='outlined'
-            size='small'
-            sx={{m: 1}}
-            onClick={replyButtonClicked}
-          >
-            Reply
-          </Button>
-        )}
-        {ReplyCommentList.length > 0
-          ? ReplyCommentList.map((newitem) => (
-              // <h1>REply {ReplyCommentList.length }</h1>
-              <>
-                <ShowAvatar data={newitem} />
-                <Box
-                  sx={{
-                    position: 'relative',
-                  }}
-                  className='todo-comment-info'
-                >
-                  <CommentTitle data={newitem} />
-                  <CommentWrapper>
-                    <Typography>{newitem.Content}</Typography>
-                  </CommentWrapper>
-                </Box>
-              </>
-            ))
-          : null}
-      </Box>
-    </Box>
-  );
-};
-
-function ShowAvatar({data}) {
-  return (
-    <Box
-      sx={{
-        marginRight: 2.5,
-        position: 'relative',
-      }}
-      className='todo-comment-user'
-    >
-      {data.AvatarURL ? (
-        <Avatar
-          src={data.AvatarURL}
-          sx={{
-            height: 36,
-            width: 36,
-          }}
-        />
-      ) : (
-        <Avatar
-          sx={{
-            height: 36,
-            width: 36,
-          }}
-        >
-          {data.ByName[0]}
-        </Avatar>
-      )}
-    </Box>
+    <div>
+      <CommentIndivCard item={item} />
+      <Grid container spacing={5}>
+        <Grid item xs={12}>
+          {isItReply
+            ? ReplyCommentList.map((item1) => (
+                // <CommentFullCard
+                <CommentIndivCard
+                  item={item1}
+                  marginSize={width * ((item1.ThreadLevel * 6) / 100)}
+                  PageAsPath={PageAsPath}
+                />
+              ))
+            : null}
+        </Grid>
+      </Grid>
+    </div>
   );
 }
 
-function CommentTitle({data}) {
-  return (
-    <Box
-      sx={{
-        display: 'block',
-        marginBottom: 1.5,
-        color: 'text.secondary',
-        fontSize: 12,
-        '& > span': {
-          marginRight: 1,
-        },
-      }}
-      className='todo-comment-time'
-    >
-      <span>{data.ByName} , </span>
-      <span>
-        <span>{moment(data.OnDate).format('DD MMM YYYY @ HH:mm')}</span>
-      </span>
-    </Box>
-  );
-}
-export default CommentsListItem;
+// function CommentFullCard({
+//   item,
+//   replyButtonClicked,
+//   togglereplyButton,
+//   replyClicked,
+//   marginSize = 0,
+//   setselecteditem,
+// }) {
+//   return (
+//     <Card sx={{marginLeft: `${marginSize}px`}}>
+//       <Box sx={{p: '15px'}}>
+//         <Stack spacing={2} direction='row'>
+//           <Box>
+//             <ShowAvatar data={item}></ShowAvatar>
+//           </Box>
+//           <Box sx={{width: '100%'}}>
+//             <Stack
+//               spacing={2}
+//               direction='column'
+//               // justifyContent='space-between'
+//               // alignItems='center'
+//             >
+//               {/* <Stack spacing={2} direction='row' alignItems='center'> */}
+//               <CommentTitle data={item} />
+//               {/* </Stack>     */}
+//               {/* {userName === 'juliusomo' ? (
+//               <Stack direction='row' spacing={1}>
+//                 <DeleteButton functionality={() => handleOpen()} />
+//                 <EditButton
+//                   functionality={() => setEditingComm(!editingComm)}
+//                   editingComm={editingComm}
+//                 />
+//               </Stack>
+//             ) : (
+//               <ReplyButton functionality={() => setClicked(!clicked)} />
+//             )} */}
+//               <Typography sx={{color: 'grayishBlue', p: '10px 0'}}>
+//                 {item.Content}
+//               </Typography>
+//               {/* <CommentWrapper>
+//               <Typography>{item.Content}</Typography>
+//             </CommentWrapper> */}
+//               {/* <Button
+//               variant='outlined'
+//               size='small'
+//               sx={{m: 1}}
+//               onClick={replyButtonClicked}
+//             >
+//               Reply
+//             </Button> */}
+//               <Stack
+//                 direction={{xs: 'column', sm: 'row'}}
+//                 justifyContent='flex-end'
+//               >
+//                 {!replyClicked?.action ? (
+//                   <Button
+//                     onClick={() => {
+//                       setselecteditem(item);
+//                       replyButtonClicked();
+//                     }}
+//                   >
+//                     <Reply /> Reply
+//                   </Button>
+//                 ) : (
+//                   <Button color='error' onClick={() => togglereplyButton(item)}>
+//                     <Cancel /> Cancel
+//                   </Button>
+//                 )}
+//               </Stack>
+//             </Stack>
+//             {replyClicked?.action ? (
+//               <WriteComment replyClicked={replyClicked} />
+//             ) : null}
+
+//             {/* {editingComm ? (
+//             <>
+//               <EditableCommentField
+//                 commentText={commentText}
+//                 setCommentText={setCommentText}
+//                 placeHolder="Don't leave this blank!"
+//               />
+//               <UpdateButton
+//                 commentText={commentText}
+//                 editingComm={editingComm}
+//                 setEditingComm={setEditingComm}
+//               />
+//             </>
+//           ) : (
+//             <CommentText commentText={commentText} />
+//           )} */}
+//           </Box>
+//         </Stack>
+//       </Box>
+//     </Card>
+//   );
+// }
 
 CommentsListItem.propTypes = {
   item: PropTypes.object,
-  isPreviousSender: PropTypes.bool,
-  isLast: PropTypes.bool,
+  ReplyCommentList: PropTypes.array,
+  isItReply: PropTypes.bool,
 };

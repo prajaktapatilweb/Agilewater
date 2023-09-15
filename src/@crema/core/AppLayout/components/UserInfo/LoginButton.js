@@ -38,7 +38,7 @@ export default function LoginButton({
 }
 
 
-WriteComment.propTypes = {
+LoginButton.propTypes = {
   ButtonHeading: PropTypes.string,
   sxStyle :PropTypes.object,
   onClickFunction:PropTypes.func,

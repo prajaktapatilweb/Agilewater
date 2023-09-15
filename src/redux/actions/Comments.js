@@ -10,11 +10,11 @@ import IntlMessages from '@crema/utility/IntlMessages';
 import jwtAxios from '@crema/services/auth/jwt-auth';
 
 export const onGetCommentsList = (data) => {
-  console.log('Redux Get Comments List ',data);
+  console.log('Redux Get Comments List ', data);
   return (dispatch) => {
     dispatch({type: FETCH_START});
     jwtAxios
-      .get('/comments/getpagecommentlist',{params:data})
+      .get('/comments/getpagecommentlist', {params: data})
       .then((data) => {
         console.log('Data Rece REdux', data.data);
         if (data.status === 200) {
@@ -34,7 +34,7 @@ export const onGetCommentsList = (data) => {
 };
 
 export const onPostNewComment = (data) => {
-  console.log('redux',data)
+  console.log('redux', data);
   return (dispatch) => {
     dispatch({type: FETCH_START});
     jwtAxios
@@ -60,41 +60,34 @@ export const onPostNewComment = (data) => {
   };
 };
 
-
-// export const onUpdateCourseData = ({CourseID, data}) => {
-//   console.log('In Redux', data);
-//   return (dispatch) => {
-//     dispatch({type: FETCH_START});
-//     jwtAxios
-//       .put(`/courses/updatecourse/${CourseID}`, {data})
-//       .then((recdata) => {
-//         if (recdata.status === 200) {
-//           // console.log('Data from Redux Students LEads', data.data, deleteID);
-//           dispatch({type: FETCH_SUCCESS});
-//           if (recdata.data === 'Nothing to update') {
-//             dispatch({
-//               type: SHOW_MESSAGE,
-//               payload: 'Nothing to update',
-//             });
-//           } else {
-//             dispatch({type: GET_COURSE_LIST, payload: recdata.data});
-//             dispatch({
-//               type: SHOW_MESSAGE,
-//               payload: `Data of ${CourseID} Updated`,
-//             });
-//           }
-//         } else {
-//           dispatch({
-//             type: FETCH_ERROR,
-//             payload: <IntlMessages id='message.somethingWentWrong' />,
-//           });
-//         }
-//       })
-//       .catch((error) => {
-//         dispatch({type: FETCH_ERROR, payload: error.message});
-//       });
-//   };
-// };
+export const onChangeCommentStatus = (userType, ID, data) => {
+  const linkField = userType ==='JWT' ? 'JWTChangeStatus' : 'FBChangeStatus';
+  console.log('In Redux', userType, data, ID, linkField);
+  return (dispatch) => {
+    dispatch({type: FETCH_START});
+    jwtAxios
+      .put(`/comments/${linkField}/${ID}`, data)
+      .then((recdata) => {
+        if (recdata.status === 200) {
+          // console.log('Data from Redux Students LEads', data.data, deleteID);
+          dispatch({type: FETCH_SUCCESS});
+          dispatch({type: GET_COMMENT_LIST, payload: recdata.data});
+          dispatch({
+            type: SHOW_MESSAGE,
+            payload: `Status of the Comment Changed`,
+          });
+        } else {
+          dispatch({
+            type: FETCH_ERROR,
+            payload: <IntlMessages id='message.somethingWentWrong' />,
+          });
+        }
+      })
+      .catch((error) => {
+        dispatch({type: FETCH_ERROR, payload: error.message});
+      });
+  };
+};
 
 // export const onDeleteIndivCourseData = ({CourseID}) => {
 //   console.log('Redux Delete  Indiv Course', CourseID);

@@ -13,25 +13,17 @@ import WriteComment from './WriteComment';
 export default function Discussion() {
   const router = useRouter();
   const dispatch = useDispatch();
+  const PageAsPath = router?.asPath;
   useEffect(() => {
-    dispatch(onGetCommentsList({PageAsPath: router.asPath}));
+    dispatch(onGetCommentsList({PageAsPath: PageAsPath}));
   }, [dispatch]);
   const CommentList = useSelector((state) => state?.Comments?.CommentList);
-  // const CommentFullList = CommentList?.Comments;
-  // console.log('DARA', CommentList);
-  // const rootComments = CommentFullList.filter((item) => !item.IsItReply);
-  // const getReplies = (commentId) =>
-  //   CommentFullList.filter((item) => item.RepliedToParentID === commentId).sort(
-  //     (a, b) =>
-  //       new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime(),
-  //   );
   return (
     <div>
       {/* <pre>{JSON.stringify(user, null, 4)}</pre> */}
       <Divider sx={{marginTop: 4, marginBottom: 5}} />
-
-      {CommentList && CommentList?.PageAsPath === router?.asPath ? (
-        <CommentsList comments={CommentList?.Comments} />
+      {CommentList && CommentList?.PageAsPath === PageAsPath ? (
+        <CommentsList comments={CommentList?.Comments} PageAsPath={PageAsPath}/>
       ) : null}
       <Typography variant='h1' p={3}>
         Leave a Reply

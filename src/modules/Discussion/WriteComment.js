@@ -37,7 +37,7 @@ export default function WriteComment({
     console.log('New Subjemit data', data);
     dispatch(onPostNewComment(data));
     setComment('');
-    togglereplyButton();
+    togglereplyButton ? togglereplyButton() : null;
   };
   return (
     <Box
