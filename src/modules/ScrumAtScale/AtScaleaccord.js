@@ -2,6 +2,7 @@ import { Link, List, ListItem } from '@mui/material';
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 import Accordioninfo from 'modules/commanmodules/Accordianinfo';
 import React from 'react';
+import { freecourselink, scrumquizlink } from 'modules/commanmodules/Pagelinks';
 
 export default function AtScaleaccord() {
     var DetailObject = [
@@ -179,7 +180,7 @@ export default function AtScaleaccord() {
                             <KeyboardDoubleArrowRightIcon></KeyboardDoubleArrowRightIcon>
                             <span>
                                 We at Agile Waters provide{' '}
-                                <Link href=''>free CSM mock tests</Link> so you can analyse and
+                                <Link href={scrumquizlink}>free CSM mock tests</Link> so you can analyse and
                                 evaluate your preparation scenario for the Scrum@Scale Training
                                 Certification Exam.
                             </span>
@@ -193,7 +194,7 @@ export default function AtScaleaccord() {
                         </ListItem>
                         <ListItem alignItems='flex-start'>
                             <KeyboardDoubleArrowRightIcon></KeyboardDoubleArrowRightIcon>
-                            <Link href=''>
+                            <Link href={freecourselink}>
                                 We also provide additional free certified Courses.
                             </Link>
                         </ListItem>
@@ -306,7 +307,7 @@ export default function AtScaleaccord() {
 
                     <br></br><br></br>SAFe prescribes a sequential set of events practices, and stakeholder relativity with hierarchical roles whereas Scrum@Scale suggests the evolution of Structure based on scrum values and minimal viable bureaucracy.
 
-                    <br></br><br></br>SAFe structure across multiple organisations would be the same but Scrum@Scale structure may be different. Scrum@Scale is slowly getting popular. Even pioneer SAFe implementers like John Deer are now moving to <Link href="">Scrum@Scale.</Link>
+                    <br></br><br></br>SAFe structure across multiple organisations would be the same but Scrum@Scale structure may be different. Scrum@Scale is slowly getting popular. Even pioneer SAFe implementers like John Deer are now moving to <Link href="https://www.scrumatscale.com/scrum-at-scale-guide/">Scrum@Scale.</Link>
                 </span>
             )
         }

@@ -3,5 +3,5 @@ import AppPage from '../../@crema/hoc/UserPage';
 import asyncComponent from '../../@crema/utility/asyncComponent';
 
 
-const Crypto = asyncComponent(() => import('../../modules/Prince2'));
+const Crypto = asyncComponent(() => import('../../modules/ProjectManage/Prince2'));
 export default AppPage(() => <Crypto />);

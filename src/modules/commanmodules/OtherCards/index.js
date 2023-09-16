@@ -8,9 +8,10 @@ import Box from '@mui/material/Box';
 import PropTypes from 'prop-types';
 import { Fonts } from '../../../shared/constants/AppEnums';
 import { AppCard } from '@crema';
+import { useRouter } from 'next/router';
 
 const OtherCards = ({ data }) => {
-
+    const Router = useRouter()
     return (
         <Grid container spacing={3}>
             {data.map((item, index) => (
@@ -61,6 +62,7 @@ const OtherCards = ({ data }) => {
                                     // backgroundColor: '#3e2bce',
                                     color: 'white',
                                 }}
+                                onClick={() => Router.push(item.onlink)}
                             >
                                 {item.links}
                                 {/* <IntlMessages id='dashboard.readMore' /> */}

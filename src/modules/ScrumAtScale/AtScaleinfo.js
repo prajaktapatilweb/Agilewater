@@ -1,4 +1,5 @@
 import CourseinfoCopy from 'modules/commanmodules/Courseinfocopy'
+import { freecourselink, scrumquizlink } from 'modules/commanmodules/Pagelinks'
 import React from 'react'
 
 export default function AtScaleinfo() {
@@ -48,7 +49,7 @@ export default function AtScaleinfo() {
             type: 'items',
             link: {
                 bool: true,
-                link: 'https://scaledagile.com/training/safe-scrum-master/',
+                link: scrumquizlink,
                 elemNo: 0,
             },
             text: ['Free Mock Test'],
@@ -61,7 +62,7 @@ export default function AtScaleinfo() {
             type: 'items',
             link: {
                 bool: true,
-                link: 'https://scaledagile.com/training/safe-scrum-master/',
+                link: freecourselink,
                 elemNo: 0,
             },
             text: ['Free Certified Courses'],

@@ -4,7 +4,7 @@ import { Container, Grid } from '@mui/material'
 import RelatedCourses from 'modules/commanmodules/RelatedCourses'
 import { careerlist, courseList2 } from 'modules/Constant/Relatecoursedata'
 import { AppCard } from '@crema'
-import SideCard from 'modules/ScrumMasterCert/SideCard'
+import SideCard from 'modules/SM/ScrumMasterCert/SideCard'
 import { sideList1, sideList6 } from 'modules/Constant/OtherCardsConst'
 import Careersidecard from './Careersidecard'
 

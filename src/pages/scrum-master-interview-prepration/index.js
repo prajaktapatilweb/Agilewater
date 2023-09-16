@@ -2,5 +2,5 @@ import React from 'react';
 import AppPage from '../../@crema/hoc/UserPage';
 import asyncComponent from '../../@crema/utility/asyncComponent';
 
-const Crypto = asyncComponent(() => import('../../modules/SMInterview'));
+const Crypto = asyncComponent(() => import('../../modules/SM/SMInterview'));
 export default AppPage(() => <Crypto />);

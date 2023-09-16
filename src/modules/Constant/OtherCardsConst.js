@@ -1,10 +1,12 @@
 import { Link } from '@mui/material';
+import { acspolink, careerlink, csmlink, cspolink, freecourselink, icpacclink, icpcatlink, icpentlink, polink, psm1link, smclink, smcoachlink, writebloglink } from 'modules/commanmodules/Pagelinks';
 const otherCard = {
     course: {
         img: '/assets/images/courselogo/CSM.png',
         title: 'Certified Scrum Master (CSM)',
         subtitle: 'Gain a high degree of proficiency in executing Scrum',
-        links: 'Enroll @ ₹23999 Only',
+        onlink: csmlink,
+        links: 'Enroll @ ₹239996 Only',
         strip: 'INSTRUCTOR-LED',
     },
     course1: {
@@ -12,6 +14,7 @@ const otherCard = {
         title: 'Professional Scrum Master (PSM)',
         subtitle:
             'Deep understanding of core Scrum principles and its implementation.',
+        onlink: psm1link,
         links: 'Enroll @ ₹25999 Only',
         strip: 'INSTRUCTOR-LED',
     },
@@ -19,6 +22,7 @@ const otherCard = {
         img: '/assets/images/courselogo/smc.webp',
         title: 'Scrum Master Certified (SMC)',
         subtitle: 'Self-paced video recordings and material ',
+        onlink: smclink,
         links: 'Enroll @ ₹14999 Only',
         strip: 'SELF-PACED',
     },
@@ -26,6 +30,7 @@ const otherCard = {
         img: '/assets/images/courselogo/CSPO.jpg',
         title: 'Certified Scrum Product Owner®',
         subtitle: ' ',
+        onlink: cspolink,
         links: 'Click For Details',
         strip: 'INSTRUCTOR-LED',
     },
@@ -33,6 +38,7 @@ const otherCard = {
         img: '/assets/images/courselogo/ACSPO1.jpg',
         title: 'Advanced Certified Scrum Product Owner®',
         subtitle: ' ',
+        onlink: acspolink,
         links: 'Click For Details',
         strip: 'INSTRUCTOR-LED',
     },
@@ -40,6 +46,7 @@ const otherCard = {
         img: '/assets/images/courselogo/ProductOwner.jpg',
         title: 'Scrum Product Owner Certification',
         subtitle: ' ',
+        onlink: polink,
         links: 'Click For Details',
         strip: 'INSTRUCTOR-LED',
     },
@@ -47,6 +54,7 @@ const otherCard = {
         img: '/assets/images/courselogo/ICP-CAT.jpg',
         title: 'Coaching Agile Transitions',
         subtitle: ' ',
+        onlink: icpcatlink,
         links: 'Click For Details',
         strip: 'INSTRUCTOR-LED',
     },
@@ -54,6 +62,7 @@ const otherCard = {
         img: '/assets/images/courselogo/ICP-ACC.jpg',
         title: 'Agile Coaching Certification',
         subtitle: ' ',
+        onlink: icpacclink,
         links: 'Click For Details',
         strip: 'INSTRUCTOR-LED',
     },
@@ -61,6 +70,7 @@ const otherCard = {
         img: '/assets/images/courselogo/ICP-ENT.jpg',
         title: 'Enterprise Coaching Certification',
         subtitle: ' ',
+        onlink: icpentlink,
         links: 'Click For Details',
         strip: 'INSTRUCTOR-LED',
     },
@@ -94,7 +104,7 @@ const otherCardMain = {
             <span>
                 We bring you Online Agile Scrum Master certifications at the best cost
                 by best trainers. We also give you various Agile Coach & Scrum Master{' '}
-                <Link href='' sx={{ textDecoration: 'none', fontWeight: 'bold' }}>
+                <Link href={careerlink} sx={{ textDecoration: 'none', fontWeight: 'bold' }}>
                     job opportunities
                 </Link>{' '}
                 in various global companies. Get certified Scrum Master after 2 days
@@ -108,7 +118,7 @@ const otherCardMain = {
             <span>
                 We bring you all Agile Scrum Product Owner certification trainings under
                 one roof with best cost, best trainers &{' '}
-                <Link href='' sx={{ textDecoration: 'none', fontWeight: 'bold' }}>
+                <Link href={careerlink} sx={{ textDecoration: 'none', fontWeight: 'bold' }}>
                     job opportunities.
                 </Link>{' '}
                 Get certified after 2 days of expert online training.
@@ -134,36 +144,43 @@ const otherSideMain = {
     sideMain1: {
         img: '/assets/images/cards/growth.png',
         title: 'Get Scrum Master Coaching from our professional, certified coaches',
+        onlink: smcoachlink,
         buttons: ' Scrum Master Coaching',
+        smcoachlink
     },
     sideMain2: {
         img: '/assets/images/cards/interview-prepration.png',
         title:
             'Apply for Scrum Master, Product Owner, Agile Coach Job openings in MNC’s across the world.',
+        onlink: careerlink,
         buttons: 'Find Job Opportunities',
     },
     sideMain3: {
         img: '/assets/images/cards/career-path.png',
         title:
             'Hire Life Coach, Agile Coach and Scrum Master coach to help you and your organization',
+        onlink: smcoachlink,
         buttons: 'Hire Life/Agile/Career Coach',
     },
     sideMain4: {
         img: '/assets/images/cards/daily-tasks.png',
         title:
             'We help write, review, publish Advertise your content worldwide. Connect with us to help you write blog and publish.',
+        onlink: writebloglink,
         buttons: 'Write Your Best Blogs',
     },
     sideMain5: {
         img: '/assets/images/cards/certificate.png',
         title:
             'Enroll in any paid course and get access to 30+ free Courses and Certifications.',
+        onlink: freecourselink,
         buttons: 'Explore Free Courses',
     },
     sideMain6: {
         img: '/assets/images/cards/interview-prepration.png',
         title:
             'Prepare for your next interview with experts. Book session to talk one to one with our industry experts and get your all doubts/queries cleared.',
+        onlink: smcoachlink,
         buttons: 'Register Now',
     },
 

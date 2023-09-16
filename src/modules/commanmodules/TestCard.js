@@ -3,10 +3,11 @@ import AppCard from '@crema/core/AppCard';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import { Fonts } from 'shared/constants/AppEnums';
-import { Container } from '@mui/material';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 const Testcard = ({ data }) => {
+    const Router = useRouter()
     return (
         <Box>
             {data.map((item, index) => (
@@ -78,6 +79,7 @@ const Testcard = ({ data }) => {
                                         color: '#000',
                                     },
                                 }}
+                                onClick={() => Router.push(item.onlink)}
                             >
                                 {item.testbutton}
                             </Button>

@@ -8,6 +8,7 @@ import PropTypes from 'prop-types';
 import CourseSlider from './CourseSlider';
 import Image from 'next/image';
 import { Typography } from '@mui/material';
+import { freecertlink } from '../Pagelinks';
 
 const settings = {
   dots: true,
@@ -50,7 +51,7 @@ const FreeCourseSlider = ({ images }) => {
             justifyContent: 'center'
           }}
         >
-          <Link href="" sx={{ textDecoration: 'none' }}>
+          <Link href={freecertlink} sx={{ textDecoration: 'none' }}>
             <Box
               sx={{
                 color: '#259BE0',

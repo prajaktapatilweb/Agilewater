@@ -224,11 +224,18 @@ const routesConfig = [
             url: "/pspo/"
           },
           {
+            id: "menu247",
+            messageId: "menu.cert.ProOwn7",
+            type: "item",
+            url: "/pspo2/"
+          },
+          {
             id: "menu244",
             messageId: "menu.cert.ProOwn4",
             type: "item",
             url: "/product-owner-certification/"
           },
+
           {
             id: "menu245",
             messageId: "menu.cert.ProOwn5",
