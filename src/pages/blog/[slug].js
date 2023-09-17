@@ -5,7 +5,7 @@ import AppPage from '../../@crema/hoc/UserPage';
 import asyncComponent from '../../@crema/utility/asyncComponent';
 import {client} from 'lib/client';
 
-import {apiVersion, dataset, projectId, useCdn} from './env';
+import {apiVersion, dataset, projectId, useCdn} from 'lib/env';
 
 const Blog = asyncComponent(() =>
   import('../../modules/Blog/IndividualBlogPage'),
