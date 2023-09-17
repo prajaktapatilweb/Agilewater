@@ -5,8 +5,6 @@ import AppPage from '../../@crema/hoc/UserPage';
 import asyncComponent from '../../@crema/utility/asyncComponent';
 import {client} from 'lib/client';
 
-import {apiVersion, dataset, projectId, useCdn} from 'lib/env';
-
 const Blog = asyncComponent(() =>
   import('../../modules/Blog/IndividualBlogPage'),
 );
@@ -14,13 +12,7 @@ export default AppPage(({post}) => <Blog post={post} />);
 
 export const getStaticPaths = async () => {
   // Get the paths we want to pre-render based on persons
-  const postID = await createClient({
-    apiVersion,
-    dataset,
-    projectId,
-    useCdn,
-    // perspective,
-  }).fetch(`*[_type == "post"] { slug }`);
+  const postID = await client.fetch(`*[_type == "post"] { slug }`);
   const paths = postID.map((id) => ({
     params: {slug: id.slug.current},
   }));
