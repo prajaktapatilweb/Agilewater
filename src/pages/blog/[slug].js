@@ -3,7 +3,7 @@ import {createClient} from 'next-sanity';
 import React from 'react';
 import AppPage from '../../@crema/hoc/UserPage';
 import asyncComponent from '../../@crema/utility/asyncComponent';
-import {client} from 'lib/client';
+import client from 'lib/client';
 
 const Blog = asyncComponent(() =>
   import('../../modules/Blog/IndividualBlogPage'),
