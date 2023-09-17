@@ -230,6 +230,12 @@ const routesConfig = [
             url: "/pspo2/"
           },
           {
+            id: "menu248",
+            messageId: "menu.cert.ProOwn8",
+            type: "item",
+            url: "/value-driven-product-ownership/"
+          },
+          {
             id: "menu244",
             messageId: "menu.cert.ProOwn4",
             type: "item",

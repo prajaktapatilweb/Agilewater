@@ -1,5 +1,5 @@
 import { Link } from '@mui/material';
-import { acspolink, careerlink, csmlink, cspolink, freecourselink, icpacclink, icpcatlink, icpentlink, polink, psm1link, smclink, smcoachlink, writebloglink } from 'modules/commanmodules/Pagelinks';
+import { acspolink, agilebootcamplink, careerlink, csmlink, cspolink, freecourselink, icpacclink, icpapmlink, icpcatlink, icpentlink, icplealink, polink, psm1link, smclink, smcoachlink, writebloglink } from 'modules/commanmodules/Pagelinks';
 const otherCard = {
     course: {
         img: '/assets/images/courselogo/CSM.png',
@@ -78,6 +78,7 @@ const otherCard = {
         img: '/assets/images/courselogo/ICP-ACC-ENT2.png',
         title: ' Enterprise Agile Coaching MasterClass',
         subtitle: ' ',
+        onlink: agilebootcamplink,
         links: 'Click For Details',
         strip: 'INSTRUCTOR-LED',
     },
@@ -85,6 +86,7 @@ const otherCard = {
         img: '/assets/images/courselogo/ICP-LEA.png',
         title: 'Leading with Agility Certification',
         subtitle: ' ',
+        onlink: icplealink,
         links: 'Click For Details',
         strip: 'INSTRUCTOR-LED',
     },
@@ -92,6 +94,7 @@ const otherCard = {
         img: '/assets/images/courselogo/ICP-APM.jpg',
         title: 'Agile Project & Delivery Management',
         subtitle: ' ',
+        onlink: icpapmlink,
         links: 'Click For Details',
         strip: 'INSTRUCTOR-LED',
     },

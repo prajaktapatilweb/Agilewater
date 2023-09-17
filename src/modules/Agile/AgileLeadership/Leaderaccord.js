@@ -2,6 +2,7 @@ import { Link, List, ListItem } from '@mui/material'
 import Accordioninfo from 'modules/commanmodules/Accordianinfo'
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 import React from 'react'
+import { freecourselink, icpatflink, icplink, scrumquizlink } from 'modules/commanmodules/Pagelinks';
 
 export default function Leaderaccord() {
     var DetailObject = [
@@ -47,11 +48,11 @@ export default function Leaderaccord() {
                         <ListItem alignItems='flex-start'>
                             <KeyboardDoubleArrowRightIcon></KeyboardDoubleArrowRightIcon>Our Trainers at AgileWaters provide Real-life case studies to know the in-depth and thorough approach of Agile principles and its working process.</ListItem>
                         <ListItem alignItems='flex-start'>
-                            <KeyboardDoubleArrowRightIcon></KeyboardDoubleArrowRightIcon><span>We at AgileWaters provide a <Link href=''>free Agile mock test</Link> so you can analyse and evaluate your preparation scenario for the Agile Coach Certification exam.</span></ListItem>
+                            <KeyboardDoubleArrowRightIcon></KeyboardDoubleArrowRightIcon><span>We at AgileWaters provide a <Link href={scrumquizlink}>free Agile mock test</Link> so you can analyse and evaluate your preparation scenario for the Agile Coach Certification exam.</span></ListItem>
                         <ListItem alignItems='flex-start'>
                             <KeyboardDoubleArrowRightIcon></KeyboardDoubleArrowRightIcon>AgileWaters provides a holistic view to Agile Fundamentals which means we believe in inter-connecting all the things which are related to Agile Fundamentals to deliver the exact concept and principles of Agile working process.</ListItem>
                         <ListItem alignItems='flex-start'>
-                            <KeyboardDoubleArrowRightIcon></KeyboardDoubleArrowRightIcon><span><Link href=''>We also provide additional free certified courses.</Link></span></ListItem>
+                            <KeyboardDoubleArrowRightIcon></KeyboardDoubleArrowRightIcon><span><Link href={freecourselink}>We also provide additional free certified courses.</Link></span></ListItem>
                     </List>
 
                     Agile Coaching Certification is already added in the Course when you take it from AgileWaters. At first, we will provide you with training and workshops. Afterwards, we will take you through both the theoretical and practical approach for the post-work implementation process.
@@ -123,7 +124,7 @@ export default function Leaderaccord() {
                     <br></br><br></br>
                     Big MNCs like John Deere, Schlumberger, TCS, Siemens, Infosys, Deutsche Bank, Master Card, BNY Mellon, Netflix and many more have successfully implemented the Agile Methodology in their work process and becoming Agile Coach will open several gateways and opportunities for your dream Company.
                     <br></br><br></br>
-                    Check out our other upcoming <Link href=''> Online ICP Agile Team Facilitation Certification</Link>, & <Link href=''> ICAgile Fundamentals Certification Training courses.</Link>
+                    Check out our other upcoming <Link href={icpatflink}> Online ICP Agile Team Facilitation Certification</Link>, & <Link href={icplink}> ICAgile Fundamentals Certification Training courses.</Link>
                 </span>
             )
         }

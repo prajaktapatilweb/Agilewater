@@ -2,6 +2,7 @@ import { List, ListItem, Link } from '@mui/material';
 import Accordioninfo from 'modules/commanmodules/Accordianinfo';
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 import React from 'react';
+import { cspolink, freecertlink, freecourselink, scrumquizlink } from 'modules/commanmodules/Pagelinks';
 
 export default function POaccord() {
     var DetailObject = [
@@ -83,7 +84,7 @@ export default function POaccord() {
                         <ListItem alignItems='flex-start'>
                             <KeyboardDoubleArrowRightIcon></KeyboardDoubleArrowRightIcon>
                             <span>
-                                We at AgileWaters provides <Link href=''>free mock test</Link>{' '}
+                                We at AgileWaters provides <Link href={scrumquizlink}>free mock test</Link>{' '}
                                 so you can analyse and evaluate your preparation scenario for
                                 the Scrum Master Certification Exam.
                             </span>
@@ -99,7 +100,7 @@ export default function POaccord() {
                             <KeyboardDoubleArrowRightIcon></KeyboardDoubleArrowRightIcon>
                             <span>
                                 Check out our other upcoming{' '}
-                                <Link href=''>Online CSPO Certification Training Courses.</Link>
+                                <Link href={cspolink}>Online CSPO Certification Training Courses.</Link>
                             </span>
                         </ListItem>
                     </List>

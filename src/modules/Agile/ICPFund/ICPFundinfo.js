@@ -1,5 +1,6 @@
 import { Link } from '@mui/material'
 import CourseinfoCopy from 'modules/commanmodules/Courseinfocopy'
+import { icpatflink } from 'modules/commanmodules/Pagelinks'
 import React from 'react'
 
 export default function ICPFundinfo() {
@@ -88,7 +89,7 @@ export default function ICPFundinfo() {
         },
         {
             type: 'para',
-            text: [<span>Check out our other upcoming <Link href=""> Online Agile Coaching Certification</Link>, & <Link href=""> ICP Agile Team Facilitation Certification</Link>. </span>]
+            text: [<span>Check out our other upcoming <Link href=''> Online Agile Coaching Certification</Link>, & <Link href={icpatflink}> ICP Agile Team Facilitation Certification</Link>. </span>]
 
         }
     ]
