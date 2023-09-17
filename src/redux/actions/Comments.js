@@ -5,6 +5,7 @@ import {
   FETCH_SUCCESS,
   SHOW_MESSAGE,
   GET_COMMENT_LIST,
+  GET_ALL_COMMENT_LIST,
 } from 'shared/constants/ActionTypes';
 import IntlMessages from '@crema/utility/IntlMessages';
 import jwtAxios from '@crema/services/auth/jwt-auth';
@@ -32,6 +33,29 @@ export const onGetCommentsList = (data) => {
       });
   };
 };
+// export const onGetAllCommentsList = () => {
+//   console.log('Redux Get All Comments List ');
+//   return (dispatch) => {
+//     dispatch({type: FETCH_START});
+//     jwtAxios
+//       .get('/comments/getallcommentlist')
+//       .then((data) => {
+//         console.log('Data Rece REdux', data.data);
+//         if (data.status === 200) {
+//           dispatch({type: FETCH_SUCCESS});
+//           dispatch({type: GET_ALL_COMMENT_LIST, payload: data.data});
+//         } else {
+//           dispatch({
+//             type: FETCH_ERROR,
+//             payload: <IntlMessages id='message.somethingWentWrong' />,
+//           });
+//         }
+//       })
+//       .catch((error) => {
+//         dispatch({type: FETCH_ERROR, payload: error.message});
+//       });
+//   };
+// };
 
 export const onPostNewComment = (data) => {
   console.log('redux', data);
@@ -61,7 +85,7 @@ export const onPostNewComment = (data) => {
 };
 
 export const onChangeCommentStatus = (userType, ID, data) => {
-  const linkField = userType ==='JWT' ? 'JWTChangeStatus' : 'FBChangeStatus';
+  const linkField = userType === 'JWT' ? 'JWTChangeStatus' : 'FBChangeStatus';
   console.log('In Redux', userType, data, ID, linkField);
   return (dispatch) => {
     dispatch({type: FETCH_START});

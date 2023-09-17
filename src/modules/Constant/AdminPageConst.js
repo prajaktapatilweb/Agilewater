@@ -6,6 +6,7 @@ export const RouteLinks = {
   id303: {link: '/adminpages/course/delete', allowedRole: ['Admin']},
   id401: {link: '/adminpages/coaches/add', allowedRole: ['Admin', 'Employee']},
   id402: {link: '/adminpages/coaches/list', allowedRole: ['Admin', 'Employee']},
+  id501: {link: '/adminpages/comments', allowedRole: ['Admin']},
 };
 export const roterList = [
   {
@@ -63,6 +64,17 @@ export const roterList = [
       //   id: 203,
       //   name: 'Delete Coach',
       // },
+    ],
+  },
+  {
+    heading: 'Comments',
+    labels: [
+      {
+        linkID: 'id501',
+        color: '#00ff00',
+        id: 501,
+        name: 'Approve',
+      },
     ],
   },
 ];

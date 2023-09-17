@@ -1,6 +1,4 @@
-import {
-  Grid,
-} from '@mui/material';
+import {Grid} from '@mui/material';
 import React, {useEffect} from 'react';
 import CommentIndivCard from './CommentIndivCard';
 import PropTypes from 'prop-types';
@@ -23,26 +21,31 @@ import UseWindowDimensions from 'modules/commanmodules/UseWindowDimensions';
 //   },
 // }));
 
-export default function CommentsListItem({item, isItReply, ReplyCommentList,PageAsPath}) {
+export default function CommentsListItem({
+  item,
+  isItReply,
+  ReplyCommentList,
+  PageAsPath,
+}) {
   const {height, width} = UseWindowDimensions();
-  console.log('Widnow Dimenstion', height, width);
+  console.log('Widnow Screen Dimenstion', height, width, item, PageAsPath);
   return (
     <div>
-      <CommentIndivCard item={item} />
-      <Grid container spacing={5}>
-        <Grid item xs={12}>
-          {isItReply
-            ? ReplyCommentList.map((item1) => (
-                // <CommentFullCard
-                <CommentIndivCard
-                  item={item1}
-                  marginSize={width * ((item1.ThreadLevel * 6) / 100)}
-                  PageAsPath={PageAsPath}
-                />
-              ))
-            : null}
+      <CommentIndivCard item={item} PageAsPath={PageAsPath} />
+      {isItReply ? (
+        <Grid container spacing={2}>
+          {ReplyCommentList.map((item1, i) => (
+            // <CommentFullCard
+            <Grid item xs={12} key={i}>
+              <CommentIndivCard
+                item={item1}
+                marginSize={width * ((item1.ThreadLevel * 6) / 100)}
+                PageAsPath={PageAsPath}
+              />
+            </Grid>
+          ))}
         </Grid>
-      </Grid>
+      ) : null}
     </div>
   );
 }
@@ -148,4 +151,5 @@ CommentsListItem.propTypes = {
   item: PropTypes.object,
   ReplyCommentList: PropTypes.array,
   isItReply: PropTypes.bool,
+  PageAsPath: PropTypes.string,
 };

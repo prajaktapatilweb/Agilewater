@@ -12,20 +12,24 @@ import PropTypes from 'prop-types';
 export default function WriteComment({
   replyClicked = null,
   togglereplyButton = null,
+  PageAsPath = null,
 }) {
   const {user} = useAuthUser();
   const [comment, setComment] = useState('');
   const router = useRouter();
+  const pageLink = router.asPath.split('/')[1];
+  // console.log('RRRR',router,PageAsPath)
   const dispatch = useDispatch();
   const onAddComments = () => {
     // console.log('first', user, router.asPath, comment);
     const data = {
-      PageAsPath: router.asPath,
+      PageAsPath: PageAsPath || router.asPath,
+      pageLink: pageLink,
       Comment: {
         Content: comment,
-        ByEmailID: user.email,
-        ByName: user.displayName,
-        AvatarURL: user.photoURL,
+        ByEmailID: user?.email,
+        ByName: user?.displayName,
+        AvatarURL: user?.photoURL,
       },
     };
     replyClicked
@@ -106,4 +110,5 @@ export default function WriteComment({
 WriteComment.propTypes = {
   replyClicked: PropTypes.object,
   togglereplyButton: PropTypes.func,
+  PageAsPath: PropTypes.string,
 };

@@ -23,15 +23,15 @@ export const StyledSimpleBarReact = styled(SimpleBarReact)(({theme}) => ({
   },
 }));
 const CommentsList = ({comments, PageAsPath}) => {
-  const _scrollBarRef = useRef();
-  useEffect(() => {
-    if (comments?.length > 0) {
-      if (_scrollBarRef?.current) {
-        const scrollEl = _scrollBarRef.current.getScrollElement();
-        scrollEl.scrollTop = scrollEl.scrollHeight;
-      }
-    }
-  }, [comments, _scrollBarRef]);
+  // const _scrollBarRef = useRef();
+  // useEffect(() => {
+  //   if (comments?.length > 0) {
+  //     if (_scrollBarRef?.current) {
+  //       const scrollEl = _scrollBarRef.current.getScrollElement();
+  //       scrollEl.scrollTop = scrollEl.scrollHeight;
+  //     }
+  //   }
+  // }, [comments, _scrollBarRef]);
 
   const rootComments = comments.filter((item) => !item.IsItReply);
   // Get All Reply Comments
@@ -74,27 +74,27 @@ const CommentsList = ({comments, PageAsPath}) => {
     console.log('NEWSLU', finalArray);
     return finalArray;
   };
-  console.log('first', rootComments.length);
+  console.log('first Comments', comments, PageAsPath);
   return (
     <>
       {rootComments.length > 0 ? (
         <Box sx={{marginBottom: 5}}>
           <Box sx={{mb: 4, fontWeight: Fonts.SEMI_BOLD}} component='h4'>
-            Comments
+            Comments {comments.length}
           </Box>
-          <StyledSimpleBarReact ref={_scrollBarRef}>
-            <Stack spacing={3}>
-              {rootComments.map((item, index) => (
-                <CommentsListItem
-                  item={item}
-                  key={index}
-                  isItReply={getReplies(item._id)?.length > 0}
-                  ReplyCommentList={getReplies(item._id)}
-                  PageAsPath={PageAsPath}
-                />
-              ))}
-            </Stack>
-          </StyledSimpleBarReact>
+          {/* <StyledSimpleBarReact ref={_scrollBarRef}> */}
+          <Stack spacing={3}>
+            {rootComments.map((item, index) => (
+              <CommentsListItem
+                item={item}
+                key={index}
+                isItReply={getReplies(item._id)?.length > 0}
+                ReplyCommentList={getReplies(item._id)}
+                PageAsPath={PageAsPath}
+              />
+            ))}
+          </Stack>
+          {/* </StyledSimpleBarReact> */}
         </Box>
       ) : null}
     </>
@@ -109,4 +109,5 @@ CommentsList.defaultProps = {
 
 CommentsList.propTypes = {
   comments: PropTypes.array,
+  PageAsPath: PropTypes.string,
 };
