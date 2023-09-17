@@ -10,7 +10,7 @@ const Signin = () => {
   return (
     <AuthWrapper>
       <Box sx={{width: '100%'}}>
-        <Box sx={{mb: {xs: 6, xl: 8}}}>
+        {/* <Box sx={{mb: {xs: 6, xl: 8}}}>
           <Box
             sx={{
               mb: 5,
@@ -20,7 +20,7 @@ const Signin = () => {
           >
             <AppLogo />
           </Box>
-        </Box>
+        </Box> */}
 
         <SigninFirebase />
       </Box>

@@ -15,5 +15,6 @@ export const defaultUser = {
   photoURL: '/assets/images/avatar/A11.jpg',
 };
 // export const initialUrl = '/dashboards/crypto'; // this url will open after login
-export const initialUrl = '/safepages/safe-agile-certification'; // this url will open after login
+// export const initialUrl = '/safepages/safe-agile-certification'; // this url will open after login
+export const initialUrl = '/'; // this url will open after login
 export const JWTInitialUrl = '/adminpages/'; // this url will open after login

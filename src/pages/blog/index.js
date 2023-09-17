@@ -2,14 +2,10 @@ import {createClient} from 'next-sanity';
 import React from 'react';
 import AppPage from '../../@crema/hoc/UserPage';
 import asyncComponent from '../../@crema/utility/asyncComponent';
+import {client} from 'lib/client';
 
-const client = createClient({
-  projectId: 'smjl4qzv',
-  dataset: 'production',
-  //   apiVersion: '2021-10-21',
-  useCdn: false,
-});
-const query = `*[_type == "post"]`;
+
+const query = `*[_type == "post"]{_id,title,slug,mainImage,author->{name},"excerpt": array::join(string::split((pt::text(body)), "")[0..150], "") + "..."}`;
 
 const Blog = asyncComponent(() => import('../../modules/Blog'));
 export default AppPage(({posts}) => <Blog posts={posts} />);

@@ -38,6 +38,7 @@ const SignupFirebase = () => {
             name: '',
             email: '',
             password: '',
+            phoneNumbr:''
           }}
           validationSchema={validationSchema}
           onSubmit={(data, {setSubmitting}) => {
@@ -55,7 +56,7 @@ const SignupFirebase = () => {
             <Form style={{textAlign: 'left'}} noValidate autoComplete='off'>
               <Box sx={{mb: {xs: 4, xl: 5}}}>
                 <AppTextField
-                  label={<IntlMessages id='common.name' />}
+                  label={<IntlMessages id='name' />}
                   name='name'
                   variant='outlined'
                   sx={{
@@ -69,7 +70,7 @@ const SignupFirebase = () => {
 
               <Box sx={{mb: {xs: 4, xl: 5}}}>
                 <AppTextField
-                  label={<IntlMessages id='common.email' />}
+                  label={<IntlMessages id='email' />}
                   name='email'
                   variant='outlined'
                   sx={{
@@ -83,9 +84,23 @@ const SignupFirebase = () => {
 
               <Box sx={{mb: {xs: 4, xl: 5}}}>
                 <AppTextField
-                  label={<IntlMessages id='common.password' />}
+                  label={<IntlMessages id='password' />}
                   name='password'
                   type='password'
+                  variant='outlined'
+                  sx={{
+                    width: '100%',
+                    '& .MuiInputBase-input': {
+                      fontSize: 14,
+                    },
+                  }}
+                />
+              </Box>
+              
+              <Box sx={{mb: {xs: 4, xl: 5}}}>
+                <AppTextField
+                  label={<IntlMessages id='phno' />}
+                  name='phoneNumbr'
                   variant='outlined'
                   sx={{
                     width: '100%',
@@ -179,7 +194,7 @@ const SignupFirebase = () => {
         >
           <Link href='/signin'>
             <a>
-              <IntlMessages id='common.signIn' />
+              <IntlMessages id='common.signInHere' />
             </a>
           </Link>
         </Box>

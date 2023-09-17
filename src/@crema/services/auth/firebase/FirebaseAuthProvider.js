@@ -13,6 +13,7 @@ import {
   FETCH_START,
   FETCH_SUCCESS,
 } from 'shared/constants/ActionTypes';
+import jwtAxios from '../jwt-auth';
 
 const FirebaseContext = createContext();
 const FirebaseActionsContext = createContext();
@@ -82,6 +83,14 @@ const FirebaseAuthProvider = ({children}) => {
     dispatch({type: FETCH_START});
     try {
       const {user} = await auth.signInWithPopup(getProvider(providerName));
+      jwtAxios
+        .post('/users/firebaseuserdata', {user, providerName})
+        .then((data) => {
+          console.log('Firebase user ', data);
+        })
+        .catch((error) => {
+          console.log('Firebase user ', error);
+        });
       setFirebaseData({
         user,
         isAuthenticated: true,
@@ -102,6 +111,14 @@ const FirebaseAuthProvider = ({children}) => {
     dispatch({type: FETCH_START});
     try {
       const {user} = await auth.signInWithEmailAndPassword(email, password);
+      jwtAxios
+        .post('/users/firebaseuserdata', {user: {email}})
+        .then((data) => {
+          console.log('Firebase user ', data);
+        })
+        .catch((error) => {
+          console.log('Firebase user ', error);
+        });
       setFirebaseData({user, isAuthenticated: true, isLoading: false});
       dispatch({type: FETCH_SUCCESS});
     } catch (error) {
@@ -113,7 +130,12 @@ const FirebaseAuthProvider = ({children}) => {
       dispatch({type: FETCH_ERROR, payload: error.message});
     }
   };
-  const createUserWithEmailAndPassword = async ({name, email, password}) => {
+  const createUserWithEmailAndPassword = async ({
+    name,
+    email,
+    password,
+    phoneNumbr,
+  }) => {
     dispatch({type: FETCH_START});
     try {
       const {user} = await auth.createUserWithEmailAndPassword(email, password);
@@ -129,6 +151,16 @@ const FirebaseAuthProvider = ({children}) => {
         isAuthenticated: true,
         isLoading: false,
       });
+      jwtAxios
+        .post('/users/firebaseuserdata', {
+          user: {email, displayName: name, phoneNumbr},
+        })
+        .then((data) => {
+          console.log('Firebase user ', data);
+        })
+        .catch((error) => {
+          console.log('Firebase user ', error);
+        });
       dispatch({type: FETCH_SUCCESS});
     } catch (error) {
       setFirebaseData({

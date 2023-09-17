@@ -4,6 +4,7 @@ import Common from './Common';
 import Dashboard from './Dashboard';
 import Coach from './Coach';
 import User from './Users';
+import Comments from './Comments'
 
 const reducers = combineReducers({
   settings: Settings,
@@ -11,5 +12,6 @@ const reducers = combineReducers({
   dashboard: Dashboard,
   Coach: Coach,
   User: User,
+  Comments:Comments,
 });
 export default reducers;
