@@ -8,6 +8,9 @@ import AppGridContainer from '@crema/core/AppGridContainer';
 import { contactlink, csmlink, devopsmasterlink, devopsproflink, pmiacplink, polink, safeagilelink, safesmlink, scrumatscalelink } from 'modules/commanmodules/Pagelinks';
 
 export default function Userfooter() {
+  const contactno1 = " +919421809846"
+  const contactno2 = " +919421809846"
+
   return (
     <div>
       <Grid container className='section' style={{ background: '#ffffff' }}>
@@ -120,9 +123,33 @@ export default function Userfooter() {
                 Reach Us
               </Typography>
               <p style={{ color: '#75849a' }} gutterBottom>
-                +91 9405045060<br></br>
-                +91 9421809846<br></br>
-                Support@AgileWaters.com<br></br>
+                <Link
+                  href={`tel:${contactno1}`}
+                  target="_blank"
+                  className="footermenu"
+                  style={{ textDecoration: "underline", display: "inline-block" }}
+                >
+                  +91 9405045060
+                </Link>
+                <br></br>
+                <Link
+                  href={`tel:${contactno2}`}
+                  target="_blank"
+                  className="footermenu"
+                  style={{ textDecoration: "underline", display: "inline-block" }}
+                >
+                  +91 9421809846
+                </Link>
+                <br></br>
+                <Link
+                  href={`mailto:${'Support@AgileWaters.com'}`}
+                  target="_blank"
+                  className="footermenu"
+                  style={{ textDecoration: "underline", display: "inline-block" }}
+                >
+                  Support@AgileWaters.com
+                </Link>
+                <br></br>
                 <Link href='https://linktr.ee/Agilewaters'>AgileWaters-Linktree</Link>
               </p>
 
