@@ -55,9 +55,10 @@ export default function Accordioninfo(props) {
                 <Accordion
                     expanded={expanded === 'panel1'}
                     onChange={handleChange('panel1')}
-                    key={i}>
-                    <AccordionSummary aria-controls='panel1d-content' id='panel1d-header'>
-                        <Typography>{item.heading}</Typography>
+                    key={i}
+                >
+                    <AccordionSummary aria-controls='panel1d-content' id='panel1d-header' >
+                        <Typography >{item.heading}</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
                         <Typography>

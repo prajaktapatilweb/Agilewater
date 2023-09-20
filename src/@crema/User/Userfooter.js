@@ -178,8 +178,8 @@ export default function Userfooter() {
                 Legal
               </Typography>
               <p style={{ color: '#75849a' }} gutterBottom>
-                Privacy Policy<br></br>
-                Refund Policy<br></br>
+                <Link href='/privacy-policy'> Privacy Policy</Link><br></br>
+                <Link href='/refund-policy'> Refund Policy</Link><br></br>
               </p>
               <Typography variant='h2' color='#20509e' gutterBottom>
                 {' '}

@@ -7,6 +7,7 @@ import { AppCard } from '@crema'
 import SideCard from 'modules/SM/ScrumMasterCert/SideCard'
 import { sideList1, sideList6 } from 'modules/Constant/OtherCardsConst'
 import Careersidecard from './Careersidecard'
+import JobCards from './JobCards'
 
 export default function Careers() {
     return (
@@ -17,6 +18,7 @@ export default function Careers() {
                     <Grid item xs={12} md={8}>
                         <AppCard>
                             <h1>Job Opportunities</h1>
+                            <JobCards></JobCards>
                         </AppCard>
                     </Grid>
                     <Grid item xs={12} md={4}>
