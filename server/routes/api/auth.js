@@ -18,12 +18,13 @@ router.get('/', auth, async (req, res) => {
       UserID: 1,
       Avatar: 1,
       Email: 1,
+      Role: 1,
     });
-    logger.info('Auth Route - Token Verified and allowed', {
-      by: user.UserID,
-      for: [0],
-      info: {},
-    });
+    // logger.info('Auth Route - Token Verified and allowed', {
+    //   by: user.UserID,
+    //   for: [0],
+    //   info: {},
+    // });
     // return res.json({ user: user, PageList: PermissionList });
     return res.json({user: user});
   } catch (err) {
@@ -229,6 +230,7 @@ router.post(
                 id: user.id,
                 gid: user.UserID,
                 name: user.Name,
+                role: user.Role,
               },
             };
             console.log('The Token', payload, process.env.JWTSECRET);

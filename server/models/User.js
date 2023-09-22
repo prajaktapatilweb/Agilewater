@@ -31,6 +31,53 @@ const UserSchema = new mongoose.Schema({
   Avatar: {
     type: String,
   },
+  Role: {
+    type: String,
+  },
+  Created: {
+    ByID: {
+      type: String,
+    },
+    ByName: {
+      type: String,
+    },
+    OnDate: {
+      type: Date,
+      default: Date.now,
+    },
+  },
+  Updation: [
+    {
+      ByID: {
+        type: String,
+      },
+      ByName: {
+        type: String,
+      },
+      OnDate: {
+        type: Date,
+        default: Date.now,
+      },
+      Updates: {
+        type: Object,
+      },
+    },
+  ],
+  Deletion: {
+    ByID: {
+      type: String,
+    },
+    ByName: {
+      type: String,
+    },
+    OnDate: {
+      type: Date,
+      // default: Date.now,
+    },
+    DeleteReason: {
+      type: String,
+    },
+  },
 });
 
 module.exports = mongoose.model('user', UserSchema);

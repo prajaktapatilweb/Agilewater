@@ -42,6 +42,9 @@ app.use(helmet());
 // Define Route
 app.use('/api/studentdata', require('./server/routes/api/googleSheetCourse'));
 app.use('/api/courses', require('./server/routes/api/courses'));
+app.use('/api/coaches', require('./server/routes/api/coaches'));
+app.use('/api/comments', require('./server/routes/api/comments'));
+app.use('/api/users', require('./server/routes/api/users'));
 app.use('/api/auth', require('./server/routes/api/auth'));
 
 app.listen(PORT, (err) => {
@@ -50,6 +53,7 @@ app.listen(PORT, (err) => {
   }
   console.log(`Server started on port ${PORT}`);
 });
+
 app.get('*', (req, res) => {
   return handle(req, res);
 });

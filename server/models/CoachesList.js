@@ -1,43 +1,34 @@
 const mongoose = require('mongoose');
 
-const CoursesListSchema = new mongoose.Schema({
+const CoachesListSchema = new mongoose.Schema({
   Status: {
     type: String,
     required: true,
     default: 'Active',
   },
-  CourseID: {
+  CoachID: {
     type: String,
     required: true,
     unique: true,
   },
-  CourseName: {
+  CoachName: {
     type: String,
     required: true,
   },
-  StartDate: {
-    type: Date,
-  },
-  EndDate: {
-    type: Date,
-  },
-  Time: {
-    type: String,
-  },
-  ActualCost: {
+  Experience: {
     type: Number,
   },
-  DiscountedCost: {
-    type: Number,
-  },
-  Trainer: {
+  Country: {
     type: String,
   },
-  Place: {
-    type: String,
+  Specialization: {
+    type: Array,
   },
-  EventDeleteDate: {
-    type: Date,
+  Expertise: {
+    type: Array,
+  },
+  Avatar: {
+    type: String,
   },
   Created: {
     ByID: {
@@ -85,4 +76,4 @@ const CoursesListSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model('courselist', CoursesListSchema);
+module.exports = mongoose.model('coachlist', CoachesListSchema);
