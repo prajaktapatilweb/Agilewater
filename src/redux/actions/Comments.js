@@ -9,6 +9,7 @@ import {
 } from 'shared/constants/ActionTypes';
 import IntlMessages from '@crema/utility/IntlMessages';
 import jwtAxios from '@crema/services/auth/jwt-auth';
+import {Subject} from '@mui/icons-material';
 
 export const onGetCommentsList = (data) => {
   console.log('Redux Get Comments List ', data);
@@ -136,3 +137,29 @@ export const onChangeCommentStatus = (userType, ID, data) => {
 //       });
 //   };
 // };
+
+export const onUploadQuizCSVFile = (formData) => {
+  const Subject = formData.get('QuizSubject');
+  return (dispatch) => {
+    dispatch({type: FETCH_START});
+    jwtAxios
+      .post(`/comments/quizcsv/${Subject}`, formData)
+      .then((data) => {
+        if (data.status === 200) {
+          dispatch({type: FETCH_SUCCESS});
+          dispatch({
+            type: SHOW_MESSAGE,
+            payload: 'Data Added Succefully',
+          });
+        } else {
+          dispatch({
+            type: FETCH_ERROR,
+            payload: <IntlMessages id='message.somethingWentWrong' />,
+          });
+        }
+      })
+      .catch((error) => {
+        dispatch({type: FETCH_ERROR, payload: error.message});
+      });
+  };
+};

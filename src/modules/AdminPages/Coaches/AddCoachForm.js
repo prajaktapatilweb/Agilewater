@@ -46,6 +46,7 @@ import CustomizedCheckboxFormik from 'modules/commanmodules/Formik/CustomizedChe
 import CustomizedFieldArray from 'modules/commanmodules/Formik/CustomizedFieldArray';
 import ProfilePhoto from './ProfilePhoto';
 import {useJWTAuthUser} from '@crema/utility/AuthHooks';
+import {useRouter} from 'next/router';
 
 // import Notistack from 'modules/Testing/Notistack';
 // import ReactTostify from 'modules/Testing/ReactTostify';
@@ -103,6 +104,7 @@ const AddCoachForm = ({CoachData, closefn}) => {
   // console.log('sds bnnnnn', user);
 
   // Varibles and Function for alert dialogue
+  const Router = useRouter();
   const [open, setOpen] = React.useState(false);
   const [msg, setMsg] = React.useState('');
   const [dialogaction, setDialogaction] = React.useState('');

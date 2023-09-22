@@ -7,6 +7,7 @@ export const RouteLinks = {
   id401: {link: '/adminpages/coaches/add', allowedRole: ['Admin', 'Employee']},
   id402: {link: '/adminpages/coaches/list', allowedRole: ['Admin', 'Employee']},
   id501: {link: '/adminpages/comments', allowedRole: ['Admin']},
+  id601: {link: '/adminpages/quiz', allowedRole: ['Admin']},
 };
 export const roterList = [
   {
@@ -74,6 +75,17 @@ export const roterList = [
         color: '#00ff00',
         id: 501,
         name: 'Approve',
+      },
+    ],
+  },
+  {
+    heading: 'Quiz',
+    labels: [
+      {
+        linkID: 'id601',
+        color: '#00ff00',
+        id: 501,
+        name: 'Upload',
       },
     ],
   },
