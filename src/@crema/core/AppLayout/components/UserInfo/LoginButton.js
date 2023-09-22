@@ -10,6 +10,7 @@ export default function LoginButton({
   sxStyle,
   onClickFunction,
   disabled,
+  btnQuizID = null,
 }) {
   const {user} = useAuthUser();
   const [LoginDialog, setLoginDialog] = React.useState(false);
@@ -22,7 +23,7 @@ export default function LoginButton({
       <Button
         variant='contained'
         onClick={() =>
-          user ? onClickFunction() : setLoginDialog(true)
+          user ? onClickFunction(btnQuizID) : setLoginDialog(true)
         }
         // onClick={() => Router.push('/login')}
         sx={{...sxStyle}}
@@ -37,10 +38,10 @@ export default function LoginButton({
   );
 }
 
-
 LoginButton.propTypes = {
   ButtonHeading: PropTypes.string,
-  sxStyle :PropTypes.object,
-  onClickFunction:PropTypes.func,
-  disabled:PropTypes.string,
+  sxStyle: PropTypes.object,
+  onClickFunction: PropTypes.func,
+  disabled: PropTypes.string,
+  btnQuizID: PropTypes.string,
 };

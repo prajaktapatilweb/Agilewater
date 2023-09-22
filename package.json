@@ -52,6 +52,7 @@
     "nextjs-cors": "^2.1.2",
     "nodemon": "^2.0.21",
     "notistack": "^2.0.3",
+    "papaparse": "^5.4.1",
     "prism-react-renderer": "^1.2.1",
     "prop-types": "^15.7.2",
     "rate-limiter-flexible": "^2.4.1",
