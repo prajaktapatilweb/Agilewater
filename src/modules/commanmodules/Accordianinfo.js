@@ -44,8 +44,10 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
 
 export default function Accordioninfo(props) {
     const [expanded, setExpanded] = React.useState('false');
+    console.log('Expanded Out', expanded)
 
     const handleChange = (panel) => (event, newExpanded) => {
+        console.log('Expanded', panel, newExpanded)
         setExpanded(newExpanded ? panel : false);
     };
 
@@ -53,8 +55,8 @@ export default function Accordioninfo(props) {
         <div>
             {props.DetailObject.map((item, i) => (
                 <Accordion
-                    expanded={expanded === 'panel1'}
-                    onChange={handleChange('panel1')}
+                    expanded={expanded === `panel${i}`}
+                    onChange={handleChange(`panel${i}`)}
                     key={i}
                 >
                     <AccordionSummary aria-controls='panel1d-content' id='panel1d-header' >
@@ -66,8 +68,9 @@ export default function Accordioninfo(props) {
                         </Typography>
 
                     </AccordionDetails>
-                    {item.comp}
-                </Accordion>))}
+                    {/* {item.comp} */}
+                </Accordion>
+            ))}
             {/* // <Accordion */}
             {/* //     expanded={expanded === 'panel2'}
             //     onChange={handleChange('panel2')}

@@ -1,6 +1,6 @@
 import React from 'react'
 import PMPCertaccord from './PMPCertaccord'
-import Accordioninfo from 'modules/commanmodules/Accordianinfo'
+import SingleAccordian from 'modules/commanmodules/SingleAccordian'
 
 export default function MainPMPcertaccord() {
 
@@ -13,7 +13,7 @@ export default function MainPMPcertaccord() {
     ]
     return (
         <div>
-            <Accordioninfo DetailObject={DetailObject}></Accordioninfo>
+            <SingleAccordian DetailObject={DetailObject}></SingleAccordian>
         </div>
     )
 }

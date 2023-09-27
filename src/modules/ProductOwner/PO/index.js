@@ -11,6 +11,7 @@ import FreeCourseSlider from 'modules/commanmodules/FreeCourseSlider'
 import { freecourseList } from 'modules/Constant/FreeCourseConst'
 import RelatedCourses from 'modules/commanmodules/RelatedCourses'
 import { safeadvList } from 'modules/Constant/Relatecoursedata'
+import POaccord from './POaccord'
 
 export default function PO() {
     return (
@@ -23,6 +24,7 @@ export default function PO() {
                         <AppCard sxStyle={{ p: 5 }}>
                             <POinfo></POinfo>
                             <MainPOaccord />
+                            {/* <POaccord /> */}
                         </AppCard>
                     </Grid>
                     <Grid item xs={12} md={4}>

@@ -1,10 +1,10 @@
 import React from 'react';
 import IconButton from '@mui/material/IconButton';
 import Collapse from '@mui/material/Collapse';
-import {Box, alpha, Container, Hidden} from '@mui/material';
+import { Box, alpha, Container, Hidden } from '@mui/material';
 import Alert from '@mui/material/Alert';
 import CloseIcon from '@mui/icons-material/Close';
-import {useSidebarContext} from '../../../../utility/AppContextProvider/SidebarContextProvider';
+import { useSidebarContext } from '../../../../utility/AppContextProvider/SidebarContextProvider';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
@@ -15,7 +15,7 @@ import CallBack from 'modules/commanmodules/CallBack';
 
 const NotificationBar = () => {
   const [open, setOpen] = React.useState(true);
-  const {sidebarBgColor, sidebarTextColor} = useSidebarContext();
+  const { sidebarBgColor, sidebarTextColor } = useSidebarContext();
   const [scrollDirection, setScrollDirection] = React.useState(null);
   React.useEffect(() => {
     let lastScrollY = window.scrollY;
@@ -26,7 +26,7 @@ const NotificationBar = () => {
       const direction = scrollY > lastScrollY ? 'down' : 'up';
       direction !== scrollDirection &&
         (scrollY - lastScrollY > 10 ? setOpen(false) : null,
-        scrollY - lastScrollY < -10 ? setOpen(true) : null);
+          scrollY - lastScrollY < -10 ? setOpen(true) : null);
       // setScrollDirection(direction);
 
       lastScrollY = scrollY > 0 ? scrollY : 0;
@@ -42,14 +42,16 @@ const NotificationBar = () => {
         sx={{
           borderBottom: (theme) =>
             `solid 1px ${alpha(theme.palette.common.black, 0.15)}`,
-          padding: '2px 0',
+          padding: '0',
           backgroundColor: sidebarBgColor,
           color: sidebarTextColor,
         }}
       >
         <Container
+
           sx={{
-            maxWidth: {xl: 1400},
+            maxWidth: { xl: 1400 },
+            height: { xl: 35, lg: 35, md: 'auto' },
             textAlign: {
               xs: 'center',
               sm: 'left',
@@ -128,7 +130,7 @@ const NotificationBar = () => {
                   target='_blank'
                   rel='noreferrer'
                 >
-                  <FacebookIcon sx={{color: '#1b4e9b'}} />{' '}
+                  <FacebookIcon sx={{ color: '#1b4e9b' }} />{' '}
                 </a>
               </IconButton>
               <IconButton>
@@ -137,7 +139,7 @@ const NotificationBar = () => {
                   target='_blank'
                   rel='noreferrer'
                 >
-                  <TwitterIcon sx={{color: '#00aeef'}}></TwitterIcon>
+                  <TwitterIcon sx={{ color: '#00aeef' }}></TwitterIcon>
                 </a>
               </IconButton>
               <IconButton>
@@ -146,7 +148,7 @@ const NotificationBar = () => {
                   target='_blank'
                   rel='noreferrer'
                 >
-                  <InstagramIcon sx={{color: '#f26f37'}}></InstagramIcon>
+                  <InstagramIcon sx={{ color: '#f26f37' }}></InstagramIcon>
                 </a>
               </IconButton>
               <IconButton>
@@ -155,7 +157,7 @@ const NotificationBar = () => {
                   target='_blank'
                   rel='noreferrer'
                 >
-                  <LinkedInIcon sx={{color: '#0277bd'}}> </LinkedInIcon>
+                  <LinkedInIcon sx={{ color: '#0277bd' }}> </LinkedInIcon>
                 </a>
               </IconButton>
               <IconButton>
@@ -164,7 +166,7 @@ const NotificationBar = () => {
                   target='_blank'
                   rel='noreferrer'
                 >
-                  <YouTubeIcon sx={{color: '#d50000'}}></YouTubeIcon>
+                  <YouTubeIcon sx={{ color: '#d50000' }}></YouTubeIcon>
                 </a>
               </IconButton>
             </Box>

@@ -1,6 +1,6 @@
 import React from 'react'
 import Leaderaccord from './Leaderaccord'
-import Accordioninfo from 'modules/commanmodules/Accordianinfo'
+import SingleAccordian from 'modules/commanmodules/SingleAccordian'
 
 export default function MainLeaderaccord() {
     var DetailObject = [
@@ -12,7 +12,7 @@ export default function MainLeaderaccord() {
     ]
     return (
         <div>
-            <Accordioninfo DetailObject={DetailObject}></Accordioninfo>
+            <SingleAccordian DetailObject={DetailObject} />
         </div>
     )
 }

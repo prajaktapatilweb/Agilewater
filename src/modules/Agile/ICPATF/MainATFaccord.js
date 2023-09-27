@@ -1,6 +1,6 @@
-import Accordioninfo from 'modules/commanmodules/Accordianinfo'
 import React from 'react'
 import ATFaccord from './ATFaccord'
+import SingleAccordian from 'modules/commanmodules/SingleAccordian'
 
 export default function MainATFaccord() {
     var DetailObject = [
@@ -12,7 +12,7 @@ export default function MainATFaccord() {
     ]
     return (
         <div>
-            <Accordioninfo DetailObject={DetailObject}></Accordioninfo>
+            <SingleAccordian DetailObject={DetailObject} />
         </div>
     )
 }

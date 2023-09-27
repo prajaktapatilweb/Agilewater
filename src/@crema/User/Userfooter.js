@@ -185,27 +185,32 @@ export default function Userfooter() {
                 {' '}
                 Membership:
               </Typography>
+
               <Image
                 alt='Safelogo'
-                src='/assets/images/safe/safe-Bronze-partnership-bagde-logo.webp'
-                height='100%'
-                width='100%'
+                src='/assets/images/Safe/safe-Bronze-partnership-bagde-logo.webp'
+                height={80}
+                width={80}
               />
+              &nbsp;
               <Image
                 alt='Safelogo'
-                src='/assets/images/safe/ICAgile-Logo.jpeg'
-                height='100%'
-                width='100%'
+                src='/assets/images/Safe/ICAgile.jpg'
+                height={80}
+                width={80}
+
               />
+
               <br></br>
-              <Box sx={{ pl: 5, pt: 2 }}>
+              <Box sx={{ pl: 2, pt: 2 }}>
                 <Image
                   alt='Safelogo'
-                  src='/assets/images/safe/EXIN-Logo-e1625802522731.webp'
+                  src='/assets/images/Safe/EXIN-Logo-e1625802522731.webp'
                   height='30%'
                   width='60%'
                 />
               </Box>
+
             </Grid>
           </AppGridContainer>
         </Container>

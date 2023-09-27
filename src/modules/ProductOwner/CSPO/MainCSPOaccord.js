@@ -1,6 +1,6 @@
 import React from 'react'
 import CSPOaccord from './CSPOaccord'
-import Accordioninfo from 'modules/commanmodules/Accordianinfo'
+import SingleAccordian from 'modules/commanmodules/SingleAccordian'
 
 export default function MainCSPOaccord() {
     var DetailObject = [
@@ -12,7 +12,7 @@ export default function MainCSPOaccord() {
     ]
     return (
         <div>
-            <Accordioninfo DetailObject={DetailObject}></Accordioninfo>
+            <SingleAccordian DetailObject={DetailObject}></SingleAccordian>
         </div>
     )
 }

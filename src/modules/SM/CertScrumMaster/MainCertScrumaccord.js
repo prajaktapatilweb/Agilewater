@@ -1,6 +1,6 @@
-import Accordioninfo from 'modules/commanmodules/Accordianinfo'
 import React from 'react'
 import CertScrumaccord from './CertScrumaccord'
+import SingleAccordian from 'modules/commanmodules/SingleAccordian'
 
 export default function MainCertScrumaccord() {
     var DetailObject = [
@@ -12,7 +12,7 @@ export default function MainCertScrumaccord() {
     ]
     return (
         <div>
-            <Accordioninfo DetailObject={DetailObject}></Accordioninfo>
+            <SingleAccordian DetailObject={DetailObject}></SingleAccordian>
         </div>
     )
 }

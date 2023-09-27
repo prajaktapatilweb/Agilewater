@@ -1,6 +1,7 @@
 import React from 'react'
 import Safeadvaccord from './Safeadvaccord'
 import Accordioninfo from 'modules/commanmodules/Accordianinfo'
+import SingleAccordian from 'modules/commanmodules/SingleAccordian'
 
 export default function MainSafeadvaccord() {
     var DetailObject = [
@@ -12,7 +13,7 @@ export default function MainSafeadvaccord() {
     ]
     return (
         <div>
-            <Accordioninfo DetailObject={DetailObject}></Accordioninfo>
+            <SingleAccordian DetailObject={DetailObject}></SingleAccordian>
         </div>
     )
 }

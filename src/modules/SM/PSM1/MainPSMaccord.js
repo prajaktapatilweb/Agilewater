@@ -1,6 +1,6 @@
 import React from 'react'
 import PSMaccord from './PSMaccord'
-import Accordioninfo from 'modules/commanmodules/Accordianinfo'
+import SingleAccordian from 'modules/commanmodules/SingleAccordian'
 
 export default function MainPSMaccord() {
     var DetailObject = [
@@ -12,7 +12,7 @@ export default function MainPSMaccord() {
     ]
     return (
         <div>
-            <Accordioninfo DetailObject={DetailObject}></Accordioninfo>
+            <SingleAccordian DetailObject={DetailObject}></SingleAccordian>
         </div>
     )
 }

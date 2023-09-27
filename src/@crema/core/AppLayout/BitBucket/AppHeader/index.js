@@ -24,6 +24,14 @@ const AppHeader = () => {
         >
           <MenuIcon className='menu-icon' />
         </IconButton>
+        <Image
+          src={logo1}
+
+          width={350}
+          height={60}
+
+
+        />
         <AppLogo />
         <Box
           sx={{

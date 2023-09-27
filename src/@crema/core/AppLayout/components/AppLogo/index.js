@@ -33,7 +33,8 @@ const AppLogo = () => {
 
         width={350}
         height={60}
-      // layout='fill'
+
+
       />
 
 

@@ -1,6 +1,6 @@
-import Accordioninfo from 'modules/commanmodules/Accordianinfo'
 import React from 'react'
 import POaccord from './POaccord'
+import SingleAccordian from 'modules/commanmodules/SingleAccordian'
 
 export default function MainPOaccord() {
     var DetailObject = [
@@ -12,7 +12,7 @@ export default function MainPOaccord() {
     ]
     return (
         <div>
-            <Accordioninfo DetailObject={DetailObject}></Accordioninfo>
+            <SingleAccordian DetailObject={DetailObject}></SingleAccordian>
         </div>
     )
 }
