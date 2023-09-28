@@ -9,6 +9,7 @@ import {useDispatch} from 'react-redux';
 import {useEffect} from 'react';
 import {useSelector} from 'react-redux';
 import WriteComment from './WriteComment';
+import {AppCard} from '@crema';
 
 export default function Discussion() {
   const router = useRouter();
@@ -21,14 +22,19 @@ export default function Discussion() {
   return (
     <div>
       {/* <pre>{JSON.stringify(user, null, 4)}</pre> */}
-      <Divider sx={{marginTop: 4, marginBottom: 5}} />
-      {CommentList && CommentList?.PageAsPath === PageAsPath ? (
-        <CommentsList comments={CommentList?.Comments} PageAsPath={PageAsPath}/>
-      ) : null}
-      <Typography variant='h1' p={3}>
-        Leave a Reply
-      </Typography>
-      <WriteComment />
+      <AppCard>
+        {/* <Divider sx={{ marginTop: 4, marginBottom: 5 }} /> */}
+        {CommentList && CommentList?.PageAsPath === PageAsPath ? (
+          <CommentsList
+            comments={CommentList?.Comments}
+            PageAsPath={PageAsPath}
+          />
+        ) : null}
+        <Typography variant='h1' p={3}>
+          Leave a Reply
+        </Typography>
+        <WriteComment />
+      </AppCard>
     </div>
   );
 }

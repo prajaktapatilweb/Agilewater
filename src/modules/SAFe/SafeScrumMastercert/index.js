@@ -13,6 +13,7 @@ import Safescruminfo from './Safescruminfo';
 import SlideBasicArrow from 'modules/commanmodules/SlideBasicArrow';
 import {usersPhotoList} from 'modules/Constant/Photoslider';
 import PaymentModule from 'modules/commanmodules/PaymentModule';
+import Discussion from 'modules/Discussion';
 
 export default function SafeScrumMastercert() {
   return (
@@ -32,6 +33,7 @@ export default function SafeScrumMastercert() {
             <AppCard sxStyle={{p: 5}}>
               <Safescruminfo />
             </AppCard>
+            <Discussion></Discussion>
           </Grid>
           <Grid item xs={12} md={4}>
             <VideoMain

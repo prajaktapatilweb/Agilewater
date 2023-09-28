@@ -12,6 +12,7 @@ import {testList1} from 'modules/Constant/OthershortConst';
 import Testcard from 'modules/commanmodules/TestCard';
 import VideoMain from 'modules/commanmodules/VideoMain';
 import EnquiryForm from 'modules/Forms/EnquiryForm';
+import Discussion from 'modules/Discussion';
 
 export default function SafeAdvScrumMaster() {
   return (
@@ -26,6 +27,7 @@ export default function SafeAdvScrumMaster() {
               <Safeadvinfo />
               <MainSafeadvaccord />
             </AppCard>
+            <Discussion></Discussion>
           </Grid>
           <Grid item xs={12} md={4}>
             <VideoMain
