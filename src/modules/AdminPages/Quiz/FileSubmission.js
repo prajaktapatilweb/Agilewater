@@ -15,11 +15,11 @@ import PropTypes from 'prop-types';
 export default function FileSubmission({
   form,
   field,
+  uploadedFiles,
   setUploadedFiles,
   setUploadedFilesData,
 }) {
   const [parsedData, setParsedData] = useState([]);
-
   const {getRootProps, getInputProps} = useDropzone({
     accept: 'text/csv',
     onDrop: (acceptedFiles) => {
@@ -31,7 +31,7 @@ export default function FileSubmission({
           (file) => (
             // For Displaying Data of the csv file
             Papa.parse(file, {
-              header: true,
+              header: false,
               skipEmptyLines: false,
               complete: function (results) {
                 const rowsArray = [];
@@ -70,9 +70,11 @@ export default function FileSubmission({
       <div {...getRootProps({className: 'dropzone'})}>
         <input {...getInputProps()} />
         <label htmlFor='icon-button-file'>
-          <Box sx={{'& img': {width: '90%'}}}>
-            <img src={values.photoURL} />
-          </Box>
+          {uploadedFiles.length > 0 && (
+            <Box sx={{'& img': {width: '90%'}}}>
+              <img src={values.photoURL} />
+            </Box>
+          )}
           <TiFolderOpen
             style={{
               fontSize: 40,
@@ -92,6 +94,7 @@ export default function FileSubmission({
 FileSubmission.propTypes = {
   field: PropTypes.object,
   form: PropTypes.object,
-  setUploadedFiles: PropTypes.array,
-  setUploadedFilesData: PropTypes.array,
+  uploadedFiles: PropTypes.array,
+  setUploadedFiles: PropTypes.func,
+  setUploadedFilesData: PropTypes.func,
 };

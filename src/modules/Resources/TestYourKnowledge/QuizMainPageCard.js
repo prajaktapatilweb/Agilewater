@@ -5,34 +5,50 @@ import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
 import {useRouter} from 'next/router';
 import {quizText} from 'modules/Constant/QuizConst';
 import PropTypes from 'prop-types';
+import {useDispatch} from 'react-redux';
+import {onGetFBUserData} from 'redux/actions';
+import {useAuthUser} from '@crema/utility/AuthHooks';
+import {useSelector} from 'react-redux';
 
 // import SAFEJSON from '../../../../../public/data/QuizData-SAFE.json'
-export default function SafeQuizinfo({data, subjectName}) {
+export default function QuizMainPageCard({subjectName}) {
   const router = useRouter();
-  // console.log('ddsds',SAFEJSON)
+  const dispatch = useDispatch();
+  const {user} = useAuthUser();
+  console.log('uuus', user);
+  // const userData = useSelector((state) => state?.User?.FBUserData);
+  const userData = useSelector((state) => state?.User?.FBUserData);
+
+  console.log('ddsds', subjectName, userData);
   const onGotoQuiz = (btnQuizID) => {
-    console.log('In quiz', fileData, btnQuizID);
     router.push({
       pathname: '/quiz',
       as: '/quiz',
       query: {param: subjectName, btnQuizID: btnQuizID},
     });
   };
-
   const [fileData, setFileData] = React.useState([]);
 
   React.useEffect(() => {
+    dispatch(onGetFBUserData(user?.email));
     import(`/public/data/QuizData-${subjectName}.json`)
-      //   .then(response => console.log('reached',response))
       .then((data) => setFileData(data))
       .catch((error) => console.error(error));
   }, []);
-  const quizNumbers = fileData ? Math.ceil(fileData?.length / 20) : null;
+  const maxQuestion = 20;
+  const quizNumbers = fileData && Math.ceil(fileData?.length / maxQuestion);
+  const newQuizNumbers =
+    fileData && Math.ceil(fileData?.length - (quizNumbers - 1) * maxQuestion);
   const quizArrays = fileData
-    ? //   ?[ ...Array(quizNumbers).keys() ]
-      Array.from({length: quizNumbers}, (v, i) => i)
+    ? Array.from(
+        {
+          length:
+            newQuizNumbers > maxQuestion * 0.25 ? quizNumbers : quizNumbers - 1,
+        },
+        (v, i) => i,
+      )
     : null;
-  console.log('sdsds', quizNumbers, quizArrays);
+
   return (
     <>
       {fileData && (
@@ -57,7 +73,15 @@ export default function SafeQuizinfo({data, subjectName}) {
                   <Typography variant='body2'>
                     {quizText[subjectName]}
                   </Typography>
-                  <br></br>
+                  {userData.QuizResult[`${subjectName}-${index + 1}`] ? (
+                    <Typography variant='h4' color={'blue'} p={1}>
+                      Last Score of the quiz ={' '}
+                      {userData.QuizResult[`${subjectName}-${index + 1}`]}
+                    </Typography>
+                  ) : (
+                    <br></br>
+                  )}
+
                   <LoginButton
                     ButtonHeading={'Take Quiz'}
                     onClickFunction={onGotoQuiz}
@@ -73,7 +97,6 @@ export default function SafeQuizinfo({data, subjectName}) {
   );
 }
 
-SafeQuizinfo.propTypes = {
-  data: PropTypes.object,
+QuizMainPageCard.propTypes = {
   subjectName: PropTypes.string,
 };

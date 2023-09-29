@@ -20,22 +20,43 @@ import {useRouter} from 'next/router';
 import {useJWTAuthMethod} from '@crema/utility/AuthHooks';
 import {Logout} from '@mui/icons-material';
 import JWTUserInfo from '@crema/core/AppLayout/components/UserInfo/JWTUserInfo';
-import { roterList} from 'modules/Constant/AdminPageConst';
+import {roterList} from 'modules/Constant/AdminPageConst';
+import {useRef} from 'react';
+import {useEffect} from 'react';
+import {styled} from '@mui/material/styles';
+import SimpleBarReact from 'simplebar-react';
+
 // import {Fonts} from 'shared/constants/AppEnums';
 
+export const StyledSimpleBarReact = styled(SimpleBarReact)(({theme}) => ({
+  maxHeight: 600,
+  [theme.breakpoints.up('xl')]: {
+    maxHeight: 600,
+  },
+  '@media (min-width: 1920px)': {
+    maxHeight: 310,
+  },
+  '@media (min-width: 2000px)': {
+    maxHeight: 350,
+  },
+  '@media (min-width: 2400px)': {
+    maxHeight: 460,
+  },
+}));
 const SideBarContent = () => {
   const {logout} = useJWTAuthMethod();
   return (
     <>
-      <Box
-        sx={{
-          px: {xs: 4, md: 5},
-          pt: {xs: 4, md: 5},
-          pb: 2.5,
-        }}
-      >
-        <JWTUserInfo />
-        {/* <Zoom in style={{transitionDelay: '300ms'}}>
+      <StyledSimpleBarReact>
+        <Box
+          sx={{
+            px: {xs: 4, md: 5},
+            pt: {xs: 4, md: 5},
+            pb: 2.5,
+          }}
+        >
+          <JWTUserInfo />
+          {/* <Zoom in style={{transitionDelay: '300ms'}}>
           <Button
             variant='outlined'
             color='primary'
@@ -53,78 +74,79 @@ const SideBarContent = () => {
             Logout
           </Button>
         </Zoom> */}
-      </Box>
+        </Box>
 
-      <AppScrollbar className='scroll-app-sidebar'>
-        <Box
-          sx={{
-            pr: 4,
-            pb: {xs: 4, md: 5, lg: 6.2},
-          }}
-        >
-          <Link href={`/adminpages`}>
-            <Box
-              variant='outlined'
-              color='primary'
-              sx={{
-                padding: '8px 8px',
-                px: 8,
-                borderRadius: 8,
-                '& .MuiSvgIcon-root': {
-                  fontSize: 26,
-                },
-                '&:hover,&:focus,&.active': {
-                  backgroundColor: 'lightgreen',
-                  color: 'black',
-                },
-              }}
-            >
-              Dashboard
-            </Box>
-          </Link>
-          {roterList.map((item) => (
-            <>
+        <AppScrollbar className='scroll-app-sidebar'>
+          <Box
+            sx={{
+              pr: 4,
+              pb: {xs: 4, md: 5, lg: 6.2},
+            }}
+          >
+            <Link href={`/adminpages`}>
               <Box
-                component='h4'
+                variant='outlined'
+                color='primary'
                 sx={{
-                  mt: {xs: 4, xl: 5},
-                  px: {xs: 4, md: 5, lg: 6.2},
-                  fontWeight: Fonts.SEMI_BOLD,
+                  padding: '8px 8px',
+                  px: 8,
+                  borderRadius: 8,
+                  '& .MuiSvgIcon-root': {
+                    fontSize: 26,
+                  },
+                  '&:hover,&:focus,&.active': {
+                    backgroundColor: 'lightgreen',
+                    color: 'black',
+                  },
                 }}
               >
-                {item.heading}
+                Dashboard
               </Box>
-              <AppList
-                animation='transition.slideLeftIn'
-                data={item.labels}
-                ListEmptyComponent={
-                  <ListEmptyResult
-                    loading={true}
-                    placeholder={
-                      <Box
-                        sx={{
-                          px: {xs: 4, md: 5, lg: 6.2},
-                        }}
-                      >
-                        <SidebarPlaceholder />
-                      </Box>
-                    }
-                  />
-                }
-                renderRow={(label) => (
-                  <LabelItem key={label.id} label={label} />
-                )}
-              />
-            </>
-          ))}
-          {/* <List component='nav' aria-label='main mailbox folders'> */}
-          {/* </List> */}
-          {/* <CreateContact
+            </Link>
+            {roterList.map((item) => (
+              <>
+                <Box
+                  component='h4'
+                  sx={{
+                    mt: {xs: 4, xl: 5},
+                    px: {xs: 4, md: 5, lg: 6.2},
+                    fontWeight: Fonts.SEMI_BOLD,
+                  }}
+                >
+                  {item.heading}
+                </Box>
+                <AppList
+                  animation='transition.slideLeftIn'
+                  data={item.labels}
+                  ListEmptyComponent={
+                    <ListEmptyResult
+                      loading={true}
+                      placeholder={
+                        <Box
+                          sx={{
+                            px: {xs: 4, md: 5, lg: 6.2},
+                          }}
+                        >
+                          <SidebarPlaceholder />
+                        </Box>
+                      }
+                    />
+                  }
+                  renderRow={(label) => (
+                    <LabelItem key={label.id} label={label} />
+                  )}
+                />
+              </>
+            ))}
+            {/* <List component='nav' aria-label='main mailbox folders'> */}
+            {/* </List> */}
+            {/* <CreateContact
           //   isAddContact={isAddContact}
           //   handleAddContactClose={handleAddContactClose}
           // /> */}
-        </Box>
-      </AppScrollbar>
+          </Box>
+        </AppScrollbar>
+      </StyledSimpleBarReact>
     </>
   );
 };

@@ -25,12 +25,11 @@ function App() {
   const [uploadedFiles, setUploadedFiles] = useState([]);
   const [uploadedFilesData, setUploadedFilesData] = useState({});
   const onDeleteUploadFile = (file) => {
-    dropzone.acceptedFiles.splice(dropzone.acceptedFiles.indexOf(file), 1);
-    setUploadedFiles([...dropzone.acceptedFiles]);
-    setTableRows([]);
-    setValues([]);
+    // dropzone.acceptedFiles.splice(dropzone.acceptedFiles.indexOf(file), 1);
+    setUploadedFiles([]);
+    // setTableRows([]);
+    // setValues([]);
     setUploadedFilesData({});
-    window.location.reload(false);
   };
 
   return (
@@ -50,6 +49,7 @@ function App() {
             <UploadModern
               uploadText='Drag n drop some files here, or click to select files'
               // dropzone={dropzone}
+              uploadedFiles={uploadedFiles}
               setUploadedFiles={setUploadedFiles}
               setUploadedFilesData={setUploadedFilesData}
             />
