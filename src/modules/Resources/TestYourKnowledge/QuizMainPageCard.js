@@ -73,7 +73,7 @@ export default function QuizMainPageCard({subjectName}) {
                   <Typography variant='body2'>
                     {quizText[subjectName]}
                   </Typography>
-                  {userData.QuizResult[`${subjectName}-${index + 1}`] ? (
+                  {userData?.QuizResult[`${subjectName}-${index + 1}`] ? (
                     <Typography variant='h4' color={'blue'} p={1}>
                       Last Score of the quiz ={' '}
                       {userData.QuizResult[`${subjectName}-${index + 1}`]}
