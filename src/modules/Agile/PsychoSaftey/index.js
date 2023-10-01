@@ -11,16 +11,17 @@ import {freecourseList} from 'modules/Constant/FreeCourseConst';
 import RelatedCourses from 'modules/commanmodules/RelatedCourses';
 import {safeadvList} from 'modules/Constant/Relatecoursedata';
 import Discussion from 'modules/Discussion';
+import DetailBlogPage from './DetailBlogPage';
 
 export default function PsychoSaftey() {
   return (
     <div>
-      <HeroPsycho />
-      <Innerlink></Innerlink>
+      {/* <HeroPsycho /> */}
+      {/* <Innerlink></Innerlink> */}
       <Container sx={{maxWidth: {xl: 1450}, marginTop: 10}}>
-        <Grid container spacing={{xs: 4, md: 8}}>
+        {/* <Grid container spacing={{ xs: 4, md: 8 }}>
           <Grid item xs={12} md={8}>
-            <AppCard sxStyle={{p: 5}}>
+            <AppCard sxStyle={{ p: 5 }}>
               <Psychoinfo />
             </AppCard>
             <Discussion></Discussion>
@@ -34,7 +35,8 @@ export default function PsychoSaftey() {
             <FreeCourseSlider images={freecourseList}></FreeCourseSlider>
             <RelatedCourses data={safeadvList} />
           </Grid>
-        </Grid>
+        </Grid> */}
+        <DetailBlogPage></DetailBlogPage>
       </Container>
     </div>
   );

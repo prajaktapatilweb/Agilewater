@@ -10,7 +10,7 @@ import {createClient} from 'next-sanity';
 import {PortableText} from '@portabletext/react';
 import PropTypes from 'prop-types';
 import {urlForImage} from 'lib/image';
-import Link from 'next/dist/client/link';
+import Link from 'next/link';
 
 export default function Blog({posts}) {
   console.log('BLogs', posts);
@@ -19,7 +19,7 @@ export default function Blog({posts}) {
       <Container sx={{mt: 20}}>
         <Grid container>
           {posts.map((post) => (
-            <Link href={`/blog/${post.slug.current}`}>
+            <Link href={`/blog/${post.slug.current}`} key={post._id}>
               <Grid
                 item
                 xs={4}
@@ -43,7 +43,6 @@ export default function Blog({posts}) {
                     <Typography gutterBottom variant='h5' component='div'>
                       {post.title}
                       {/* <pre>{JSON.stringify(urlForImage(post.mainImage), null, 2)}</pre>  */}
-                      
                     </Typography>
                     <Typography gutterBottom variant='p' component='div'>
                       {post.author.name}
