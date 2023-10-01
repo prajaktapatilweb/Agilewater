@@ -42,69 +42,69 @@ function HorizontalItem(props) {
 
   return (
     <Link href={item.url} as={item.as}>
-      <ListItem
-        className={clsx('navItemSubmenu', dense && 'dense', {
-          active: item.url === props.router.pathname,
-        })}
-        exact={item.exact}
-        sx={{
-          minHeight: 40,
-          padding: '4px 12px',
-
-          color: (theme) => theme.palette.text.primary,
-          textDecoration: 'none!important',
-          // Below line is commented to remove the space between two menu items on navbar
-          // minWidth: 160,
-
-          '&.active': {
-            backgroundColor: sidebarMenuSelectedBgColor,
-            color: sidebarMenuSelectedTextColor + '!important',
-            pointerEvents: 'none',
-            '& .list-item-text-primary': {
-              color: 'inherit',
-            },
-            '& .list-item-icon': {
-              color: 'inherit',
-            },
-          },
-          '& .list-item-text': {
-            padding: '0 0 0 16px',
-          },
-          '&.dense': {
-            padding: '4px 12px',
+      <a style={{textDecoration: 'none'}}>
+        <ListItem
+          className={clsx('navItemSubmenu', dense && 'dense', {
+            active: item.url === props.router.pathname,
+          })}
+          exact={item.exact}
+          sx={{
             minHeight: 40,
-            '& .list-item-text': {
-              padding: '0 0 0 8px',
+            padding: '4px 12px',
+            color: (theme) => theme.palette.text.primary,
+            textDecoration: 'none!important',
+            // Below line is commented to remove the space between two menu items on navbar
+            // minWidth: 160,
+            '&.active': {
+              backgroundColor: sidebarMenuSelectedBgColor,
+              color: sidebarMenuSelectedTextColor + '!important',
+              pointerEvents: 'none',
+              '& .list-item-text-primary': {
+                color: 'inherit',
+              },
+              '& .list-item-icon': {
+                color: 'inherit',
+              },
             },
-          },
-        }}
-      >
-        {item.icon && (
-          <Icon
-            sx={{
-              color: active ? sidebarMenuSelectedTextColor : 'action',
-              mr: 3,
-              fontSize: {xs: 16, xl: 18},
-            }}
-          >
-            {item.icon}
-          </Icon>
-        )}
-        <ListItemText
-          className='AppNavLinkTextSubmenu'
-          primary={<IntlMessages id={item.messageId} />}
-        />
-        {item.count && (
-          <Box ml={4} clone>
-            <Badge
-              count={item.count}
+            '& .list-item-text': {
+              padding: '0 0 0 16px',
+            },
+            '&.dense': {
+              padding: '4px 12px',
+              minHeight: 40,
+              '& .list-item-text': {
+                padding: '0 0 0 8px',
+              },
+            },
+          }}
+        >
+          {item.icon && (
+            <Icon
               sx={{
-                color: item.color,
+                color: active ? sidebarMenuSelectedTextColor : 'action',
+                mr: 3,
+                fontSize: {xs: 16, xl: 18},
               }}
-            />
-          </Box>
-        )}
-      </ListItem>
+            >
+              {item.icon}
+            </Icon>
+          )}
+          <ListItemText
+            className='AppNavLinkTextSubmenu'
+            primary={<IntlMessages id={item.messageId} />}
+          />
+          {item.count && (
+            <Box ml={4} clone>
+              <Badge
+                count={item.count}
+                sx={{
+                  color: item.color,
+                }}
+              />
+            </Box>
+          )}
+        </ListItem>
+      </a>
     </Link>
   );
 }

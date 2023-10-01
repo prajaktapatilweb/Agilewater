@@ -13,6 +13,7 @@ import Safescruminfo from './Safescruminfo';
 import SlideBasicArrow from 'modules/commanmodules/SlideBasicArrow';
 import {usersPhotoList} from 'modules/Constant/Photoslider';
 import PaymentModule from 'modules/commanmodules/PaymentModule';
+import CourseTable from '../SafeAgileCert/CourseTable';
 import Discussion from 'modules/Discussion';
 
 export default function SafeScrumMastercert() {
@@ -23,6 +24,7 @@ export default function SafeScrumMastercert() {
         <Grid container spacing={{xs: 4, md: 8}}>
           <Grid item xs={12} md={8}>
             {/* <CourseTable /> */}
+            <CourseTable />
             <PaymentModule />
           </Grid>
           <Grid item xs={12} md={4}>

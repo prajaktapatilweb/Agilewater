@@ -2,12 +2,14 @@ import {
   ADD_NEW_USER,
   GET_INDIV_USER_DATA,
   GET_USERS_LIST,
+  GET_FB_USERS_LIST,
 } from 'shared/constants/ActionTypes';
 
 const initialState = {
   Userslist: null,
   result: null,
   Coachdata: null,
+  FBUserData: null,
 };
 
 const userReducer = (state = initialState, action) => {
@@ -23,6 +25,12 @@ const userReducer = (state = initialState, action) => {
       return {
         ...state,
         Userdata: action.payload,
+      };
+
+    case GET_FB_USERS_LIST:
+      return {
+        ...state,
+        FBUserData: action.payload,
       };
 
     default:

@@ -4,6 +4,7 @@ import {
   FETCH_START,
   FETCH_SUCCESS,
   SHOW_MESSAGE,
+  GET_FB_USERS_LIST,
   ADD_NEW_USER,
   GET_INDIV_USER_DATA,
   GET_USERS_LIST,
@@ -136,6 +137,52 @@ export const onDeleteIndivUserData = (UserID, toggleDeleteUserDialogue) => {
             payload: 'User Deleted Succefully',
           });
           dispatch({type: GET_USERS_LIST, payload: data.data});
+        } else {
+          dispatch({
+            type: FETCH_ERROR,
+            payload: <IntlMessages id='message.somethingWentWrong' />,
+          });
+        }
+      })
+      .catch((error) => {
+        dispatch({type: FETCH_ERROR, payload: error.message});
+      });
+  };
+};
+
+export const onUpdateFBUserData = (UserData) => {
+  console.log('In Redux', UserData);
+  return (dispatch) => {
+    dispatch({type: FETCH_START});
+    jwtAxios
+      .put(`/users/firebaseuserupdates`, UserData)
+      .then((data) => {
+        if (data.status === 200) {
+          dispatch({type: FETCH_SUCCESS});
+        } else {
+          dispatch({
+            type: FETCH_ERROR,
+            payload: <IntlMessages id='message.somethingWentWrong' />,
+          });
+        }
+      })
+      .catch((error) => {
+        dispatch({type: FETCH_ERROR, payload: error.message});
+      });
+  };
+};
+
+export const onGetFBUserData = (email) => {
+  console.log('Redux Get Firebase User Data', email);
+  return (dispatch) => {
+    dispatch({type: FETCH_START});
+    jwtAxios
+      .get('/users/getfirebaseuserupdates', {params: {email: email}})
+      .then((data) => {
+        console.log('Data Rece REdux', data.data);
+        if (data.status === 200) {
+          dispatch({type: FETCH_SUCCESS});
+          dispatch({type: GET_FB_USERS_LIST, payload: data.data});
         } else {
           dispatch({
             type: FETCH_ERROR,

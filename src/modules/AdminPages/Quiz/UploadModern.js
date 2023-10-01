@@ -19,6 +19,7 @@ import {QuizSubjectList} from 'modules/Constant/CommanConst';
 const UploadModern = ({
   uploadText,
   // dropzone,
+  uploadedFiles,
   setUploadedFiles,
   setUploadedFilesData,
 }) => {
@@ -75,6 +76,7 @@ const UploadModern = ({
                 <Field
                   name='FileName'
                   component={FileSubmission}
+                  uploadedFiles={uploadedFiles}
                   setUploadedFiles={setUploadedFiles}
                   setUploadedFilesData={setUploadedFilesData}
                 />
@@ -120,6 +122,7 @@ export default UploadModern;
 
 UploadModern.propTypes = {
   uploadText: PropTypes.string,
+  uploadedFiles: PropTypes.array,
   // dropzone: PropTypes.object,
   setUploadedFiles: PropTypes.array,
   setUploadedFilesData: PropTypes.object,
