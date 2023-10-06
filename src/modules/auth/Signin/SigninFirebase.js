@@ -12,11 +12,12 @@ import IconButton from '@mui/material/IconButton';
 import AppInfoView from '../../../@crema/core/AppInfoView';
 import {useAuthMethod} from '../../../@crema/utility/AuthHooks';
 import {Fonts} from '../../../shared/constants/AppEnums';
-import {AiOutlineGoogle, AiOutlineTwitter} from 'react-icons/ai';
+import {AiOutlineTwitter} from 'react-icons/ai';
 import {FaFacebookF} from 'react-icons/fa';
 import {BsGithub} from 'react-icons/bs';
 import {useRouter} from 'next/router';
 import AppLogo from '@crema/core/AppLayout/components/AppLogo';
+import Image from 'next/image';
 
 const validationSchema = yup.object({
   email: yup
@@ -222,7 +223,12 @@ const SigninFirebase = () => {
               }}
               onClick={() => signInWithPopup('google')}
             >
-              <AiOutlineGoogle color='#D44638'/>
+              <Image
+                src={'/assets/images/icons8-gmail-48.png'}
+                height='16'
+                width={'16'}
+              />
+              {/* <AiOutlineGoogle color='#D44638'/> */}
             </IconButton>
             <IconButton
               sx={{
@@ -232,7 +238,7 @@ const SigninFirebase = () => {
               }}
               onClick={() => signInWithPopup('facebook')}
             >
-              <FaFacebookF color='#3b5998'/>
+              <FaFacebookF color='#3b5998' />
             </IconButton>
             <IconButton
               sx={{
@@ -242,7 +248,7 @@ const SigninFirebase = () => {
               }}
               onClick={() => signInWithPopup('github')}
             >
-              <BsGithub color='#171515'/>
+              <BsGithub color='#171515' />
             </IconButton>
             <IconButton
               sx={{
@@ -252,7 +258,7 @@ const SigninFirebase = () => {
               }}
               onClick={() => signInWithPopup('twitter')}
             >
-              <AiOutlineTwitter color='#00ACEE'/>
+              <AiOutlineTwitter color='#00ACEE' />
             </IconButton>
           </Box>
         </Box>
