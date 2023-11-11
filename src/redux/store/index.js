@@ -5,7 +5,7 @@ import thunkMiddleware from 'redux-thunk';
 import reducers from '../reducers';
 
 function initStore(initialState) {
-  console.log('sd1');
+  // console.log('sd1');
   return createStore(
     reducers,
     initialState,

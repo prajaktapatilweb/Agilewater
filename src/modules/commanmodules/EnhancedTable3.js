@@ -18,15 +18,14 @@ import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
-import DeleteIcon from '@mui/icons-material/Delete';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import {visuallyHidden} from '@mui/utils';
 import {Button} from '@mui/material';
-import {Edit} from '@mui/icons-material';
 import AppDialog from '@crema/core/AppDialog';
 import {useState} from 'react';
 import AddCourseForm from 'modules/AdminPages/Course/AddCourseForm';
 import DeleteDialoug from 'modules/AdminPages/Course/DeleteDialoug';
+import CourseListButtons from './CourseListButtons';
 
 function descendingComparator(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
@@ -184,15 +183,6 @@ export default function EnhancedTable({
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
 
   const [selectedRow, setSelectedRow] = useState();
-  const [isDialogOpen, setisDialogOpen] = useState(false);
-  const [isDeleteDialogOpen, setisDeleteDialogOpen] = useState(false);
-  const toggleDialogOpen = () => {
-    setisDialogOpen(!isDialogOpen);
-    setSelectedRow();
-  };
-  const toggleDeleteDialogOpen = () => {
-    setisDeleteDialogOpen(!isDeleteDialogOpen);
-  };
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === 'asc';
@@ -286,47 +276,12 @@ export default function EnhancedTable({
                         </TableCell>
                         <TableCell align='left'>{row.Trainer}</TableCell>
                         <TableCell>
-                          {ActionLabel === 'Edit' ? (
-                            <Button
-                              variant='outlined'
-                              onClick={() => {
-                                setSelectedRow(row);
-                                setisDialogOpen(true);
-                              }}
-                              startIcon={<Edit />}
-                              color='primary'
-                            >
-                              Edit
-                            </Button>
-                          ) : ActionLabel === 'Delete' ? (
-                            <Button
-                              variant='outlined'
-                              onClick={() => {
-                                console.log('Clicked');
-                                setSelectedRow(row);
-                                setisDeleteDialogOpen(true);
-                                console.log('Clicked', isDeleteDialogOpen);
-                              }}
-                              startIcon={<DeleteIcon />}
-                              color='error'
-                            >
-                              Delete {row.CourseID}
-                            </Button>
-                          ) : (
-                            <Button
-                              variant='contained'
-                              sx={{
-                                backgroundImage:
-                                  'linear-gradient(to right, #3e2bce 0%, #2dd3aa 100%, #2dd3aa 100%, #2dd3aa 100%)',
-                              }}
-                              onClick={() => {
-                                setSelectedRow(row);
-                                setisDialogOpen(true);
-                              }}
-                            >
-                              Register
-                            </Button>
-                          )}
+                          <CourseListButtons
+                            ActionLabel={ActionLabel}
+                            selectedRow={selectedRow}
+                            setSelectedRow={setSelectedRow}
+                            row={row}
+                          />
                         </TableCell>
                         {/* {headCells.map((item) =>
                           item.id === mainColumn ? (
@@ -387,26 +342,6 @@ export default function EnhancedTable({
           onRowsPerPageChange={handleChangeRowsPerPage}
         />
       </Paper>
-      <AppDialog
-        open={isDialogOpen}
-        onClose={toggleDialogOpen}
-        // title={`${ActionLabel}  for ${selectedRow?.CourseID}`}
-      >
-        <AddCourseForm
-          CourseID={selectedRow?.CourseID}
-          closefn={toggleDialogOpen}
-        />
-      </AppDialog>
-      <AppDialog
-        open={isDeleteDialogOpen}
-        onClose={toggleDeleteDialogOpen}
-        // title={`${ActionLabel}  for ${selectedRow?.CourseID}`}
-      >
-        <DeleteDialoug
-          CourseID={selectedRow?.CourseID}
-          closefn={toggleDeleteDialogOpen}
-        />
-      </AppDialog>
     </Box>
   );
 }

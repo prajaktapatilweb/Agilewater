@@ -24,7 +24,7 @@ export default function SafeAgileCert() {
       <Container sx={{maxWidth: {xl: 1450}, marginTop: 10}}>
         <Grid container spacing={{xs: 4, md: 8}}>
           <Grid item xs={12} md={8}>
-            <CourseTable PageCourseName='Ms.' />
+            <CourseTable PageCourseName='SAFe 6.0 Agilist (Leading SAFe)' />
           </Grid>
           <Grid item xs={12} md={4}>
             <SlideBasicArrow data={usersPhotoList} />
