@@ -270,7 +270,7 @@ export default function QuestionSet() {
                       {page === maxQuestion ? 'Submit' : 'Next'}
                     </Button>
                   </Stack>
-                  <pre>{JSON.stringify(values, null, 2)}</pre>
+                  {/* <pre>{JSON.stringify(values, null, 2)}</pre> */}
                 </Form>
                 // );
               )}

@@ -24,6 +24,7 @@ import HorizontalNav from '../../components/HorizontalNav';
 import { useSidebarContext } from '../../../../utility/AppContextProvider/SidebarContextProvider';
 import NotificationBar from '../NotificationBar';
 import Image from 'next/image';
+import NewSearch from '@crema/core/AppSearchBar/NewSearch';
 
 const AppHeader = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -165,7 +166,8 @@ const AppHeader = () => {
                 },
               }}
             >
-              <AppSearchBar iconPosition='right' placeholder='Search…' />
+              {/* <AppSearchBar iconPosition='right' placeholder='Search…' /> */}
+              <NewSearch />
             </Box>
             <Box
               sx={{

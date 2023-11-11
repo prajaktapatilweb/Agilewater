@@ -11,9 +11,10 @@ import IconButton from '@mui/material/IconButton';
 import AppInfoView from '../../../@crema/core/AppInfoView';
 import {Fonts} from '../../../shared/constants/AppEnums';
 import Link from 'next/link';
-import {AiOutlineGoogle, AiOutlineTwitter} from 'react-icons/ai';
+import {AiOutlineTwitter} from 'react-icons/ai';
 import {BsGithub} from 'react-icons/bs';
 import {FaFacebookF} from 'react-icons/fa';
+import Image from 'next/image';
 
 const validationSchema = yup.object({
   name: yup.string().required(<IntlMessages id='validation.nameRequired' />),
@@ -38,7 +39,7 @@ const SignupFirebase = () => {
             name: '',
             email: '',
             password: '',
-            phoneNumbr:''
+            phoneNumbr: '',
           }}
           validationSchema={validationSchema}
           onSubmit={(data, {setSubmitting}) => {
@@ -96,7 +97,7 @@ const SignupFirebase = () => {
                   }}
                 />
               </Box>
-              
+
               <Box sx={{mb: {xs: 4, xl: 5}}}>
                 <AppTextField
                   label={<IntlMessages id='phno' />}
@@ -230,7 +231,13 @@ const SignupFirebase = () => {
             sx={{p: 2, '& svg': {fontSize: 18}}}
             onClick={() => signInWithPopup('google')}
           >
-            <AiOutlineGoogle />
+            <Image
+              src={'/assets/images/icons8-gmail-48.png'}
+              height='16'
+              width={'16'}
+            />
+
+            {/* <AiOutlineGoogle /> */}
           </IconButton>
           <IconButton
             sx={{
@@ -239,7 +246,7 @@ const SignupFirebase = () => {
             }}
             onClick={() => signInWithPopup('facebook')}
           >
-            <FaFacebookF />
+            <FaFacebookF color='#3b5998' />
           </IconButton>
           <IconButton
             sx={{
@@ -248,7 +255,7 @@ const SignupFirebase = () => {
             }}
             onClick={() => signInWithPopup('github')}
           >
-            <BsGithub />
+            <BsGithub color='#171515' />
           </IconButton>
           <IconButton
             sx={{
@@ -257,7 +264,7 @@ const SignupFirebase = () => {
             }}
             onClick={() => signInWithPopup('twitter')}
           >
-            <AiOutlineTwitter />
+            <AiOutlineTwitter color='#00ACEE' />
           </IconButton>
         </Box>
       </Box>

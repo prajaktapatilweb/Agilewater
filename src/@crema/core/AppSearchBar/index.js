@@ -8,6 +8,8 @@ import {
   SearchInputBase,
   SearchWrapper,
 } from './index.style';
+import {useState} from 'react';
+import NewSearch from './NewSearch';
 
 const AppSearch = ({
   placeholder,
@@ -19,32 +21,49 @@ const AppSearch = ({
   iconStyle,
   ...rest
 }) => {
+  //   <script async src="https://cse.google.com/cse.js?cx=754ae9cc9677b415d">
+  // </script>
+  // <div class="gcse-search"></div>
+  const [onClosee, setonClosee] = useState(true);
+  const handleClick = () => {
+    console.log('sssddd', onClosee);
+    setonClosee(false);
+
+    // return <h1>ssss</h1>;
+  };
   return (
-    <SearchWrapper sx={rest.sx} iconPosition={iconPosition}>
-      <SearchIconBox
-        align={align}
-        className={clsx(
-          'searchRoot',
-          {'hs-search': overlap},
-          {'hs-disableFocus': disableFocus},
-          {searchIconBox: onlyIcon},
-        )}
-      >
-        <SearchIconWrapper
-          className={clsx({
-            right: iconPosition === 'right',
-          })}
-          style={iconStyle}
-        >
-          <SearchIcon />
-        </SearchIconWrapper>
-        <SearchInputBase
-          {...rest}
-          placeholder={placeholder || 'Search…'}
-          inputProps={{'aria-label': 'search'}}
-        />
-      </SearchIconBox>
-    </SearchWrapper>
+    <>
+      {!onClosee ? (
+        <SearchWrapper sx={rest.sx} iconPosition={iconPosition}>
+          <SearchIconBox
+            align={align}
+            className={clsx(
+              'searchRoot',
+              {'hs-search': overlap},
+              {'hs-disableFocus': disableFocus},
+              {searchIconBox: onlyIcon},
+            )}
+          >
+            <SearchIconWrapper
+              className={clsx({
+                right: iconPosition === 'right',
+              })}
+              style={iconStyle}
+            >
+              <SearchIcon />
+            </SearchIconWrapper>
+            <SearchInputBase
+              {...rest}
+              placeholder={placeholder || 'Search…'}
+              inputProps={{'aria-label': 'search'}}
+              onClick={handleClick}
+            />
+          </SearchIconBox>
+        </SearchWrapper>
+      ) : (
+        <NewSearch />
+      )}
+    </>
   );
 };
 
