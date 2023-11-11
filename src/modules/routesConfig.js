@@ -41,25 +41,25 @@ const routesConfig = [
         messageId: 'menu.coach.agile',
         type: 'item',
         // url: '/trialpages/homepage',
-        url: '/agile-coaching/'
+        url: '/agile-coaching'
       },
       {
         id: 'menu12',
         messageId: "menu.coach.life",
         type: 'item',
-        url: '/life-coaching/'
+        url: '/life-coaching'
       },
       {
         id: 'menu13',
         messageId: "menu.coach.car",
         type: 'item',
-        url: '/career-coaching/'
+        url: '/career-coaching'
       },
       {
         id: 'menu14',
         messageId: 'menu.coach.sm',
         type: 'item',
-        url: '/scrum-master-coaching/'
+        url: '/scrum-master-coaching'
       },
     ],
   },
@@ -88,31 +88,31 @@ const routesConfig = [
             id: "menu212",
             messageId: "menu.cert.scm",
             type: "item",
-            url: "/safe-scrum-master-certification/"
+            url: "/safe-scrum-master-certification"
           },
           {
             id: "menu213",
             messageId: "menu.cert.ascm",
             type: "item",
-            url: "/safe-advanced-scrum-master/"
+            url: "/safe-advanced-scrum-master"
           },
           {
             id: "menu214",
             messageId: "menu.cert.spopm",
             type: "item",
-            url: "/safe-popm-certification/"
+            url: "/safe-popm-certification"
           },
           {
             id: "menu215",
             messageId: "menu.cert.arch",
             type: "item",
-            url: "/safe-for-architects/"
+            url: "/safe-for-architects"
           },
           {
             id: "menu216",
             messageId: "menu.cert.team",
             type: "item",
-            url: "/safe-for-teams/"
+            url: "/safe-for-teams"
           },
         ]
       },
@@ -120,7 +120,7 @@ const routesConfig = [
         id: "menu22",
         messageId: "menu.cert.ScrumAtScale",
         type: "item",
-        url: "/scrum-at-scale/"
+        url: "/scrum-at-scale"
       },
       {
         id: "menu23",
@@ -133,67 +133,67 @@ const routesConfig = [
             id: "menu231",
             messageId: "menu.cert.scm",
             type: "item",
-            url: "/safe-scrum-master-certification/"
+            url: "/safe-scrum-master-certification"
           },
           {
             id: "menu232",
             messageId: "menu.cert.ascm",
             type: "item",
-            url: "/safe-advanced-scrum-master/"
+            url: "/safe-advanced-scrum-master"
           },
           {
             id: "menu233",
             messageId: "menu.cert.ScrMasterCer",
             type: "item",
-            url: "/scrum-master-certifications-csm-psm-smc/"
+            url: "/scrum-master-certifications-csm-psm-smc"
           },
           {
             id: "menu234",
             messageId: "menu.cert.CSM",
             type: "item",
-            url: "/scrum-master-certification-pune-europe-america/"
+            url: "/scrum-master-certification-pune-europe-america"
           },
           {
             id: "menu235",
             messageId: "menu.cert.ACSM",
             type: "item",
-            url: "/advanced-scrum-master-training/"
+            url: "/advanced-scrum-master-training"
           },
           {
             id: "menu236",
             messageId: "menu.cert.ScrMasters",
             type: "item",
-            url: "/scrum-master-certification/"
+            url: "/scrum-master-certification"
           },
           {
             id: "menu237",
             messageId: "menu.cert.PSM",
             type: "item",
-            url: "/professional-scrum-master-certification/"
+            url: "/professional-scrum-master-certification"
           },
           {
             id: "menu238",
             messageId: "menu.cert.PSM2",
             type: "item",
-            url: "/professional-scrum-master-2-certification-training/"
+            url: "/professional-scrum-master-2-certification-training"
           },
           {
             id: "menu239",
             messageId: "menu.cert.CSP-CM",
             type: "item",
-            url: "/certified-scrum-professional-scrummaster-csp-sm/"
+            url: "/certified-scrum-professional-scrummaster-csp-sm"
           },
           {
             id: "menu2310",
             messageId: "menu.cert.SMC",
             type: "item",
-            url: "/scrum-master-certified-smc-certification-training/"
+            url: "/scrum-master-certified-smc-certification-training"
           },
           {
             id: "menu2311",
             messageId: "menu.cert.SMCQues",
             type: "item",
-            url: "/scrum-master-interview-prepration/"
+            url: "/scrum-master-interview-prepration"
           },
         ]
       },
@@ -209,50 +209,50 @@ const routesConfig = [
             id: "menu241",
             messageId: "menu.cert.ProOwn1",
             type: "item",
-            url: "/safe-popm-certification/"
+            url: "/safe-popm-certification"
           },
           {
             id: "menu242",
             messageId: "menu.cert.ProOwn2",
             type: "item",
-            url: "/cspo-certification-training/"
+            url: "/cspo-certification-training"
           },
           {
             id: "menu243",
             messageId: "menu.cert.ProOwn3",
             type: "item",
-            url: "/pspo/"
+            url: "/pspo"
           },
           {
             id: "menu247",
             messageId: "menu.cert.ProOwn7",
             type: "item",
-            url: "/pspo2/"
+            url: "/pspo2"
           },
           {
             id: "menu248",
             messageId: "menu.cert.ProOwn8",
             type: "item",
-            url: "/value-driven-product-ownership/"
+            url: "/value-driven-product-ownership"
           },
           {
             id: "menu244",
             messageId: "menu.cert.ProOwn4",
             type: "item",
-            url: "/product-owner-certification/"
+            url: "/product-owner-certification"
           },
 
           {
             id: "menu245",
             messageId: "menu.cert.ProOwn5",
             type: "item",
-            url: "/scrum-product-owner-certified-spoc/"
+            url: "/scrum-product-owner-certified-spoc"
           },
           {
             id: "menu246",
             messageId: "menu.cert.ProOwn6",
             type: "item",
-            url: "/advanced-certified-scrum-product-owner-acspo/"
+            url: "/advanced-certified-scrum-product-owner-acspo"
           },
         ]
       },
@@ -268,79 +268,79 @@ const routesConfig = [
             id: "menu251",
             messageId: "menu.cert.AgileCoach1",
             type: "item",
-            url: "/agile-coaching-all-certifications/"
+            url: "/agile-coaching-all-certifications"
           },
           {
             id: "menu252",
             messageId: "menu.cert.AgileCoach2",
             type: "item",
-            url: "/agile-coaching-masterclass-bootcamp/"
+            url: "/agile-coaching-masterclass-bootcamp"
           },
           {
             id: "menu253",
             messageId: "menu.cert.AgileCoach13",
             type: "item",
-            url: "/cat-ent-acc/"
+            url: "/cat-ent-acc"
           },
           {
             id: "menu254",
             messageId: "menu.cert.AgileCoach3",
             type: "item",
-            url: "/agile-coaching-certification/"
+            url: "/agile-coaching-certification"
           },
           {
             id: "menu255",
             messageId: "menu.cert.AgileCoach4",
             type: "item",
-            url: "/icagile-apm-certification/"
+            url: "/icagile-apm-certification"
           },
           {
             id: "menu256",
             messageId: "menu.cert.AgileCoach5",
             type: "item",
-            url: "/icp-cat-agile-coaching-transition-certification/"
+            url: "/icp-cat-agile-coaching-transition-certification"
           },
           {
             id: "menu257",
             messageId: "menu.cert.AgileCoach6",
             type: "item",
-            url: "/icp-ent-enterprise-agile-coaching-certification/"
+            url: "/icp-ent-enterprise-agile-coaching-certification"
           },
           {
             id: "menu258",
             messageId: "menu.cert.AgileCoach7",
             type: "item",
-            url: "/psychological-safety/"
+            url: "/psychological-safety"
           },
           {
             id: "menu259",
             messageId: "menu.cert.AgileCoach8",
             type: "item",
-            url: "/agile-leadership-journey/"
+            url: "/agile-leadership-journey"
           },
           {
             id: "menu2510",
             messageId: "menu.cert.AgileCoach9",
             type: "item",
-            url: "/icp-atf-certification/"
+            url: "/icp-atf-certification"
           },
           {
             id: "menu2511",
             messageId: "menu.cert.AgileCoach10",
             type: "item",
-            url: "/icagile-lea-certification/"
+            url: "/icagile-lea-certification"
           },
           {
             id: "menu2512",
             messageId: "menu.cert.AgileCoach11",
             type: "item",
-            url: "/business-agility-foundation-training/"
+            url: "/business-agility-foundation-training"
           },
           {
             id: "menu2513",
             messageId: "menu.cert.AgileCoach12",
             type: "item",
-            url: "/icagile-fundamentals/"
+            url: "/icagile-fundamentals"
           },
 
 
@@ -358,13 +358,13 @@ const routesConfig = [
             id: "menu261",
             messageId: "menu.cert.DevOps1",
             type: "item",
-            url: "/devops-professional-certification/"
+            url: "/devops-professional-certification"
           },
           {
             id: "menu262",
             messageId: "menu.cert.DevOps2",
             type: "item",
-            url: "/devops-master-certification/"
+            url: "/devops-master-certification"
           },
         ]
       },
@@ -372,7 +372,7 @@ const routesConfig = [
         id: "menu270",
         messageId: "menu.cert.PMI-ACP",
         type: "item",
-        url: "/pmi-acp-certification/"
+        url: "/pmi-acp-certification"
       },
       {
         id: "menu27",
@@ -386,25 +386,25 @@ const routesConfig = [
             id: "menu271",
             messageId: "menu.cert.ProManage1",
             type: "item",
-            url: "/icagile-apm-certification/"
+            url: "/icagile-apm-certification"
           },
           {
             id: "menu272",
             messageId: "menu.cert.ProManage2",
             type: "item",
-            url: "/pmp-project-management-certification-training/"
+            url: "/pmp-project-management-certification-training"
           },
           {
             id: "menu273",
             messageId: "menu.cert.ProManage3",
             type: "item",
-            url: "/prince2/"
+            url: "/prince2"
           },
           {
             id: "menu274",
             messageId: "menu.cert.ProManage4",
             type: "item",
-            url: "/tbr-training-back-of-the-room/"
+            url: "/tbr-training-back-of-the-room"
           },
         ]
       },
@@ -412,7 +412,7 @@ const routesConfig = [
         id: "menu28",
         messageId: "menu.cert.SixSigCer",
         type: "item",
-        url: "/six-sigma-certification/"
+        url: "/six-sigma-certification"
       },
       {
         id: "menu29",
@@ -426,37 +426,37 @@ const routesConfig = [
             id: "menu291",
             messageId: "menu.cert.CloudComp1",
             type: "item",
-            url: "/internet-of-things-foundation-certification-iot/"
+            url: "/internet-of-things-foundation-certification-iot"
           },
           {
             id: "menu292",
             messageId: "menu.cert.CloudComp2",
             type: "item",
-            url: "/artificial-intelligence-essentials-ai-certification/"
+            url: "/artificial-intelligence-essentials-ai-certification"
           },
           {
             id: "menu293",
             messageId: "menu.cert.CloudComp3",
             type: "item",
-            url: "/blockchain-foundation-certification/"
+            url: "/blockchain-foundation-certification"
           },
           {
             id: "menu294",
             messageId: "menu.cert.CloudComp4",
             type: "item",
-            url: "/blockchain-essentials-certification/"
+            url: "/blockchain-essentials-certification"
           },
           {
             id: "menu295",
             messageId: "menu.cert.CloudComp5",
             type: "item",
-            url: "/cloud-virtualization-essentials-cloud-computing-certification/"
+            url: "/cloud-virtualization-essentials-cloud-computing-certification"
           },
           {
             id: "menu296",
             messageId: "menu.cert.CloudComp6",
             type: "item",
-            url: "/cloud-technology-associate-certification-cta-ccc/"
+            url: "/cloud-technology-associate-certification-cta-ccc"
           },
         ]
       }
@@ -466,7 +466,7 @@ const routesConfig = [
     id: "menu3",
     messageId: "menu.cert.Mentoring",
     type: "item",
-    url: "/talk-to-mentor/"
+    url: "/talk-to-mentor"
   },
   {
     id: "menu4",
@@ -480,13 +480,13 @@ const routesConfig = [
         id: "menu41",
         messageId: "menu.cert.Resourses1",
         type: "item",
-        url: "/apgi-conf/"
+        url: "/apgi-conf"
       },
       {
         id: "menu42",
         messageId: "menu.cert.Resourses2",
         type: "item",
-        url: "/blog/"
+        url: "/blog"
       },
       {
         id: "menu43",
@@ -500,25 +500,25 @@ const routesConfig = [
             id: "menu431",
             messageId: "menu.cert.Resourses31",
             type: "item",
-            url: "/safe-quiz/"
+            url: "/safe-quiz"
           },
           {
             id: "menu432",
             messageId: "menu.cert.Resourses32",
             type: "item",
-            url: "/kanban-quiz/"
+            url: "/kanban-quiz"
           },
           {
             id: "menu433",
             messageId: "menu.cert.Resourses33",
             type: "item",
-            url: "/project-management-quiz/"
+            url: "/project-management-quiz"
           },
           {
             id: "menu434",
             messageId: "menu.cert.Resourses34",
             type: "item",
-            url: "/scrum-quiz/"
+            url: "/scrum-quiz"
           },
         ]
       },
@@ -526,13 +526,13 @@ const routesConfig = [
         id: "menu44",
         messageId: "menu.cert.Resourses4",
         type: "item",
-        url: "/free-course/"
+        url: "/free-course"
       },
       {
         id: "menu45",
         messageId: "menu.cert.Resourses5",
         type: "item",
-        url: "/free-agile-workshop/"
+        url: "/free-agile-workshop"
       },
 
     ]
@@ -541,19 +541,19 @@ const routesConfig = [
     id: "menu6",
     messageId: "menu.cert.Contactus",
     type: "item",
-    url: "/contact-us/"
+    url: "/contact-us"
   },
   {
     id: "menu7",
     messageId: "menu.cert.Career",
     type: "item",
-    url: "/careers/"
+    url: "/careers"
   },
   {
     id: "menu7",
     messageId: "menu.cert.Refer",
     type: "item",
-    url: "/refer-and-earn/"
+    url: "/refer-and-earn"
   }
 ];
 

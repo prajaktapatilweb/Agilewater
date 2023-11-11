@@ -12,6 +12,7 @@ import Box from '@mui/material/Box';
 import { Formik } from 'formik';
 import * as yup from 'yup';
 import IntlMessages from '../../../@crema/utility/IntlMessages';
+import { AddressMap } from './Address/Addressmap';
 
 const validationSchema = yup.object({
   fullName: yup
@@ -29,7 +30,8 @@ const Contact = () => {
     <AppAnimate animation='transition.slideUpIn' delay={200}>
       <AppCard>
         <Box sx={{ mb: 5, maxHeight: '40%' }}>
-          <SimpleMap />
+          {/* <SimpleMap /> */}
+          <AddressMap />
         </Box>
         <SendMessage sendMessage={contactUsData.sendMessage} />
         <AppGridContainer>

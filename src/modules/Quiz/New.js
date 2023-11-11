@@ -13,9 +13,9 @@ export default function LabTabs() {
   };
 
   return (
-    <Box sx={{width: '100%', typography: 'body1'}}>
+    <Box sx={{ width: '100%', typography: 'body1' }}>
       <TabContext value={value}>
-        <Box sx={{borderBottom: 2, borderColor: 'divider'}}>
+        <Box sx={{ borderBottom: 2, borderColor: 'divider' }}>
           <TabList
             onChange={handleChange}
             variant='scrollable'
@@ -23,15 +23,15 @@ export default function LabTabs() {
             aria-label='lab API tabs example'
           >
             <Tab
-              label='1'
+              label='Scrum'
               value='1'
-              sx={{border: '1px solid red', borderRadius: '50%', color: 'red'}}
+              sx={{ border: '1px solid red', borderRadius: '50%', color: 'red' }}
             />
             <Tab
               label='2'
               value='2'
               disabled={false}
-              sx={{border: '1px solid red', borderRadius: '50%', color: 'red'}}
+              sx={{ border: '1px solid red', borderRadius: '50%', color: 'red' }}
             />
             <Tab label='3' value='3' disabled />
             <Tab label='4' value='3' />

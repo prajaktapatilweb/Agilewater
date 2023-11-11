@@ -1,0 +1,16 @@
+.menuList {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.menuItem {
+    margin-right: 2rem;
+    font-weight: 700;
+}
+
+.menuItem .menuLink:hover {
+    color: rgba(255, 255, 255, 0.7);
+    border-bottom: 1px solid white;
+}

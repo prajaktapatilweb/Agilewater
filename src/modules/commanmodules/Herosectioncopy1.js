@@ -3,8 +3,9 @@ import Grid from '@mui/material/Grid';
 import { Container, Typography } from '@mui/material';
 import Image from 'next/image';
 import PropTypes from 'prop-types';
-
-export default function Herosectioncopy1({ heading, image1, para, btn }) {
+import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
+import { Button } from '@mui/material'
+export default function Herosectioncopy1({ name, heading, image1, para, btn, btn1 }) {
   return (
     <div>
       <Grid className='section section-lg section-shaped'>
@@ -38,13 +39,16 @@ export default function Herosectioncopy1({ heading, image1, para, btn }) {
 
             </Grid>
             <Grid item xs={12} sm={6} md={8}>
+
               <Typography variant='h1' sx={{ color: 'wheat' }}>{heading}</Typography>
               <br></br>
               <Typography variant='body1' sx={{ color: 'white' }}>
                 {para}
               </Typography>
               <br></br>
-              {btn}
+              <Button variant='contained' sx={{ mr: 3 }}>{btn} <KeyboardDoubleArrowRightIcon></KeyboardDoubleArrowRightIcon> </Button>
+              <Button variant='contained'>{btn1} <KeyboardDoubleArrowRightIcon></KeyboardDoubleArrowRightIcon> </Button>
+
             </Grid>
           </Grid>
         </Container>

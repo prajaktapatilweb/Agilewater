@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import Button from '@mui/material/Button';
 import {
   FormControl,
@@ -7,7 +7,7 @@ import {
   TextField,
   Typography,
 } from '@mui/material';
-import {Formik, Field, Form} from 'formik';
+import { Formik, Field, Form } from 'formik';
 // import FormikRadioGroup from '../../formik/FormikRadioGroup';
 // import CustomizedSelectFormik from '../../formik/CustomizedSelectFormik';
 // import CustomizedCheckboxFormik from '../../formik/CustomizedCheckboxFormik';
@@ -28,7 +28,7 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import IntlMessages from '@crema/utility/IntlMessages';
 import CircularProgress from '@mui/material/CircularProgress';
-import {green} from '@mui/material/colors';
+import { green } from '@mui/material/colors';
 import CustomizedSelectFormik from 'modules/commanmodules/Formik/CustomizedSelectFormik';
 import {
   CourseOptions,
@@ -37,15 +37,15 @@ import {
 } from 'modules/Constant/CommanConst';
 import DateTimePicker from '@mui/lab/DateTimePicker';
 import moment from 'moment';
-import {DatePicker} from '@mui/lab';
+import { DatePicker } from '@mui/lab';
 import {
   onGetIndivCourseData,
   onPostNewCourseData,
   onUpdateCourseData,
 } from 'redux/actions';
-import {useDispatch, useSelector} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
-import {Fonts} from 'shared/constants/AppEnums';
+import { Fonts } from 'shared/constants/AppEnums';
 
 const validationSchema = yup.object({
   CourseName: yup.string().required(
@@ -110,18 +110,23 @@ const validationSchema = yup.object({
       });
     }),
 });
-export default function EnquiryFormik({AllowedFieldArray}) {
+export default function EnquiryFormik({ AllowedFieldArray }) {
   console.log('sfsdfds', AllowedFieldArray.includes('A'));
-  const onSubmit = async (data, {setSubmitting, resetForm}) => {
+  const onSubmit = async (data, { setSubmitting, resetForm }) => {
     console.log('Signup Form Submission', data);
     setSubmitting(true);
     CourseID
-      ? dispatch(onUpdateCourseData({CourseID, data}))
-      : dispatch(onPostNewCourseData({data, resetForm}));
+      ? dispatch(onUpdateCourseData({ CourseID, data }))
+      : dispatch(onPostNewCourseData({ data, resetForm }));
     CourseID ? closefn() : null;
     setSubmitting(false);
   };
   const initialValues = {
+    FirstName: '',
+    LastName: '',
+    Email: '',
+    Phone: '',
+    Message: '',
     CourseName: '',
     StartDate: '',
     EndDate: '',
@@ -149,11 +154,35 @@ export default function EnquiryFormik({AllowedFieldArray}) {
         isSubmitting,
       }) => (
         // {/* {(data, errors, isValidating, isSubmitting) => ( */}
-        <Form style={{textAlign: 'left'}} noValidate autoComplete='off'>
-          {/* <pre>{JSON.stringify(values, null, 2)}</pre> */}
-          <Grid container sx={{mb: {xs: 4, xl: 5}}} spacing={2}>
+        <Form style={{ textAlign: 'left' }} noValidate autoComplete='off'>
+          <pre>{JSON.stringify(values, null, 2)}</pre>
+          <Grid container sx={{ mb: { xs: 4, xl: 5 } }} spacing={2}>
             <Grid item xs={12} md={6}>
-              <FormControl sx={{width: '100%'}}>
+              {AllowedFieldArray.includes('FirstName') && (
+                <Grid item xs={6} md={12}>
+                  <AppTextField
+                    label='First Name'
+                    disabled={values.isSubmitting}
+                    // name='Cost.Actual'
+                    name='FirstName'
+                    variant='outlined'
+                  />
+                </Grid>
+              )}
+            </Grid>
+            <Grid item xs={12} md={6}>
+              {AllowedFieldArray.includes('LastName') && (
+                <Grid item xs={6} md={12}>
+                  <AppTextField
+                    label='Last Name'
+                    disabled={values.isSubmitting}
+                    // name='Cost.Actual'
+                    name='LastName'
+                    variant='outlined'
+                  />
+                </Grid>
+              )}
+              {/* <FormControl sx={{ width: '100%' }}>
                 <InputLabel id='demo-simple-select-label'>
                   <IntlMessages id='course' />
                 </InputLabel>
@@ -163,20 +192,65 @@ export default function EnquiryFormik({AllowedFieldArray}) {
                   component={CustomizedSelectFormik}
                   disabled={isSubmitting}
                 />
-              </FormControl>
+              </FormControl> */}
+            </Grid>
+            <Grid item xs={12} md={6}>
+              {AllowedFieldArray.includes('Email') && (
+                <Grid item xs={6} md={12}>
+                  <AppTextField
+                    label='Email'
+                    disabled={values.isSubmitting}
+                    // name='Cost.Actual'
+                    name='Email'
+                    variant='outlined'
+                  />
+                </Grid>
+              )}
+            </Grid>
+            <Grid item xs={12} md={6}>
+              {AllowedFieldArray.includes('Phone') && (
+                <Grid item xs={6} md={12}>
+                  <AppTextField
+                    label='Phone'
+                    disabled={values.isSubmitting}
+                    // name='Cost.Actual'
+                    name='Phone'
+                    variant='outlined'
+                  />
+                </Grid>
+              )}
+            </Grid>
+            <Grid item xs={12} md={12}>
+              {AllowedFieldArray.includes('LastName') && (
+                <Grid item xs={6} md={12}>
+                  <AppTextField
+                    fullWidth
+                    multiline
+                    label='Message'
+                    disabled={values.isSubmitting}
+                    name='Message'
+                    rows='3'
+                    variant='outlined'
+
+                  />
+
+                </Grid>
+              )}
             </Grid>
             <Grid item md={6} xs={12}>
-              <FormControl sx={{width: '100%'}}>
-                <InputLabel id='demo-simple-select-label'>
-                  <IntlMessages id='Course.trainer' />
-                </InputLabel>
-                <Field
-                  name='Trainer'
-                  options={TrainerList}
-                  component={CustomizedSelectFormik}
-                  disabled={isSubmitting}
-                />
-              </FormControl>
+              {AllowedFieldArray.includes('Trainer') && (
+                <FormControl sx={{ width: '100%' }}>
+                  <InputLabel id='demo-simple-select-label'>
+                    <IntlMessages id='Course.trainer' />
+                  </InputLabel>
+                  <Field
+                    name='Trainer'
+                    options={TrainerList}
+                    component={CustomizedSelectFormik}
+                    disabled={isSubmitting}
+                  />
+                </FormControl>
+              )}
             </Grid>
             <Grid container justifyContent='space-between' spacing={2} p={2}>
               {/* <DateTimePicker
@@ -190,83 +264,91 @@ export default function EnquiryFormik({AllowedFieldArray}) {
               renderInput={(params) => <TextField {...params} />}
               onChange={(value) => setFieldValue('StartDate', value)}
             /> */}
-              <Grid item>
-                <DatePicker
-                  autoOk
-                  format='YYYY/MM/DD'
-                  variant='inline'
-                  inputVariant='outlined'
-                  label={<IntlMessages id='common.startDate' />}
-                  name='StartDate'
-                  value={values.StartDate}
-                  slotProps={{
-                    textField: {
-                      helperText: 'MM/DD/YYYY',
-                    },
-                  }}
-                  renderInput={(params) => <TextField {...params} />}
-                  onChange={(value) =>
-                    setFieldValue(
-                      'StartDate',
-                      value,
-                      // moment.utc(value).format('YYYY/MM/DD'),
-                    )
-                  }
-                />
-                {errors.StartDate ? (
-                  <Typography color='red'>{errors.StartDate}</Typography>
-                ) : (
-                  <Typography>MM/DD/YYYY</Typography>
-                )}
-              </Grid>
-              <Grid item>
-                <DatePicker
-                  autoOk
-                  format='YYYY/MM/DD'
-                  variant='inline'
-                  inputVariant='outlined'
-                  label={<IntlMessages id='common.endDate' />}
-                  name='EndDate'
-                  value={values.EndDate}
-                  renderInput={(params) => <TextField {...params} />}
-                  onChange={(value) =>
-                    setFieldValue(
-                      'EndDate',
-                      value,
-                      // moment(value).format('YYYY/MM/DD'),
-                    )
-                  }
-                />
-                {errors.EndDate ? (
-                  <Typography color='red'>{errors.EndDate}</Typography>
-                ) : (
-                  <Typography>MM/DD/YYYY</Typography>
-                )}
-              </Grid>
-              <Grid item>
-                <DatePicker
-                  autoOk
-                  format='YYYY/MM/DD'
-                  variant='inline'
-                  inputVariant='outlined'
-                  label={<IntlMessages id='common.delDate' />}
-                  name='EventDeleteDate'
-                  value={values.EventDeleteDate}
-                  renderInput={(params) => <TextField {...params} />}
-                  onChange={(value) =>
-                    setFieldValue(
-                      'EventDeleteDate',
-                      value,
-                      // moment(value).format('YYYY/MM/DD'),
-                    )
-                  }
-                />
-                {errors.EventDeleteDate ? (
-                  <Typography color='red'>{errors.EventDeleteDate}</Typography>
-                ) : (
-                  <Typography>MM/DD/YYYY</Typography>
-                )}
-              </Grid>
+              {AllowedFieldArray.includes('StartDate') && (
+                <Grid item>
+
+                  <DatePicker
+                    autoOk
+                    format='YYYY/MM/DD'
+                    variant='inline'
+                    inputVariant='outlined'
+                    label={<IntlMessages id='common.startDate' />}
+                    name='StartDate'
+                    value={values.StartDate}
+                    slotProps={{
+                      textField: {
+                        helperText: 'MM/DD/YYYY',
+                      },
+                    }}
+                    renderInput={(params) => <TextField {...params} />}
+                    onChange={(value) =>
+                      setFieldValue(
+                        'StartDate',
+                        value,
+                        // moment.utc(value).format('YYYY/MM/DD'),
+                      )
+                    }
+                  />
+                  {errors.StartDate ? (
+                    <Typography color='red'>{errors.StartDate}</Typography>
+                  ) : (
+                    <Typography>MM/DD/YYYY</Typography>
+                  )}
+
+                </Grid>
+              )}
+              {AllowedFieldArray.includes('EndDate') && (
+                <Grid item>
+                  <DatePicker
+                    autoOk
+                    format='YYYY/MM/DD'
+                    variant='inline'
+                    inputVariant='outlined'
+                    label={<IntlMessages id='common.endDate' />}
+                    name='EndDate'
+                    value={values.EndDate}
+                    renderInput={(params) => <TextField {...params} />}
+                    onChange={(value) =>
+                      setFieldValue(
+                        'EndDate',
+                        value,
+                        // moment(value).format('YYYY/MM/DD'),
+                      )
+                    }
+                  />
+                  {errors.EndDate ? (
+                    <Typography color='red'>{errors.EndDate}</Typography>
+                  ) : (
+                    <Typography>MM/DD/YYYY</Typography>
+                  )}
+                </Grid>
+              )}
+              {AllowedFieldArray.includes('delDate') && (
+                <Grid item>
+                  <DatePicker
+                    autoOk
+                    format='YYYY/MM/DD'
+                    variant='inline'
+                    inputVariant='outlined'
+                    label={<IntlMessages id='common.delDate' />}
+                    name='EventDeleteDate'
+                    value={values.EventDeleteDate}
+                    renderInput={(params) => <TextField {...params} />}
+                    onChange={(value) =>
+                      setFieldValue(
+                        'EventDeleteDate',
+                        value,
+                        // moment(value).format('YYYY/MM/DD'),
+                      )
+                    }
+                  />
+                  {errors.EventDeleteDate ? (
+                    <Typography color='red'>{errors.EventDeleteDate}</Typography>
+                  ) : (
+                    <Typography>MM/DD/YYYY</Typography>
+                  )}
+                </Grid>
+              )}
             </Grid>
             {/* <Grid continer  direction="row" xs={12}  justifyContent="space-evenly"> */}
             {/* <Grid item md={6} xs={12}>
@@ -302,28 +384,32 @@ export default function EnquiryFormik({AllowedFieldArray}) {
                 />
               </Grid>
             )}
-            <Grid item xs={6} md={3}>
-              <AppTextField
-                label={<IntlMessages id='Course.time' />}
-                disabled={values.isSubmitting}
-                name='Time'
-                variant='outlined'
-              />
-            </Grid>
-            <Grid item xs={6} md={3}>
-              <AppTextField
-                label={<IntlMessages id='Course.place' />}
-                disabled={values.isSubmitting}
-                name='Place'
-                variant='outlined'
-                sx={{
-                  width: '100%',
-                  '& .MuiInputBase-input': {
-                    fontSize: 14,
-                  },
-                }}
-              />
-            </Grid>
+            {AllowedFieldArray.includes('Time') && (
+              <Grid item xs={6} md={3}>
+                <AppTextField
+                  label={<IntlMessages id='Course.time' />}
+                  disabled={values.isSubmitting}
+                  name='Time'
+                  variant='outlined'
+                />
+              </Grid>
+            )}
+            {AllowedFieldArray.includes('Place') && (
+              <Grid item xs={6} md={3}>
+                <AppTextField
+                  label={<IntlMessages id='Course.place' />}
+                  disabled={values.isSubmitting}
+                  name='Place'
+                  variant='outlined'
+                  sx={{
+                    width: '100%',
+                    '& .MuiInputBase-input': {
+                      fontSize: 14,
+                    },
+                  }}
+                />
+              </Grid>
+            )}
           </Grid>
           <Grid container>
             <Button
@@ -331,7 +417,7 @@ export default function EnquiryFormik({AllowedFieldArray}) {
               color='primary'
               disabled={values.isValidating || values.isSubmitting}
               sx={{
-                mt: {xs: 5, xl: 6},
+                mt: { xs: 5, xl: 6 },
                 minWidth: 160,
                 fontWeight: Fonts.REGULAR,
                 fontSize: 16,

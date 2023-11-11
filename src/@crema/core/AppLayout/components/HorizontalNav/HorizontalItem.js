@@ -1,20 +1,20 @@
-import React from 'react';
-import {Icon, ListItem, ListItemText} from '@mui/material';
-import {useRouter, withRouter} from 'next/router';
+import React, { useState } from 'react';
+import { Icon, ListItem, ListItemText } from '@mui/material';
+import { useRouter, withRouter } from 'next/router';
 import clsx from 'clsx';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
 import IntlMessages from '../../../../utility/IntlMessages';
 import Box from '@mui/material/Box';
 import Badge from '@mui/material/Badge';
-import {useSidebarContext} from '../../../../utility/AppContextProvider/SidebarContextProvider';
+import { useSidebarContext } from '../../../../utility/AppContextProvider/SidebarContextProvider';
 import PropsTypes from 'prop-types';
 
 function HorizontalItem(props) {
-  const {item, dense} = props;
-  const {pathname} = useRouter();
+  const { item, dense } = props;
+  const { pathname } = useRouter();
   const active = isUrlInChildren(item, pathname);
-  const {sidebarMenuSelectedBgColor, sidebarMenuSelectedTextColor} =
+  const { sidebarMenuSelectedBgColor, sidebarMenuSelectedTextColor } =
     useSidebarContext();
 
   function isUrlInChildren(parent, url) {
@@ -40,14 +40,19 @@ function HorizontalItem(props) {
     return false;
   }
 
+  const [isHovered, setHovered] = useState(false);
+  const calculatedStyle = { ...(isHovered ? { backgroundColor: 'rgba(0,0,0,.08)' } : {}) };
   return (
-    <Link href={item.url} as={item.as}>
-      <a style={{textDecoration: 'none'}}>
+    <Link href={item.url} as={item.as} >
+      <a style={{ textDecoration: 'none', }} >
         <ListItem
           className={clsx('navItemSubmenu', dense && 'dense', {
             active: item.url === props.router.pathname,
           })}
           exact={item.exact}
+          style={calculatedStyle}
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => setHovered(false)}
           sx={{
             minHeight: 40,
             padding: '4px 12px',
@@ -57,7 +62,8 @@ function HorizontalItem(props) {
             // minWidth: 160,
             '&.active': {
               backgroundColor: sidebarMenuSelectedBgColor,
-              color: sidebarMenuSelectedTextColor + '!important',
+              // color: sidebarMenuSelectedTextColor + '!important',
+              color: 'red' + '!important',
               pointerEvents: 'none',
               '& .list-item-text-primary': {
                 color: 'inherit',
@@ -83,7 +89,7 @@ function HorizontalItem(props) {
               sx={{
                 color: active ? sidebarMenuSelectedTextColor : 'action',
                 mr: 3,
-                fontSize: {xs: 16, xl: 18},
+                fontSize: { xs: 16, xl: 18 },
               }}
             >
               {item.icon}

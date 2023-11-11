@@ -149,7 +149,7 @@ const otherSideMain = {
         title: 'Get Scrum Master Coaching from our professional, certified coaches',
         onlink: smcoachlink,
         buttons: ' Scrum Master Coaching',
-        smcoachlink
+
     },
     sideMain2: {
         img: '/assets/images/cards/interview-prepration.png',
@@ -185,6 +185,13 @@ const otherSideMain = {
             'Prepare for your next interview with experts. Book session to talk one to one with our industry experts and get your all doubts/queries cleared.',
         onlink: smcoachlink,
         buttons: 'Register Now',
+    },
+    sideMain11: {
+        img: '/assets/images/cards/video-conference.png',
+        title: 'Schedule a personal meeting with trainer. Book One-on-One Coaching Sessions',
+        onlink: smcoachlink,
+        buttons: ' Book Session',
+
     },
 
 
@@ -322,6 +329,7 @@ export const sideList3 = [otherSideMain.sideMain3];
 export const sideList4 = [otherSideMain.sideMain4];
 export const sideList5 = [otherSideMain.sideMain5];
 export const sideList6 = [otherSideMain.sideMain6];
+export const sideList11 = [otherSideMain.sideMain11];
 
 export const otherHeroList = [
     otherHeroMain.heromain1,

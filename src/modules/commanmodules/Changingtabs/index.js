@@ -53,7 +53,8 @@ export default function FullWidthTabs() {
     const handleChangeIndex = (index) => {
         setValue(index);
     };
-
+    const data = [{ image: 'ss', title: 'dddd', category: 'iitl' }]
+    const tabData = [{ category: 'iitl' }, { category: 'Scrum' }]
     return (
         <Box sx={{ bgcolor: 'background.paper', borderRadius: 5, mb: 7 }}>
             <AppBar position='static'>
@@ -66,9 +67,12 @@ export default function FullWidthTabs() {
                     aria-label='full width tabs example'
 
                 >
-                    <Tab label='SAFe' {...a11yProps(0)} sx={{ fontSize: 16 }} />
+                    {tabData.map((item, i) =>
+                        <Tab label={item.category} {...a11yProps(1)} sx={{ fontSize: 16 }} key={i} />
+                    )}
+                    {/* <Tab label='SAFe' {...a11yProps(0)} sx={{ fontSize: 16 }} />
                     <Tab label='Scrum' {...a11yProps(1)} sx={{ fontSize: 16 }} />
-                    <Tab label='Agile' {...a11yProps(2)} sx={{ fontSize: 16 }} />
+                    <Tab label='Agile' {...a11yProps(2)} sx={{ fontSize: 16 }} /> */}
                 </Tabs>
             </AppBar>
             <SwipeableViews
@@ -76,8 +80,9 @@ export default function FullWidthTabs() {
                 index={value}
                 onChangeIndex={handleChangeIndex}
             >
+
                 <TabPanel value={value} index={0} dir={theme.direction}>
-                    <Hero />
+                    <Hero filterData={data.filter(item => item.category === value)} />
                     {/* Item One */}
                 </TabPanel>
                 <TabPanel value={value} index={1} dir={theme.direction}>
