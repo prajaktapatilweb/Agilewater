@@ -43,6 +43,7 @@ async function getCoursList(req, res) {
         Date: 1,
         Time: 1,
         Trainer: 1,
+        PaymentTypes: 1,
       },
     },
     {
@@ -62,7 +63,6 @@ async function getCoursList(req, res) {
                 'Aug',
                 'Sep',
                 'Oct',
-                'Sep',
                 'Nov',
                 'Dec',
               ];
@@ -99,6 +99,7 @@ async function getCoursList(req, res) {
         Date: 1,
         Time: 1,
         Trainer: 1,
+        PaymentTypes: 1,
         // isExpired: {
         //   // new field
         //   $cond: {
@@ -110,11 +111,11 @@ async function getCoursList(req, res) {
       },
     },
   ]);
-  console.log('first', NewList.length);
+  console.log('first12', NewList[2]);
 
   return res.status(200).json({List: NewList});
 }
-router.get('/getcourslist', auth, async (req, res) => {
+router.get('/getcourslist', async (req, res) => {
   console.log('In request Get Course List ');
   res.setHeader('Access-Control-Allow-Origin', '*');
   console.log('In request Get Course List 2');
@@ -149,6 +150,7 @@ router.get('/getindividualcourse', async (req, res) => {
         StartDate: 1,
         Time: 1,
         Trainer: 1,
+        PaymentTypes: 1,
         _id: 0,
       },
     );
