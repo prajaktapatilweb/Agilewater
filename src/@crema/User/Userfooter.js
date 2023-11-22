@@ -1,9 +1,9 @@
-import {Container, Link} from '@mui/material';
+import { Container, Link } from '@mui/material';
 import React from 'react';
-import {Grid} from '@mui/material';
-import {Typography, Box} from '@mui/material';
+import { Grid } from '@mui/material';
+import { Typography, Box } from '@mui/material';
 import Image from 'next/image';
-import {Button} from '@mui/material';
+import { Button } from '@mui/material';
 import AppGridContainer from '@crema/core/AppGridContainer';
 import {
   contactlink,
@@ -21,74 +21,75 @@ import ScrollUp from 'modules/commanmodules/ScrollUp';
 export default function Userfooter() {
   const contactno1 = ' +919421809846';
   const contactno2 = ' +919421809846';
+  const contactno3 = ' +1(323)991-3839';
 
   return (
     <div>
-      <Grid container className='section' style={{background: '#ffffff'}}>
+      <Grid container className='section' style={{ background: '#ffffff' }}>
         <ScrollUp></ScrollUp>
         {/* backgroundImage: "linear-gradient(180deg,#9c27b0,#540162 )" */}
-        <Container sx={{maxWidth: {xl: 1450}}}>
+        <Container sx={{ maxWidth: { xl: 1450 } }}>
           <AppGridContainer>
             <Grid
               item
               xs={12}
               sm={6}
               md={3}
-              sx={{color: 'white'}}
-              ml={{xs: 10, sm: 0}}
+              sx={{ color: 'white' }}
+              ml={{ xs: 10, sm: 0 }}
             >
               <Link
                 href={scrumatscalelink}
-                sx={{color: '#00a1ff', textDecoration: 'none'}}
+                sx={{ color: '#00a1ff', textDecoration: 'none' }}
               >
                 Scrum@Scale Practitioner
               </Link>
               <br></br>
               <Link
                 href={csmlink}
-                sx={{color: '#00a1ff', textDecoration: 'none'}}
+                sx={{ color: '#00a1ff', textDecoration: 'none' }}
               >
                 CSM – Certified Scrum Master
               </Link>
               <br></br>
               <Link
                 href={safeagilelink}
-                sx={{color: '#00a1ff', textDecoration: 'none'}}
+                sx={{ color: '#00a1ff', textDecoration: 'none' }}
               >
                 SAFe Agile Certification
               </Link>
               <br></br>
               <Link
                 href={safesmlink}
-                sx={{color: '#00a1ff', textDecoration: 'none'}}
+                sx={{ color: '#00a1ff', textDecoration: 'none' }}
               >
                 SAFe Scrum Master
               </Link>
               <br></br>
               <Link
                 href={polink}
-                sx={{color: '#00a1ff', textDecoration: 'none'}}
+                sx={{ color: '#00a1ff', textDecoration: 'none' }}
               >
                 Scrum Product Owner
               </Link>
               <br></br>
               <Link
                 href={devopsproflink}
-                sx={{color: '#00a1ff', textDecoration: 'none'}}
+                sx={{ color: '#00a1ff', textDecoration: 'none' }}
               >
                 DevOps Professional
               </Link>
               <br></br>
               <Link
                 href={devopsmasterlink}
-                sx={{color: '#00a1ff', textDecoration: 'none'}}
+                sx={{ color: '#00a1ff', textDecoration: 'none' }}
               >
                 DevOps Master
               </Link>
               <br></br>
               <Link
                 href={pmiacplink}
-                sx={{color: '#00a1ff', textDecoration: 'none'}}
+                sx={{ color: '#00a1ff', textDecoration: 'none' }}
               >
                 PMI – ACP
               </Link>
@@ -98,23 +99,28 @@ export default function Userfooter() {
               xs={12}
               sm={6}
               md={3}
-              mb={{xs: 5, sm: 5, md: 0}}
-              ml={{xs: 10, sm: 0}}
+              mb={{ xs: 5, sm: 5, md: 0 }}
+              ml={{ xs: 10, sm: 0 }}
             >
               <Typography variant='h2' color='#20509e' gutterBottom>
                 Corporate Office
               </Typography>
-              <p style={{color: '#75849a'}}>
+              <p style={{ color: '#75849a' }}>
                 Office No.111, Vision 9 Mall,<br></br>
                 1st floor, Kunal Icon Rd,<br></br>
                 Pimple Saudagar, Pune, Maharashtra<br></br>
                 PIN : 411027
               </p>
-
+              <Typography variant='h2' color='#20509e' gutterBottom>
+                USA Office
+              </Typography>
+              <p style={{ color: '#75849a' }}>
+                32957 Norwalk Street, Union City, CA 94587
+              </p>
               <Typography variant='h2' color='#20509e' gutterBottom>
                 Other Offices
               </Typography>
-              <p style={{color: '#75849a'}}>
+              <p style={{ color: '#75849a' }}>
                 Bengaluru, Mumbai, Noida,<br></br>
                 Hyderabad, Kolkata, Mexico, UK<br></br>
               </p>
@@ -128,23 +134,23 @@ export default function Userfooter() {
               >
                 <Link
                   href={contactlink}
-                  sx={{color: 'white', textDecoration: 'none'}}
+                  sx={{ color: 'white', textDecoration: 'none' }}
                 >
                   {' '}
                   Contact Us
                 </Link>
               </Button>
             </Grid>
-            <Grid item xs={12} sm={6} md={3} ml={{xs: 10, sm: 0}}>
+            <Grid item xs={12} sm={6} md={3} ml={{ xs: 10, sm: 0 }}>
               <Typography variant='h2' color='#20509e' gutterBottom>
                 Reach Us
               </Typography>
-              <p style={{color: '#75849a'}} gutterBottom>
+              <p style={{ color: '#75849a' }} gutterBottom>
                 <Link
                   href={`tel:${contactno1}`}
                   target='_blank'
                   className='footermenu'
-                  style={{textDecoration: 'underline', display: 'inline-block'}}
+                  style={{ textDecoration: 'underline', display: 'inline-block' }}
                 >
                   +91 9405045060
                 </Link>
@@ -153,16 +159,29 @@ export default function Userfooter() {
                   href={`tel:${contactno2}`}
                   target='_blank'
                   className='footermenu'
-                  style={{textDecoration: 'underline', display: 'inline-block'}}
+                  style={{ textDecoration: 'underline', display: 'inline-block' }}
                 >
                   +91 9421809846
                 </Link>
-                <br></br>
+                <Typography variant='h2' color='#20509e' gutterBottom>
+                  USA
+                </Typography>
+                <p style={{ color: '#75849a', }}>
+                  <Link
+                    href={`tel:${contactno3}`}
+                    target='_blank'
+                    className='footermenu'
+                    style={{ textDecoration: 'underline', display: 'inline-block' }}
+                  >
+                    +1 (323)991-3839
+                  </Link>
+                </p>
+
                 <Link
                   href={`mailto:${'Support@AgileWaters.com'}`}
                   target='_blank'
                   className='footermenu'
-                  style={{textDecoration: 'underline', display: 'inline-block'}}
+                  style={{ textDecoration: 'underline', display: 'inline-block' }}
                 >
                   Support@AgileWaters.com
                 </Link>
@@ -177,7 +196,7 @@ export default function Userfooter() {
               </Typography>
               <Link
                 href='https://www.apgionline.com/'
-                sx={{color: '#00a1ff', textDecoration: 'none'}}
+                sx={{ color: '#00a1ff', textDecoration: 'none' }}
               >
                 {' '}
                 APGI
@@ -185,18 +204,18 @@ export default function Userfooter() {
               <br></br>
               <Link
                 href='https://vijaywade.com/'
-                sx={{color: '#00a1ff', textDecoration: 'none'}}
+                sx={{ color: '#00a1ff', textDecoration: 'none' }}
               >
                 {' '}
                 VijayWade
               </Link>
               <br></br>
             </Grid>
-            <Grid item xs={12} sm={6} md={3} ml={{xs: 10, sm: 0}}>
+            <Grid item xs={12} sm={6} md={3} ml={{ xs: 10, sm: 0 }}>
               <Typography variant='h2' color='#20509e' gutterBottom>
                 Legal
               </Typography>
-              <p style={{color: '#75849a'}} gutterBottom>
+              <p style={{ color: '#75849a' }} gutterBottom>
                 <Link href='/privacy-policy'> Privacy Policy</Link>
                 <br></br>
                 <Link href='/refund-policy'> Refund Policy</Link>
@@ -220,7 +239,7 @@ export default function Userfooter() {
                 width={80}
               />
               <br></br>
-              <Box sx={{pl: 2, pt: 2}}>
+              <Box sx={{ pl: 2, pt: 2 }}>
                 <Image
                   alt='Safelogo'
                   src='/assets/images/Safe/EXIN-Logo-e1625802522731.webp'

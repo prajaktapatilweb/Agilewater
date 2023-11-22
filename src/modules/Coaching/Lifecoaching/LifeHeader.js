@@ -8,8 +8,9 @@ export default function LifeHeader() {
             <Coachingheader
                 title="LIFE COACHING"
                 subtitle="Be Who You Want To Be"
-                para={<Button variant="contained" sx={{ backgroundImage: "linear-gradient(to right, #3e2bce 0%, #2dd3aa 100%, #2dd3aa 100%, #2dd3aa 100%)" }}> Hire An Agile Coach</Button>}
-
+                para=" "
+                btn="Hire An Life Coach"
+                link="/hire-coach"
             />
         </div>
     )

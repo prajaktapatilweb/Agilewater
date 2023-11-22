@@ -23,9 +23,9 @@ export default function Careercoaching() {
     return (
         <div>
             <CareerHeader />
-            <Container sx={{ maxWidth: { xl: 1450 }, marginTop: 10 }}>
+            <Container sx={{ maxWidth: { xl: 1450 }, my: 10 }}>
                 <Careerdetails />
-                <Box sx={{ textAlign: 'center' }}>
+                <Box sx={{ textAlign: 'center', my: 10 }}>
                     <Typography variant='h7'>
                         Choose From Our Top Career Coaches
                     </Typography>

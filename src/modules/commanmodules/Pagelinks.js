@@ -28,3 +28,4 @@ export const safesmlink = "/safe-scrum-master-certification/"
 export const devopsproflink = "/devops-professional-certification/"
 export const devopsmasterlink = "/devops-master-certification/"
 export const pmiacplink = "/pmi-acp-certification/"
+

@@ -26,9 +26,9 @@ export default function Agilecoaching() {
     return (
         <div>
             <AgileHeader />
-            <Container sx={{ maxWidth: { xl: 1450 }, marginTop: 10 }}>
+            <Container sx={{ maxWidth: { xl: 1450 }, my: 10 }}>
                 <Agiledetails />
-                <Box sx={{ textAlign: 'center' }}>
+                <Box sx={{ textAlign: 'center', my: 10 }} >
                     <Typography variant='h7'>Choose From Our Top Agile Coaches</Typography>
                 </Box>
                 {/* <CoachProfile data={CoachList} /> */}
@@ -37,8 +37,10 @@ export default function Agilecoaching() {
                     <AppGrid
                         responsive={{ xs: 1, sm: 2, md: 3, lg: 2, xl: 3 }}
                         data={AgileCoachList}
+
                         renderRow={(coach, id) => (
                             <CoachDetailData coach={coach} key={id} />
+
                         )}
                     />
                 )}

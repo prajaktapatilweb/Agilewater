@@ -4,6 +4,7 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import { Fonts } from 'shared/constants/AppEnums';
 import PropTypes from 'prop-types';
 import Image from 'next/image';
+import { Link } from '@mui/material';
 
 const CourseItem = ({ data }) => {
   return (
@@ -18,14 +19,15 @@ const CourseItem = ({ data }) => {
           mb: 2,
         }}
       >
-        <Image
-          src={data.image}
-          alt={data.title}
-          width={100}
-          height={100}
-          layout='responsive'
-        />
-
+        <Link href={data.links}>
+          <Image
+            src={data.image}
+            alt={data.title}
+            width={100}
+            height={100}
+            layout='responsive'
+          />
+        </Link>
         {/* <img src={data.image} alt={data.title} /> */}
       </Box>
       <Box

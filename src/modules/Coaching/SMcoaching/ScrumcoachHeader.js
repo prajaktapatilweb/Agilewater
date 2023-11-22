@@ -9,7 +9,9 @@ export default function ScrumcoachHeader() {
             <Coachingheader
                 title="SCRUM MASTER COACHING"
                 subtitle="If it matters to you, you'll find a way"
-                para={<Button variant="contained" sx={{ backgroundImage: "linear-gradient(to right, #3e2bce 0%, #2dd3aa 100%, #2dd3aa 100%, #2dd3aa 100%)" }}> Hire An Agile Coach</Button>}
+                para=" "
+                btn="Hire An Scrum Master Coach"
+                link="/hire-coach"
             ></Coachingheader>
         </div>
     )

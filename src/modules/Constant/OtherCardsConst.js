@@ -162,7 +162,7 @@ const otherSideMain = {
         img: '/assets/images/cards/career-path.png',
         title:
             'Hire Life Coach, Agile Coach and Scrum Master coach to help you and your organization',
-        onlink: smcoachlink,
+        onlink: '/hire-coach',
         buttons: 'Hire Life/Agile/Career Coach',
     },
     sideMain4: {
