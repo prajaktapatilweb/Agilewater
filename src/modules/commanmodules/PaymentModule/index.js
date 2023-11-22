@@ -29,7 +29,11 @@ export default function PaymentModule() {
     }
 
     // creating a new order
-    const result = await axios.post('http://localhost:4000/payment/orders');
+    const result = await axios.post('http://localhost:4000/payment/orders', {
+      CourseID: 'ID-18',
+      PayTypeID: '655618ae9a506c1bd6b763ab',
+      DiscountCoupon: 'DIWALI',
+    });
 
     if (!result) {
       alert('Server error. Are you online?');
@@ -40,13 +44,14 @@ export default function PaymentModule() {
     const {amount, id: order_id, currency} = result.data;
 
     const options = {
-      key: 'rzp_test_C7ah6AISScKMcn', // Enter the Key ID generated from the Dashboard
+      key: 'rzp_test_C7ah6AISScKMcn', // Enter the Key ID generated from the Dashboard of Razorpay
       amount: amount.toString(),
       currency: currency,
       name: 'Agilewaters ',
+      order_id: order_id,
+      // Below are the optional parameters
       description: 'Test Transaction',
       image: {logo},
-      order_id: order_id,
       handler: async function (response) {
         // console.log('Testing41',resonse)
         const data = {
@@ -65,9 +70,9 @@ export default function PaymentModule() {
         alert(result.data.msg);
       },
       prefill: {
-        name: 'Prajakta',
+        name: 'Customer Details',
         email: 'prajaktaweb@gmail.com',
-        contact: '9823217284',
+        contact: '+919823217284',
       },
       notes: {
         address: 'Soumya Dey Corporate Office',

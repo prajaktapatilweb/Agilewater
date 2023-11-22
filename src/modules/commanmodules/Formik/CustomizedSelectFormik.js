@@ -31,7 +31,7 @@ function CustomizedSelectFormik({
         {options
           ? options.map((item) => {
               return (
-                <MenuItem key={item.key} value={item.text}>
+                <MenuItem key={item.key} value={item.value || item.text}>
                   {item.text}
                 </MenuItem>
               );

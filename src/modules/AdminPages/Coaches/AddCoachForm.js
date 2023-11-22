@@ -31,11 +31,12 @@ import IntlMessages from '@crema/utility/IntlMessages';
 import CircularProgress from '@mui/material/CircularProgress';
 import {green} from '@mui/material/colors';
 import CustomizedSelectFormik from 'modules/commanmodules/Formik/CustomizedSelectFormik';
-import {CocheSubject} from 'modules/Constant/CommanConst';
+import {CocheSubject, CountryList} from 'modules/Constant/CommanConst';
 import DateTimePicker from '@mui/lab/DateTimePicker';
 import moment from 'moment';
 import {DatePicker} from '@mui/lab';
 import {
+  onGetCoachList,
   onGetIndivCoachData,
   onPostNewCoachData,
   onUpdateCoachData,
@@ -52,51 +53,6 @@ import {useRouter} from 'next/router';
 // import ReactTostify from 'modules/Testing/ReactTostify';
 
 // Yup Form Validation
-const validationSchema = yup.object({
-  CoachName: yup.string().required(
-    <>
-      <IntlMessages id='Coach.Name' /> required !
-    </>,
-  ),
-  Experience: yup
-    .string()
-    .required(
-      <>
-        <IntlMessages id='Coach.experience' /> required !
-      </>,
-    )
-    .matches(/^[0-9]+$/, 'Only digits are allowed for this field '),
-
-  Country: yup
-    .string()
-    .required(
-      <>
-        <IntlMessages id='Coach.country' /> required !
-      </>,
-    )
-    .matches(/^[aA-zZ]+$/, 'Only alphabets are allowed for this field '),
-
-  Avatar: yup.string().required(
-    <>
-      <IntlMessages id='Coach.photo' /> required !
-    </>,
-  ),
-  Specialization: yup.array().of(
-    yup.string().required(
-      <>
-        <IntlMessages id='Coach.Specil' /> required !
-      </>,
-    ),
-  ),
-  Expertise: yup
-    .array()
-    .min(1, 'Please select at least select one Expertise Field')
-    .required(
-      <>
-        <IntlMessages id='Coach.expertise' /> required !
-      </>,
-    ),
-});
 
 const AddCoachForm = ({CoachData, closefn}) => {
   // console.log('Begining of SignupJWTAuth');
@@ -114,6 +70,10 @@ const AddCoachForm = ({CoachData, closefn}) => {
   const [checked, setChecked] = React.useState('');
   const CoachID = CoachData ? CoachData?.CoachID : null;
   const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(onGetCoachList());
+  }, [dispatch]);
+  const CoachList = useSelector((state) => state?.Coach?.Coachlist);
 
   console.log('Signup Form Submission', CoachData);
 
@@ -160,36 +120,77 @@ const AddCoachForm = ({CoachData, closefn}) => {
     photoURL: CoachData?.photoURL
       ? `/userFileUploads/${CoachData?.photoURL}`
       : '/assets/images/placeholder.jpg',
+    Summary: CoachData?.Summary,
   };
+  const validationSchema = yup.object({
+    CoachName: yup
+      .string()
+      .required(
+        <>
+          <IntlMessages id='Coach.Name' /> required !
+        </>,
+      )
+      .test(
+        'checkIfExist',
+        `The Coach Name is already added`,
+        function (value) {
+          console.log(
+            'ssss',
+            CoachList.some((item) => item.CoachName === value),
+          );
+          return !CoachList.some((item) => item.CoachName === value);
+        },
+      ),
+    Experience: yup
+      .string()
+      .required(
+        <>
+          <IntlMessages id='Coach.experience' /> required !
+        </>,
+      )
+      .matches(/^[0-9]+$/, 'Only digits are allowed for this field '),
 
+    Country: yup
+      .string()
+      .required(
+        <>
+          <IntlMessages id='Coach.country' /> required !
+        </>,
+      )
+      .matches(/^[aA-zZ]+$/, 'Only alphabets are allowed for this field '),
+
+    Avatar: yup.string().required(
+      <>
+        <IntlMessages id='Coach.photo' /> required !
+      </>,
+    ),
+    Specialization: yup.array().of(
+      yup.string().required(
+        <>
+          <IntlMessages id='Coach.Specil' /> required !
+        </>,
+      ),
+    ),
+    Expertise: yup
+      .array()
+      .min(1, 'Please select at least select one Expertise Field')
+      .required(
+        <>
+          <IntlMessages id='Coach.expertise' /> required !
+        </>,
+      ),
+  });
   return (
     <Box sx={{flex: 1, display: 'flex', flexDirection: 'column'}}>
-      {/* {CoachID ? (
-        <Typography variant='h1'>Update the data of {CoachID}</Typography>
-      ) : null} */}
       <Box sx={{flex: 1, display: 'flex', flexDirection: 'column', m: 10}}>
-        {/* <Grid container sx={{mb: {xs: 4, xl: 5}}} spacing={15}>
-          <Grid item xs={12} sm={4}>
-            <Card sx={{alignItems: 'center', p: {xs: 15, sm: 5, lg: 3}}}>
-              <ProfilePhoto CoachData={CoachData} />
-            </Card>
-          </Grid>
-          <Grid item xs={12} sm={8}> */}
         <Formik
           initialValues={initialValues}
-          // validationSchema={validationSchema}
+          validationSchema={validationSchema}
           validateOnChange={true}
           onSubmit={onSubmit}
           enableReinitialize={true}
         >
-          {({
-            values,
-            errors,
-            isValidating,
-            touched,
-            setFieldValue,
-            isSubmitting,
-          }) => (
+          {({values, setFieldValue, isSubmitting}) => (
             // {/* {(data, errors, isValidating, isSubmitting) => ( */}
             <Form
               style={{textAlign: 'left'}}
@@ -201,7 +202,6 @@ const AddCoachForm = ({CoachData, closefn}) => {
               <Grid container sx={{mb: {xs: 4, xl: 5}}} spacing={15}>
                 <Grid item xs={12} sm={4}>
                   <Card sx={{alignItems: 'center', p: {xs: 15, sm: 5, lg: 3}}}>
-                    {/* <ProfilePhoto CoachData={CoachData} /> */}
                     <FormControl sx={{width: '100%'}}>
                       <InputLabel id='demo-simple-select-label'>
                         <IntlMessages id='Course.trainer' />
@@ -230,13 +230,16 @@ const AddCoachForm = ({CoachData, closefn}) => {
                       />
                     </Grid>
                     <Grid item xs={6}>
-                      <AppTextField
-                        label={<IntlMessages id='Coach.country' />}
-                        disabled={values.isSubmitting}
-                        // name='Cost.Actual'
-                        name='Country'
-                        variant='outlined'
-                      />
+                      <FormControl sx={{width: '100%'}}>
+                        <InputLabel id='demo-simple-select-label'>
+                          <IntlMessages id='Coach.country' />
+                        </InputLabel>
+                        <Field
+                          name='Country'
+                          options={CountryList}
+                          component={CustomizedSelectFormik}
+                        />
+                      </FormControl>
                     </Grid>
                     <Grid item xs={12}>
                       <Box
@@ -262,7 +265,10 @@ const AddCoachForm = ({CoachData, closefn}) => {
                         <FormControl>
                           <Field
                             name='Expertise'
-                            options={CocheSubject}
+                            options={[
+                              ...CocheSubject,
+                              {key: 4, text: 'Trainer', value: 'Trainer'},
+                            ]}
                             olddata=''
                             checked={checked}
                             disabled={values.isSubmitting}
@@ -271,6 +277,17 @@ const AddCoachForm = ({CoachData, closefn}) => {
                           ></Field>
                         </FormControl>
                       </Box>
+                    </Grid>
+                    <Grid item xs={12}>
+                      <AppTextField
+                        label={<IntlMessages id='Summary' />}
+                        disabled={values.isSubmitting}
+                        // name='Cost.Actual'
+                        multiline
+                        rows='3'
+                        name='Summary'
+                        variant='outlined'
+                      />
                     </Grid>
                     <Grid item xs={12}>
                       {/* Specialization Array */}
@@ -304,8 +321,6 @@ const AddCoachForm = ({CoachData, closefn}) => {
             </Form>
           )}
         </Formik>
-        {/* </Grid>
-        </Grid> */}
       </Box>
 
       <Box sx={{color: 'grey.500'}}></Box>

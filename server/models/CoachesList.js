@@ -14,11 +14,15 @@ const CoachesListSchema = new mongoose.Schema({
   CoachName: {
     type: String,
     required: true,
+    unique: true,
   },
   Experience: {
     type: Number,
   },
   Country: {
+    type: String,
+  },
+  Summary: {
     type: String,
   },
   Specialization: {

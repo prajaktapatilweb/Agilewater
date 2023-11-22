@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const FirebaseUserSchema = new mongoose.Schema({
+  Status: {
+    type: String,
+    default: 'Active',
+  },
   UserID: {
     type: String,
     required: true,
@@ -24,13 +28,12 @@ const FirebaseUserSchema = new mongoose.Schema({
   LoginData: {
     type: Array,
   },
-  InvolvedInDiscussion: {
-    type: Boolean,
-    default: false,
-  },
   MadePayment: {
     type: Boolean,
     default: false,
+  },
+  QuizResult: {
+    type: Object,
   },
 });
 
