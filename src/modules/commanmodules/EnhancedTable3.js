@@ -26,6 +26,7 @@ import {useState} from 'react';
 import AddCourseForm from 'modules/AdminPages/Course/AddCourseForm';
 import DeleteDialoug from 'modules/AdminPages/Course/DeleteDialoug';
 import CourseListButtons from './CourseListButtons';
+import Link from 'next/link';
 
 function descendingComparator(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
@@ -158,11 +159,11 @@ export default function EnhancedTable({
       numeric: false,
       label: 'Cost (INR)',
     },
-    {
-      id: 'DiscountedCost',
-      numeric: false,
-      label: 'Cost (INR)',
-    },
+    // {
+    //   id: 'DiscountedCost',
+    //   numeric: false,
+    //   label: 'Cost (INR)',
+    // },
     {
       id: 'Trainer',
       numeric: false,
@@ -268,13 +269,35 @@ export default function EnhancedTable({
                         <TableCell align='left'>{row.Date}</TableCell>
                         <TableCell align='left'>{row.Place}</TableCell>
                         <TableCell align='left'>{row.Time}</TableCell>
-                        <TableCell align='center'>{row?.ActualCost}</TableCell>
-                        <TableCell align='left'>
-                          <Typography variant='h1'>
+                        <TableCell align='center'>
+                          <Typography
+                            variant='caption'
+                            sx={{textDecoration: 'line-through'}}
+                            display='inline'
+                          >
+                            {row?.ActualCost}
+                          </Typography>
+                          <Typography variant='h2' display='inline'>
+                            {' '}
                             {row?.DiscountedCost}
                           </Typography>
                         </TableCell>
-                        <TableCell align='left'>{row.Trainer}</TableCell>
+                        {/* <TableCell align='left'>
+                          <Typography variant='h1'>
+                            {row?.DiscountedCost}
+                          </Typography>
+                        </TableCell> */}
+                        <TableCell align='left'>
+                          <Link
+                            href={`team/${row.Trainer.split('#')[0]}`.replace(
+                              / /g,
+                              '-',
+                            )}
+                          >
+                            {row.Trainer.split('#')[1] ||
+                              row.Trainer.split('#')[0]}
+                          </Link>
+                        </TableCell>
                         <TableCell>
                           <CourseListButtons
                             ActionLabel={ActionLabel}

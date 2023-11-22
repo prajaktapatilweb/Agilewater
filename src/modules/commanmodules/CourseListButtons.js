@@ -1,7 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {useState} from 'react';
-import {Button} from '@mui/material';
+import {
+  Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+  Typography,
+} from '@mui/material';
 import AppDialog from '@crema/core/AppDialog';
 import AddCourseForm from 'modules/AdminPages/Course/AddCourseForm';
 import DeleteDialoug from 'modules/AdminPages/Course/DeleteDialoug';
@@ -10,6 +17,8 @@ import SigninFirebase from 'modules/auth/Signin/SigninFirebase';
 import PaymentModule from './PaymentModule';
 import {Edit} from '@mui/icons-material';
 import DeleteIcon from '@mui/icons-material/Delete';
+import FirstPagePayment from './PaymentModule/FirstPagePayment';
+import {AppScrollbar} from '@crema';
 
 export default function CourseListButtons({
   ActionLabel,
@@ -98,9 +107,15 @@ export default function CourseListButtons({
           closefn={toggleDeleteDialogOpen}
         />
       </AppDialog>
-      <AppDialog open={LoginDialog} onClose={toggleLoginDialog}>
+      <FirstPagePayment
+        data={row}
+        open={LoginDialog}
+        onClose={toggleLoginDialog}
+      />
+
+      {/* <AppDialog hideClose open={LoginDialog} onClose={toggleLoginDialog}>
         {user ? <PaymentModule /> : <SigninFirebase />}
-      </AppDialog>
+       </AppDialog> */}
     </>
   );
 }

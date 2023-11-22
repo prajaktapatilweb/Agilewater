@@ -1,15 +1,17 @@
 import AppTextField from '@crema/core/AppFormComponents/AppTextField';
 import IntlMessages from '@crema/utility/IntlMessages';
-import {Grid} from '@mui/material';
-import {FieldArray} from 'formik';
+import {FormControl, Grid, InputLabel} from '@mui/material';
+import {Field, FieldArray} from 'formik';
 import ButtonAdd from './ButtonAdd';
 import ButtonRemove from './ButtonRemove';
 import React from 'react';
 import PropTypes from 'prop-types';
+import {CourseOptions, SpecializationList} from 'modules/Constant/CommanConst';
+import CustomizedSelectFormik from './CustomizedSelectFormik';
 
 function CustomizedFieldArray(props) {
   const arrayName = props.arrayName;
-  // console.log(arrayName);
+  console.log(arrayName);
   return (
     <>
       <FieldArray name={arrayName}>
@@ -27,7 +29,7 @@ function CustomizedFieldArray(props) {
                 {arrayName1.map((individual, index) => (
                   <>
                     <Grid item lg={8} md={8} sm={8} xs={8}>
-                      <AppTextField
+                      {/* <AppTextField
                         key={index}
                         label={
                           index === 0 &&
@@ -56,7 +58,20 @@ function CustomizedFieldArray(props) {
                           mb: 3,
                           // '& .MuiInputBase-input': {fontSize: 14},
                         }}
-                      />
+                      /> */}
+                      <FormControl sx={{width: '100%'}}>
+                        <InputLabel id='demo-simple-select-label'>
+                          <IntlMessages id={props.fieldName} />
+                          {/* <IntlMessages id='course' /> */}
+                        </InputLabel>
+                        <Field
+                          name={`${arrayName}[${index}]`}
+                          // name='CourseName'
+                          options={SpecializationList}
+                          component={CustomizedSelectFormik}
+                          // disabled={isSubmitting}
+                        />
+                      </FormControl>
                     </Grid>
                     {arrayName1.length > 1 && index > 0 ? (
                       <ButtonRemove index={index} remove={remove} />

@@ -22,12 +22,15 @@ import AppPageMeta from '../@crema/core/AppPageMeta';
 import JWTAuthProvider from '@crema/services/auth/jwt-auth/JWTAuthProvider';
 import ScrollUp from 'modules/commanmodules/ScrollUp';
 import TawkMessengerReact from '@tawk.to/tawk-messenger-react';
+import {useRouter} from 'next/router';
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
 // tawkMessengerRef.current.popup();
 
 export default function MyApp(props) {
   const {Component, emotionCache = clientSideEmotionCache, pageProps} = props;
+  const {route} = useRouter();
+  const splitRoute = route.split('/');
   const store = useStore(pageProps.initialReduxState);
   const tawkMessengerRef = React.useRef();
   const customStyle = {
@@ -48,6 +51,15 @@ export default function MyApp(props) {
   const onLoad = () => {
     tawkMessengerRef.current.popup();
   };
+
+  !(splitRoute[1] !== 'authlogin' || splitRoute[1] !== 'adminpages') &&
+    console.log(
+      'TTESSTYING',
+      splitRoute[1],
+      splitRoute[1] === 'authlogin',
+      splitRoute[1] === 'adminpages',
+      splitRoute[1] === 'authlogin' || splitRoute[1] === 'adminpages',
+    );
   return (
     <CacheProvider value={emotionCache}>
       <AppContextProvider>
@@ -60,13 +72,24 @@ export default function MyApp(props) {
                     <AuthRoutes>
                       <CssBaseline />
                       <AppPageMeta />
-                      <TawkMessengerReact
-                        propertyId='5da463fbfbec0f2fe3b9a18a'
-                        widgetId='default'
-                        customStyle={customStyle}
-                        onLoad={onLoad}
-                        ref={tawkMessengerRef}
-                      />
+                      {!(
+                        splitRoute[1] === 'authlogin' ||
+                        splitRoute[1] === 'adminpages'
+                      ) && (
+                        <TawkMessengerReact
+                          // propertyId={
+                          //   splitRoute[1] !== 'authlogin' ||
+                          //   splitRoute[1] !== 'adminpages'
+                          //     ? '5da463fbfbec0f2fe3b9a18a'
+                          //     : null
+                          // }
+                          propertyId='5da463fbfbec0f2fe3b9a18a'
+                          widgetId='default'
+                          customStyle={customStyle}
+                          onLoad={onLoad}
+                          ref={tawkMessengerRef}
+                        />
+                      )}
                       <Component {...pageProps} />
                     </AuthRoutes>
                   </JWTAuthProvider>
