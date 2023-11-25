@@ -26,6 +26,7 @@ const FreeCourseSlider = ({ images }) => {
         <Slider {...settings}>
           {images.map((item, index) => (
             <Box key={index} sx={{ alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
+              {/* <Image src={`/assets/images/cards/img${index + 1}.jpg`} width={460} height={200} layout='responsive' alt={item.title} /> */}
               <Image src={item.img} width={460} height={200} layout='responsive' alt={item.title} />
               <br></br>
               <Typography variant='h2'>{item.subtitle}</Typography>

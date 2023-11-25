@@ -30,11 +30,8 @@ export default function Blog({ posts }) {
             <Grid container spacing={{ md: 3 }}>
               {posts.map((post) => (
                 <Link href={`/blog/${post.slug.current}`} key={post._id}>
-                  <Grid
-                    item
-                    xs={4}
+                  <Grid item xs={4}
                   // sx={{border: '1px solid red'}}
-
                   >
                     <Card
                       // sx={{ maxWidth: 345 }} 
@@ -68,7 +65,7 @@ export default function Blog({ posts }) {
                       <CardActions>
                         <Button size='small'>Share</Button>
                         {/* // react-share or react-web-share module can be used to do this taks */}
-                        <Button size='small'>Learn More</Button>
+                        <Button size='small'>Read More</Button>
                       </CardActions>
                     </Card>
                   </Grid>
@@ -93,8 +90,11 @@ export default function Blog({ posts }) {
               }}
             />
 
-            <Card>
-              Recent Post
+            <Card sx={{ p: 5, mb: 4 }}>
+              <Typography variant='h3' sx={{}} gutterBottom>
+                Recent Posts
+              </Typography>
+              <Link href='/'>gujdfuh  j rthjto jortiyoi</Link>
             </Card>
             <SideCard data={sideList4} />
           </Grid>

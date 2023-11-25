@@ -11,7 +11,7 @@ export default function NewForm() {
                 <Typography variant='h4' gutterBottom> Enroll in any paid course and get access to 30+ free Courses and Certifications.</Typography>
                 <Typography variant='h4' gutterBottom>Fill Form To Know About Courses</Typography>
                 <AppCard>
-                    <EnquiryFormik AllowedFieldArray={['FirstName', 'LastName', 'Email', 'Phone', 'Message']} />
+                    <EnquiryFormik AllowedFieldArray={['FirstName', 'LastName', 'Email', 'Phone', 'City', 'Country', 'Message']} />
                 </AppCard>
             </Container>
         </div>

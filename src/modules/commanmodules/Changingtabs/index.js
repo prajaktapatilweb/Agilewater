@@ -54,7 +54,8 @@ export default function FullWidthTabs() {
         setValue(index);
     };
     const data = [{ image: 'ss', title: 'dddd', category: 'iitl' }]
-    const tabData = [{ category: 'iitl' }, { category: 'Scrum' }]
+    const tabData = [{ category: 'IITL' }, { category: 'Scrum' }, { category: 'Six Sigma' }, { category: 'Digital Marketing' }, { category: 'Marketing Strategy' }, { category: 'COBIT' }, { category: 'PRINCE2' }, { category: 'MSP' }, { category: 'Negotiation' }, { category: 'Risk Management' }]
+
     return (
         <Box sx={{ bgcolor: 'background.paper', borderRadius: 5, mb: 7 }}>
             <AppBar position='static'>

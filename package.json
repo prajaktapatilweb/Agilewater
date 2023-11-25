@@ -53,6 +53,7 @@
     "next-seo": "^4.28.1",
     "next-transpile-modules": "^10.0.0",
     "nextjs-cors": "^2.1.2",
+    "nodemailer": "^6.9.7",
     "nodemon": "^2.0.21",
     "notistack": "^2.0.3",
     "papaparse": "^5.4.1",

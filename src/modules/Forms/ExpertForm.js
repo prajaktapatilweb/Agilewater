@@ -31,6 +31,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 import { green } from '@mui/material/colors';
 import CustomizedSelectFormik from 'modules/commanmodules/Formik/CustomizedSelectFormik';
 import {
+  CertList,
   CourseOptions,
   TitleOptions,
   TrainerList,
@@ -41,6 +42,7 @@ import { DatePicker } from '@mui/lab';
 import {
   onGetIndivCourseData,
   onPostNewCourseData,
+  onPostNewExpert,
   onPostNewLead,
   onUpdateCourseData,
 } from 'redux/actions';
@@ -50,8 +52,7 @@ import { Fonts } from 'shared/constants/AppEnums';
 import { useRouter } from 'next/router';
 
 const validationSchema = yup.object({
-  FirstName: yup.string().required('First Name is required'),
-  LastName: yup.string().required('Last Name is required'),
+  Name: yup.string().required('First Name is required'),
   Phone: yup
     .string()
     .required('Enter 10 digit valid mobile number')
@@ -61,10 +62,9 @@ const validationSchema = yup.object({
     .string()
     .email('Not valid Email id ')
     .required('Email ID is required !'),
-  City: yup.string().required('City is required'),
-  Country: yup.string().required('Country is required'),
+  Certification: yup.string().required('Certification is required'),
 });
-export default function EnquiryFormik({ AllowedFieldArray }) {
+export default function ExpertForm({ AllowedFieldArray }) {
   const router = useRouter()
   console.log('Router ', router.asPath)
   const dispatch = useDispatch()
@@ -72,17 +72,16 @@ export default function EnquiryFormik({ AllowedFieldArray }) {
     console.log('Signup Form Submission', data);
     data.EnquiryFromLink = router.asPath
     setSubmitting(true);
-    dispatch(onPostNewLead({ data }))
+    dispatch(onPostNewExpert({ data }))
     setSubmitting(false);
   };
   const initialValues = {
-    FirstName: '',
-    LastName: '',
+    Name: '',
     Email: '',
     Phone: '',
+    Certification: '',
     Message: '',
-    City: '',
-    Country: '',
+
   };
   return (
     <Formik
@@ -104,29 +103,18 @@ export default function EnquiryFormik({ AllowedFieldArray }) {
         <Form style={{ textAlign: 'left' }} noValidate autoComplete='off'>
           <pre>{JSON.stringify(values, null, 2)}</pre>
           <Grid container sx={{ mb: { xs: 4, xl: 5 } }} spacing={2}>
-            <Grid item xs={12} md={6}>
-              {AllowedFieldArray.includes('FirstName') && (
+            <Grid item xs={12} md={12}>
+              {AllowedFieldArray.includes('Name') && (
                 <AppTextField
-                  label='First Name'
+                  label='Name'
                   disabled={values.isSubmitting}
                   // name='Cost.Actual'
-                  name='FirstName'
+                  name='Name'
                   variant='outlined'
                 />
               )}
             </Grid>
-            <Grid item xs={12} md={6}>
-              {AllowedFieldArray.includes('LastName') && (
-                <AppTextField
-                  label='Last Name'
-                  disabled={values.isSubmitting}
-                  // name='Cost.Actual'
-                  name='LastName'
-                  variant='outlined'
-                />
-              )}
-            </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} md={12}>
               {AllowedFieldArray.includes('Email') && (
                 <AppTextField
                   label='Email'
@@ -137,7 +125,7 @@ export default function EnquiryFormik({ AllowedFieldArray }) {
                 />
               )}
             </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} md={12}>
               {AllowedFieldArray.includes('Phone') && (
                 <AppTextField
                   label='Phone'
@@ -148,28 +136,35 @@ export default function EnquiryFormik({ AllowedFieldArray }) {
                 />
               )}
             </Grid>
-            <Grid item xs={12} md={6}>
-              {AllowedFieldArray.includes('City') && (
+
+            <Grid item md={6} xs={12}>
+              {AllowedFieldArray.includes('Certification') && (
+                <FormControl sx={{ width: '100%' }}>
+                  <InputLabel id='demo-simple-select-label'>
+                    <IntlMessages id='Certification' />
+                  </InputLabel>
+                  <Field
+                    name='Certification'
+                    options={CertList}
+                    component={CustomizedSelectFormik}
+                    disabled={isSubmitting}
+                  />
+                </FormControl>
+              )}
+            </Grid>
+
+            {/* <Grid item xs={12} md={6}>
+              {AllowedFieldArray.includes('Certification') && (
                 <AppTextField
-                  label='City'
+                  label='Certification'
                   disabled={values.isSubmitting}
                   // name='Cost.Actual'
-                  name='City'
+                  name='Certification'
                   variant='outlined'
                 />
               )}
-            </Grid>
-            <Grid item xs={12} md={6}>
-              {AllowedFieldArray.includes('Country') && (
-                <AppTextField
-                  label='Conutry'
-                  disabled={values.isSubmitting}
-                  // name='Cost.Actual'
-                  name='Country'
-                  variant='outlined'
-                />
-              )}
-            </Grid>
+            </Grid> */}
+
             <Grid item xs={12} md={12}>
               {AllowedFieldArray.includes('Message') && (
                 <Grid item xs={6} md={12}>
@@ -387,6 +382,6 @@ export default function EnquiryFormik({ AllowedFieldArray }) {
   );
 }
 
-EnquiryFormik.propTypes = {
+ExpertForm.propTypes = {
   AllowedFieldArray: PropTypes.array,
 };

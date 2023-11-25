@@ -20,6 +20,7 @@ export const GET_COMMENT_LIST = 'get_comment_list';
 export const GET_ALL_COMMENT_LIST = 'get_all_comment_list';
 export const GET_INDIV_COACH_DATA = 'get_indiv_coach_data';
 export const GET_FB_USERS_LIST = 'get_fb_users_list';
+export const ADD_NEW_ENQUIRY = 'Add_New_Enquiry';
 // APP SETTING
 export const TOGGLE_NAV_COLLAPSED = 'toggle_nav_collapsed';
 export const SET_INITIAL_PATH = 'set_initial_path';

@@ -97,3 +97,15 @@ export const CountryList = [
   { key: 8, text: 'United Kingdom' },
   { key: 9, text: 'USA' },
 ]
+export const CertList = [
+
+  { key: 1, text: 'Kanban' },
+  { key: 2, text: 'Scrum' },
+  { key: 3, text: 'SAFe' },
+  { key: 4, text: 'Scrum@Scale' },
+  { key: 5, text: 'Six Sigma' },
+  { key: 6, text: 'PMP' },
+  { key: 7, text: 'PMI-ACP' },
+  { key: 8, text: 'Agile Coaching' },
+  { key: 9, text: 'DevOps' },
+]
