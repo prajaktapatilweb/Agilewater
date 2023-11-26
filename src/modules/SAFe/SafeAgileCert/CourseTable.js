@@ -6,8 +6,14 @@ import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {onGetCourseList} from 'redux/actions';
 import PropTypes from 'prop-types';
+import {CourseOptions} from 'modules/Constant/CommanConst';
 
-export default function CourseTable({PageCourseName}) {
+export default function CourseTable({DataID}) {
+  const PageCourseName = CourseOptions.filter((item) => item.key === DataID)[0]
+    .text;
+  console.log('PAger', PageCourseName);
+  const TableTitle = CourseOptions.filter((item) => item.key === DataID)[0]
+    .TableTitle;
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(onGetCourseList());
@@ -47,7 +53,7 @@ export default function CourseTable({PageCourseName}) {
 
               <EnhancedTable
                 rows={CourseList}
-                TableTitle='Agile'
+                TableTitle={TableTitle}
                 mainColumn='CourseName'
                 orderByColumn='City'
               />
@@ -74,5 +80,5 @@ export default function CourseTable({PageCourseName}) {
 }
 
 CourseTable.propTypes = {
-  PageCourseName: PropTypes.string,
+  DataID: PropTypes.number,
 };

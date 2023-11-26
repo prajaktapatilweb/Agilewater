@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
-const LeadSchema = new mongoose.Schema({
-  LeadID: {
+const ExpertSchema = new mongoose.Schema({
+  ExpertID: {
     type: String,
     required: true,
     unique: true,
@@ -11,11 +11,7 @@ const LeadSchema = new mongoose.Schema({
     required: true,
     default: 'Active',
   },
-  FirstName: {
-    type: String,
-    required: true,
-  },
-  LastName: {
+  Name: {
     type: String,
     required: true,
   },
@@ -26,12 +22,10 @@ const LeadSchema = new mongoose.Schema({
   Phone: {
     type: Number,
   },
-  City: {
+  Certification: {
     type: String,
   },
-  Country: {
-    type: String,
-  },
+
   Message: {
     type: String,
   },
@@ -44,8 +38,6 @@ const LeadSchema = new mongoose.Schema({
       default: Date.now,
     },
   },
-
 });
 
-
-module.exports = mongoose.model('lead', LeadSchema);
+module.exports = mongoose.model('expert', ExpertSchema);

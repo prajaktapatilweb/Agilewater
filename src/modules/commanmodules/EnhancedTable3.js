@@ -221,7 +221,7 @@ export default function EnhancedTable({
               background: '#20509e',
             }}
           >
-            SAFe Agilist Certification Training
+            {TableTitle}
           </Typography>
           <div id='cards'>
             <Table

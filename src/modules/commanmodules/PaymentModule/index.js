@@ -2,8 +2,18 @@ import {Button} from '@mui/material';
 import axios from 'axios';
 import React from 'react';
 import logo from '../../../assets/icon/401.svg';
+import router from 'next/router';
+import PropTypes from 'prop-types';
 
-export default function PaymentModule() {
+export default function PaymentModule({
+  CourseID,
+  DiscountCoupon,
+  RegisterationDetails,
+  clearAll,
+  disableOp,
+  PartcipantDetails,
+  GSTDetail,
+}) {
   function loadScript(src) {
     return new Promise((resolve) => {
       const script = document.createElement('script');
@@ -18,7 +28,6 @@ export default function PaymentModule() {
     });
   }
   async function displayRazorpay() {
-    console.log('Testing');
     const res = await loadScript(
       'https://checkout.razorpay.com/v1/checkout.js',
     );
@@ -30,9 +39,11 @@ export default function PaymentModule() {
 
     // creating a new order
     const result = await axios.post('http://localhost:4000/payment/orders', {
-      CourseID: 'ID-18',
-      PayTypeID: '655618ae9a506c1bd6b763ab',
-      DiscountCoupon: 'DIWALI',
+      CourseID: CourseID,
+      PayTypeID: RegisterationDetails,
+      DiscountCoupon: DiscountCoupon,
+      PartcipantDetails: PartcipantDetails,
+      GSTDetail: GSTDetail,
     });
 
     if (!result) {
@@ -66,17 +77,18 @@ export default function PaymentModule() {
           'http://localhost:4000/payment/success',
           data,
         );
+        clearAll();
 
-        alert(result.data.msg);
+        // alert(result.data.msg);
       },
       prefill: {
-        name: 'Customer Details',
-        email: 'prajaktaweb@gmail.com',
-        contact: '+919823217284',
+        name: PartcipantDetails[0].Name,
+        email: PartcipantDetails[0].Email,
+        contact: PartcipantDetails[0].Phone,
       },
-      notes: {
-        address: 'Soumya Dey Corporate Office',
-      },
+      // notes: {
+      //   address: 'NA',
+      // },
       theme: {
         color: '#61dafb',
       },
@@ -87,8 +99,24 @@ export default function PaymentModule() {
   }
   return (
     <div>
-      PaymentModule
-      <Button onClick={displayRazorpay}>Pay Now</Button>
+      <Button
+        disabled={disableOp}
+        color='primary'
+        variant='contained'
+        onClick={displayRazorpay}
+      >
+        Pay Now
+      </Button>
     </div>
   );
 }
+
+PaymentModule.propTypes = {
+  CourseID: PropTypes.string,
+  DiscountCoupon: PropTypes.Object,
+  RegisterationDetails: PropTypes.Object,
+  clearAll: PropTypes.func,
+  disableOp: PropTypes.func,
+  PartcipantDetails: PropTypes.array,
+  GSTDetail: PropTypes.Object,
+};

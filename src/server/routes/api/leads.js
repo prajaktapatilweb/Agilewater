@@ -1,5 +1,5 @@
 const express = require('express');
-const { indexof } = require('stylis');
+const {indexof} = require('stylis');
 const auth = require('../../middleware/auth');
 const CoursesList = require('../../models/CoursesList');
 const router = express.Router();
@@ -7,7 +7,7 @@ const moment = require('moment');
 const CoachesList = require('../../models/CoachesList');
 const uploadController = require('../../middleware/uploadMultipleFiles');
 const Leads = require('../../models/Leads');
-const { client } = require('../../middleware/nodeemail');
+const {client} = require('../../middleware/nodeemail');
 const Experts = require('../../models/Experts');
 
 // async function getCoachList(req, res) {
@@ -34,7 +34,6 @@ const Experts = require('../../models/Experts');
 router.post('/addnewlead', async (req, res) => {
   console.log('In add new Course router post request', req.body);
   try {
-
     // const CoachID = req.params.ID;
     const data = req.body;
     async function asyncCall() {
@@ -42,56 +41,51 @@ router.post('/addnewlead', async (req, res) => {
       totalNumber = totalNumber >= 1 ? totalNumber + 1 : 1;
       data.LeadID = `LeadID-${totalNumber}`;
       // data.Avatar = req.Avatar;
-      const clientIp = (req.headers['x-forwarded-for'] || '').split(',').pop().trim() || req.socket.remoteAddress;
-      console.log('IP', clientIp)
+      const clientIp =
+        (req.headers['x-forwarded-for'] || '').split(',').pop().trim() ||
+        req.socket.remoteAddress;
+      console.log('IP', clientIp);
       FinalData = new Leads(data);
 
-      const emailContent =
-        `Dear Admin, \n \n Details of the person contacted you are on the link ${data.EnquiryFromLink} as follows \n
+      const emailContent = `Dear Admin, \n \n Details of the person contacted you are on the link ${data.EnquiryFromLink} as follows \n
     Name: ${req.body.FirstName} ${data.LastName} \n
     Email: ${req.body.Email} \n
     Mobile Number: ${req.body.Phone} \n
     City & Country : ${req.body.City}, ${data.Country} \n
     Message : ${req.body.Message} \n
     Date & Time :${FinalData.Created.OnDate} \n
-    IP Address: ${clientIp} \n`
+    IP Address: ${clientIp} \n`;
 
-      await client.sendMail(
-        {
-          from: `Web Developer <${process.env.EMAILID}>`,
-          to: "prajubpatil@gmail.com",
-          subject: 'emailSubject',
-          text: emailContent
-        }
-      )
-
-
+      await client.sendMail({
+        from: `Web Developer <${process.env.EMAILID}>`,
+        to: 'prajubpatil@gmail.com',
+        subject: 'emailSubject',
+        text: emailContent,
+      });
 
       console.log('Final Data', FinalData);
       await FinalData.save()
         .then(() => {
-          return res.status(200).json({ data: 'Success' });
+          return res.status(200).json({data: 'Success'});
         })
         .catch((err) => {
           console.log('Errot', err);
           return res
             .status(500)
-            .json({ error: `Problem in Storing to MongoDB: ${err}` });
+            .json({error: `Problem in Storing to MongoDB: ${err}`});
         });
     }
     asyncCall();
   } catch (err) {
     console.log('Error', err);
-    return res.status(500).json({ error: `Server Error: ${err}` });
+    return res.status(500).json({error: `Server Error: ${err}`});
   }
 });
-
 
 /*add by praju */
 router.post('/addnewexpert', async (req, res) => {
   console.log('In add new expert data request', req.body);
   try {
-
     // const CoachID = req.params.ID;
     const data = req.body;
     async function asyncCall() {
@@ -99,61 +93,47 @@ router.post('/addnewexpert', async (req, res) => {
       totalNumber = totalNumber >= 1 ? totalNumber + 1 : 1;
       data.ExpertID = `ExpertID-${totalNumber}`;
       // data.Avatar = req.Avatar;
-      const clientIp = (req.headers['x-forwarded-for'] || '').split(',').pop().trim() || req.socket.remoteAddress;
-      console.log('IP', clientIp)
+      const clientIp =
+        (req.headers['x-forwarded-for'] || '').split(',').pop().trim() ||
+        req.socket.remoteAddress;
+      console.log('IP', clientIp);
       FinalData = new Experts(data);
 
-      const emailContent =
-        `Dear Admin, \n \n Details of the person contacted you are on the link ${data.EnquiryFromLink} as follows \n
+      const emailContent = `Dear Admin, \n \n Details of the person contacted you are on the link ${data.EnquiryFromLink} as follows \n
     Name: ${req.body.FirstName} \n
     Email: ${req.body.Email} \n
     Mobile Number: ${req.body.Phone} \n
     Certification : ${req.body.Certification}, \n
     Message : ${req.body.Message} \n
     Date & Time :${FinalData.Created.OnDate} \n
-    IP Address: ${clientIp} \n`
+    IP Address: ${clientIp} \n`;
 
-      await client.sendMail(
-        {
-          from: `Web Developer <${process.env.EMAILID}>`,
-          to: "prajubpatil@gmail.com",
-          subject: 'emailSubject',
-          text: emailContent
-        }
-      )
-
-
+      await client.sendMail({
+        from: `Web Developer <${process.env.EMAILID}>`,
+        to: 'prajubpatil@gmail.com',
+        subject: 'emailSubject',
+        text: emailContent,
+      });
 
       console.log('Final Data', FinalData);
       await FinalData.save()
         .then(() => {
-          return res.status(200).json({ data: 'Success' });
+          return res.status(200).json({data: 'Success'});
         })
         .catch((err) => {
           console.log('Errot', err);
           return res
             .status(500)
-            .json({ error: `Problem in Storing to MongoDB: ${err}` });
+            .json({error: `Problem in Storing to MongoDB: ${err}`});
         });
     }
     asyncCall();
   } catch (err) {
     console.log('Error', err);
-    return res.status(500).json({ error: `Server Error: ${err}` });
+    return res.status(500).json({error: `Server Error: ${err}`});
   }
 });
 /*end  */
-
-
-
-
-
-
-
-
-
-
-
 
 router.put('/updatecoach/:CoachID', auth, async (req, res) => {
   try {
@@ -166,7 +146,7 @@ router.put('/updatecoach/:CoachID', auth, async (req, res) => {
       async function asyncPutCall() {
         const CoachID = req.params.CoachID;
         const newData = req.body;
-        let oldData = await CoachesList.findOne({ CoachID });
+        let oldData = await CoachesList.findOne({CoachID});
         console.log('DDDEEE', oldData, newData);
         let updatedThings = [];
         let cnt = 0;
@@ -189,7 +169,7 @@ router.put('/updatecoach/:CoachID', auth, async (req, res) => {
         if (cnt > 0) {
           console.log('To update');
           await CoachesList.updateOne(
-            { CoachID: CoachID },
+            {CoachID: CoachID},
             {
               $set: newData,
               $push: {
@@ -205,14 +185,14 @@ router.put('/updatecoach/:CoachID', auth, async (req, res) => {
             },
           )
             .then(async () => {
-              let enterData = await CoachesList.findOne({ CoachID });
+              let enterData = await CoachesList.findOne({CoachID});
               console.log('The renter data', enterData);
               getCoachList(req, res);
             })
             .catch((err) => {
               console.log('errr', err);
 
-              return res.status(500).json({ error: 'Server Error' });
+              return res.status(500).json({error: 'Server Error'});
             });
         } else {
           return res.json('Nothing to update');
@@ -223,7 +203,7 @@ router.put('/updatecoach/:CoachID', auth, async (req, res) => {
   } catch (err) {
     console.log('errr', err);
     // logger.error(`Catch Block - User List Request Block ${err}`, { by: req.user.gid, for: [0], info: {} })
-    return res.status(500).json({ error: `Server Error: ${err}` });
+    return res.status(500).json({error: `Server Error: ${err}`});
   }
 });
 
@@ -232,7 +212,7 @@ router.delete('/deletecoach/:CoachID', auth, async (req, res) => {
   try {
     const deleteCourse = req.params.CoachID;
     await CoachesList.updateOne(
-      { CoachID: deleteCourse },
+      {CoachID: deleteCourse},
       {
         $set: {
           Status: 'Deleted',
@@ -247,7 +227,7 @@ router.delete('/deletecoach/:CoachID', auth, async (req, res) => {
     getCoachList(req, res);
   } catch (err) {
     console.log('errr', err);
-    return res.status(500).json({ error: `Server Error: ${err}` });
+    return res.status(500).json({error: `Server Error: ${err}`});
   }
 });
 
