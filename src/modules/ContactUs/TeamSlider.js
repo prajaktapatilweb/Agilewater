@@ -8,6 +8,11 @@ import { IconButton, useMediaQuery } from "@mui/material";
 import IconArrowBack from "@mui/icons-material/ArrowBack";
 import IconArrowForward from "@mui/icons-material/ArrowForward";
 import TeamMember from "./TeamMember";
+import { useDispatch } from 'react-redux'
+import { onGetCoachList } from 'redux/actions'
+import { useSelector } from 'react-redux'
+import { useEffect } from 'react'
+
 const SliderArrow = (props) => {
     const { onClick, type, className } = props;
     return (
@@ -92,6 +97,16 @@ const TeamSlider = () => {
 
 
 
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(onGetCoachList())
+    }, [dispatch]);
+
+    const CoachList = useSelector((state) => state?.Coach?.Coachlist);
+    const AgileCoachList = CoachList?.filter(item => item.Expertise.includes("Agile Coach"));
+    console.log('ghdsfgh', AgileCoachList);
+
+
     var details = [
         {
             id: 1,
@@ -151,14 +166,46 @@ const TeamSlider = () => {
                 <Grid item xs={12} md={12} sx={{ textAlign: 'center' }}>
 
                     <Typography variant="h7">
-                        Our Popular Courses
+                        Our Team
                     </Typography>
 
                 </Grid>
+                {/* {AgileCoachList && (
+                    <Grid item xs={12} md={12}>
+                        <Slider {...sliderConfig}>
+                            <Box
+                                data={AgileCoachList}
+                                renderRow={(coach, id) => (
 
+                                    <TeamMember coach={coach} key={id} />
+
+                                )} */}
+
+                {/* // details.map((coach, id) => (
+                            //     <TeamMember coach={coach} key={id} />
+                            //     // <TeamMember key={(item.id)} item={item} ></TeamMember>
+                            //     // <CourseCardItem key={String(item.id)} item={item} />
+                            // ))
+                            />
+                        </Slider>
+                    </Grid> */}
+
+                {/* // <AppGrid
+                    //     responsive={{ xs: 1, sm: 2, md: 3, lg: 2, xl: 3 }}
+                    //     data={CoachList} */}
+
+                {/* //     renderRow={(coach, id) => ( */}
+
+                {/* //         <CoachDetailData coach={coach} key={id} /> */}
+
+                {/* //     )}
+                    // />
+                )} */}
                 <Grid item xs={12} md={12}>
                     <Slider {...sliderConfig}>
-                        {details.map((item) => (
+                        {CoachList?.map((item) => (
+                            // <pre>{JSON.stringify(item, null, 2)}</pre>
+
                             <TeamMember key={(item.id)} item={item} ></TeamMember>
                             // <CourseCardItem key={String(item.id)} item={item} />
                         ))}

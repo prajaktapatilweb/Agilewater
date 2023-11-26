@@ -12,11 +12,11 @@ const TeamMember = ({ item }) => {
             <section id="team" className="team-area section">
                 <div className="item">
                     <div className="thumb">
-                        <Image className="img-fluid" src={item.img} alt={'Course ' + item.id} width={200} height={200} layout='responsive'></Image>
+                        <Image className="img-fluid" src={item.Avatar} alt='Triner' width={200} height={200} layout='responsive'></Image>
                         <div className="overlay">
-                            <h4>{item.nm}</h4>
+                            <h4>{item.CoachName}</h4>
                             <p>
-                                {item.info}
+                                {item.Country}
                             </p>
                             <div className="social">
                                 <ul>
@@ -40,8 +40,8 @@ const TeamMember = ({ item }) => {
                         <span className="message">
                             <a href="#"><ArrowCircleUpIcon /></a>
                         </span>
-                        <h4>{item.nm}</h4>
-                        <span>{item.post}</span>
+                        <h4>{item.CoachName}</h4>
+                        <span>{item.Expertise}</span>
                     </div>
                 </div>
             </section>

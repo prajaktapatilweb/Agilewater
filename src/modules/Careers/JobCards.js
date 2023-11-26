@@ -3,8 +3,12 @@ import Accordioninfo from 'modules/commanmodules/Accordianinfo'
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 
 import React from 'react'
+import { PlayArrow } from '@mui/icons-material';
 
 export default function JobCards() {
+    const openInNewTab = (url) => {
+        window.open(url, '_blank', 'noreferrer');
+    };
     var Details = {
 
         job1: [{
@@ -88,7 +92,8 @@ export default function JobCards() {
                             <Typography variant='h5' gutterBottom>{item.head3}</Typography>
                             <Typography variant='h5' gutterBottom>{item.head4}</Typography>
 
-                            <Button variant='contained'>Apply Now</Button>
+
+                            <Button variant='contained' startIcon={<PlayArrow />} onClick={() => openInNewTab('https://www.youtube.com/@drakshaysdentavenuegeneral8556')}>Apply Now</Button>
                         </Box>
                     ))}
                 </Box>
