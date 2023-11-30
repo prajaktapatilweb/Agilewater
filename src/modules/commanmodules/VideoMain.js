@@ -6,34 +6,31 @@ export default function VideoMain(props) {
     return (
         <div>
 
-
             <Box
                 sx={{
-                    background: "white",
-                    borderRadius: "1px",
                     padding: 0,
-                    boxShadow: "1px 5px 8px 5px #d4d4d4",
-
-
+                    // boxShadow: "1px 5px 8px 5px #d4d4d4",
 
                     // '& .react-player': {
                     //     width: '100% !important',
                     // },
                 }}
             >
-                <ReactPlayer
-                    className='react-player'
-                    controls={true}
-                    url={props.links}
-                    width="100%"
+                <div className="player-wrapper">
+                    <ReactPlayer
+                        className='react-player'
+                        controls={true}
+                        url={props.links}
+                        width="100%"
+                        height="100%"
 
 
 
 
-                // url='https://www.youtube.com/watch?v=-M-R3Lc-V74'
-                />
+                    // url='https://www.youtube.com/watch?v=-M-R3Lc-V74'
+                    />
+                </div>
             </Box>
-
 
         </div>
     );

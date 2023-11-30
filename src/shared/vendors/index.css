@@ -65,52 +65,94 @@
   height: 120px;
   width: 120px;
   border-radius: 10%;
+  animation: animate 25s linear infinite;
+  bottom: -150px;
 }
+@keyframes animate {
+
+  0%{
+      transform: translateY(0) rotate(0deg);
+      opacity: 1;
+      border-radius: 0;
+  }
+
+  100%{
+      transform: translateY(-1000px) rotate(720deg);
+      opacity: 0;
+      border-radius: 50%;
+  }
+
+}
+
+
+
+
+
 .section-shaped .shape-style-u1 .span-200 {
   height: 200px;
   width: 200px;
+  
+ 
 }
 .section-shaped .shape-style-u1 .span-150 {
   height: 150px;
   width: 150px;
+  
 }
 .section-shaped .shape-style-u1 .span-100 {
   height: 100px;
   width: 100px;
+ 
+ 
 }
 .section-shaped .shape-style-u1 .span-75 {
   height: 75px;
   width: 75px;
+  
 }
 .section-shaped .shape-style-u1 .span-50 {
   height: 50px;
   width: 50px;
+  
 }
+
+
+
+
+
+
+
 .section-shaped .shape-style-u1 :nth-child(1) {
   left: 45%;
   top: 15%;
   background: rgba(255, 255, 255, 0.1);
+ 
 }
 .section-shaped .shape-style-u1 :nth-child(2) {
   right: 4%;
   top: 10%;
   background: rgba(255, 255, 255, 0.1);
+  animation-delay: 2s;
+  animation-duration: 12s;
 }
 .section-shaped .shape-style-u1 :nth-child(3) {
   top: 280px;
   right: 5.66666%;
   background: rgba(255, 255, 255, 0.3);
+ 
 }
 .section-shaped .shape-style-u1 :nth-child(4) {
   top: 320px;
   right: 7%;
   background: rgba(255, 255, 255, 0.15);
+ 
 }
 .section-shaped .shape-style-u1 :nth-child(5) {
   top: 38%;
   left: 1%;
   right: auto;
   background: rgba(255, 255, 255, 0.05);
+ 
 }
 .section-shaped .shape-style-u1 :nth-child(6) {
   width: 150px;
@@ -1098,3 +1140,27 @@ background-color: #cd486b;
   }
 }
 /* end scroll*/
+/*png back shadow*/
+.pngback{
+  filter: drop-shadow(2px 5px 2px rgb(48, 48, 48));
+           
+}
+/*end*/
+/* .react-player {
+  
+  border-radius: 15px;
+  overflow: hidden;
+  
+} */
+.player-wrapper {
+  position: relative;
+  padding-top: 65.25%; /* 720 / 1280 = 0.5625 */
+}
+
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 15px;
+  overflow: hidden;
+}

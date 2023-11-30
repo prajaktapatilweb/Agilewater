@@ -1,28 +1,29 @@
 import Herosection from 'modules/commanmodules/Herosection';
 import React from 'react';
 import CertScruminfo from './CertScruminfo';
-import {Box, Container, Grid} from '@mui/material';
-import {AppCard} from '@crema';
+import { Box, Container, Grid } from '@mui/material';
+import { AppCard } from '@crema';
 import PricingCard from 'modules/commanmodules/PricingCard';
 import MainCertScrumaccord from './MainCertScrumaccord';
 import VideoMain from 'modules/commanmodules/VideoMain';
 import SideCard from 'modules/SM/ScrumMasterCert/SideCard';
-import {sideList1} from 'modules/Constant/OtherCardsConst';
+import { sideList1 } from 'modules/Constant/OtherCardsConst';
 import Safetest from 'modules/SAFe/SafeAgileCert/Safetest';
 import Atscaledownload from 'modules/ScrumAtScale/Atscaledownload';
 import FreeCourseSlider from 'modules/commanmodules/FreeCourseSlider';
-import {freecourseList} from 'modules/Constant/FreeCourseConst';
+import { freecourseList } from 'modules/Constant/FreeCourseConst';
 import RelatedCourses from 'modules/commanmodules/RelatedCourses';
-import {safeadvList} from 'modules/Constant/Relatecoursedata';
+import { safeadvList } from 'modules/Constant/Relatecoursedata';
 import Testcard from 'modules/commanmodules/TestCard';
-import {testList2} from 'modules/Constant/OthershortConst';
+import { testList2 } from 'modules/Constant/OthershortConst';
 import Discussion from 'modules/Discussion';
+import Herosectiondemo from 'modules/commanmodules/Herosectiondemo';
 
 export default function CertScrumMaster() {
   return (
     <div>
-      <Herosection
-        image1='/assets/images/courselogo/CSM.png'
+      <Herosectiondemo
+        image1='/assets/images/courselogo/CSM4.png'
         // /assets/images/Safe/SAFe-Agilist-Logo.png'
         heading='ScrumMaster® (CSM®) Certification Training'
         list1={[
@@ -32,10 +33,10 @@ export default function CertScrumMaster() {
           '100% Assured Results',
         ]}
       />
-      <Container sx={{maxWidth: {xl: 1450}, marginTop: 10}}>
-        <Grid container spacing={{xs: 4, md: 8}}>
+      <Container sx={{ maxWidth: { xl: 1450 }, marginTop: 10 }}>
+        <Grid container spacing={{ xs: 4, md: 8 }}>
           <Grid item xs={12} md={8}>
-            <AppCard sxStyle={{p: 5}}>
+            <AppCard sxStyle={{ p: 5 }}>
               <CertScruminfo />
               <PricingCard
                 heading='CSM Certification Training'
