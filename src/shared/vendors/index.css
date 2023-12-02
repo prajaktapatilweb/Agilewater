@@ -740,7 +740,8 @@
 
  /* Parallox Section */ 
  .events1 {
-  background-image: url('/assets/images/globalmap.jpg') ;
+  background-image: url('/assets/images/globalmap4.png') ;
+  background-position:center;
   /* background: url("../public/vision.jpg") center center no-repeat; */
   background-size: cover;
   position: relative;
