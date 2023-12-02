@@ -25,6 +25,7 @@ import { useSidebarContext } from '../../../../utility/AppContextProvider/Sideba
 import NotificationBar from '../NotificationBar';
 import Image from 'next/image';
 import NewSearch from '@crema/core/AppSearchBar/NewSearch';
+import { Link } from '@mui/material';
 
 const AppHeader = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -107,7 +108,7 @@ const AppHeader = () => {
                 },
               }}
             > */}
-            <Image src={logo1} width={350} height={60} />
+            <Link href='/' sx={{ textDecoration: 'none' }}> <Image src={logo1} width={350} height={60} /></Link>
             {/* <AppLogo /> */}
             {/* </Box> */}
             <Hidden lgDown>
