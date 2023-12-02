@@ -1,7 +1,7 @@
 import Herosection from 'modules/commanmodules/Herosection';
 import React from 'react';
 import CertScruminfo from './CertScruminfo';
-import { Box, Container, Grid } from '@mui/material';
+import { Box, Container, Grid, Typography } from '@mui/material';
 import { AppCard } from '@crema';
 import PricingCard from 'modules/commanmodules/PricingCard';
 import MainCertScrumaccord from './MainCertScrumaccord';
@@ -18,6 +18,8 @@ import Testcard from 'modules/commanmodules/TestCard';
 import { testList2 } from 'modules/Constant/OthershortConst';
 import Discussion from 'modules/Discussion';
 import Herosectiondemo from 'modules/commanmodules/Herosectiondemo';
+import LabTabs from 'modules/commanmodules/LabTabs';
+import CertScrumaccord from './CertScrumaccord';
 
 export default function CertScrumMaster() {
   return (
@@ -37,14 +39,27 @@ export default function CertScrumMaster() {
         <Grid container spacing={{ xs: 4, md: 8 }}>
           <Grid item xs={12} md={8}>
             <AppCard sxStyle={{ p: 5 }}>
-              <CertScruminfo />
-              <PricingCard
-                heading='CSM Certification Training'
-                img='/assets/images/Safe/Scrum-Master-Certification-Pune.webp'
-              ></PricingCard>
-              <MainCertScrumaccord />
+              Course Table Here
             </AppCard>
+            <AppCard sxStyle={{ p: 5 }}>
+
+              <LabTabs data={[
+                { label: 'Overview', panelData: <CertScruminfo /> },
+                { label: 'FAQ', panelData: <CertScrumaccord /> },
+                { label: 'ScrumQuiz', panelData: 'Item ewe' },
+                { label: 'FreeCourses', panelData: 'Item ewe' }
+              ]} />
+
+            </AppCard>
+
+            <PricingCard
+              heading='CSM Certification Training'
+              img='/assets/images/Safe/Scrum-Master-Certification-Pune.webp'
+            ></PricingCard>
+
             <Discussion></Discussion>
+
+
 
             <RelatedCourses data={safeadvList} />
           </Grid>
@@ -59,6 +74,8 @@ export default function CertScrumMaster() {
             <FreeCourseSlider images={freecourseList}></FreeCourseSlider>
             <br></br>
             <Atscaledownload />
+
+
           </Grid>
         </Grid>
       </Container>

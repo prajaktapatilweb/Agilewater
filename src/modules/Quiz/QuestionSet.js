@@ -1,4 +1,4 @@
-import {useAuthUser} from '@crema/utility/AuthHooks';
+import { useAuthUser } from '@crema/utility/AuthHooks';
 import {
   Box,
   Button,
@@ -10,18 +10,18 @@ import {
   Tab,
   Typography,
 } from '@mui/material';
-import {ErrorMessage, Field, Form, Formik} from 'formik';
+import { ErrorMessage, Field, Form, Formik } from 'formik';
 import CustomizedCheckboxFormik from 'modules/commanmodules/Formik/CustomizedCheckboxFormik';
 import FormikRadioGroup from 'modules/commanmodules/Formik/FormikRadioGroup';
 import TextError from 'modules/commanmodules/Formik/TextError';
-import {useRouter} from 'next/router';
+import { useRouter } from 'next/router';
 import React from 'react';
-import {useState} from 'react';
+import { useState } from 'react';
 import * as yup from 'yup';
 import LabTabs from './New';
-import {TabContext, TabList, TabPanel} from '@mui/lab';
-import {useDispatch} from 'react-redux';
-import {onUpdateFBUserData} from 'redux/actions';
+import { TabContext, TabList, TabPanel } from '@mui/lab';
+import { useDispatch } from 'react-redux';
+import { onUpdateFBUserData } from 'redux/actions';
 
 // const validationSchema = yup.object({
 //   answer: yup.array().of(
@@ -33,7 +33,7 @@ import {onUpdateFBUserData} from 'redux/actions';
 //   ),
 // });
 export default function QuestionSet() {
-  const {user} = useAuthUser();
+  const { user } = useAuthUser();
   const router = useRouter();
   const [fileData, setFileData] = React.useState([]);
   const [page, setPage] = useState(1);
@@ -131,7 +131,7 @@ export default function QuestionSet() {
       router.push({
         pathname: '/quiz/answers',
         as: '/quiz/answers',
-        query: {data: JSON.stringify(fileData), FinalResult: cnt},
+        query: { data: JSON.stringify(fileData), FinalResult: cnt },
       });
     } else {
       console.log('Intreimdd', page, values.answer[page]?.length);
@@ -144,9 +144,9 @@ export default function QuestionSet() {
   return (
     <div>
       {user && selected && (
-        <Container sx={{maxWidth: {xl: 1450}, marginTop: 15}}>
+        <Container sx={{ maxWidth: { xl: 1450 }, marginTop: 15 }}>
           {/* <LabTabs /> */}
-          <Stack spacing={2} alignItems='center' sx={{m: 3}}>
+          <Stack spacing={2} alignItems='center' sx={{ m: 3 }}>
             {/* <Typography>Page: {page}</Typography> */}
             {/* <Pagination
               count={maxQuestion}
@@ -158,25 +158,25 @@ export default function QuestionSet() {
               size='large'
             /> */}
           </Stack>
-          <Card sx={{p: 5}}>
+          <Card sx={{ p: 5 }}>
             <Formik
-              initialValues={{answer: []}}
+              initialValues={{ answer: [] }}
               // validationSchema={validationSchema}
               validateOnChange={true}
               onSubmit={onSubmit}
               enableReinitialize={true}
             >
-              {({values, errors}) => (
+              {({ values, errors }) => (
                 // return (
                 <Form
-                  style={{textAlign: 'left'}}
+                  style={{ textAlign: 'left' }}
                   noValidate
                   autoComplete='off'
                   encType='multipart/form-data'
                 >
-                  <Box sx={{width: '100%', typography: 'body1'}}>
+                  <Box sx={{ width: '100%', typography: 'body1' }}>
                     <TabContext value={value}>
-                      <Box sx={{borderBottom: 2, borderColor: 'divider'}}>
+                      <Box sx={{ borderBottom: 2, borderColor: 'divider' }}>
                         <TabList
                           onChange={handleChange}
                           variant='scrollable'
@@ -206,7 +206,7 @@ export default function QuestionSet() {
                           <Typography variant='h3' p={3}>
                             {selected['Question']}
                           </Typography>
-                          <FormControl sx={{width: '100%'}}>
+                          <FormControl sx={{ width: '100%' }}>
                             <div role='group' aria-labelledby='my-radio-group'>
                               <Stack
                                 direction='column'
@@ -264,7 +264,7 @@ export default function QuestionSet() {
                     <Button
                       variant='contained'
                       // disabled={!checked}
-                      sx={{m: 3}}
+                      sx={{ m: 3 }}
                       type='submit'
                     >
                       {page === maxQuestion ? 'Submit' : 'Next'}
