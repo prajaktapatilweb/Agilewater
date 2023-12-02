@@ -18,7 +18,6 @@ import { useRouter } from 'next/router';
 import React from 'react';
 import { useState } from 'react';
 import * as yup from 'yup';
-import LabTabs from './New';
 import { TabContext, TabList, TabPanel } from '@mui/lab';
 import { useDispatch } from 'react-redux';
 import { onUpdateFBUserData } from 'redux/actions';
