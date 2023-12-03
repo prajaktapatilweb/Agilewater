@@ -17,7 +17,8 @@ export default function LabTabs({ data }) {
   return (
     <Box sx={{ width: '100%', typography: 'body1' }}>
       <TabContext value={value}>
-        <Box sx={{ borderBottom: 2, borderColor: 'divider' }}>
+        <Box>
+          {/* <Box sx={{ borderBottom: 2, borderColor: 'divider' }}> */}
           <Tabs
             value={value}
             onChange={handleChange}
@@ -31,6 +32,8 @@ export default function LabTabs({ data }) {
                 key={i}
                 label={item.label}
                 value={i}
+
+                sx={{ textTransform: 'capitalize', fontSize: 16 }}
               />
             ))}
           </Tabs>

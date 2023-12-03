@@ -12,6 +12,9 @@ import CertScrumaccord from 'modules/SM/CertScrumMaster/CertScrumaccord';
 import Heading from 'modules/commanmodules/Heading';
 import { headList7 } from 'modules/Constant/titlefile';
 import Registerform from './Registerform';
+import Testimonial from './Testimonial';
+import Clients from 'modules/ContactUs/Clients';
+import Certcourse from './Certcourse';
 
 export default function indexfile() {
   return (
@@ -31,31 +34,25 @@ export default function indexfile() {
         </section>
       </Box>
       <Countup />
-      <section style={{ background: "white" }}>
-        <Container sx={{ maxWidth: 1500, paddingTop: 15 }}>
-          <Heading data={headList7}></Heading>
-          <Card sx={{ p: 5, mt: 5, border: '1px solid lightgrey' }}>
-
-            <LabTabs data={[
-              { label: 'Overview', panelData: <CertScruminfo /> },
-              { label: 'FAQ', panelData: <CertScrumaccord /> },
-              { label: 'ScrumQuiz', panelData: 'Item ewe' },
-              { label: 'FreeCourses', panelData: 'Item ewe' }
-            ]} />
-          </Card>
-        </Container>
-      </section>
+      <Certcourse></Certcourse>
 
       <Registerform></Registerform>
-      <Container sx={{ maxWidth: 1500, marginTop: 10, background: 'white' }}>
+      <Container sx={{ maxWidth: 1500 }}>
         {/* <Changingtabs /> */}
         <CoachCoursecard />
-        testimonials
-        clients company
-
-        {/* <Hero /> */}
-
       </Container>
+      <Box container className='section' style={{ background: '#edeff3' }}>
+
+        <Testimonial></Testimonial>
+
+      </Box>
+
+
+      <Clients />
+
+      {/* <Hero /> */}
+
+
     </div>
   );
 }

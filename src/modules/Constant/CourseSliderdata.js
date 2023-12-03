@@ -3,52 +3,94 @@ export const data = [
     {
         id: 1,
         cover: '/assets/images/courselogo/ACSM1.png',
-        title: 'Root Canalfgd:',
-        price: "Relieve pain and save your natural tooth with our expert root canal treatments"
+        title: 'ACSM',
+
+        text: [
+            'Attend Registered Scrum@Scale Practitioner Training Course.',
+
+            'After completion of the Course, clear the Certification Exam.',
+            'Upon passing the Certification Exam, accept your Registered Scrum@Scale '
+        ],
+
+
 
     },
     {
         id: 2,
-        cover: '/assets/images/courselogo/CSM.jpg',
-        title: 'Dental Implant:',
-        price: 'Restore your smile with confidence through our advanced dental implant solutions.',
+        cover: '/assets/images/courselogo/CSPO2.png',
+        title: 'CSM',
+
+        text: [
+            'Attend Registered Scrum@Scale Practitioner Training Course.',
+
+            'After completion of the Course, clear the Certification Exam.',
+            'Upon passing the Certification Exam, accept your Registered Scrum@Scale '
+        ],
 
     },
     {
         id: 3,
-        cover: '/assets/images/courselogo/CSPO.jpg',
-        title: 'Full Mouth Reconstruction:',
-        price: "Regain optimal oral health and function with our comprehensive full mouth reconstruction treatments.",
+        cover: '/assets/images/courselogo/ACSPO2.png',
+
+        title: 'ACSPO',
+
+        text: [
+            'Attend Registered Scrum@Scale Practitioner Training Course.',
+
+            'After completion of the Course, clear the Certification Exam.',
+            'Upon passing the Certification Exam, accept your Registered Scrum@Scale '
+        ],
 
     },
     {
         id: 4,
-        cover: '/assets/images/courselogo/CSP-SM.jpg',
-        title: 'Braces & Aligners:',
-        price: 'Achieve a straighter smile and improved bite with our customized braces and aligner options.',
+        cover: '/assets/images/courselogo/CSPO2.png',
+        title: 'CSPO',
+
+        text: [
+            'Attend Registered Scrum@Scale Practitioner Training Course.',
+
+            'After completion of the Course, clear the Certification Exam.',
+            'Upon passing the Certification Exam, accept your Registered Scrum@Scale '
+        ],
 
     },
     {
         id: 5,
-        cover: '/assets/images/courselogo/ICP-ACC.jpg',
-        title: 'Crown & Bridges:',
+        cover: '/assets/images/courselogo/ICP-CAT1.png',
+        title: 'ICP-CAT',
+        text: [
+            'Attend Registered Scrum@Scale Practitioner Training Course.',
 
-        price: 'Regain the strength, function, and aesthetics of your teeth with our high-quality crown and bridge treatments.',
+            'After completion of the Course, clear the Certification Exam.',
+            'Upon passing the Certification Exam, accept your Registered Scrum@Scale '
+        ],
+
 
     },
     {
         id: 6,
         cover: '/assets/images/courselogo/ICP-CAT.jpg',
-        title: 'Teeth Whitening:',
-        price: 'Enhance your smiles brilliance and beauty with our effective teeth whitening solutions.',
+        title: 'ICP-CAT',
+        text: [
+            'Attend Registered Scrum@Scale Practitioner Training Course.',
+
+            'After completion of the Course, clear the Certification Exam.',
+            'Upon passing the Certification Exam, accept your Registered Scrum@Scale '
+        ],
 
     },
     {
         id: 7,
         cover: '/assets/images/courselogo/ICP-CAT.jpg',
-        title: 'Pediatric Dentistry:',
+        title: 'ICP-LEA',
+        text: [
+            'Attend Registered Scrum@Scale Practitioner Training Course.',
 
-        price: ' Ensure your childs dental health with our gentle and specialized pediatric dental care.',
+            'After completion of the Course, clear the Certification Exam.',
+            'Upon passing the Certification Exam, accept your Registered Scrum@Scale '
+        ],
+
 
     },
 
@@ -56,15 +98,25 @@ export const data = [
     {
         id: 8,
         cover: '/assets/images/courselogo/ICP-CAT.jpg',
-        title: 'Dental Veneers:',
-        price: 'Dental Veneers Transform your smile with dental veneers, the perfect solution for a stunning and confident appearance.',
+        title: 'CSM',
+        text: [
+            'Attend Registered Scrum@Scale Practitioner Training Course.',
+
+            'After completion of the Course, clear the Certification Exam.',
+            'Upon passing the Certification Exam, accept your Registered Scrum@Scale '
+        ],
 
     },
     {
         id: 9,
         cover: '/assets/images/courselogo/ICP-CAT.jpg',
-        title: 'Wisdom Teeth Extraction:',
-        price: 'Wisdom Teeth Extraction Trust our experienced team for safe and comfortable wisdom teeth extraction or any other tooth extraction needs.',
+        title: 'CSPO',
+        text: [
+            'Attend Registered Scrum@Scale Practitioner Training Course.',
+
+            'After completion of the Course, clear the Certification Exam.',
+            'Upon passing the Certification Exam, accept your Registered Scrum@Scale '
+        ],
 
     },
 ];

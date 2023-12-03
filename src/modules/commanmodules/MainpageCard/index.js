@@ -7,19 +7,21 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Image from 'next/image';
 import { Grid, Box } from '@mui/material';
+import Heading from '../Heading';
+import { headList3 } from 'modules/Constant/titlefile';
 
 export default function MainpageCard(props) {
     return (
 
-        <Grid container spacing={3} sx={{ mb: 7 }}>
+        <Grid container spacing={3} sx={{ mb: 7 }} className='section'>
             <Grid item xs={12} sx={{ p: 3, textAlign: 'center' }}>
-                <Typography variant='h1' sx={{ fontSize: { xs: 30, md: 35 } }}>Master Courses</Typography>
+                <Heading data={headList3}></Heading>
             </Grid>
 
             {props.DetailObject.map((item, i) => (
                 <Grid item xs={12} sm={6} md={3} lg={3} sx={{ justifyContent: 'stretch' }} key={i}>
                     <Card>
-                        <CardMedia
+                        {/* <CardMedia
                             // component='img'
                             // height='200'
                             // image=''
@@ -28,7 +30,7 @@ export default function MainpageCard(props) {
                         >
 
                             <Image src={item.img} width={100} height={100}></Image>
-                        </CardMedia>
+                        </CardMedia> */}
                         <CardContent>
                             <Typography gutterBottom variant='h3' component='div'>
                                 {item.title}

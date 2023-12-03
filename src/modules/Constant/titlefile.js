@@ -13,14 +13,14 @@ const headDetails = {
     },
     service: {
 
-        subtitle: <span style={{ color: 'white' }}>Tailored Solutions for Unique Needs</span>,
-        title: "Explore Our Services",
+        subtitle: 'Certification Courses',
+        title: "Get certified by global certification bodies and deepen your expertise",
 
     },
-    equip: {
+    coachcourse: {
 
-        subtitle: "Smile with Confidence at Smiledent",
-        title: "Equipment ",
+        subtitle: "Coaching Course",
+        title: "Develop the skills to move fast and stay ahead. ",
 
     },
     wyuus: {
@@ -34,7 +34,7 @@ const headDetails = {
 
     },
     testi: {
-        subtitle: <span style={{ color: 'white' }}>What Our Clients Say</span>,
+        subtitle: <span style={{ color: 'black' }}>What Our Clients Say</span>,
         title: 'Feedback'
     },
     faqs: {
@@ -47,7 +47,7 @@ const headDetails = {
 
 export const headList1 = [headDetails.about];
 export const headList2 = [headDetails.service];
-export const headList3 = [headDetails.equip];
+export const headList3 = [headDetails.coachcourse];
 export const headList4 = [headDetails.wyuus];
 export const headList5 = [headDetails.photos];
 export const headList6 = [headDetails.testi];

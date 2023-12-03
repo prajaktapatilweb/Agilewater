@@ -7,33 +7,16 @@ export default function Heading({ data }) {
             <Box>
                 {data.map((item, index) => (
                     <Box>
-                        <Typography
-                            variant='h3'
-                            sx={{
 
-                                // fontSize: { xs: 40, md: 45 },
-                                ml: { xs: 0, md: 4 },
-                                mt: 0,
-                                mb: 1,
-                                // lineHeight: 1.3,
-                                fontWeight: "500",
-                                color: 'secondary.main',
-                                textAlign: 'center'
-                            }}
-                        >
-                            {item.title}
-
-
-                        </Typography>
 
                         <Typography
                             variant="h1"
                             sx={{
 
-                                fontSize: { xs: 40, md: 45 },
+                                fontSize: { xs: 30, md: 40 },
                                 ml: { xs: 0, md: 4 },
                                 mt: 0,
-                                mb: 3,
+                                mb: 1,
                                 lineHeight: 1.3,
                                 fontWeight: "bold",
                                 color: 'black',
@@ -42,6 +25,24 @@ export default function Heading({ data }) {
 
                         >
                             {item.subtitle}
+
+                        </Typography>
+                        <Typography
+                            variant='h3'
+                            sx={{
+
+                                // fontSize: { xs: 40, md: 45 },
+                                ml: { xs: 0, md: 4 },
+                                mt: 0,
+                                mb: 7,
+                                // lineHeight: 1.3,
+                                fontWeight: "500",
+                                color: '#0157b8',
+                                textAlign: 'center'
+                            }}
+                        >
+                            {item.title}
+
 
                         </Typography>
                     </Box>

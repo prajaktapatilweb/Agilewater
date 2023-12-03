@@ -46,7 +46,8 @@ const StyledDots = styled("ul")(({ theme }) => ({
         position: "absolute",
 
         left: 0,
-        bottom: 10,
+
+        bottom: 0,
 
 
         // paddingLeft: theme.spacing(3),
@@ -101,7 +102,7 @@ const CardSlider = () => {
         >
             {/* <Container maxWidth="lg"> */}
             <Grid container spacing={2}>
-                <Grid item xs={12} md={12}>
+                {/* <Grid item xs={12} md={12}>
                     <Box
                         sx={{
                             height: "100%",
@@ -115,7 +116,7 @@ const CardSlider = () => {
                             Our Popular Courses
                         </Typography>
                     </Box>
-                </Grid>
+                </Grid> */}
 
                 <Grid item xs={12} md={12}>
                     <Slider {...sliderConfig}>

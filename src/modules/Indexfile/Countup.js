@@ -42,9 +42,9 @@ export default function Countup() {
 
     return (
         <div>
-            <Box id="feature" sx={{ py: 7, background: 'white' }} >
+            <Box id="feature" sx={{}} >
                 <Container>
-                    <Card sx={{ p: 5, marginTop: -28, zIndex: 1, position: 'relative', borderRadius: 2, boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)' }}>
+                    <Card sx={{ px: 6, py: 8, marginTop: -20, zIndex: 1, position: 'relative', borderRadius: 2, boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)' }}>
                         <Heading data={headList7}></Heading>
                         <Grid
                             container
@@ -59,14 +59,14 @@ export default function Countup() {
                                             mb: { xs: 1, md: 0 },
                                             padding: 3,
                                             borderRadius: 5,
-                                            background: '#04091e',
+                                            background: '#3c3fca',
 
                                             // background: "#127c71",
                                         }}
                                     >
                                         <Typography
                                             sx={{
-                                                color: "secondary.main",
+                                                color: "white",
                                                 mb: { xs: 1, md: 2 },
                                                 fontSize: { xs: 30, md: 35 },
                                                 fontWeight: "bold",

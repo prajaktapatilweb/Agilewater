@@ -85,7 +85,7 @@ export default function ExpertForm({ AllowedFieldArray }) {
 
   };
   return (
-    <AppCard>
+    <AppCard sx={{ p: 5 }}>
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -103,7 +103,7 @@ export default function ExpertForm({ AllowedFieldArray }) {
         }) => (
           // {/* {(data, errors, isValidating, isSubmitting) => ( */}
           <Form style={{ textAlign: 'left' }} noValidate autoComplete='off'>
-            <pre>{JSON.stringify(values, null, 2)}</pre>
+            {/* <pre>{JSON.stringify(values, null, 2)}</pre> */}
             <Grid container sx={{ mb: { xs: 4, xl: 5 } }} spacing={2}>
               <Grid item xs={12} md={12}>
                 {AllowedFieldArray.includes('Name') && (
