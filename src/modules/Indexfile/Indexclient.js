@@ -101,7 +101,7 @@ export default function Indexclient() {
                     <Grid item xs={12} md={8}>
                         <Grid container spacing={1}>
                             {details.map((item, i) => (
-                                <Grid item xs={12} md={2}>
+                                <Grid item xs={3} md={2}>
                                     <Box>
                                         <Image src={item.imgs} alt="" width={100} height={100} layout='responsive' key={i}></Image>
                                     </Box>
