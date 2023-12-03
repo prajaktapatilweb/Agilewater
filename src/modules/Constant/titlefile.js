@@ -37,8 +37,8 @@ const headDetails = {
         subtitle: <span style={{ color: 'black' }}>What Our Clients Say</span>,
         title: 'Feedback'
     },
-    faqs: {
-        subtitle: 'Your Questions Answered',
+    clientsf: {
+        subtitle: ' Our Most Valuable Clients',
         title: 'Common Concerns, Clear Answers'
 
     }
@@ -52,4 +52,4 @@ export const headList4 = [headDetails.wyuus];
 export const headList5 = [headDetails.photos];
 export const headList6 = [headDetails.testi];
 export const headList7 = [headDetails.counts];
-export const headList8 = [headDetails.faqs];
+export const headList8 = [headDetails.clientsf];

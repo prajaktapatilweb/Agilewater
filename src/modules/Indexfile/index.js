@@ -15,6 +15,7 @@ import Registerform from './Registerform';
 import Testimonial from './Testimonial';
 import Clients from 'modules/ContactUs/Clients';
 import Certcourse from './Certcourse';
+import Indexclient from './Indexclient';
 
 export default function indexfile() {
   return (
@@ -47,8 +48,11 @@ export default function indexfile() {
 
       </Box>
 
+      <Box container className='section' style={{ background: 'lightgrey' }}>
 
-      <Clients />
+        <Indexclient></Indexclient>
+      </Box>
+
 
       {/* <Hero /> */}
 
