@@ -9,6 +9,7 @@ import Image from 'next/image';
 import { Grid, Box } from '@mui/material';
 import Heading from '../Heading';
 import { headList3 } from 'modules/Constant/titlefile';
+import { AppCard } from '@crema';
 
 export default function MainpageCard(props) {
     return (
@@ -19,8 +20,8 @@ export default function MainpageCard(props) {
             </Grid>
 
             {props.DetailObject.map((item, i) => (
-                <Grid item xs={12} sm={6} md={3} lg={3} sx={{ justifyContent: 'stretch' }} key={i}>
-                    <Card>
+                <Grid item xs={12} sm={6} md={3} lg={3} key={i}>
+                    <AppCard>
                         {/* <CardMedia
                             // component='img'
                             // height='200'
@@ -32,11 +33,11 @@ export default function MainpageCard(props) {
                             <Image src={item.img} width={100} height={100}></Image>
                         </CardMedia> */}
                         <CardContent>
-                            <Typography gutterBottom variant='h3' component='div'>
+                            <Typography gutterBottom variant='h2' component='div' className='paras' sx={{ textAlign: 'center' }}>
                                 {item.title}
                                 {/* Lizard */}
                             </Typography>
-                            <Typography variant='body2' color='text.secondary'>
+                            <Typography variant='body2' color='text.secondary' sx={{ textAlign: 'justify' }}>
                                 {item.para}
                                 {/* Lizards are a widespread group of squamate reptiles, with over 6,000
                             species, ranging across all continents except Antarctica jfgkji jflghk jhlfk */}
@@ -47,7 +48,7 @@ export default function MainpageCard(props) {
                             {/* <Button size='small'>Share</Button> */}
                             <Button size='small'>Learn More</Button>
                         </CardActions>
-                    </Card>
+                    </AppCard>
                 </Grid>
             ))}
 
