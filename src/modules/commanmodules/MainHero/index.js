@@ -29,7 +29,7 @@ export default function MainHero() {
                     <span className='span-50' />
                     <span className='span-100' />
                 </div> */}
-            <Container maxWidth="lg" sx={{ py: 50 }}>
+            <Container maxWidth="lg" sx={{ py: { xs: 10, sm: 20, md: 50 } }}>
                 <Grid container alignItems='center' justifyContent='center' textAlign='center'>
                     <Grid item xs={12} md={12}>
                         <Box>
@@ -66,7 +66,7 @@ export default function MainHero() {
                             {/* <Button color="primary" size="large" variant="contained" sx={{ mb: { xs: 12, sm: 3, md: 0 }, mr: 4, fontSize: 17, backgroundImage: "linear-gradient(to right, #3e2bce 0%, #2dd3aa 100%, #2dd3aa 100%, #2dd3aa 100%)", color: 'white' }}> */}
 
                             <Button color="primary" size="large" variant="contained" sx={{
-                                mb: { xs: 12, sm: 3, md: 0 }, mr: 4, fontSize: 17, backgroundColor: '#fff',
+                                my: { xs: 5, sm: 3, md: 0 }, mr: 4, fontSize: 17, backgroundColor: '#fff',
                                 color: 'black'
                             }}>
 

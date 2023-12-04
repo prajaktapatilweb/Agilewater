@@ -43,10 +43,12 @@ export default function MainpageCard(props) {
                             species, ranging across all continents except Antarctica jfgkji jflghk jhlfk */}
                             </Typography>
                         </CardContent>
-                        <CardActions>
-                            {/* {props.links} */}
-                            {/* <Button size='small'>Share</Button> */}
-                            <Button size='small'>Learn More</Button>
+                        <CardActions >
+                            <Box sx={{ textAlign: 'center' }}>
+                                {/* {props.links} */}
+                                {/* <Button size='small'>Share</Button> */}
+                                <Button size='large' sx={{ color: '#20509e' }}>Learn More</Button>
+                            </Box>
                         </CardActions>
                     </AppCard>
                 </Grid>

@@ -94,7 +94,7 @@ const CardSlider = () => {
         <Box
             id="treatments"
             sx={{
-                p: { xs: 7, md: 7 },
+                p: { xs: 0, md: 3 },
                 // backgroundColor: "#f1efeb",
                 borderRadius: 7
             }}
