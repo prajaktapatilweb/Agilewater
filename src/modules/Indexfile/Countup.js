@@ -44,7 +44,9 @@ export default function Countup() {
         <div>
             <Box id="feature" sx={{}} >
                 <Container>
-                    <Card sx={{ px: 6, py: 8, marginTop: -20, zIndex: 1, position: 'relative', borderRadius: 2, boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)' }}>
+                    <Card sx={{
+                        px: 6, py: 8, marginTop: -20, zIndex: 1, position: 'relative', borderRadius: 2, boxShadow: 'rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset',
+                    }}>
                         <Heading data={headList7}></Heading>
                         <Grid
                             container
@@ -59,22 +61,26 @@ export default function Countup() {
                                             mb: { xs: 1, md: 0 },
                                             padding: 3,
                                             borderRadius: 5,
-                                            background: '#3c3fca',
+                                            boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px',
+                                            background: '#eeeeff'
+                                            // boxShadow: 'rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset',
+                                            // background: '#3c3fca',
 
                                             // background: "#127c71",
                                         }}
                                     >
                                         <Typography
                                             sx={{
-                                                color: "white",
+                                                // color: "white",
                                                 mb: { xs: 1, md: 2 },
                                                 fontSize: { xs: 30, md: 35 },
                                                 fontWeight: "bold",
                                             }}
+                                            className="paras"
                                         >
                                             <CountUp end={item.numbers} duration={5} start={200} />+
                                         </Typography>
-                                        <Typography color="white" variant="h5">
+                                        <Typography variant="h5" className="paras">
                                             {item.title}
                                         </Typography>
                                     </Card>

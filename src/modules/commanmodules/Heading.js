@@ -37,7 +37,8 @@ export default function Heading({ data }) {
                                 mb: 7,
                                 // lineHeight: 1.3,
                                 fontWeight: "500",
-                                color: '#0157b8',
+                                color: "#20509e",
+                                // color: '#0157b8',
                                 textAlign: 'center'
                             }}
                         >

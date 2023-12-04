@@ -25,10 +25,10 @@ export default function indexfile() {
         <section
           className='section'
           style={{
-            backgroundColor: 'rgba(0, 0, 0, 0.6)',
 
-            // backgroundImage:
-            //   'linear-gradient(to right, rgba(61,51,204,0.9), rgba(154,219,206,0.9)',
+            // backgroundColor: 'rgba(0, 0, 0, 0.6)',
+            backgroundImage: "linear-gradient(to right,	rgba(62,43,206,0.9) 30%, rgba(45,211,170,0.8) 100%, rgba(45,211,170,0.8) 100%, rgba(45,211,170,0.8) 100%)"
+            // backgroundImage: 'linear-gradient(to right, rgba(61,51,204,0.6), rgba(154,219,206,0.6)',
           }}
         >
           <MainHero />

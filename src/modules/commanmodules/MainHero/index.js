@@ -63,12 +63,18 @@ export default function MainHero() {
                             </Typography>
 
 
-                            <Button color="primary" size="large" variant="contained" sx={{ mb: { xs: 12, sm: 3, md: 0 }, mr: 4, fontSize: 17, backgroundImage: "linear-gradient(to right, #3e2bce 0%, #2dd3aa 100%, #2dd3aa 100%, #2dd3aa 100%)", color: 'white' }}>
-                                {/* ", */}
+                            {/* <Button color="primary" size="large" variant="contained" sx={{ mb: { xs: 12, sm: 3, md: 0 }, mr: 4, fontSize: 17, backgroundImage: "linear-gradient(to right, #3e2bce 0%, #2dd3aa 100%, #2dd3aa 100%, #2dd3aa 100%)", color: 'white' }}> */}
+
+                            <Button color="primary" size="large" variant="contained" sx={{
+                                mb: { xs: 12, sm: 3, md: 0 }, mr: 4, fontSize: 17, backgroundColor: '#fff',
+                                color: 'black'
+                            }}>
+
                                 In Demand Course
                             </Button>
 
-                            <Button color="primary" size="large" variant="contained" sx={{ mb: { xs: 12, sm: 3, md: 0 }, fontSize: 17, backgroundImage: "linear-gradient(to right, #3e2bce 0%, #2dd3aa 100%, #2dd3aa 100%, #2dd3aa 100%)", color: 'white' }} onClick={() => openInNewTab('https://www.youtube.com/@AgileWatersConsulting')}>
+
+                            <Button color="primary" size="large" variant="contained" sx={{ mb: { xs: 12, sm: 3, md: 0 }, fontSize: 17, backgroundColor: '#fff', color: 'black' }} onClick={() => openInNewTab('https://www.youtube.com/@AgileWatersConsulting')}>
                                 {/* ", */}
                                 Watch Video
                             </Button>
@@ -139,7 +145,7 @@ export default function MainHero() {
                 </Grid> */}
             </Container>
 
-        </div>
+        </div >
     );
 }
 

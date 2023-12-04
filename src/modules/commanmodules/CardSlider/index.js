@@ -54,7 +54,7 @@ const StyledDots = styled("ul")(({ theme }) => ({
         // textAlign:'left',
         textAlign: "center",
         "& li": {
-            marginRight: theme.spacing(5),
+            marginRight: theme.spacing(1),
 
 
             "&.slick-active>div": {
@@ -81,12 +81,11 @@ const CardSlider = () => {
         customPaging: () => (
             <Box
                 sx={{
-                    height: 10,
-                    width: 30,
-
+                    height: 15,
+                    width: 15,
                     backgroundColor: "divider",
                     display: "inline-block",
-                    borderRadius: 10,
+                    borderRadius: '50%',
                 }}
             />
         ),

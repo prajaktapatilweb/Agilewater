@@ -31,7 +31,8 @@ export const backgroundDark = {
 
 export const backgroundLight = {
   paper: '#FFFFFF',
-  default: '#F4F7FE',
+  // default: '#F4F7FE',
+  default: '#f3f7f9',
 };
 
 const cardRadius = ThemeStyleRadius.STANDARD;
@@ -45,7 +46,8 @@ export const defaultTheme = {
       mode: ThemeMode.LIGHT,
       background: {
         paper: '#FFFFFF',
-        default: '#F4F7FE',
+        default: '#f3f7f9',
+        // default: '#F4F7FE',
       },
       primary: {
         main: '#0A8FDC',
