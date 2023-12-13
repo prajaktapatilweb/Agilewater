@@ -37,11 +37,11 @@ const HomeFeature = () => {
   return (
     <Box className='section'>
       <Container sx={{ position: 'relative', zIndex: 1 }}>
-        <Grid container spacing={6}>
+        <Grid container spacing={3} alignItems='center'>
           <Grid item xs={12} md={5}>
             <Box sx={{ position: 'relative' }}>
               {/* <ExpertForm AllowedFieldArray={['Name', 'Email', 'Phone', 'Certification', 'Message']} /> */}
-              <Image src="/assets/images/about1.jpg" width={650} height={678} quality={97} alt="Feature img" />
+              <Image src="/assets/images/about1.jpg" width={600} height={600} quality={97} layout='responsive' alt="Feature img" />
               <Box sx={{
                 position: 'absolute',
                 top: -40,
@@ -124,7 +124,7 @@ const HomeFeature = () => {
               position: 'relative',
               fontSize: { xs: 40, md: 45 },
               ml: { xs: 0, md: 4 },
-              mt: 2,
+              mt: { xs: 15, md: 0 },
               mb: 3,
               px: 3,
               lineHeight: 1.2,
@@ -133,23 +133,23 @@ const HomeFeature = () => {
             }} gutterBottom>
               Make your{' '}
 
-              Learning <br />
-
+              Learning
 
               Enjoyable
             </Typography>
 
             <Typography sx={{ color: 'white', mb: 5, ml: { xs: 0, md: 7 } }}>
               Set the way of learning according to your wishes with some of the benefits that you get us, so you on
+              enjoy the lessons that we provide.Set the way of learning according to your wishes with some of the benefits that you get us, so you on
               enjoy the lessons that we provide.
             </Typography>
 
-            <Grid container spacing={3} sx={{ ml: { xs: 0, md: 2 } }}>
+            <Grid container spacing={2} sx={{ ml: { xs: 0, md: 2 } }}>
               {data.map(({ title, description, icon }, index) => (<Grid key={String(index)} item xs={12} md={6}>
-                <Box sx={{ px: 3, py: 4, boxShadow: 1, borderRadius: 4, display: 'flex', alignItems: 'center', background: 'white' }}>
+                <Box sx={{ px: 2, py: 4, mr: 2, boxShadow: 1, borderRadius: 4, display: 'flex', alignItems: 'center', background: 'white', mx: { xs: 7, md: 2 }, mb: { xs: 3, md: 1, lg: 2 } }}>
                   <Box sx={{
                     mr: 3,
-                    backgroundColor: 'primary.main',
+                    backgroundColor: '#2dd2ab',
                     borderRadius: '50%',
                     height: 36,
                     width: 36,
@@ -164,7 +164,7 @@ const HomeFeature = () => {
                     {icon}
                   </Box>
                   <Box sx={{ display: 'flex', flex: 1, flexDirection: 'column' }}>
-                    <Typography variant="h1" sx={{ fontSize: '1rem', mb: 1, color: 'secondary.main' }}>
+                    <Typography variant="h1" sx={{ fontSize: '1rem', mb: 1, color: '#20509e' }}>
                       {/* hkhhl */}
                       {title}
                     </Typography>
