@@ -16,6 +16,8 @@ import Testimonial from './Testimonial';
 import Clients from 'modules/ContactUs/Clients';
 import Certcourse from './Certcourse';
 import Indexclient from './Indexclient';
+import VideoCall from 'modules/commanmodules/VideoCall';
+import Image from 'next/image';
 
 export default function indexfile() {
   return (
@@ -41,17 +43,17 @@ export default function indexfile() {
       <Container sx={{ maxWidth: 1500 }}>
         {/* <Changingtabs /> */}
         <CoachCoursecard />
+
+
+
       </Container>
-      <Box container className='section' style={{ background: '#edeff3' }}>
 
-        <Testimonial></Testimonial>
+      <Testimonial></Testimonial>
+      {/* <VideoCall></VideoCall> */}
 
-      </Box>
 
-      <Box container className='section' style={{ background: 'lightgrey' }}>
+      <Indexclient></Indexclient>
 
-        <Indexclient></Indexclient>
-      </Box>
 
 
       {/* <Hero /> */}

@@ -1172,3 +1172,116 @@ background-color: #cd486b;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+
+
+
+/*testi section start*/
+.testimonial{
+  padding: 70px 20px 50px;
+  margin: 50px 10px 30px;
+  /* background-color: #00b6f1; */
+  border-width: 3px;
+  border-style: solid;
+  border-image: linear-gradient(to right, #3e2ecd, #2ecfab) 1;
+  /* border: 1px solid #ea816b; */
+  position: relative;
+}
+.testimonial .pic{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid #3e2ecd;
+  overflow: hidden;
+  margin: 0 auto;
+  position: absolute;
+  top: -50px;
+  left: 0;
+  right: 0;
+}
+.testimonial .pic img{
+  width: 100%;
+  height: auto;
+}
+.testimonial .description{
+  font-size: 15px;
+  color: #5e595b;
+  line-height: 27px;
+  text-align: justify;
+  margin: 0;
+  position: relative;
+
+}
+.testimonial .description:before{
+  content: "\f10d";
+  font-family: "Font Awesome 5 Free"; font-weight: 900;
+  font-size: 25px;
+  color: #d7d7d7;
+  position: absolute;
+  top: 0;
+  left: -2px;
+
+}
+.testimonial .title{
+  display: inline-table;
+  padding: 10px;
+  margin: 0 auto;
+  background: #fff;
+  border-width: 3px;
+  border-style: solid;
+  border-image: linear-gradient(to right, #2ecfab, #3e2ecd) 1;
+  /* border: 1px solid #ea816b; */
+  font-size: 16px;
+  font-weight: 700;
+  color: #c7373c;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: -22px;
+  left: 0;
+  right: 0;
+}
+.testimonial .post{
+  font-size: 15px;
+  color: #671a36;
+}
+.owl-theme .owl-controls{
+  width: 100%;
+  height: 50px;
+  opacity: 1;
+  position: absolute;
+  top: 38%;
+}
+.owl-theme .owl-controls .owl-buttons div{
+  width: 50px;
+  height: 50px;
+  line-height: 40px;
+  border-radius: 0;
+  background: transparent;
+}
+.owl-prev{
+  position: absolute;
+  left: -5%;
+}
+.owl-next{
+  position: absolute;
+  right: -5%;
+}
+.owl-prev:after,
+.owl-next:after{
+  content: "\f104";
+  font-family: "Font Awesome 5 Free"; font-weight: 900;
+  font-size: 30px;
+  color: #c7373c;
+  opacity: 1;
+}
+.owl-next:after{ content: "\f105"; }
+
+@media only screen and (max-width: 479px){
+  .testimonial{ padding: 70px 10px 30px; }
+  .testimonial .description:before{ top: -20px }
+  .testimonial .title{ font-size: 12px; }
+  .testimonial .post{ font-size: 11px; }
+}
+
+/*testi section start*/

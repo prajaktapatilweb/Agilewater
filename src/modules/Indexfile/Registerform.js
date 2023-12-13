@@ -1,5 +1,7 @@
 import { Container, Grid, Typography } from '@mui/material'
+import { headList1 } from 'modules/Constant/titlefile'
 import ExpertForm from 'modules/Forms/ExpertForm'
+import Heading from 'modules/commanmodules/Heading'
 import React from 'react'
 
 export default function Registerform() {
@@ -22,10 +24,9 @@ export default function Registerform() {
                 <Container maxWidth="lg" sx={{ px: 3 }}>
                     <Grid container spacing={3} alignItems='center' justifyContent='center' sx={{ position: 'relative', zIndex: 1 }}>
                         <Grid item xs={12} md={6}>
-                            <Typography variant='h4' sx={{ color: 'wheat', fontSize: 45 }} gutterBottom>
-                                Our  Journey
-                            </Typography>
-                            <Typography variant='p' textAlign='justify' sx={{ color: 'white' }}>
+                            <Heading data={headList1}></Heading>
+
+                            <Typography variant='p' textAlign='justify' sx={{ color: 'white', lineHeight: 2 }}>
                                 There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from characteristic words etc.
                             </Typography>
                         </Grid>

@@ -84,11 +84,11 @@ const Testimonial = () => {
     };
     return (
         <Box
-            id="testimonials"
-        // sx={{
-        //     py: { xs: 7, md: 7 },
-        //     backgroundColor: "#fafafa",
-        // }}
+            className="section"
+            sx={{
+                // py: { xs: 7, md: 7 },
+                backgroundColor: "white",
+            }}
         >
             <Container maxWidth="lg">
                 <Heading data={headList6}></Heading>

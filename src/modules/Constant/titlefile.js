@@ -7,8 +7,8 @@ const headDetails = {
     },
     about: {
 
-        subtitle: "Our Dental Journey",
-        title: "  Establishing Excellence in Dental Care",
+        subtitle: <span style={{ color: 'white' }}>Our Journey</span>,
+        title: <span style={{ color: 'wheat' }}>The fastest, most effective training to get future-ready</span>,
 
     },
     service: {

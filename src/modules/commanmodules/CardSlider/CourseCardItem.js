@@ -28,7 +28,7 @@ const CourseCardItem = ({ item }) => {
                     // background: '#009688',
                     borderRadius: 1,
                     // border: '2px #009688 solid',
-                    mx: { xs: 0, sm: 3 },
+                    mx: { xs: 1, sm: 3 },
                     // backgroundColor
                     // mx: 3,
                     mb: 15
@@ -102,7 +102,7 @@ const CourseCardItem = ({ item }) => {
                 <Box
                     sx={{
                         py: 4,
-                        px: 4,
+                        px: 1,
                         color: 'primary.contrastText',
                         flex: 1,
                         // backgroundImage: "linear-gradient(to right, #3e2bce 0%, #2dd3aa 100%, #2dd3aa 100%, #2dd3aa 100%)",
@@ -132,16 +132,14 @@ const CourseCardItem = ({ item }) => {
                     <Box
                         variant='subtitle'
                         sx={{
-                            // fontWeight: Fonts.BOLD,
-                            fontSize: 15,
-                            textAlign: 'center',
+                            alignItems: "center",
                             color: 'black'
                         }}
                     >
                         {/* {props.testpara} */}
                         {item.text.map((text, i) => (
-                            <ListItem alignItems='flex-start'> <KeyboardDoubleArrowRightIcon />
-                                <ListItemText>
+                            <ListItem alignItems='flex-start' just> <KeyboardDoubleArrowRightIcon />
+                                <ListItemText sx={{ mt: 0, ml: 1 }}>
                                     {item.text[i]}
                                 </ListItemText>
                             </ListItem>

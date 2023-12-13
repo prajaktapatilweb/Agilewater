@@ -95,39 +95,41 @@ export default function Indexclient() {
     ]
     return (
         <div>
-            <Container sx={{ maxWidth: 1500 }}>
-                <Heading data={headList8}></Heading>
-                <Grid container spacing={4} alignItems='center' justifyContent='center'>
-                    <Grid item xs={12} md={8}>
-                        <Grid container spacing={1}>
-                            {details.map((item, i) => (
-                                <Grid item xs={3} md={2}>
-                                    <Box>
-                                        <Image src={item.imgs} alt="" width={100} height={100} layout='responsive' key={i}></Image>
-                                    </Box>
-                                </Grid>
-                            ))}
+            <Box className='section'>
+                <Container sx={{ maxWidth: 1500 }}>
+                    <Heading data={headList8}></Heading>
+                    <Grid container spacing={4} alignItems='center' justifyContent='center'>
+                        <Grid item xs={12} md={8}>
+                            <Grid container spacing={3}>
+                                {details.map((item, i) => (
+                                    <Grid item xs={3} md={3}>
+                                        <Box sx={{ border: '1px solid lightgrey', boxShadow: 'rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px' }}>
+                                            <Image src={item.imgs} alt="" width={200} height={100} layout='responsive' key={i} ></Image>
+                                        </Box>
+                                    </Grid>
+                                ))}
+
+                            </Grid>
 
                         </Grid>
-
+                        <Grid item xs={12} md={4}>
+                            <AppCard sx={{ p: 3 }}>
+                                <Typography variant="h3" sx={{ textAlign: 'center', color: "#0a8fdc" }} gutterBottom>
+                                    Companies, big and small, trust us to scale their business
+                                </Typography>
+                                <Typography variant="p" sx={{ textAlign: 'justify', color: "black", }}>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                </Typography>
+                                <br></br>
+                                <br></br>
+                                <Box textAlign='center'>
+                                    <Button variant='contained'>Apply Here</Button>
+                                </Box>
+                            </AppCard>
+                        </Grid>
                     </Grid>
-                    <Grid item xs={12} md={4}>
-                        <AppCard sx={{ p: 3 }}>
-                            <Typography variant="h3" sx={{ textAlign: 'center', color: "#0a8fdc" }} gutterBottom>
-                                Companies, big and small, trust us to scale their business
-                            </Typography>
-                            <Typography variant="p" sx={{ textAlign: 'justify', color: "black", }}>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </Typography>
-                            <br></br>
-                            <br></br>
-                            <Box textAlign='center'>
-                                <Button variant='contained'>Apply Here</Button>
-                            </Box>
-                        </AppCard>
-                    </Grid>
-                </Grid>
-            </Container>
+                </Container>
+            </Box>
         </div>
     )
 }

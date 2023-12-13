@@ -21,6 +21,7 @@ export default function MainpageCard(props) {
 
             {props.DetailObject.map((item, i) => (
                 <Grid item xs={12} sm={6} md={3} lg={3} key={i}>
+
                     <AppCard>
                         {/* <CardMedia
                             // component='img'
@@ -33,7 +34,7 @@ export default function MainpageCard(props) {
                             <Image src={item.img} width={100} height={100}></Image>
                         </CardMedia> */}
                         <CardContent>
-                            <Typography gutterBottom variant='h2' component='div' className='paras' sx={{ textAlign: 'center' }}>
+                            <Typography gutterBottom variant='h2' className='paras' sx={{ textAlign: 'center' }}>
                                 {item.title}
                                 {/* Lizard */}
                             </Typography>
