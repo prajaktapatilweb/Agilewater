@@ -41,7 +41,7 @@ const HomeFeature = () => {
           <Grid item xs={12} md={5}>
             <Box sx={{ position: 'relative' }}>
               {/* <ExpertForm AllowedFieldArray={['Name', 'Email', 'Phone', 'Certification', 'Message']} /> */}
-              <Image src="/assets/images/about1.jpg" width={600} height={600} quality={97} layout='responsive' alt="Feature img" />
+              <Image src="/assets/images/about1.JPG" width={600} height={600} quality={97} layout='responsive' alt="Feature img" />
               <Box sx={{
                 position: 'absolute',
                 top: -40,
