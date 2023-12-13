@@ -1,6 +1,7 @@
 import { AppCard } from '@crema'
 import { Box, Button, Container, Grid, Typography } from '@mui/material'
 import { headList8 } from 'modules/Constant/titlefile'
+import ExpertForm from 'modules/Forms/ExpertForm'
 import Heading from 'modules/commanmodules/Heading'
 import Image from 'next/image'
 import React from 'react'
@@ -99,7 +100,7 @@ export default function Indexclient() {
                 <Container sx={{ maxWidth: 1500 }}>
                     <Heading data={headList8}></Heading>
                     <Grid container spacing={4} alignItems='center' justifyContent='center'>
-                        <Grid item xs={12} md={8}>
+                        <Grid item xs={12} md={7}>
                             <Grid container spacing={3}>
                                 {details.map((item, i) => (
                                     <Grid item xs={3} md={3}>
@@ -112,8 +113,9 @@ export default function Indexclient() {
                             </Grid>
 
                         </Grid>
-                        <Grid item xs={12} md={4}>
-                            <AppCard sx={{ p: 3 }}>
+                        <Grid item xs={12} md={5}>
+                            <ExpertForm AllowedFieldArray={['Name', 'Email', 'Phone', 'Certification', 'Message']} />
+                            {/* <AppCard sx={{ p: 3 }}>
                                 <Typography variant="h3" sx={{ textAlign: 'center', color: "#0a8fdc" }} gutterBottom>
                                     Companies, big and small, trust us to scale their business
                                 </Typography>
@@ -125,7 +127,7 @@ export default function Indexclient() {
                                 <Box textAlign='center'>
                                     <Button variant='contained'>Apply Here</Button>
                                 </Box>
-                            </AppCard>
+                            </AppCard> */}
                         </Grid>
                     </Grid>
                 </Container>

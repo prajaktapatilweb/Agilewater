@@ -15,7 +15,7 @@ export default function Certcourse() {
             <Box className='section'>
                 <Container sx={{ maxWidth: 1500, paddingTop: 10 }} >
                     <Heading data={headList2}></Heading>
-                    <AppCard sx={{ boxShadow: 'rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset' }}>
+                    <AppCard sx={{ py: 7, boxShadow: 'rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset' }}>
                         <LabTabs data={[
                             { label: 'Scrum Master', panelData: <Hero /> },
                             { label: 'SAFe', panelData: <Hero /> },

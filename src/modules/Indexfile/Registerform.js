@@ -3,6 +3,7 @@ import { headList1 } from 'modules/Constant/titlefile'
 import ExpertForm from 'modules/Forms/ExpertForm'
 import Heading from 'modules/commanmodules/Heading'
 import React from 'react'
+import HomeFeature from './HomeFeature'
 
 export default function Registerform() {
     return (
@@ -21,7 +22,8 @@ export default function Registerform() {
                     <span className='span-50' />
                     <span className='span-100' />
                 </div>
-                <Container maxWidth="lg" sx={{ px: 3 }}>
+                <HomeFeature></HomeFeature>
+                {/* <Container maxWidth="lg" sx={{ px: 3 }}>
                     <Grid container spacing={3} alignItems='center' justifyContent='center' sx={{ position: 'relative', zIndex: 1 }}>
                         <Grid item xs={12} md={6}>
                             <Heading data={headList1}></Heading>
@@ -34,7 +36,7 @@ export default function Registerform() {
                             <ExpertForm AllowedFieldArray={['Name', 'Email', 'Phone', 'Certification', 'Message']} />
                         </Grid>
                     </Grid>
-                </Container>
+                </Container> */}
             </Grid>
         </div>
     )

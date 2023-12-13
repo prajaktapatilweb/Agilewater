@@ -9,6 +9,7 @@ import IconArrowBack from "@mui/icons-material/ArrowBack";
 import IconArrowForward from "@mui/icons-material/ArrowForward";
 import CourseCardItem from "./CourseCardItem";
 import { data } from "modules/Constant/CourseSliderdata";
+import { AppCard } from "@crema";
 const SliderArrow = (props) => {
     const { onClick, type, className } = props;
     return (
@@ -91,6 +92,7 @@ const CardSlider = () => {
         ),
     };
     return (
+        // <AppCard sx={{ boxShadow: 'rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset' }}>
         <Box
             id="treatments"
             sx={{
@@ -127,6 +129,7 @@ const CardSlider = () => {
             </Grid>
             {/* </Container> */}
         </Box>
+        // </AppCard>
     );
 };
 export default CardSlider;

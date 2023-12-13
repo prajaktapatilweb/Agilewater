@@ -18,6 +18,7 @@ import Certcourse from './Certcourse';
 import Indexclient from './Indexclient';
 import VideoCall from 'modules/commanmodules/VideoCall';
 import Image from 'next/image';
+import HomeFeature from './HomeFeature';
 
 export default function indexfile() {
   return (
@@ -48,6 +49,7 @@ export default function indexfile() {
 
       </Container>
 
+      {/* <HomeFeature></HomeFeature> */}
       <Testimonial></Testimonial>
       {/* <VideoCall></VideoCall> */}
 
