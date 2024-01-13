@@ -5,6 +5,9 @@ import { Fonts } from 'shared/constants/AppEnums';
 import Image from 'next/image';
 
 const SlideItem = ({ slide }) => {
+  const openInNewTab = (url) => {
+    window.open(url, '_blank', 'noreferrer');
+  };
   return (
     <Box
       sx={{
