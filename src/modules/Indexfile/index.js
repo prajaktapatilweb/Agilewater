@@ -1,6 +1,6 @@
 import React from 'react';
 import Countup from './Countup';
-import { Box, Card, Container } from '@mui/material';
+import { Box, Card, Container, Grid } from '@mui/material';
 import Hero from './Hero';
 import Changingtabs from 'modules/commanmodules/Changingtabs';
 import CoachCoursecard from './CoachCoursecard';
@@ -19,12 +19,17 @@ import Indexclient from './Indexclient';
 import VideoCall from 'modules/commanmodules/VideoCall';
 import Image from 'next/image';
 import HomeFeature from './HomeFeature';
+import SlideBasicThree from 'modules/commanmodules/SlideBasicThree';
+import { heroPhotoList, usersPhotoList } from 'modules/Constant/Photoslider';
 
 export default function indexfile() {
   return (
     <div>
-      <Box className='events1' alignItems='center' justifyContent='center'>
-        {/* <section className='section' style={{ backgroundImage: "linear-gradient(to bottom, rgba(255,255,255,0.7),rgba(255,255,255,0.7)" }}> */}
+      <Grid>
+        <SlideBasicThree data={heroPhotoList}></SlideBasicThree>
+      </Grid>
+      {/* <Box className='events1' alignItems='center' justifyContent='center'>
+        {/* <section className='section' style={{ backgroundImage: "linear-gradient(to bottom, rgba(255,255,255,0.7),rgba(255,255,255,0.7)" }}> *
         <section
           className='section'
           style={{
@@ -36,13 +41,16 @@ export default function indexfile() {
         >
           <MainHero />
         </section>
-      </Box>
+      </Box> */}
       <Countup />
       <Certcourse></Certcourse>
 
+
       <Registerform></Registerform>
-      <Container sx={{ maxWidth: 1500 }}>
+      <Container>
         {/* <Changingtabs /> */}
+
+
         <CoachCoursecard />
 
 

@@ -10,6 +10,9 @@ import { Grid, Box } from '@mui/material';
 import Heading from '../Heading';
 import { headList3 } from 'modules/Constant/titlefile';
 import { AppCard } from '@crema';
+import ItemMenu from '@crema/core/New/AppActionGridCard/ItemMenu';
+import { teal } from '@mui/material/colors';
+import { Fonts } from 'shared/constants/AppEnums';
 
 export default function MainpageCard(props) {
     return (
@@ -21,19 +24,14 @@ export default function MainpageCard(props) {
 
             {props.DetailObject.map((item, i) => (
                 <Grid item xs={12} sm={6} md={3} lg={3} key={i}>
+                    <Card sx={{ height: 'auto', flexShrink: 0, mx: { xs: 5, sm: 0 } }}>
+                        <Box sx={{ height: 'auto', flexShrink: 0, }}>
 
-                    <AppCard>
-                        {/* <CardMedia
-                            // component='img'
-                            // height='200'
-                            // image=''
-                            alt='green iguana'
-                            sx={{ textAlign: 'center' }}
-                        >
+                            <Image src={item.img} width={100} height={70} layout='responsive'  ></Image>
 
-                            <Image src={item.img} width={100} height={100}></Image>
-                        </CardMedia> */}
-                        <CardContent>
+
+                        </Box>
+                        <Box sx={{ p: 5 }}>
                             <Typography gutterBottom variant='h2' className='paras' sx={{ textAlign: 'center' }}>
                                 {item.title}
                                 {/* Lizard */}
@@ -43,15 +41,16 @@ export default function MainpageCard(props) {
                                 {/* Lizards are a widespread group of squamate reptiles, with over 6,000
                             species, ranging across all continents except Antarctica jfgkji jflghk jhlfk */}
                             </Typography>
-                        </CardContent>
-                        <CardActions >
-                            <Box sx={{ textAlign: 'center' }}>
-                                {/* {props.links} */}
-                                {/* <Button size='small'>Share</Button> */}
-                                <Button size='large' sx={{ color: '#20509e' }}>Learn More</Button>
-                            </Box>
-                        </CardActions>
-                    </AppCard>
+
+                            <Button size='large' sx={{ color: '#20509e' }}>Learn More</Button>
+
+                        </Box>
+
+                    </Card>
+
+
+
+
                 </Grid>
             ))}
 

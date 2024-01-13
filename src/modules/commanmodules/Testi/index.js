@@ -6,25 +6,25 @@ import { AppCard } from '@crema';
 const Testi = ({ item }) => {
   return (
 
+    <Box className='section'>
+      <div className="testimonial">
 
-    <div class="testimonial">
+        <div className="pic">
 
-      <div class="pic">
+          <Image src={item.photo} width={120} height={120} ></Image>
 
-        <Image src={item.photo} width={120} height={120} ></Image>
+          {/* <img src="images/img-1.jpg" alt="" /> */}
+        </div>
 
-        {/* <img src="images/img-1.jpg" alt="" /> */}
+        <p className="description">
+          {item.description}
+        </p>
+        <h3 className="title">{item.name}
+          <span className="post"> - Web Developer</span>
+        </h3>
       </div>
 
-      <p class="description">
-        {item.description}
-      </p>
-      <h3 class="title">{item.name}
-        <span class="post"> - Web Developer</span>
-      </h3>
-    </div>
-
-
+    </Box>
 
     // <Box sx={{ px: 1.5, py: 5 }} alignItems='center' justifyContent='center' textAlign='center'>
     //   <AppCard sx={{

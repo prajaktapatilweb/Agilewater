@@ -96,14 +96,14 @@ const CardSlider = () => {
         <Box
             id="treatments"
             sx={{
-                p: { xs: 0, md: 3 },
+                // p: { xs: 0, md: 3 },
                 // backgroundColor: "#f1efeb",
-                borderRadius: 7
+                // borderRadius: 7
             }}
         >
             {/* <Container maxWidth="lg"> */}
-            <Grid container spacing={2}>
-                {/* <Grid item xs={12} md={12}>
+            {/* <Grid container spacing={2}> */}
+            {/* <Grid item xs={12} md={12}>
                     <Box
                         sx={{
                             height: "100%",
@@ -119,14 +119,14 @@ const CardSlider = () => {
                     </Box>
                 </Grid> */}
 
-                <Grid item xs={12} md={12}>
-                    <Slider {...sliderConfig}>
-                        {data.map((item) => (
-                            <CourseCardItem key={String(item.id)} item={item} />
-                        ))}
-                    </Slider>
-                </Grid>
-            </Grid>
+            {/* <Grid item xs={12} md={12}> */}
+            <Slider {...sliderConfig}>
+                {data.map((item) => (
+                    <CourseCardItem key={String(item.id)} item={item} />
+                ))}
+            </Slider>
+            {/* </Grid> */}
+            {/* </Grid> */}
             {/* </Container> */}
         </Box>
         // </AppCard>

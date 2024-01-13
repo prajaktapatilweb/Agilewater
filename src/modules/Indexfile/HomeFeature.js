@@ -35,14 +35,14 @@ const BorderLinearProgress = styled(LinearProgress, {
 }));
 const HomeFeature = () => {
   return (
-    <Box className='section'>
+    <Box>
       <Container sx={{ position: 'relative', zIndex: 1 }}>
         <Grid container spacing={3} alignItems='center'>
           <Grid item xs={12} md={5}>
             <Box sx={{ position: 'relative' }}>
               {/* <ExpertForm AllowedFieldArray={['Name', 'Email', 'Phone', 'Certification', 'Message']} /> */}
-              <Image src="/assets/images/about1.JPG" width={600} height={600} quality={97} layout='responsive' alt="Feature img" />
-              <Box sx={{
+              <Image src="/assets/images/worldmap3.jpg" width={600} height={600} quality={97} layout='responsive' alt="Feature img" />
+              {/* <Box sx={{
                 position: 'absolute',
                 top: -40,
                 right: { xs: 0, md: -30 },
@@ -75,9 +75,9 @@ const HomeFeature = () => {
                   </Typography>
                   <BorderLinearProgress variant="determinate" color="inherit" value={50} order={3} />
                 </Box>
-              </Box>
+              </Box> */}
 
-              <Box sx={{
+              {/* <Box sx={{
                 position: 'absolute',
                 bottom: -50,
                 left: { xs: 0, md: -40 },
@@ -115,7 +115,7 @@ const HomeFeature = () => {
                     <CircularProgress disableShrink thickness={2} variant="determinate" value={75} size={85} sx={{ transform: 'rotate(96deg) !important', color: '#32dc88', position: 'absolute' }} />
                   </Box>
                 </Box>
-              </Box>
+              </Box> */}
             </Box>
           </Grid>
           <Grid item xs={12} md={7}>

@@ -32,11 +32,26 @@ const sixsigmaPhoto = {
     }
 }
 
+const heroPhoto = {
+    slidephoto1: {
+        image: '/assets/images/safeslide/KMP2-scaled.jpg',
+        title: 'KMP2-scaled',
+    },
+    slidephoto2: {
+        image: '/assets/images/heroback1.jpg',
+        title: 'KMP2-scaled',
+    },
+}
 export const usersPhotoList = [
     userPhoto.agilephoto,
     userPhoto.agilephoto1,
     userPhoto.agilephoto2,
     userPhoto.agilephoto3
+]
+export const heroPhotoList = [
+    heroPhoto.slidephoto1,
+    heroPhoto.slidephoto2
+
 ]
 
 export const sixsigmaList = [

@@ -42,7 +42,7 @@ export default function Countup() {
 
     return (
         <div>
-            <Box id="feature" sx={{}} >
+            <Box sx={{ py: 5, mt: -5, background: "#f3f7f9" }}>
                 <Container>
                     {/* <Card sx={{
                         px: 6, py: 8, marginTop: -20, zIndex: 1, position: 'relative', borderRadius: 2, boxShadow: 'rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset',
@@ -51,17 +51,18 @@ export default function Countup() {
                     <Grid
                         container
                         spacing={2}
-                        sx={{ flexDirection: { xs: "column", md: "unset" } }}
+                    // sx={{ flexDirection: { xs: "column", md: "unset" } }}
                     >
                         {Details.map((item, i) => (
-                            <Grid item xs={12} sm={12} md={2} key={i}>
+                            <Grid item xs={6} sm={4} md={2} key={i}>
                                 <Card
                                     sx={{
-                                        textAlign: "center",
-                                        px: 5, py: 5, marginTop: -18, zIndex: 1, position: 'relative',
-                                        mb: { xs: 1, md: 0 },
+                                        textAlign: "center", px: 2, py: 5, zIndex: 1, position: 'relative',
+                                        // mb: { xs: 1, md: 0 },
                                         // padding: 3,
                                         borderRadius: 5,
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
                                         background: 'white',
                                         boxShadow: 'rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.6) 0px -2px 6px 0px inset',
                                         // boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px',
@@ -71,12 +72,13 @@ export default function Countup() {
 
                                         // background: "#127c71",
                                     }}
+
                                 >
                                     <Typography
                                         sx={{
                                             // color: "white",
-                                            mb: { xs: 1, md: 2 },
-                                            fontSize: { xs: 30, md: 35 },
+                                            // mb: { xs: 1, md: 0 },
+                                            fontSize: { xs: 20, sm: 28, md: 30, lg: 35 },
                                             fontWeight: "bold",
                                         }}
                                         className="paras"

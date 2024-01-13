@@ -34,11 +34,11 @@ const SliderArrow = (props) => {
             onClick={onClick}
             className={className}
         >
-            {type === "next" ? (
+            {/* {type === "next" ? (
                 <IconArrowForward sx={{ fontSize: 22 }} />
             ) : (
                 <IconArrowBack sx={{ fontSize: 22 }} />
-            )}
+            )} */}
         </IconButton>
     );
 };
@@ -48,7 +48,7 @@ const StyledDots = styled("ul")(({ theme }) => ({
         left: 0,
         bottom: -20,
         paddingLeft: theme.spacing(1),
-        textAlign: "left",
+        textAlign: "center",
         "& li": {
             marginRight: theme.spacing(2),
             "&.slick-active>div": {
@@ -66,18 +66,18 @@ const Testimonial = () => {
         speed: 300,
         slidesToShow: matchMobileView ? 1 : 3,
         slidesToScroll: 1,
-        // prevArrow: <SliderArrow type="prev" />,
-        // nextArrow: <SliderArrow type="next" />,
+        prevArrow: <SliderArrow type="prev" />,
+        nextArrow: <SliderArrow type="next" />,
         dots: true,
         appendDots: (dots) => <StyledDots>{dots}</StyledDots>,
         customPaging: () => (
             <Box
                 sx={{
-                    height: 8,
-                    width: 30,
+                    height: 15,
+                    width: 15,
                     backgroundColor: "divider",
                     display: "inline-block",
-                    borderRadius: 4,
+                    borderRadius: 50,
                 }}
             />
         ),
@@ -91,13 +91,16 @@ const Testimonial = () => {
             }}
         >
             <Container maxWidth="lg">
+
                 <Heading data={headList6}></Heading>
                 {/* <Typography variant="h1" sx={{ fontSize: { xs: 30, md: 35 } }}>
                     What Our Clients Say
                 </Typography> */}
 
+
                 <Slider {...sliderConfig}>
                     {data.map((item) => (
+
                         <Testi key={String(item.id)} item={item} />
                     ))}
                 </Slider>

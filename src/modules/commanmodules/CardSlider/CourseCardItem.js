@@ -26,9 +26,9 @@ const CourseCardItem = ({ item }) => {
                     background: "linear-gradient(to right, #3e2bce 0%, #2dd3aa 100%, #2dd3aa 100%, #2dd3aa 100%)",
                     // backgroundImage: 'linear-gradient(to right, rgba(61,51,204,0.9), rgba(154,219,206,0.9)',
                     // background: '#009688',
-                    borderRadius: 1,
-                    // border: '2px #009688 solid',
-                    mx: { xs: 1, sm: 3 },
+                    borderRadius: 0,
+
+                    mx: { xs: 1, sm: 2 },
                     // backgroundColor
                     // mx: 3,
                     mb: 15
