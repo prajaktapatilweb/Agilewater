@@ -30,16 +30,12 @@ export default function LabTabs({ data }) {
           <Box
             sx={{
               width: '100%',
-
               display: 'flex',
               flexDirection: 'column',
               position: 'relative',
-
               background: 'white',
               borderTopLeftRadius: 30,
               borderTopRightRadius: 30,
-
-
               // border: '1px #EDEDEE solid',
             }}
           >
@@ -48,15 +44,15 @@ export default function LabTabs({ data }) {
               onChange={handleChange}
               indicatorColor='primary'
               textColor='primary'
-              variant='fullWidth'
-              aria-label='action tabs example'
+              // variant='fullWidth'
+              // aria-label='action tabs example'
 
-            // value={value}
-            // onChange={handleChange}
-            // variant="scrollable"
-            // scrollButtons
-            // allowScrollButtonsMobile
-            // aria-label="scrollable force tabs example"
+              // value={value}
+              // onChange={handleChange}
+              variant="scrollable"
+              scrollButtons
+              allowScrollButtonsMobile
+              aria-label="scrollable force tabs example"
             >
               {data.map((item, i) => (
                 <Tab
@@ -65,8 +61,8 @@ export default function LabTabs({ data }) {
                   value={i}
 
                   sx={{
-                    textTransform: 'capitalize', fontSize: 18, color: 'grey'
-
+                    textTransform: 'capitalize', color: 'grey',
+                    fontSize: { sm: 16, md: 16, lg: 18 }
                   }}
 
                 />
