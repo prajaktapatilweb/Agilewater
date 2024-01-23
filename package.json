@@ -41,6 +41,7 @@
     "firebase": "^9.0.2",
     "formik": "^2.2.9",
     "formik-material-ui-pickers": "^1.0.0-alpha.1",
+    "framer-motion": "6.5.1",
     "googleapis": "^105.0.0",
     "helmet": "^7.0.0",
     "jsonwebtoken": "^9.0.1",

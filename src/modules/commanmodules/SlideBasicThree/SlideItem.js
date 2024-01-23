@@ -3,21 +3,29 @@ import { alpha, Box, Button, Grid, Typography } from '@mui/material';
 import PropTypes from 'prop-types';
 import { Fonts } from 'shared/constants/AppEnums';
 import Image from 'next/image';
+import { useState } from "react";
+import { motion } from 'framer-motion';
+
 
 const SlideItem = ({ slide }) => {
   const openInNewTab = (url) => {
     window.open(url, '_blank', 'noreferrer');
   };
+
   return (
     <Box
       sx={{
         position: 'relative',
         width: '100%',
         height: { xs: '100vh', sm: '68vh' },
+        overflow: 'hidden',
+        // border: '2px #333 solid'
+
         // height: '68vh',
       }}
     >
-      <Box>
+
+      <div id="imageContainer">
         <Image
           src={slide.image}
           height={100}
@@ -25,8 +33,27 @@ const SlideItem = ({ slide }) => {
           layout='fill'
           objectFit='cover'
           alt={slide.title}
+
+          animation='kenburns 20s infinite'
+
         />
-      </Box>
+        {/* <img src={slide.image} /> */}
+      </div>
+
+      {/* <Image
+            src={slide.image}
+            height={100}
+            width={100}
+            layout='fill'
+            objectFit='cover'
+            alt={slide.title}
+
+            animation='kenburns 20s infinite'
+
+          /> */}
+
+
+
       <Box
         sx={{
           // py: 3,
@@ -152,6 +179,8 @@ const SlideItem = ({ slide }) => {
         </Box>
       </Box>
     </Box>
+
+
   );
 };
 
