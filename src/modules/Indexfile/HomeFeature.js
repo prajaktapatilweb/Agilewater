@@ -11,6 +11,8 @@ import { data } from 'modules/Constant/feature.data';
 import ExpertForm from 'modules/Forms/ExpertForm';
 import Heading from 'modules/commanmodules/Heading';
 import { headList1 } from 'modules/Constant/titlefile';
+import { motion } from 'framer-motion';
+
 
 const BorderLinearProgress = styled(LinearProgress, {
   shouldForwardProp: (prop) => prop !== 'color',
@@ -40,8 +42,31 @@ const HomeFeature = () => {
         <Grid container spacing={3} alignItems='center'>
           <Grid item xs={12} md={5}>
             <Box sx={{ position: 'relative' }}>
+
+              <motion.div
+                // className="box"
+                // initial={{ opacity: 0 }}
+                // a nimate={{ opacity: 1 }}
+
+                initial={{ x: -100, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                viewport={{ once: true }}
+
+                transition={{
+                  delay: 0.2,
+                  x: { type: 'spring', stiffness: 60 },
+                  opacity: { duration: 0.6 },
+                  ease: "easeIn",
+                  duration: 1
+                }}
+              >
+
+                <Image src="/assets/images/worldmap3.jpg" width={600} height={600} quality={97} layout='responsive' alt="Feature img" />
+
+              </motion.div>
+
               {/* <ExpertForm AllowedFieldArray={['Name', 'Email', 'Phone', 'Certification', 'Message']} /> */}
-              <Image src="/assets/images/worldmap3.jpg" width={600} height={600} quality={97} layout='responsive' alt="Feature img" />
+              {/* <Image src="/assets/images/worldmap3.jpg" width={600} height={600} quality={97} layout='responsive' alt="Feature img" /> */}
               {/* <Box sx={{
                 position: 'absolute',
                 top: -40,
@@ -120,65 +145,96 @@ const HomeFeature = () => {
           </Grid>
           <Grid item xs={12} md={7}>
             {/* <Heading data={headList1}></Heading> */}
-            <Typography component="h2" sx={{
-              position: 'relative',
-              fontSize: { xs: 40, md: 45 },
-              ml: { xs: 0, md: 4 },
-              mt: { xs: 15, md: 0 },
-              mb: 3,
-              px: 3,
-              lineHeight: 1.2,
-              fontWeight: 'bold',
-              color: 'white'
-            }} gutterBottom>
-              Make your{' '}
+            <motion.div
+              initial={{ x: 100, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true }}
 
-              Learning
+              transition={{
+                delay: 0.2,
+                x: { type: 'spring', stiffness: 60 },
+                opacity: { duration: 1 },
+                ease: "easeIn",
+                duration: 1
+              }}
+            >
 
-              Enjoyable
-            </Typography>
+              <Typography component="h2" sx={{
+                position: 'relative',
+                fontSize: { xs: 40, md: 45 },
+                ml: { xs: 0, md: 4 },
+                mt: { xs: 15, md: 0 },
+                mb: 3,
+                px: 3,
+                lineHeight: 1.2,
+                fontWeight: 'bold',
+                color: 'white'
+              }} gutterBottom>
+                Make your{' '}
 
-            <Typography sx={{ color: 'white', mb: 5, ml: { xs: 0, md: 7 } }}>
-              Set the way of learning according to your wishes with some of the benefits that you get us, so you on
-              enjoy the lessons that we provide.Set the way of learning according to your wishes with some of the benefits that you get us, so you on
-              enjoy the lessons that we provide.
-            </Typography>
+                Learning
 
-            <Grid container spacing={2} sx={{ ml: { xs: 0, md: 2 } }}>
-              {data.map(({ title, description, icon }, index) => (<Grid key={String(index)} item xs={12} md={6}>
-                <Box sx={{ px: 2, py: 4, mr: 2, boxShadow: 1, borderRadius: 4, display: 'flex', alignItems: 'center', background: 'white', mx: { xs: 7, md: 2 }, mb: { xs: 3, md: 1, lg: 2 } }}>
-                  <Box sx={{
-                    mr: 3,
-                    backgroundColor: '#2dd2ab',
-                    borderRadius: '50%',
-                    height: 36,
-                    width: 36,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: 'primary.contrastText',
-                    '& svg': {
-                      fontSize: 20,
-                    },
-                  }}>
-                    {icon}
+                Enjoyable
+              </Typography>
+
+
+              <Typography sx={{ color: 'white', mb: 5, ml: { xs: 0, md: 7 } }}>
+                Set the way of learning according to your wishes with some of the benefits that you get us, so you on
+                enjoy the lessons that we provide.Set the way of learning according to your wishes with some of the benefits that you get us, so you on
+                enjoy the lessons that we provide.
+              </Typography>
+            </motion.div>
+
+            <motion.div
+              initial={{ x: 100, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{
+                delay: 0.6,
+                x: { type: 'spring', stiffness: 60 },
+                opacity: { duration: 0.6 },
+                ease: "easeIn",
+                duration: 1
+              }}
+            >
+              <Grid container spacing={2} sx={{ ml: { xs: 0, md: 2 } }}>
+
+                {data.map(({ title, description, icon }, index) => (<Grid key={String(index)} item xs={12} md={6}>
+                  <Box sx={{ px: 2, py: 4, mr: 2, boxShadow: 1, borderRadius: 4, display: 'flex', alignItems: 'center', background: 'white', mx: { xs: 7, md: 2 }, mb: { xs: 3, md: 1, lg: 2 } }}>
+                    <Box sx={{
+                      mr: 3,
+                      backgroundColor: '#2dd2ab',
+                      borderRadius: '50%',
+                      height: 36,
+                      width: 36,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: 'primary.contrastText',
+                      '& svg': {
+                        fontSize: 20,
+                      },
+                    }}>
+                      {icon}
+                    </Box>
+                    <Box sx={{ display: 'flex', flex: 1, flexDirection: 'column' }}>
+                      <Typography variant="h1" sx={{ fontSize: '1rem', mb: 1, color: '#20509e' }}>
+                        {/* hkhhl */}
+                        {title}
+                      </Typography>
+                      <Typography sx={{ lineHeight: 1.3, color: 'text.secondary' }} variant="subtitle1">
+                        {/* holgfkhfok */}
+                        {description}
+                      </Typography>
+                    </Box>
                   </Box>
-                  <Box sx={{ display: 'flex', flex: 1, flexDirection: 'column' }}>
-                    <Typography variant="h1" sx={{ fontSize: '1rem', mb: 1, color: '#20509e' }}>
-                      {/* hkhhl */}
-                      {title}
-                    </Typography>
-                    <Typography sx={{ lineHeight: 1.3, color: 'text.secondary' }} variant="subtitle1">
-                      {/* holgfkhfok */}
-                      {description}
-                    </Typography>
-                  </Box>
-                </Box>
-              </Grid>))}
-            </Grid>
+                </Grid>))}
+
+              </Grid>
+            </motion.div>
           </Grid>
         </Grid>
-      </Container>
-    </Box>);
+      </Container >
+    </Box >);
 };
 export default HomeFeature;
