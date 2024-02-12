@@ -6,7 +6,7 @@ const MediaSlider = ({ children }) => {
   return (
     <Box
       sx={{
-        // pb: 6,
+        pb: 6,
         height: '100%',
         '& .slick-slider': {
           pb: 5,
@@ -26,7 +26,7 @@ const MediaSlider = ({ children }) => {
           },
         },
         '& .slick-dots': {
-          bottom: 50,
+          bottom: -10,
           '& li': {
             width: 10,
             height: 10,
@@ -37,18 +37,17 @@ const MediaSlider = ({ children }) => {
             },
             '& button:before': {
               fontSize: 0,
-              background: 'white',
-              // backgroundColor: 'primary.main',
-              width: 15,
-              height: 15,
+              backgroundColor: 'primary.main',
+              width: 10,
+              height: 10,
               borderRadius: '50%',
             },
           },
         },
         '& .slick-prev, & .slick-next': {
           backgroundColor: (theme) => theme.palette.common.white,
-          width: 20,
-          height: 20,
+          width: 10,
+          height: 10,
           borderRadius: '50%',
           display: 'flex !important',
           alignItems: 'center',

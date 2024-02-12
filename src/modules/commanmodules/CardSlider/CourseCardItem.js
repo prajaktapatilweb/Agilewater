@@ -22,7 +22,8 @@ const CourseCardItem = ({ item }) => {
                     left: 0,
                     top: 0,
                     position: 'relative',
-                    p: 1,
+                    p: 0.5,
+                    boxShadow: '0 14px 43px rgba(33, 54, 61, 0.15)',
                     background: "linear-gradient(to right, #3e2bce 0%, #2dd3aa 100%, #2dd3aa 100%, #2dd3aa 100%)",
                     // backgroundImage: 'linear-gradient(to right, rgba(61,51,204,0.9), rgba(154,219,206,0.9)',
                     // background: '#009688',
@@ -45,8 +46,8 @@ const CourseCardItem = ({ item }) => {
                         position: 'relative',
 
                         background: 'white',
-                        borderTopLeftRadius: 30,
-                        borderTopRightRadius: 30,
+                        // borderTopLeftRadius: 30,
+                        // borderTopRightRadius: 30,
 
                         border: '1px #EDEDEE solid',
                     }}
@@ -106,8 +107,8 @@ const CourseCardItem = ({ item }) => {
                         color: 'primary.contrastText',
                         flex: 1,
                         // backgroundImage: "linear-gradient(to right, #3e2bce 0%, #2dd3aa 100%, #2dd3aa 100%, #2dd3aa 100%)",
-                        borderBottomRightRadius: 30,
-                        borderBottomLeftRadius: 30,
+                        // borderBottomRightRadius: 30,
+                        // borderBottomLeftRadius: 30,
                         backgroundColor: 'white',
                         display: 'flex',
                         flexDirection: 'column',
@@ -130,16 +131,17 @@ const CourseCardItem = ({ item }) => {
                     </Box> */}
 
                     <Box
-                        variant='subtitle'
+
                         sx={{
                             alignItems: "center",
-                            color: 'black'
+                            color: 'black',
+
                         }}
                     >
                         {/* {props.testpara} */}
                         {item.text.map((text, i) => (
                             <ListItem alignItems='flex-start' just> <KeyboardDoubleArrowRightIcon />
-                                <ListItemText sx={{ mt: 0, ml: 1 }}>
+                                <ListItemText sx={{ mt: 0, ml: 1, textAlign: 'justify' }}>
                                     {item.text[i]}
                                 </ListItemText>
                             </ListItem>
@@ -147,24 +149,19 @@ const CourseCardItem = ({ item }) => {
 
                     </Box>
 
-                    <Box sx={{ pt: 3 }}>
-                        <Button
-                            variant='contained'
-                            size='large'
-                            sx={{
-                                backgroundImage: "linear-gradient(to right, #3e2bce 0%, #2dd3aa 100%, #2dd3aa 100%, #2dd3aa 100%)",
-                                // backgroundColor: '#fff',
-                                color: 'white',
-                                textTransform: 'capitalize',
-                                '&:hover, &:focus': {
-                                    backgroundColor: '#fff',
-                                    color: '#000',
-                                },
-                            }}
-                        >
-                            Know More
-                            {/* {props.testbutton} */}
-                        </Button>
+                    <Box sx={{ pt: 3 }} className=''>
+                        <div class="containers">
+                            <button
+                                // variant='contained'
+                                size='large'
+                                className='btn'
+
+                            >
+                                Know More
+                                {/* {props.testbutton} */}
+                            </button>
+                        </div>
+
                     </Box>
                 </Box>
             </Card>

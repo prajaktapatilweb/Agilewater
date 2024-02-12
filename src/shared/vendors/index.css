@@ -210,7 +210,8 @@
 }
 .section-shaped .shape-style-u1.shape-dark {
   
-  background: linear-gradient(to right, #3e2bce 0%, #2dd3aa 100%, #2dd3aa 100%, #2dd3aa 100%);
+  background:linear-gradient(to right, #3e2bce 0%, #2dd3aa 100%, #2dd3aa 100%, #2dd3aa 100%)
+  
   /* background: linear-gradient(90deg, #251e47 10%, #3b2450 25%, #713267  50%, #3b2450 75%, #251e47 90%); */
   /* background: linear-gradient(90deg, #05445e 35%, #189ab4 90%); */
   /* linear-gradient(150deg, #250e62 15%, #250e62 70%, #680182 94%); */
@@ -843,6 +844,29 @@
 }
 /*end*/
 
+.events3 {
+  background-image: url('/assets/images/cards/para2.jpg') center no-repeat ;
+  /* background: url("../public/vision.jpg") center center no-repeat; */
+  background-size:contain;
+  background-position: center;
+  
+  
+  /* position: relative; */
+ 
+}
+.events4 {
+  background-image: url('/assets/images/paraimg/bg_3.webp') ;
+  /* background: url("../public/vision.jpg") center center no-repeat; */
+  /* background-size:contain; */
+ 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  /* position: relative; */
+ 
+}
+
  /* contact Parallox Section */ 
  .events2 {
   background-image: url('/assets/images/cards/paralloximg.jpg') ;
@@ -1179,7 +1203,7 @@ background-color: #cd486b;
 /*testi section start*/
 .testimonial{
   padding: 70px 20px 50px;
-  margin: 50px 10px 30px;
+  margin: 0px 5px 5px;
   /* background-color: #00b6f1; */
   border-width: 3px;
   border-style: solid;
@@ -1204,9 +1228,9 @@ background-color: #cd486b;
   height: auto;
 }
 .testimonial .description{
-  font-size: 15px;
-  color: #5e595b;
-  line-height: 27px;
+  /* font-size: 15px; */
+  /* color: #5e595b; */
+  /* line-height: 27px; */
   text-align: justify;
   margin: 0;
   position: relative;
@@ -1233,7 +1257,8 @@ background-color: #cd486b;
   /* border: 1px solid #ea816b; */
   font-size: 16px;
   font-weight: 700;
-  color: #c7373c;
+  color:#20509e;
+  /* color: #c7373c; */
   letter-spacing: 1px;
   text-transform: uppercase;
   position: absolute;
@@ -1243,7 +1268,8 @@ background-color: #cd486b;
 }
 .testimonial .post{
   font-size: 15px;
-  color: #671a36;
+  color: black;
+  /* color: #671a36; */
 }
 
 
@@ -1251,7 +1277,7 @@ background-color: #cd486b;
 
 
 
-
+/*kenburns effect  start*/
 
 #imageContainer {
   /* background-color: #333; */
@@ -1283,4 +1309,115 @@ background-color: #cd486b;
 
 #imageContainer img {
   animation: kenburns 10s infinite;
+}
+
+/*kenburns effect  end*/
+
+/*glassmorph effect  start*/
+
+.cardx {
+
+
+
+color: white;
+
+
+
+  /* margin-left: 25px; */
+  /* margin-right: 25px; */
+  border: 1px solid rgba(255, 255, 255, .55);
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.55);
+
+  backdrop-filter: blur(15px);
+}
+
+
+/*glassmorph effect  start*/
+
+
+.containers {
+  /* height: 100vh;
+  width: 100vw; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+.btn {
+  padding: 15px 40px;
+  border: none;
+  outline: none;
+  position: relative;
+  z-index: 1;
+  border-radius: 5px;
+  background: linear-gradient(to right, #3e2bce 0%, #2dd3aa 100%, #2dd3aa 100%, #2dd3aa 100%);
+  cursor: pointer;
+}
+.btn::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  right: 2px;
+  top: 2px;
+  bottom: 2px;
+  border-radius: 4px;
+  background-color: white;
+  z-index: -1;
+  transition: 200ms
+}
+.btn::after {
+  content: " ";
+  font-weight: bold;
+  font-size: 18px;
+  background: linear-gradient(to right, #3e2bce 0%, #2dd3aa 100%, #2dd3aa 100%, #2dd3aa 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: 200ms
+}
+.btn:hover::before {
+  opacity: 50%;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+.btn:hover::after{
+  color: white;
+}
+
+
+
+
+div.partial-border-pseudo {
+  /* width: 150px; */
+  background: white;
+  position: relative;
+  border: none;
+  /* padding: 10px; */
+  /* margin: 25px; */
+  text-align: center;
+}
+
+div.partial-border-pseudo::before,
+div.partial-border-pseudo::after {
+  position: absolute;
+  content: "";
+  width: 80px;
+  height: 70px;
+}
+
+div.partial-border-pseudo::before {
+  left: 0;
+  top: 0;
+  border-left: 5px solid #3e2ecd;
+  border-top: 5px solid #2ec9ac;
+}
+
+div.partial-border-pseudo::after {
+  right: 0;
+  bottom: 0;
+  border-right: 5px solid #3e2ecd;
+  border-bottom: 5px solid #2ec9ac;
 }

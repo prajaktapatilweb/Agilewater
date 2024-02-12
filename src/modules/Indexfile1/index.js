@@ -23,7 +23,7 @@ import SlideBasicThree from 'modules/commanmodules/SlideBasicThree';
 import { heroPhotoList, usersPhotoList } from 'modules/Constant/Photoslider';
 import Paralloxsec from './Paralloxsec';
 
-export default function indexfile() {
+export default function indexfile1() {
   return (
     <div>
       <Grid>
@@ -43,20 +43,22 @@ export default function indexfile() {
           <MainHero />
         </section>
       </Box> */}
+      <Registerform></Registerform>
       <Countup />
+
       <Certcourse></Certcourse>
 
 
-      <Registerform></Registerform>
-      <Container>
-        {/* <Changingtabs /> */}
 
 
-        <CoachCoursecard />
+      {/* <Changingtabs /> */}
+
+
+      <CoachCoursecard />
 
 
 
-      </Container>
+
 
       {/* <HomeFeature></HomeFeature> */}
       <Testimonial></Testimonial>

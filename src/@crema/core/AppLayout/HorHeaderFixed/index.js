@@ -36,7 +36,7 @@ const HorHeaderFixed = ({ children }) => {
             <AppContentView>{children}</AppContentView>
             <AppFixedFooter />
           </MainContent>
-          {/* <AppThemeSetting /> */}
+          <AppThemeSetting />
         </>
       </HorHeaderFixedWrapper>
     </HorHeaderFixedContainer>

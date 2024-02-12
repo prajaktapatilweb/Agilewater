@@ -17,7 +17,7 @@ const SlideItem = ({ slide }) => {
       sx={{
         position: 'relative',
         width: '100%',
-        height: { xs: '100vh', sm: '68vh' },
+        height: { xs: '100vh', sm: '85vh' },
         overflow: 'hidden',
         // border: '2px #333 solid'
 
@@ -76,7 +76,8 @@ const SlideItem = ({ slide }) => {
           justifyContent: 'center',
         }}
       >
-        <Box sx={{ p: 5, mt: 25 }}>
+        <Box>
+          {/* <Box sx={{ p: 5, mt: 25 }}> */}
           <Grid container spacing={2}>
             <Grid item xs={12} md={12}>
               <Typography

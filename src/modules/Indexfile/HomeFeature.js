@@ -12,6 +12,7 @@ import ExpertForm from 'modules/Forms/ExpertForm';
 import Heading from 'modules/commanmodules/Heading';
 import { headList1 } from 'modules/Constant/titlefile';
 import { motion } from 'framer-motion';
+import { Fonts } from 'shared/constants/AppEnums';
 
 
 const BorderLinearProgress = styled(LinearProgress, {
@@ -178,9 +179,9 @@ const HomeFeature = () => {
               </Typography>
 
 
-              <Typography sx={{ color: 'white', mb: 5, ml: { xs: 0, md: 7 } }}>
+              <Typography sx={{ color: 'white', mb: 5, ml: { xs: 0, md: 7 }, textAlign: 'justify' }}>
                 Set the way of learning according to your wishes with some of the benefits that you get us, so you on
-                enjoy the lessons that we provide.Set the way of learning according to your wishes with some of the benefits that you get us, so you on
+                enjoy the lessons that we provide. Set the way of learning according to your wishes with some of the benefits that you get us, so you on
                 enjoy the lessons that we provide.
               </Typography>
             </motion.div>
@@ -218,11 +219,16 @@ const HomeFeature = () => {
                       {icon}
                     </Box>
                     <Box sx={{ display: 'flex', flex: 1, flexDirection: 'column' }}>
-                      <Typography variant="h1" sx={{ fontSize: '1rem', mb: 1, color: '#20509e' }}>
+                      <Typography variant="h1" fontSize={{ md: 16, lg: 18, xl: 18 }}
+                        sx={{
+                          fontWeight: Fonts.BOLD,
+                          color: 'black',
+                          mb: 1, color: '#20509e'
+                        }}>
                         {/* hkhhl */}
                         {title}
                       </Typography>
-                      <Typography sx={{ lineHeight: 1.3, color: 'text.secondary' }} variant="subtitle1">
+                      <Typography sx={{ lineHeight: 1.3, color: 'black', }} variant="body1">
                         {/* holgfkhfok */}
                         {description}
                       </Typography>

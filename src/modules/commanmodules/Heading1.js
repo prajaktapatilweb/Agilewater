@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Typography } from '@mui/material'
 
-export default function Heading({ data }) {
+export default function Heading1({ data }) {
     return (
         <div>
             <Box>
@@ -12,11 +12,12 @@ export default function Heading({ data }) {
                         <Typography
                             variant="h1"
                             sx={{
-
-                                fontSize: { xs: 30, md: 40 },
+                                fontFamily: "Lato, sans-serif",
+                                fontSize: '20px',
+                                // textTransform: "uppercase",
                                 ml: { xs: 0, md: 4 },
                                 mt: 0,
-                                mb: 1,
+                                mb: 3,
                                 lineHeight: 1.3,
                                 fontWeight: 500,
                                 color: 'black',
@@ -28,15 +29,18 @@ export default function Heading({ data }) {
 
                         </Typography>
                         <Typography
-                            variant='h3'
+
                             sx={{
 
-                                // fontSize: { xs: 40, md: 45 },
+                                fontFamily: "Futura, sans-serif",
+
+                                // fontFamily: "Roboto, Arial, sans-serif",
+                                fontSize: { xs: 30, md: 38 },
                                 ml: { xs: 0, md: 4 },
                                 mt: 0,
                                 mb: 7,
-                                // lineHeight: 1.3,
-                                fontWeight: "500",
+                                lineHeight: 1.4,
+                                fontWeight: 500,
                                 color: "#20509e",
                                 // color: '#0157b8',
                                 textAlign: 'center'

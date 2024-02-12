@@ -1,15 +1,15 @@
 const userPhoto = {
     agilephoto: {
-        image: '/assets/images/safeslide/KMP2-scaled.jpg',
-        title: 'KMP2-scaled',
+        image: '/assets/images/coursephoto/course1.jpeg',
+        title: 'Safe',
     },
     agilephoto1: {
-        image: '/assets/images/safeslide/KMP2-scaled.jpg',
-        title: 'KMP2-scaled',
+        image: '/assets/images/coursephoto/course2.jpeg',
+        title: 'Safe-POPM',
     },
     agilephoto2: {
-        image: '/assets/images/safeslide/KMP2-scaled.jpg',
-        title: 'KMP2-scaled',
+        image: '/assets/images/coursephoto/course3.jpeg',
+        title: 'Scrum',
     },
     agilephoto3: {
         image: '/assets/images/safeslide/KMP2-scaled.jpg',

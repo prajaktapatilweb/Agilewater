@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import Button from '@mui/material/Button';
 import {
+  Card,
   FormControl,
   Grid,
   InputLabel,
@@ -85,77 +86,79 @@ export default function ExpertForm({ AllowedFieldArray }) {
 
   };
   return (
-    <AppCard sx={{ p: 5, boxShadow: 'rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset' }}>
-      <Formik
-        initialValues={initialValues}
-        validationSchema={validationSchema}
-        validateOnChange={true}
-        onSubmit={onSubmit}
-        enableReinitialize={true}
-      >
-        {({
-          values,
-          errors,
-          isValidating,
-          touched,
-          setFieldValue,
-          isSubmitting,
-        }) => (
-          // {/* {(data, errors, isValidating, isSubmitting) => ( */}
-          <Form style={{ textAlign: 'left' }} noValidate autoComplete='off'>
-            {/* <pre>{JSON.stringify(values, null, 2)}</pre> */}
-            <Grid container sx={{ mb: { xs: 4, xl: 5 } }} spacing={2}>
-              <Grid item xs={12} md={12}>
-                {AllowedFieldArray.includes('Name') && (
-                  <AppTextField
-                    label='Name'
-                    disabled={values.isSubmitting}
-                    // name='Cost.Actual'
-                    name='Name'
-                    variant='outlined'
-                  />
-                )}
-              </Grid>
-              <Grid item xs={12} md={12}>
-                {AllowedFieldArray.includes('Email') && (
-                  <AppTextField
-                    label='Email'
-                    disabled={values.isSubmitting}
-                    // name='Cost.Actual'
-                    name='Email'
-                    variant='outlined'
-                  />
-                )}
-              </Grid>
-              <Grid item xs={12} md={12}>
-                {AllowedFieldArray.includes('Phone') && (
-                  <AppTextField
-                    label='Phone'
-                    disabled={values.isSubmitting}
-                    // name='Cost.Actual'
-                    name='Phone'
-                    variant='outlined'
-                  />
-                )}
-              </Grid>
-
-              <Grid item md={6} xs={12}>
-                {AllowedFieldArray.includes('Certification') && (
-                  <FormControl sx={{ width: '100%' }}>
-                    <InputLabel id='demo-simple-select-label'>
-                      <IntlMessages id='Certification' />
-                    </InputLabel>
-                    <Field
-                      name='Certification'
-                      options={CertList}
-                      component={CustomizedSelectFormik}
-                      disabled={isSubmitting}
+    <div>
+      {/* <div class="o">Partial Border Pair</div> */}
+      <Card className='partial-border-pseudo' sx={{ p: 10, borderRadius: 0, }}>
+        <Formik
+          initialValues={initialValues}
+          validationSchema={validationSchema}
+          validateOnChange={true}
+          onSubmit={onSubmit}
+          enableReinitialize={true}
+        >
+          {({
+            values,
+            errors,
+            isValidating,
+            touched,
+            setFieldValue,
+            isSubmitting,
+          }) => (
+            // {/* {(data, errors, isValidating, isSubmitting) => ( */}
+            <Form style={{ textAlign: 'left' }} noValidate autoComplete='off'>
+              {/* <pre>{JSON.stringify(values, null, 2)}</pre> */}
+              <Grid container sx={{ mb: { xs: 4, xl: 5 } }} spacing={2}>
+                <Grid item xs={12} md={12}>
+                  {AllowedFieldArray.includes('Name') && (
+                    <AppTextField
+                      label='Name'
+                      disabled={values.isSubmitting}
+                      // name='Cost.Actual'
+                      name='Name'
+                      variant='outlined'
                     />
-                  </FormControl>
-                )}
-              </Grid>
+                  )}
+                </Grid>
+                <Grid item xs={12} md={12}>
+                  {AllowedFieldArray.includes('Email') && (
+                    <AppTextField
+                      label='Email'
+                      disabled={values.isSubmitting}
+                      // name='Cost.Actual'
+                      name='Email'
+                      variant='outlined'
+                    />
+                  )}
+                </Grid>
+                <Grid item xs={12} md={12}>
+                  {AllowedFieldArray.includes('Phone') && (
+                    <AppTextField
+                      label='Phone'
+                      disabled={values.isSubmitting}
+                      // name='Cost.Actual'
+                      name='Phone'
+                      variant='outlined'
+                    />
+                  )}
+                </Grid>
 
-              {/* <Grid item xs={12} md={6}>
+                <Grid item md={6} xs={12}>
+                  {AllowedFieldArray.includes('Certification') && (
+                    <FormControl sx={{ width: '100%' }}>
+                      <InputLabel id='demo-simple-select-label'>
+                        <IntlMessages id='Certification' />
+                      </InputLabel>
+                      <Field
+                        name='Certification'
+                        options={CertList}
+                        component={CustomizedSelectFormik}
+                        disabled={isSubmitting}
+                      />
+                    </FormControl>
+                  )}
+                </Grid>
+
+                {/* <Grid item xs={12} md={6}>
               {AllowedFieldArray.includes('Certification') && (
                 <AppTextField
                   label='Certification'
@@ -167,54 +170,71 @@ export default function ExpertForm({ AllowedFieldArray }) {
               )}
             </Grid> */}
 
-              <Grid item xs={12} md={12}>
-                {AllowedFieldArray.includes('Message') && (
-                  <Grid item xs={6} md={12}>
-                    <AppTextField
-                      fullWidth
-                      multiline
-                      label='Message'
-                      disabled={values.isSubmitting}
-                      name='Message'
-                      rows='3'
-                      variant='outlined'
+                <Grid item xs={12} md={12}>
+                  {AllowedFieldArray.includes('Message') && (
+                    <Grid item xs={6} md={12}>
+                      <AppTextField
+                        fullWidth
+                        multiline
+                        label='Message'
+                        disabled={values.isSubmitting}
+                        name='Message'
+                        rows='3'
+                        variant='outlined'
 
-                    />
+                      />
 
-                  </Grid>
-                )}
+                    </Grid>
+                  )}
+                </Grid>
+
+
+
+
+
+
               </Grid>
+              <Grid container>
+                {/* <Box sx={{ pt: 3 }} className=''>
+                        <div class="containers">
+                            <button
+                                // variant='contained'
+                                size='large'
+                                className=''
 
+                            >
 
+                                {/* {props.testbutton} *
+                            </button>
+                        </div>
 
-
-
-
-            </Grid>
-            <Grid container>
-              <Button
-                variant='contained'
-                color='primary'
-                disabled={values.isValidating || values.isSubmitting}
-                sx={{
-                  mt: { xs: 5, xl: 6 },
-                  minWidth: 160,
-                  fontWeight: Fonts.REGULAR,
-                  fontSize: 16,
-                  textTransform: 'capitalize',
-                  padding: '8px 16px 8px',
-                }}
-                type='submit'
-              >
-                Submit
-              </Button>
-            </Grid>
-            {/* <pre>{JSON.stringify(data, null, 4)}</pre> */}
-          </Form>
-        )
-        }
-      </Formik >
-    </AppCard>
+                    </Box> */}
+                <Button
+                  className='btn'
+                  // variant='contained'
+                  // color='primary'
+                  disabled={values.isValidating || values.isSubmitting}
+                  sx={{ color: 'black', py: 4, px: 7 }}
+                  // sx={{
+                  //   mt: { xs: 5, xl: 6 },
+                  //   minWidth: 160,
+                  //   fontWeight: Fonts.REGULAR,
+                  //   fontSize: 16,
+                  //   textTransform: 'capitalize',
+                  //   padding: '8px 16px 8px',
+                  // }}
+                  type='submit'
+                >
+                  Submit
+                </Button>
+              </Grid>
+              {/* <pre>{JSON.stringify(data, null, 4)}</pre> */}
+            </Form>
+          )
+          }
+        </Formik >
+      </Card>
+    </div>
   );
 }
 

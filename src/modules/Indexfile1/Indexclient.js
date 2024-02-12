@@ -1,8 +1,9 @@
 import { AppCard } from '@crema'
 import { Box, Button, Container, Grid, Typography } from '@mui/material'
-import { headList8 } from 'modules/Constant/titlefile'
+import { headList8, headList81 } from 'modules/Constant/titlefile'
 import ExpertForm from 'modules/Forms/ExpertForm'
 import Heading from 'modules/commanmodules/Heading'
+import Heading1 from 'modules/commanmodules/Heading1'
 import Image from 'next/image'
 import React from 'react'
 
@@ -97,11 +98,11 @@ export default function Indexclient() {
     return (
         <div>
             <Box className='section'>
-                <Container sx={{ maxWidth: 1500 }}>
-
-                    <Grid container spacing={4} alignItems='center' justifyContent='center'>
+                <Container sx={{ maxWidth: 1500, }}>
+                    <Heading1 data={headList81}></Heading1>
+                    <Grid container spacing={5} alignItems='center' justifyContent='center' sx={{ p: 5 }}>
                         <Grid item xs={12} md={7}>
-                            <Heading data={headList8}></Heading>
+
                             <Grid container spacing={3}>
                                 {details.map((item, i) => (
                                     <Grid item xs={3} md={3}>

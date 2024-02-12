@@ -9,16 +9,16 @@ const Testi = ({ item }) => {
     <Box className='section'>
       <div className="testimonial">
 
-        <div className="pic">
+        <Box className="pic">
 
           <Image src={item.photo} width={120} height={120} ></Image>
 
           {/* <img src="images/img-1.jpg" alt="" /> */}
-        </div>
+        </Box>
 
-        <p className="description">
+        <Typography variant='body2' sx={{ textAlign: 'justify', mt: 2 }}>
           {item.description}
-        </p>
+        </Typography>
         <h3 className="title">{item.name}
           <span className="post"> - Web Developer</span>
         </h3>
