@@ -4,6 +4,7 @@ import { Box, Card, Container, Typography } from "@mui/material";
 import CountUp from "react-countup";
 import Heading from "modules/commanmodules/Heading";
 import { headList7 } from "modules/Constant/titlefile";
+import { motion } from "framer-motion";
 
 export default function Countup() {
 
@@ -51,50 +52,66 @@ export default function Countup() {
                         px: 6, py: 8, marginTop: -20, zIndex: 1, position: 'relative', borderRadius: 2, boxShadow: 'rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset',
                     }}> */}
                         {/* <Heading data={headList7}></Heading> */}
-                        <Grid
-                            container
-                            spacing={2}
-                        // sx={{ flexDirection: { xs: "column", md: "unset" } }}
+
+                        <motion.div
+
+                            initial={{ y: 100, opacity: 0 }}
+                            whileInView={{ y: 0, opacity: 1 }}
+                            viewport={{ once: true }}
+
+                            transition={{
+                                delay: 0.4,
+                                y: { type: 'spring', stiffness: 100 },
+                                opacity: { duration: 1 },
+                                ease: "easeIn",
+                                duration: 1
+                            }}
                         >
-                            {Details.map((item, i) => (
-                                <Grid item xs={6} sm={4} md={2} key={i}>
-                                    <Card
-                                        sx={{
-                                            textAlign: "center", px: 2, py: 5, zIndex: 1, position: 'relative',
-                                            // mb: { xs: 1, md: 0 },
-                                            // padding: 3,
-                                            borderRadius: 5,
-                                            alignItems: 'center',
-                                            justifyContent: 'center',
-                                            background: 'white',
-                                            boxShadow: 'rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.6) 0px -2px 6px 0px inset',
-                                            // boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px',
-                                            // background: '#eeeeff'
-                                            // boxShadow: 'rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset',
-                                            // background: '#3c3fca',
-
-                                            // background: "#127c71",
-                                        }}
-
-                                    >
-                                        <Typography
+                            <Grid
+                                container
+                                spacing={2}
+                            // sx={{ flexDirection: { xs: "column", md: "unset" } }}
+                            >
+                                {Details.map((item, i) => (
+                                    <Grid item xs={6} sm={4} md={2} key={i}>
+                                        <Card
                                             sx={{
-                                                // color: "white",
+                                                textAlign: "center", px: 2, py: 5, zIndex: 1, position: 'relative',
                                                 // mb: { xs: 1, md: 0 },
-                                                fontSize: { xs: 20, sm: 28, md: 30, lg: 35 },
-                                                fontWeight: "bold",
+                                                // padding: 3,
+                                                borderRadius: 5,
+                                                alignItems: 'center',
+                                                justifyContent: 'center',
+                                                background: 'white',
+                                                boxShadow: 'rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.6) 0px -2px 6px 0px inset',
+                                                // boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px',
+                                                // background: '#eeeeff'
+                                                // boxShadow: 'rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset',
+                                                // background: '#3c3fca',
+
+                                                // background: "#127c71",
                                             }}
-                                            className="paras"
+
                                         >
-                                            <CountUp end={item.numbers} duration={5} start={200} />+
-                                        </Typography>
-                                        <Typography variant="h5" className="paras">
-                                            {item.title}
-                                        </Typography>
-                                    </Card>
-                                </Grid>
-                            ))}
-                        </Grid>
+                                            <Typography
+                                                sx={{
+                                                    // color: "white",
+                                                    // mb: { xs: 1, md: 0 },
+                                                    fontSize: { xs: 20, sm: 28, md: 30, lg: 35 },
+                                                    fontWeight: "bold",
+                                                }}
+                                                className="paras"
+                                            >
+                                                <CountUp end={item.numbers} duration={5} start={200} />+
+                                            </Typography>
+                                            <Typography variant="h5" className="paras">
+                                                {item.title}
+                                            </Typography>
+                                        </Card>
+                                    </Grid>
+                                ))}
+                            </Grid>
+                        </motion.div>
                         {/* </Card> */}
                     </Container>
                 </section>

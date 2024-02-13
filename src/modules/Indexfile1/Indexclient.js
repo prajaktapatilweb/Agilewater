@@ -6,6 +6,7 @@ import Heading from 'modules/commanmodules/Heading'
 import Heading1 from 'modules/commanmodules/Heading1'
 import Image from 'next/image'
 import React from 'react'
+import { motion } from 'framer-motion'
 
 export default function Indexclient() {
     var details = [
@@ -99,25 +100,72 @@ export default function Indexclient() {
         <div>
             <Box className='section'>
                 <Container sx={{ maxWidth: 1500, }}>
-                    <Heading1 data={headList81}></Heading1>
+                    <motion.div
+
+                        initial={{ y: 100, opacity: 0 }}
+                        whileInView={{ y: 0, opacity: 1 }}
+
+                        viewport={{ once: true }}
+
+                        transition={{
+                            delay: 0.2,
+                            x: { type: 'spring', stiffness: 60 },
+                            opacity: { duration: 1 },
+                            ease: "easeIn",
+                            duration: 1
+                        }}
+                    >
+                        <Heading1 data={headList81}></Heading1>
+
+                    </motion.div>
                     <Grid container spacing={5} alignItems='center' justifyContent='center' sx={{ p: 5 }}>
+
                         <Grid item xs={12} md={7}>
+                            <motion.div
 
-                            <Grid container spacing={3}>
-                                {details.map((item, i) => (
-                                    <Grid item xs={3} md={3}>
-                                        <Box sx={{ border: '1px solid lightgrey', boxShadow: 'rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px' }}>
-                                            <Image src={item.imgs} alt="" width={200} height={100} layout='responsive' key={i} ></Image>
-                                        </Box>
-                                    </Grid>
-                                ))}
+                                initial={{ x: -100, opacity: 0 }}
+                                whileInView={{ x: 0, opacity: 1 }}
+                                viewport={{ once: true }}
 
-                            </Grid>
+                                transition={{
+                                    delay: 0.2,
+                                    x: { type: 'spring', stiffness: 60 },
+                                    opacity: { duration: 0.6 },
+                                    ease: "easeIn",
+                                    duration: 1
+                                }}
+                            >
 
+                                <Grid container spacing={3}>
+                                    {details.map((item, i) => (
+                                        <Grid item xs={3} md={3}>
+                                            <Box sx={{ border: '1px solid lightgrey', boxShadow: 'rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px' }}>
+                                                <Image src={item.imgs} alt="" width={200} height={100} layout='responsive' key={i} ></Image>
+                                            </Box>
+                                        </Grid>
+                                    ))}
+
+                                </Grid>
+                            </motion.div>
                         </Grid>
+
+
                         <Grid item xs={12} md={5}>
-                            <ExpertForm AllowedFieldArray={['Name', 'Email', 'Phone', 'Certification', 'Message']} />
-                            {/* <AppCard sx={{ p: 3 }}>
+                            <motion.div
+                                initial={{ x: 100, opacity: 0 }}
+                                whileInView={{ x: 0, opacity: 1 }}
+                                viewport={{ once: true }}
+
+                                transition={{
+                                    delay: 0.2,
+                                    x: { type: 'spring', stiffness: 60 },
+                                    opacity: { duration: 1 },
+                                    ease: "easeIn",
+                                    duration: 1
+                                }}
+                            >
+                                <ExpertForm AllowedFieldArray={['Name', 'Email', 'Phone', 'Certification', 'Message']} />
+                                {/* <AppCard sx={{ p: 3 }}>
                                 <Typography variant="h3" sx={{ textAlign: 'center', color: "#0a8fdc" }} gutterBottom>
                                     Companies, big and small, trust us to scale their business
                                 </Typography>
@@ -130,7 +178,9 @@ export default function Indexclient() {
                                     <Button variant='contained'>Apply Here</Button>
                                 </Box>
                             </AppCard> */}
+                            </motion.div>
                         </Grid>
+
                     </Grid>
                 </Container>
             </Box>

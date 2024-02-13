@@ -21,22 +21,33 @@ export default function MainpageCard(props) {
 
         <Box className='section' sx={{ background: 'white' }}>
             <Container>
-                <Grid item xs={12} sx={{ p: 3, textAlign: 'center' }}>
-                    <Heading1 data={headList31}></Heading1>
-                </Grid>
                 <motion.div
-                    // className="box"
-                    // initial={{ opacity: 0 }}
-                    // a nimate={{ opacity: 1 }}
 
                     initial={{ y: 100, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
+
                     viewport={{ once: true }}
 
                     transition={{
-                        delay: 0.4,
-                        y: { type: 'spring', stiffness: 100 },
+                        delay: 0.2,
+                        x: { type: 'spring', stiffness: 60 },
                         opacity: { duration: 1 },
+                        ease: "easeIn",
+                        duration: 1
+                    }}
+                >
+                    <Grid item xs={12} sx={{ p: 3, textAlign: 'center' }}>
+                        <Heading1 data={headList31}></Heading1>
+                    </Grid>
+                </motion.div>
+                <motion.div
+                    initial={{ y: 100, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{
+                        delay: 0.6,
+                        x: { type: 'spring', stiffness: 60 },
+                        opacity: { duration: 0.6 },
                         ease: "easeIn",
                         duration: 1
                     }}

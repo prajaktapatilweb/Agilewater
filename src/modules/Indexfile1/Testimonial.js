@@ -13,6 +13,7 @@ import { data } from "modules/Constant/mentors.data";
 import Heading from "modules/commanmodules/Heading";
 import { headList6, headList61 } from "modules/Constant/titlefile";
 import Heading1 from "modules/commanmodules/Heading1";
+import { motion } from "framer-motion";
 const SliderArrow = (props) => {
     const { onClick, type, className } = props;
     return (
@@ -92,19 +93,47 @@ const Testimonial = () => {
             }}
         >
             <Container maxWidth="lg">
+                <motion.div
 
-                <Heading1 data={headList61}></Heading1>
+                    initial={{ y: 100, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+
+                    viewport={{ once: true }}
+
+                    transition={{
+                        delay: 0.2,
+                        x: { type: 'spring', stiffness: 60 },
+                        opacity: { duration: 1 },
+                        ease: "easeIn",
+                        duration: 1
+                    }}
+                >
+
+                    <Heading1 data={headList61}></Heading1>
+                </motion.div>
                 {/* <Typography variant="h1" sx={{ fontSize: { xs: 30, md: 35 } }}>
                     What Our Clients Say
                 </Typography> */}
 
+                <motion.div
+                    initial={{ y: 100, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{
+                        delay: 0.6,
+                        x: { type: 'spring', stiffness: 60 },
+                        opacity: { duration: 0.6 },
+                        ease: "easeIn",
+                        duration: 1
+                    }}
+                >
+                    <Slider {...sliderConfig}>
+                        {data.map((item) => (
 
-                <Slider {...sliderConfig}>
-                    {data.map((item) => (
-
-                        <Testi key={String(item.id)} item={item} />
-                    ))}
-                </Slider>
+                            <Testi key={String(item.id)} item={item} />
+                        ))}
+                    </Slider>
+                </motion.div>
             </Container>
         </Box>
     );

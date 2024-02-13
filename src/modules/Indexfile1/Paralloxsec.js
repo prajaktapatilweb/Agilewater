@@ -1,8 +1,7 @@
-import { AppCard } from '@crema'
-import { Box, Button, Container, Grid, Link, Typography } from '@mui/material'
+import { Button, Container, Grid, Typography } from '@mui/material'
 import React from 'react'
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
-import SendIcon from '@mui/icons-material/Send';
+import { motion } from 'framer-motion';
 
 
 export default function Paralloxsec() {
@@ -39,26 +38,42 @@ export default function Paralloxsec() {
                 {/* <section className='section' style={{ backgroundImage: "linear-gradient(to bottom, rgba(255,255,255,0.7),rgba(255,255,255,0.7)" }}> */}
                 {/* <section className='section' style={{ backgroundImage: "linear-gradient(to right,rgb(60,58,203,0.9),rgb(60,58,203,0.9),rgb(46,209,171,0.9)" }}> */}
                 <Container sx={{ position: 'relative', zIndex: 1, py: 2 }}>
-                    <Grid container spacing={3} alignItems='center' sx={{ textAlign: 'center' }}>
-                        {/* {Coursenm.map((item, i) => ( */}
-                        <Grid item xs={12} md={12}>
-                            <Typography sx={{ color: 'white', fontSize: 30, fontWeight: 500 }} gutterBottom>Get hired for your dream job!</Typography>
+                    <motion.div
 
-                            <Typography variant='h3' sx={{ color: 'white', mb: 7 }}>Join a truly global team, united by a singular passion for science.</Typography>
+                        initial={{ y: 100, opacity: 0 }}
+                        whileInView={{ y: 0, opacity: 1 }}
 
-                            {/* <Box className="cardx"> */}
-                            <Button className='cardx' variant='h1' sx={{ fontSize: 18, fontWeight: 500, color: 'white', padding: '15px 25px 15px 25px' }} endIcon={< KeyboardDoubleArrowRightIcon />}>
-                                Search Experienced Jobs
-                            </Button>
+                        viewport={{ once: true }}
 
-                            {/* </Box> */}
+                        transition={{
+                            delay: 0.2,
+                            x: { type: 'spring', stiffness: 60 },
+                            opacity: { duration: 1 },
+                            ease: "easeIn",
+                            duration: 1
+                        }}
+                    >
+                        <Grid container spacing={3} alignItems='center' sx={{ textAlign: 'center' }}>
+                            {/* {Coursenm.map((item, i) => ( */}
+                            <Grid item xs={12} md={12}>
+                                <Typography sx={{ color: 'white', fontSize: 30, fontWeight: 500 }} gutterBottom>Get hired for your dream job!</Typography>
 
+                                <Typography variant='h3' sx={{ color: 'white', mb: 7 }}>Join a truly global team, united by a singular passion for science.</Typography>
+
+                                {/* <Box className="cardx"> */}
+                                <Button className='cardx' variant='h1' sx={{ fontSize: 18, fontWeight: 500, color: 'white', padding: '15px 25px 15px 25px' }} endIcon={< KeyboardDoubleArrowRightIcon />}>
+                                    Search Experienced Jobs
+                                </Button>
+
+                                {/* </Box> */}
+
+                            </Grid>
+
+
+
+                            {/* ))} */}
                         </Grid>
-
-
-
-                        {/* ))} */}
-                    </Grid>
+                    </motion.div>
                 </Container>
             </Grid>
             {/* </section> */}

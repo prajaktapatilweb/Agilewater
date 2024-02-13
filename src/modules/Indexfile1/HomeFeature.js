@@ -30,9 +30,6 @@ const HomeFeature = () => {
             <Box sx={{ position: 'relative' }}>
 
               <motion.div
-                // className="box"
-                // initial={{ opacity: 0 }}
-                // a nimate={{ opacity: 1 }}
 
                 initial={{ x: -100, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
