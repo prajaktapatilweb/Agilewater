@@ -79,7 +79,7 @@ const SlideItem = ({ slide }) => {
         <Box>
           {/* <Box sx={{ p: 5, mt: 25 }}> */}
           <Grid container spacing={2}>
-            <Grid item xs={12} md={12}>
+            <Grid item xs={12} md={12} mx={{ xs: 5, sm: 3, md: 0 }}>
               <Typography
                 variant='h5'
                 sx={{

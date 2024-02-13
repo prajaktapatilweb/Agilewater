@@ -123,18 +123,18 @@ const AppThemeSetting = () => {
               {/* <IntlMessages id='customizer.customiseSidebarText' /> */}
             </Box>
           </Box>
-          <Box
+          {/* <Box
             sx={{
               padding: { xs: '20px', xl: '28px 22px' },
             }}
-          >
-            {/* <NavStyles /> */}
-            {/* <LayoutTypes /> */}
-            {/* <ThemeDirection /> */}
-            {/* <ThemeHeader /> */}
-            {/* <ThemeFooter /> */}
-            {/* <SidebarSettings /> */}
-          </Box>
+          > */}
+          {/* <NavStyles /> */}
+          {/* <LayoutTypes /> */}
+          {/* <ThemeDirection /> */}
+          {/* <ThemeHeader /> */}
+          {/* <ThemeFooter /> */}
+          {/* <SidebarSettings /> */}
+          {/* </Box> */}
         </AppScrollbar>
       </Drawer>
       <Drawer

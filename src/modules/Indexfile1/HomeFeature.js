@@ -26,7 +26,7 @@ const HomeFeature = () => {
       <Container sx={{ position: 'relative', zIndex: 1 }}>
 
         <Grid container spacing={3} alignItems='center'>
-          <Grid item xs={12} md={5}>
+          <Grid item xs={12} md={5} order={{ xs: 1, sm: 1, md: 0 }}>
             <Box sx={{ position: 'relative' }}>
 
               <motion.div
@@ -59,7 +59,7 @@ const HomeFeature = () => {
 
             </Box>
           </Grid>
-          <Grid item xs={12} md={7}>
+          <Grid item xs={12} md={7} order={{ xs: 0, sm: 0, md: 1 }} mx={{ xs: 4, sm: 3, md: 0 }}>
             {/* <Heading data={headList1}></Heading> */}
             <motion.div
               initial={{ x: 100, opacity: 0 }}

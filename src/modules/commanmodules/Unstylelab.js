@@ -7,16 +7,16 @@ import { buttonUnstyledClasses } from '@mui/base/ButtonUnstyled';
 import TabUnstyled, { tabUnstyledClasses } from '@mui/base/TabUnstyled';
 
 const primary = {
-    50: '#FFF',
-    100: '#C2E0FF',
-    200: '#80BFFF',
-    300: '#20509e',
-    400: '#3399FF',
-    500: '#007FFF',
-    600: '#0072E5',
-    700: '#000000',
-    800: '#F0F0F0',
-    900: 'linear-gradient(to right,	rgba(62,43,206,1) 30%, rgba(45,211,170,1) 100%, rgba(45,211,170,0.9) 100%, rgba(45,211,170,0.8) 100%)',
+  50: '#FFF',
+  100: '#C2E0FF',
+  200: '#80BFFF',
+  300: '#20509e',
+  400: '#3399FF',
+  500: '#007FFF',
+  600: '#0072E5',
+  700: '#000000',
+  800: '#F0F0F0',
+  900: 'linear-gradient(to right,	rgba(62,43,206,1) 30%, rgba(45,211,170,1) 100%, rgba(45,211,170,0.9) 100%, rgba(45,211,170,0.8) 100%)',
 
 };
 
@@ -79,58 +79,62 @@ const TabsList = styled(TabsListUnstyled)`
 
 export default function UnstyledTab({ data }) {
 
-    const [value, setValue] = React.useState(0);
+  const [value, setValue] = React.useState(0);
 
-    const handleChange = (event, newValue) => {
-        setValue(newValue);
-    };
-    return (
+  const handleChange = (event, newValue) => {
+    console.log('value', value)
+    setValue(newValue);
+  };
+  return (
 
-        <TabsUnstyled value={value}>
-            <TabsList
+    <TabsUnstyled value={value}>
+      <TabsList
 
-                value={value}
-                onChange={handleChange}
+        value={value}
+        // onChange={handleChange}
+        // onChange={() => (console.log('value', value),
+        //   setValue(value))}
 
-                sx={{
-                    textTransform: 'capitalize',
+        sx={{
+          textTransform: 'capitalize',
 
-                    // fontSize: { sm: 16, md: 16, lg: 18 },
-                    mb: 7,
+          // fontSize: { sm: 16, md: 16, lg: 18 },
+          mb: 7,
 
-                    // backgroundImage:
-                    //     'linear-gradient(to right,	rgba(62,43,206,1) 30%, rgba(45,211,170,1) 100%, rgba(45,211,170,0.9) 100%, rgba(45,211,170,0.8) 100%)',
+          // backgroundImage:
+          //     'linear-gradient(to right,	rgba(62,43,206,1) 30%, rgba(45,211,170,1) 100%, rgba(45,211,170,0.9) 100%, rgba(45,211,170,0.8) 100%)',
 
-                }}
-                variant='scrollable'
-                scrollButtons='auto'
-                aria-label='scrollable auto tabs example'
-            >
-                {data.map((item, i) => (
-                    <Tab
-                        key={i}
-                        label={item.label}
-                        value={i}
+        }}
+        variant='scrollable'
+        scrollButtons='auto'
+        aria-label='scrollable auto tabs example'
+      >
+        {data.map((item, i) => (
+          <Tab
+            key={i}
+            label={item.label}
+            value={i}
+            onChange={handleChange}
 
-                        sx={{
-                            textTransform: 'capitalize',
-                            // fontSize: { sm: 16, md: 16, lg: 18 },
-                            // backgroundColor: 'transparent'
-                        }}
+            sx={{
+              textTransform: 'capitalize',
+              // fontSize: { sm: 16, md: 16, lg: 18 },
+              // backgroundColor: 'transparent'
+            }}
 
-                    >
-                        {item.label}
-                    </Tab>
-                ))}
+          >
+            {item.label}
+          </Tab>
+        ))}
 
-                {/* // <Tab>One</Tab> */}
+        {/* // <Tab>One</Tab> */}
 
-            </TabsList>
-            <TabPanel value={value}>{data[value]?.panelData}
-            </TabPanel>
-            {/* <TabPanel value={1}>Second content</TabPanel> */}
-            {/* <TabPanel value={2}>Third content</TabPanel> */}
-        </TabsUnstyled>
+      </TabsList>
+      <TabPanel value={value}>{data[value]?.panelData}
+      </TabPanel>
+      {/* <TabPanel value={1}>Second content</TabPanel> */}
+      {/* <TabPanel value={2}>Third content</TabPanel> */}
+    </TabsUnstyled>
 
-    );
+  );
 }

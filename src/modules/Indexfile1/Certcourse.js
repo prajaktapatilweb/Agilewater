@@ -19,7 +19,7 @@ export default function Certcourse() {
                     <Heading1 data={headList21}></Heading1>
                     <br></br>
                     {/* <AppCard sx={{ py: 7, boxShadow: 'rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset' }}> */}
-                    <UnstyledTab
+                    {/* <UnstyledTab
 
                         data={[
                             { label: 'Scrum Master', panelData: <Hero /> },
@@ -31,16 +31,16 @@ export default function Certcourse() {
                     >
 
 
-                    </UnstyledTab>
+                    </UnstyledTab> */}
 
 
-                    {/* <LabTabs data={[
+                    <LabTabs data={[
                         { label: 'Scrum Master', panelData: <Hero /> },
                         { label: 'SAFe', panelData: <Hero /> },
                         { label: 'Agile', panelData: 'hgdfhg r' },
                         { label: 'Product Owner', panelData: <Hero /> },
                         { label: 'DevOps', panelData: <Hero /> }
-                    ]} /> */}
+                    ]} />
                     {/* </AppCard> */}
                 </Container>
             </Box>
