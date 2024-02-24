@@ -19,7 +19,7 @@ import Heading1 from '../Heading1';
 export default function MainpageCard(props) {
     return (
 
-        <Box className='section' sx={{ background: 'white' }}>
+        <Box className='section'>
             <Container>
                 <motion.div
 

@@ -67,7 +67,7 @@ const CourseCardItem = ({ item }) => {
                             width={80}
                             // layout='responsive'
                             objectFit='contain'
-                            className='pngback'
+                        // className='pngback'
                         />
 
                         <Typography

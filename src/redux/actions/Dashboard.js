@@ -15,14 +15,14 @@ import jwtAxios from '@crema/services/auth/jwt-auth';
 export const onGetCourseList = () => {
   console.log('Redux Get Cours List ');
   return (dispatch) => {
-    dispatch({type: FETCH_START});
+    dispatch({ type: FETCH_START });
     jwtAxios
       .get('/courses/getcourslist')
       .then((data) => {
         console.log('Data Rece REdux', data.data);
         if (data.status === 200) {
-          dispatch({type: FETCH_SUCCESS});
-          dispatch({type: GET_COURSE_LIST, payload: data.data});
+          dispatch({ type: FETCH_SUCCESS });
+          dispatch({ type: GET_COURSE_LIST, payload: data.data });
         } else {
           dispatch({
             type: FETCH_ERROR,
@@ -31,20 +31,20 @@ export const onGetCourseList = () => {
         }
       })
       .catch((error) => {
-        dispatch({type: FETCH_ERROR, payload: error.message});
+        dispatch({ type: FETCH_ERROR, payload: error.message });
       });
   };
 };
 
-export const onPostNewCourseData = ({data, resetForm}) => {
+export const onPostNewCourseData = ({ data, resetForm }) => {
   return (dispatch) => {
-    dispatch({type: FETCH_START});
+    dispatch({ type: FETCH_START });
     jwtAxios
-      .post('/courses/addnewcourse', {data})
+      .post('/courses/addnewcourse', { data })
       .then((data) => {
         if (data.status === 200) {
-          dispatch({type: FETCH_SUCCESS});
-          dispatch({type: ADD_NEW_COURSE, payload: data.data});
+          dispatch({ type: FETCH_SUCCESS });
+          dispatch({ type: ADD_NEW_COURSE, payload: data.data });
           dispatch({
             type: SHOW_MESSAGE,
             payload: 'Data Added Succefully',
@@ -58,22 +58,22 @@ export const onPostNewCourseData = ({data, resetForm}) => {
         }
       })
       .catch((error) => {
-        dispatch({type: FETCH_ERROR, payload: error.message});
+        dispatch({ type: FETCH_ERROR, payload: error.message });
       });
   };
 };
 
-export const onGetIndivCourseData = ({CourseID}) => {
+export const onGetIndivCourseData = ({ CourseID }) => {
   console.log('Redux Get  Indiv Course', CourseID);
   return (dispatch) => {
-    dispatch({type: FETCH_START});
+    dispatch({ type: FETCH_START });
     jwtAxios
-      .get('/courses/getindividualcourse', {params: {CourseID: CourseID}})
+      .get('/courses/getindividualcourse', { params: { CourseID: CourseID } })
       .then((data) => {
         console.log('Data Rece REdux', data.data);
         if (data.status === 200) {
-          dispatch({type: FETCH_SUCCESS});
-          dispatch({type: GET_INDIV_COURSE_DATA, payload: data.data});
+          dispatch({ type: FETCH_SUCCESS });
+          dispatch({ type: GET_INDIV_COURSE_DATA, payload: data.data });
         } else {
           dispatch({
             type: FETCH_ERROR,
@@ -82,28 +82,28 @@ export const onGetIndivCourseData = ({CourseID}) => {
         }
       })
       .catch((error) => {
-        dispatch({type: FETCH_ERROR, payload: error.message});
+        dispatch({ type: FETCH_ERROR, payload: error.message });
       });
   };
 };
 
-export const onUpdateCourseData = ({CourseID, data}) => {
+export const onUpdateCourseData = ({ CourseID, data }) => {
   console.log('In Redux', data);
   return (dispatch) => {
-    dispatch({type: FETCH_START});
+    dispatch({ type: FETCH_START });
     jwtAxios
-      .put(`/courses/updatecourse/${CourseID}`, {data})
+      .put(`/courses/updatecourse/${CourseID}`, { data })
       .then((recdata) => {
         if (recdata.status === 200) {
           // console.log('Data from Redux Students LEads', data.data, deleteID);
-          dispatch({type: FETCH_SUCCESS});
+          dispatch({ type: FETCH_SUCCESS });
           if (recdata.data === 'Nothing to update') {
             dispatch({
               type: SHOW_MESSAGE,
               payload: 'Nothing to update',
             });
           } else {
-            dispatch({type: GET_COURSE_LIST, payload: recdata.data});
+            dispatch({ type: GET_COURSE_LIST, payload: recdata.data });
             dispatch({
               type: SHOW_MESSAGE,
               payload: `Data of ${CourseID} Updated`,
@@ -117,22 +117,22 @@ export const onUpdateCourseData = ({CourseID, data}) => {
         }
       })
       .catch((error) => {
-        dispatch({type: FETCH_ERROR, payload: error.message});
+        dispatch({ type: FETCH_ERROR, payload: error.message });
       });
   };
 };
 
-export const onDeleteIndivCourseData = ({CourseID}) => {
+export const onDeleteIndivCourseData = ({ CourseID }) => {
   console.log('Redux Delete  Indiv Course', CourseID);
   return (dispatch) => {
-    dispatch({type: FETCH_START});
+    dispatch({ type: FETCH_START });
     jwtAxios
       .delete(`/courses/DeleteCourse/${CourseID}`)
       .then((data) => {
         console.log('Data Rece REdux', data.data);
         if (data.status === 200) {
-          dispatch({type: FETCH_SUCCESS});
-          dispatch({type: GET_COURSE_LIST, payload: data.data});
+          dispatch({ type: FETCH_SUCCESS });
+          dispatch({ type: GET_COURSE_LIST, payload: data.data });
         } else {
           dispatch({
             type: FETCH_ERROR,
@@ -141,7 +141,7 @@ export const onDeleteIndivCourseData = ({CourseID}) => {
         }
       })
       .catch((error) => {
-        dispatch({type: FETCH_ERROR, payload: error.message});
+        dispatch({ type: FETCH_ERROR, payload: error.message });
       });
   };
 };

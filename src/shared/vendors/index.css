@@ -261,7 +261,7 @@
 }
 
 .section-shaped {
-  /* background-image: url(../public/bgwebsite.jpg); */
+  /* background-image: url(../public/globalmap.jpeg); */
   position: relative;
   overflow: hidden;
 }
@@ -742,15 +742,14 @@
 
  /* Parallox Section */ 
  .events1 {
-  background-image: url('/assets/images/worldmap3.jpg');
+  background-image: url('/assets/images/test3.png');
 
   /* background-image: url('/assets/images/globalmap4.png') ; */
   background-position:center;
   /* background: url("../public/vision.jpg") center center no-repeat; */
   background-size: cover;
   position: relative;
- 
- 
+  /* height: 70vh;  */
 }
 .events1::before {
   content: '';
@@ -1334,9 +1333,9 @@ color: white;
 }
 
 
-/*glassmorph effect  start*/
+/*glassmorph effect  end*/
 
-
+/*button gradient border  start*/
 .containers {
   /* height: 100vh;
   width: 100vw; */
@@ -1386,9 +1385,9 @@ color: white;
 .btn:hover::after{
   color: white;
 }
+/*button gradient border  end */
 
-
-
+/* partial border to card*/
 
 div.partial-border-pseudo {
   /* width: 150px; */
@@ -1420,4 +1419,108 @@ div.partial-border-pseudo::after {
   bottom: 0;
   border-right: 5px solid #3e2ecd;
   border-bottom: 5px solid #2ec9ac;
+}
+/* end partial border to card*/
+
+
+/*map animation*/
+.world-map{
+  /* width: 100%; */
+  /* max-width: 1100px; */
+  margin:0 auto;
+  /* padding: 1em; */
+  position: relative;
+}
+
+.world-map img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.pin{
+  background: yellow;
+  position: absolute;
+  width: 0.7em;
+  height: 0.7em;
+  border-radius: 50%;
+}
+.pin::before{
+content: '';
+background: yellow;
+position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  animation: pulse 1.3s ease-in-out infinite;
+}
+ .pin span{
+  display: inline-block;
+  white-space: nowrap;
+  position: absolute;
+  right: -1.0em;
+  top: 350%;
+  color:red;
+  font-weight: 500;
+  transform: translateY(-50%);
+  /* background: #fff; */
+  border-radius: 3em;
+  padding: 0.6em, 0.6em;
+  font-size: 0.9em;
+
+}
+ .usa{
+  top:35%;
+  left: 16%;
+ }
+
+.abc{
+  top:28%;
+  left: 21%;
+ }
+ 
+.france{
+  top:60%;
+  left: 50%;
+
+}
+.sweden{
+  top:37%;
+left: 50%;
+}
+.south-africa{
+  top:55%;
+  left:53%;
+}
+.australia{
+  top:70%;
+
+left:80%;
+}
+.pqr{
+  top:52%;
+
+left:59%;
+}
+.india{
+  top:53%;
+
+left:66%;
+}
+@keyframes pulse{
+  100%{
+    opacity: 0;
+    transform: 
+    translate(-50%,-50%)
+    scale(2.5);
+  }
+}
+@media screen and (max-width:600px) {
+  .world-map{
+    font-size: 13px;
+  }
+  
 }

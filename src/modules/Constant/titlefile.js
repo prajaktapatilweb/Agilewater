@@ -56,7 +56,7 @@ const headDetails1 = {
     about: {
 
         subtitle: <Box sx={{ textAlign: 'left' }}><span style={{ color: "black" }} >Our Journey</span></Box>,
-        title: <span ><Box sx={{ textAlign: 'left' }}>Benefits About Online Learning Expertise</Box></span>,
+        title: <span ><Box sx={{ textAlign: 'left' }}>We make long lasting trustworthy relations </Box></span>,
 
     },
     service: {

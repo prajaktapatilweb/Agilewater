@@ -1,6 +1,6 @@
 import React from 'react';
 import Countup from './Countup';
-import { Box, Card, Container, Grid } from '@mui/material';
+import { Box, Button, Card, Container, Grid, Typography } from '@mui/material';
 import Hero from './Hero';
 import Changingtabs from 'modules/commanmodules/Changingtabs';
 import CoachCoursecard from './CoachCoursecard';
@@ -27,11 +27,71 @@ export default function indexfile() {
   return (
     <div>
       <Grid>
-        <SlideBasicThree data={heroPhotoList}></SlideBasicThree>
+        {/* <SlideBasicThree data={heroPhotoList}></SlideBasicThree> */}
       </Grid>
       {/* <Box className='events1' alignItems='center' justifyContent='center'>
         {/* <section className='section' style={{ backgroundImage: "linear-gradient(to bottom, rgba(255,255,255,0.7),rgba(255,255,255,0.7)" }}> *
-        <section
+       
+      </Box> */}
+      <Box className='events1' alignItems='center' justifyContent='center' sx={{ p: 40 }}>
+
+        <Container>
+          <Grid container>
+            <Grid item xs={12} md={12} lg={6} sx={{ pb: { xs: 3, md: 5, lg: 0, }, }}>
+              <Box>
+                <Typography
+                  component="h2"
+                  sx={{
+                    // width: { md: 850 },
+                    position: 'relative',
+                    fontSize: { xs: 35, md: 40, lg: 40 },
+                    mb: { xs: 3, sm: 0 },
+                    letterSpacing: 1.5,
+                    fontWeight: 'bold',
+                    color: 'black',
+                    lineHeight: 1.5,
+                  }}
+                >
+                  Global Training, Certification & Recruitment Expert
+
+                </Typography>
+              </Box>
+
+              <Box sx={{ mb: 4, width: { xs: '100%', md: '80%' } }}>
+                <Typography variant='p' sx={{ color: 'black', lineHeight: 1.6, fontSize: 18 }} >
+                  {
+                    'Helps you from Learning to earning (Value generation)'
+                  }
+                </Typography>
+              </Box>
+
+
+              <Button
+                color='primary'
+                size='large'
+                variant='contained'
+                sx={{
+                  my: { xs: 5, sm: 3, md: 0 },
+
+                  fontSize: 17,
+                  backgroundColor: '#fff',
+                  p: 4,
+                  fontWeight: 'bold',
+
+                  boxShadow:
+                    'rgba(0, 0, 0, 0.17) 0px -13px 15px 0px inset, rgba(0, 0, 0, 0.5) 0px -6px 3px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px',
+
+                  color: '#3e2ecd',
+                }}
+              >
+                In Demand Course
+              </Button>
+            </Grid>
+            <Grid item xs={12} md={12} lg={6} sx={{ pb: { xs: 3, md: 5, lg: 0, }, }}>
+            </Grid>
+          </Grid>
+        </Container>
+        {/* <section
           className='section'
           style={{
 
@@ -39,10 +99,12 @@ export default function indexfile() {
             backgroundImage: "linear-gradient(to right,	rgba(62,43,206,0.8) 30%, rgba(45,211,170,0.8) 100%, rgba(45,211,170,0.8) 100%, rgba(45,211,170,0.8) 100%)"
             // backgroundImage: 'linear-gradient(to right, rgba(61,51,204,0.6), rgba(154,219,206,0.6)',
           }}
-        >
-          <MainHero />
-        </section>
-      </Box> */}
+        > */}
+        {/* <MainHero /> */}
+        {/* </section> */}
+
+
+      </Box>
       <Countup />
       <Certcourse></Certcourse>
 
@@ -70,6 +132,6 @@ export default function indexfile() {
       {/* <Hero /> */}
 
 
-    </div>
+    </div >
   );
 }

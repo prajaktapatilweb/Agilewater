@@ -5,22 +5,22 @@ import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
 import ContactSupportIcon from '@mui/icons-material/ContactSupport';
 export const data = [
     {
-        title: 'Easy Accessable',
+        title: 'Cybersecurity',
         description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore',
         icon: <ArtTrackIcon />,
     },
     {
-        title: 'More Affordable Cost',
+        title: 'Business Agility',
         description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore',
         icon: <AttachMoneyIcon />,
     },
     {
-        title: 'Flexible Study Time',
+        title: 'Technology Consulting',
         description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore',
         icon: <LocalLibraryIcon />,
     },
     {
-        title: 'Consultat With Mentor',
+        title: 'Staffing',
         description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore',
         icon: <ContactSupportIcon />,
     },

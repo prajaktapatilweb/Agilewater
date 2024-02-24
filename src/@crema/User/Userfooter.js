@@ -34,11 +34,11 @@ export default function Userfooter() {
               item
               xs={12}
               sm={6}
-              md={3}
+              md={2}
               sx={{ color: 'white' }}
               ml={{ xs: 10, sm: 0 }}
             >
-              <Link
+              {/* <Link
                 href={scrumatscalelink}
                 sx={{ color: '#00a1ff', textDecoration: 'none' }}
               >
@@ -92,13 +92,13 @@ export default function Userfooter() {
                 sx={{ color: '#00a1ff', textDecoration: 'none' }}
               >
                 PMI – ACP
-              </Link>
+              </Link> */}
             </Grid>
             <Grid
               item
               xs={12}
               sm={6}
-              md={3}
+              md={4}
               mb={{ xs: 5, sm: 5, md: 0 }}
               ml={{ xs: 10, sm: 0 }}
             >
@@ -227,7 +227,7 @@ export default function Userfooter() {
               </Typography>
               <Image
                 alt='Safelogo'
-                src='/assets/images/Safe/safe-Bronze-partnership-bagde-logo.webp'
+                src='/assets/images/Safe/safe-Bronze-partnership.webp'
                 height={80}
                 width={80}
               />
@@ -242,7 +242,7 @@ export default function Userfooter() {
               <Box sx={{ pl: 2, pt: 2 }}>
                 <Image
                   alt='Safelogo'
-                  src='/assets/images/Safe/EXIN-Logo-e1625802522731.webp'
+                  src='/assets/images/Safe/EXIN-Logo.webp'
                   height='30%'
                   width='60%'
                 />
