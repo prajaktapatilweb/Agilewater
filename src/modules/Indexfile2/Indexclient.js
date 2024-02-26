@@ -1,7 +1,6 @@
 import { AppCard } from '@crema'
 import { Box, Button, Container, Grid, Typography } from '@mui/material'
 import { headList8 } from 'modules/Constant/titlefile'
-import ExpertForm from 'modules/Forms/ExpertForm'
 import Heading from 'modules/commanmodules/Heading'
 import Image from 'next/image'
 import React from 'react'
@@ -97,7 +96,7 @@ export default function Indexclient() {
     return (
         <div>
             <Box className='section'>
-                <Container sx={{ maxWidth: 1500 }}>
+                <Container>
 
                     <Grid container spacing={4} alignItems='center' justifyContent='center'>
                         <Grid item xs={12} md={12}>

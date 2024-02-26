@@ -6,7 +6,7 @@ import Countup from './Countup'
 export default function Herohome() {
     return (
         <div>
-            <Grid className='section-shaped' sx={{ borderBottom: '1px white solid' }}>
+            <Grid className='section-shaped' sx={{ py: 2, borderBottom: '1px white solid' }}>
                 <div className='shape shape-style-u1 shape-dark'>
                     <span className='span-150' />
                     <span className='span-50' />
@@ -22,15 +22,15 @@ export default function Herohome() {
                 <Container mx='lg' sx={{ position: 'relative', zIndex: 1 }}>
 
                     <Grid container spacing={0} alignItems='center' justifyContent='center'>
-                        <Grid item xs={12} md={12} lg={5}>
+                        <Grid item xs={12} md={12} lg={5} sx={{ mt: { xs: 20, sm: 0 } }}>
                             <Box>
                                 <Typography
                                     component="h2"
                                     sx={{
                                         // width: { md: 850 },
                                         position: 'relative',
-                                        fontSize: { xs: 35, md: 40, lg: 40 },
-                                        mb: { xs: 3, sm: 0 },
+                                        fontSize: { xs: 30, md: 40, lg: 40 },
+                                        mb: { xs: 2, sm: 0 },
                                         letterSpacing: 1.5,
                                         fontWeight: 'bold',
                                         color: 'white',
@@ -56,11 +56,11 @@ export default function Herohome() {
                                 size='large'
                                 variant='contained'
                                 sx={{
-                                    my: { xs: 5, sm: 3, md: 0 },
+                                    // my: { xs: 1, sm: 1, md: 0 },
 
                                     fontSize: 17,
                                     backgroundColor: '#fff',
-                                    p: 4,
+                                    // p: 4,
                                     fontWeight: 'bold',
 
                                     boxShadow:
@@ -72,7 +72,7 @@ export default function Herohome() {
                                 In Demand Course
                             </Button>
                         </Grid>
-                        <Grid item xs={12} md={12} lg={7} sx={{ padding: 0, m: 0 }}>
+                        <Grid item xs={12} md={12} lg={7} sx={{ px: { xs: 0, sm: 0 }, ml: 0, mb: { xs: 3, sm: 0 } }}>
                             <Maplocation></Maplocation>
                             {/* <Image src="/assets/images/test6.png" width={100} height={100} quality={97} layout='responsive' objectFit='contain' alt="Feature img" /> */}
                         </Grid>

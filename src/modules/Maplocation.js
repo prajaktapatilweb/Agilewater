@@ -8,8 +8,8 @@ export default function Maplocation() {
 
 
 
-            <div className='world-map'>
-                <Image src='/assets/images/test8.png' width={100} height={100} objectFit='contain' sizes='width:100%' alt='worldmap'></Image>
+            <div className='world-map' >
+                <Image src='/assets/images/test8.png' width={110} height={80} layout='responsive' priority='true' alt='worldmap'></Image>
                 {/* <img src="assets/images/test8.png" alt=''></img> */}
                 <div className='pin usa'>
 

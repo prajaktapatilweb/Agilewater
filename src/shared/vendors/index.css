@@ -1427,8 +1427,9 @@ div.partial-border-pseudo::after {
 .world-map{
   /* width: 100%; */
   /* max-width: 1100px; */
-  margin:0 auto;
+  /* margin:0 auto; */
   /* padding: 1em; */
+  
   position: relative;
 }
 
@@ -1461,43 +1462,43 @@ position: absolute;
   display: inline-block;
   white-space: nowrap;
   position: absolute;
-  right: -1.0em;
+  right: -1em;
   top: 350%;
   color:greenyellow;
   font-weight: 500;
   transform: translateY(-50%);
   /* background: #fff; */
-  border-radius: 3em;
-  padding: 0.6em, 0.6em;
+  /* border-radius: 3em; */
+  /* padding: 0.6em, 0.6em; */
   font-size: 0.9em;
-  font-size:medium;
+
 
 }
  .usa{
-  top:42%;
+  top:35%;
   left:15%;
  }
 
 .abc{
-  top:38%;
+  top:32%;
   left: 22%;
  }
  
 .france{
-  top:57%;
-  left: 50%;
+  top:61%;
+  left:50%;
 
 }
 .sweden{
-  top:42%;
+  top:37%;
 left: 50%;
 }
 .south-africa{
-  top:54%;
-  left:53%;
+  top:57%;
+  left:55%;
 }
 .australia{
-  top:64%;
+  top:72%;
 
 left:81%;
 }
