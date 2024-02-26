@@ -1,18 +1,13 @@
 import React from 'react';
 import Image from 'next/image';
 import Box from '@mui/material/Box';
-import { Card } from '@mui/material';
+import { Card, Link } from '@mui/material';
 import { Fonts } from 'shared/constants/AppEnums';
 
-
-
 const CourseCardItem = ({ item }) => {
-
-
     return (
         <>
             <Card
-
                 sx={{
                     display: 'flex',
                     flexDirection: { xs: 'column', sm: 'row' },
@@ -21,14 +16,9 @@ const CourseCardItem = ({ item }) => {
                     mr: 2,
                     borderRadius: 0,
                     border: '1px solid lightgrey',
-                    background: "linear-gradient(to right, #3e2bce 0%, #2dd3aa 100%, #2dd3aa 100%, #2dd3aa 100%)",
-
-
-                    '&:not(:last-of-type)': {
-                        borderBottom: (theme) => `solid 1px ${theme.palette.divider}`,
-                    },
+                    background:
+                        'linear-gradient(to right, #3e2bce 0%, #2dd3aa 100%, #2dd3aa 100%, #2dd3aa 100%)',
                 }}
-                className='item-hover'
             >
                 <Box
                     sx={{
@@ -38,10 +28,7 @@ const CourseCardItem = ({ item }) => {
                         display: 'flex',
                         flexDirection: { xs: 'column', sm: 'row' },
                         alignItems: { sm: 'center' },
-
-
                         background: 'white',
-
                         border: '1px #EDEDEE solid',
                     }}
                 >
@@ -54,23 +41,17 @@ const CourseCardItem = ({ item }) => {
                         <Box
                             sx={{
                                 mr: { xs: 3, md: 4 },
-                                '& .logo': {
-                                    height: 60,
-                                    width: 60,
-                                    //borderRadius: theme.overrides.MuiCard.root.borderRadius,
-                                    overflow: 'hidden',
-                                    display: 'block',
-                                },
                             }}
                         >
-                            <Image
-                                src={item.cover}
-
-                                alt={'Course ' + item.id}
-                                height={100}
-                                width={100}
-                                objectFit='contain'
-                            />
+                            <Link href='#'>
+                                <Image
+                                    src={item.cover}
+                                    alt={'Course ' + item.id}
+                                    height={100}
+                                    width={100}
+                                    objectFit='contain'
+                                />
+                            </Link>
                             {/* <img className='logo' alt='' src={item.cover} /> */}
                         </Box>
                         <Box
@@ -89,7 +70,6 @@ const CourseCardItem = ({ item }) => {
                             >
                                 {item.title}
                             </Box>
-
                         </Box>
                     </Box>
                     {/* 
@@ -132,10 +112,7 @@ const CourseCardItem = ({ item }) => {
                     </Box> */}
                 </Box>
             </Card>
-
         </>
-
-
     );
 };
 export default CourseCardItem;

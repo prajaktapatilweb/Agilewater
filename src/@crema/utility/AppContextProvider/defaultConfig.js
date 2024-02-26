@@ -115,12 +115,18 @@ export const defaultTheme = {
         fontSize: 50,
         fontWeight: 600,
       },
+
       h7: {
         fontSize: 25,
         fontWeight: 600,
         color: '#20509e',
 
       },
+      h8: {
+        fontSize: 30,
+        fontWeight: 600,
+      },
+
       hed: {
         fontSize: 20,
         fontWeight: 600,

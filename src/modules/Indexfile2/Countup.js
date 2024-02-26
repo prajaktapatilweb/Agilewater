@@ -76,10 +76,12 @@ export default function Countup() {
 
                                 >
                                     <Typography
+
+                                        variant="h8"
                                         sx={{
                                             color: "#3a54c5",
                                             // mb: { xs: 1, md: 0 },
-                                            fontSize: { xs: 20, sm: 28, md: 30, lg: 35 },
+                                            // fontSize: { xs: 20, sm: 28, md: 30, lg: 35 },
                                             fontWeight: "bold",
                                         }}
                                     // className="paras"
