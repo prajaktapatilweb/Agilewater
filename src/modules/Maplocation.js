@@ -5,7 +5,7 @@ import React from 'react'
 export default function Maplocation() {
     return (
         <div>
-            <Box className='world-map' sx={{ my: { xs: 0, sm: -15 }, mx: { xs: 0, sm: -8 } }}>
+            <Box className='world-map'>
 
                 <Image src='/assets/images/test6-min.png' width={100} height={100} objectFit='contain' priority='true' layout='responsive' alt='worldmap'></Image>
                 {/* <img src="assets/images/test8.png" alt=''></img> */}
