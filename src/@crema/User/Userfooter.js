@@ -25,12 +25,13 @@ export default function Userfooter() {
 
   return (
     <div>
+      <ScrollUp></ScrollUp>
       <Grid container className='section' style={{ background: '#ffffff' }}>
-        <ScrollUp></ScrollUp>
+
         {/* backgroundImage: "linear-gradient(180deg,#9c27b0,#540162 )" */}
-        <Container sx={{ maxWidth: { xl: 1450 } }}>
+        <Container>
           <AppGridContainer>
-            <Grid
+            {/* <Grid
               item
               xs={12}
               sm={6}
@@ -38,67 +39,13 @@ export default function Userfooter() {
               sx={{ color: 'white' }}
               ml={{ xs: 10, sm: 0 }}
             >
-              {/* <Link
-                href={scrumatscalelink}
-                sx={{ color: '#00a1ff', textDecoration: 'none' }}
-              >
-                Scrum@Scale Practitioner
-              </Link>
-              <br></br>
-              <Link
-                href={csmlink}
-                sx={{ color: '#00a1ff', textDecoration: 'none' }}
-              >
-                CSM – Certified Scrum Master
-              </Link>
-              <br></br>
-              <Link
-                href={safeagilelink}
-                sx={{ color: '#00a1ff', textDecoration: 'none' }}
-              >
-                SAFe Agile Certification
-              </Link>
-              <br></br>
-              <Link
-                href={safesmlink}
-                sx={{ color: '#00a1ff', textDecoration: 'none' }}
-              >
-                SAFe Scrum Master
-              </Link>
-              <br></br>
-              <Link
-                href={polink}
-                sx={{ color: '#00a1ff', textDecoration: 'none' }}
-              >
-                Scrum Product Owner
-              </Link>
-              <br></br>
-              <Link
-                href={devopsproflink}
-                sx={{ color: '#00a1ff', textDecoration: 'none' }}
-              >
-                DevOps Professional
-              </Link>
-              <br></br>
-              <Link
-                href={devopsmasterlink}
-                sx={{ color: '#00a1ff', textDecoration: 'none' }}
-              >
-                DevOps Master
-              </Link>
-              <br></br>
-              <Link
-                href={pmiacplink}
-                sx={{ color: '#00a1ff', textDecoration: 'none' }}
-              >
-                PMI – ACP
-              </Link> */}
-            </Grid>
+
+            </Grid> */}
             <Grid
               item
               xs={12}
               sm={6}
-              md={4}
+              md={5}
               mb={{ xs: 5, sm: 5, md: 0 }}
               ml={{ xs: 10, sm: 0 }}
             >
@@ -141,7 +88,7 @@ export default function Userfooter() {
                 </Link>
               </Button>
             </Grid>
-            <Grid item xs={12} sm={6} md={3} ml={{ xs: 10, sm: 0 }}>
+            <Grid item xs={12} sm={6} md={4} ml={{ xs: 10, sm: 0 }}>
               <Typography variant='h2' color='#20509e' gutterBottom>
                 Reach Us
               </Typography>
@@ -227,14 +174,14 @@ export default function Userfooter() {
               </Typography>
               <Image
                 alt='Safelogo'
-                src='/assets/images/Safe/safe-Bronze-partnership.webp'
+                src='/assets/images/avatar/safe-Bronze-partnership.webp'
                 height={80}
                 width={80}
               />
               &nbsp;
               <Image
                 alt='Safelogo'
-                src='/assets/images/Safe/ICAgile.jpg'
+                src='/assets/images/avatar/ICAgile.jpg'
                 height={80}
                 width={80}
               />
@@ -242,7 +189,7 @@ export default function Userfooter() {
               <Box sx={{ pl: 2, pt: 2 }}>
                 <Image
                   alt='Safelogo'
-                  src='/assets/images/Safe/EXIN-Logo.webp'
+                  src='/assets/images/avatar/EXIN-Logo.webp'
                   height='30%'
                   width='60%'
                 />
