@@ -1,4 +1,5 @@
 import { Container } from '@mui/material'
+import Image from 'next/image'
 import React from 'react'
 
 export default function Maplocation() {
@@ -8,7 +9,8 @@ export default function Maplocation() {
 
 
             <div className='world-map'>
-                <img src="assets/images/test8.png" alt=''></img>
+                <Image src='/assets/images/test8.png' width={100} height={100} objectFit='contain' sizes='width:100%' alt='worldmap'></Image>
+                {/* <img src="assets/images/test8.png" alt=''></img> */}
                 <div className='pin usa'>
 
                     <span>San Francisco<br></br>
@@ -36,6 +38,10 @@ export default function Maplocation() {
 
                 </div>
                 <div className='pin south-africa'>
+                    <span></span>
+
+                </div>
+                <div className='pin lmn'>
                     <span></span>
 
                 </div>

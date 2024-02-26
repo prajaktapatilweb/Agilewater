@@ -6,7 +6,7 @@ import Countup from './Countup'
 export default function Herohome() {
     return (
         <div>
-            <Grid className='section section-shaped' sx={{ borderBottom: '1px white solid' }}>
+            <Grid className='section-shaped' sx={{ borderBottom: '1px white solid' }}>
                 <div className='shape shape-style-u1 shape-dark'>
                     <span className='span-150' />
                     <span className='span-50' />
