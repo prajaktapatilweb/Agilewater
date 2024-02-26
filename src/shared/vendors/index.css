@@ -1189,13 +1189,20 @@ background-color: #cd486b;
 
 /*gradient text*/
 .paras {
-  /* font-size: 72px; */
+ 
+  font-size: 30px;
+  font-weight: bold;
   background: linear-gradient(to right, #3e2bce 0%, #2dd3aa 100%, #2dd3aa 100%, #2dd3aa 100%);
   /* background: -webkit-linear-gradient(#eee, #333); */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
+@media screen and (max-width:600px) {
+  .paras{
+    font-size: 20px;
+  }
+  
+}
 
 
 

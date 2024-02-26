@@ -66,29 +66,13 @@ export default function Countup() {
                                         background: 'white',
                                         border: '2px solid lightgrey'
                                         // boxShadow: 'rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.6) 0px -2px 6px 0px inset',
-                                        // boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px',
-                                        // background: '#eeeeff'
-                                        // boxShadow: 'rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset',
-                                        // background: '#3c3fca',
-
-                                        // background: "#127c71",
+                                        ,
                                     }}
 
                                 >
-                                    <Typography
 
-                                        variant="h8"
-                                        sx={{
-                                            color: "#3a54c5",
-                                            // mb: { xs: 1, md: 0 },
-                                            // fontSize: { xs: 20, sm: 28, md: 30, lg: 35 },
-                                            fontWeight: "bold",
-                                        }}
-                                    // className="paras"
-                                    >
-                                        <CountUp end={item.numbers} duration={5} start={200} />+
-                                    </Typography>
-                                    <Typography variant="h5" sx={{ color: '#2dcfaa' }}>
+                                    <CountUp end={item.numbers} duration={5} start={200} className="paras" /> <span className="paras">+</span>
+                                    <Typography variant="h5" className="paras">
                                         {item.title}
                                     </Typography>
                                 </Card>

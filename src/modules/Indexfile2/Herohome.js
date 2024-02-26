@@ -25,7 +25,7 @@ export default function Herohome() {
                         <Grid item xs={12} sm={12} md={5} lg={5} sx={{ mt: { xs: 20, sm: 20, md: 20, lg: 0 } }}>
                             <Box>
                                 <Typography
-                                    variant='h2'
+                                    variant='h6'
                                     sx={{
                                         // width: { md: 850 },
                                         position: 'relative',
