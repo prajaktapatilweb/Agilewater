@@ -1,50 +1,50 @@
-import { Container } from '@mui/material'
+import { Box, Container } from '@mui/material'
 import Image from 'next/image'
 import React from 'react'
 
 export default function Maplocation() {
     return (
         <div>
-            <div className='world-map' style={{ padding: 0 }}>
+            <Box className='world-map' sx={{ my: { xs: 0, sm: -15 }, mx: { xs: 0, sm: -8 } }}>
 
-                <Image src='/assets/images/test6.png' width={100} height={100} objectFit='contain' priority='true' layout='responsive' alt='worldmap'></Image>
+                <Image src='/assets/images/test6-min.png' width={100} height={100} objectFit='contain' priority='true' layout='responsive' alt='worldmap'></Image>
                 {/* <img src="assets/images/test8.png" alt=''></img> */}
-                <div className='pin usa'>
+                <Box className='pin usa'>
 
                     <span>San Francisco<br></br>
                         California -USA</span>
 
-                </div>
-                <div className='pin abc'>
+                </Box>
+                <Box className='pin abc'>
                     <span></span>
 
-                </div>
-                <div className='pin france'>
+                </Box>
+                <Box className='pin france'>
                     <span></span>
 
-                </div>
-                <div className='pin sweden'>
+                </Box>
+                <Box className='pin sweden'>
                     <span></span>
 
-                </div>
-                <div className='pin pqr'>
+                </Box>
+                <Box className='pin pqr'>
                     <span></span>
 
-                </div>
-                <div className='pin india'>
+                </Box>
+                <Box className='pin india'>
                     <span>Pune <br></br> India</span>
 
-                </div>
-                <div className='pin south-africa'>
+                </Box>
+                <Box className='pin south-africa'>
                     <span></span>
 
-                </div>
-                <div className='pin australia'>
+                </Box>
+                <Box className='pin australia'>
                     <span></span>
 
-                </div>
+                </Box>
 
-            </div>
+            </Box>
 
         </div >
     )

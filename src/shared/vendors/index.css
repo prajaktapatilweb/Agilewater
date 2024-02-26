@@ -1203,6 +1203,17 @@ background-color: #cd486b;
   }
   
 }
+.h8 {
+  font-size: 42px;
+  font-weight: 600;
+
+}
+@media screen and (max-width:600px) {
+  .h8 {
+    font-size: 30px;
+  }
+  
+}
 
 
 

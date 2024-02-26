@@ -122,11 +122,6 @@ export const defaultTheme = {
         color: '#20509e',
 
       },
-      h8: {
-        fontSize: 30,
-        fontWeight: 600,
-      },
-
       hed: {
         fontSize: 20,
         fontWeight: 600,

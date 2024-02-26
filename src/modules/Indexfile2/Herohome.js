@@ -25,24 +25,25 @@ export default function Herohome() {
                         <Grid item xs={12} sm={12} md={5} lg={5} sx={{ mt: { xs: 20, sm: 20, md: 20, lg: 0 } }}>
                             <Box>
                                 <Typography
-                                    variant='h6'
+
                                     sx={{
                                         // width: { md: 850 },
                                         position: 'relative',
                                         // fontSize: { xs: 30, md: 40, lg: 40 },
                                         mb: { xs: 2, sm: 0 },
                                         letterSpacing: 1.5,
-                                        fontWeight: 'bold',
+
                                         color: 'white',
                                         lineHeight: 1.5,
                                     }}
+
                                 >
-                                    Global Training, Certification & Recruitment Expert
+                                    <span className='h8'>Global Training, Certification & Recruitment Expert</span>
 
                                 </Typography>
                             </Box>
 
-                            <Box sx={{ mb: 4, width: { xs: '100%', md: '80%' } }}>
+                            <Box sx={{ mb: 5, width: { xs: '100%', md: '80%' } }}>
                                 <Typography variant='p' sx={{ color: 'white', lineHeight: 1.6, fontSize: 18 }} >
                                     {
                                         'Helps you from Learning to earning (Value generation)'
@@ -58,7 +59,7 @@ export default function Herohome() {
                                 sx={{
                                     // my: { xs: 1, sm: 1, md: 0 },
 
-                                    fontSize: 17,
+                                    // fontSize: 17,
                                     backgroundColor: '#fff',
                                     // p: 4,
                                     fontWeight: 'bold',
@@ -72,7 +73,7 @@ export default function Herohome() {
                                 In Demand Course
                             </Button>
                         </Grid>
-                        <Grid item xs={12} sm={12} md={7} lg={7} sx={{ mt: { xs: -10, sm: -10, lg: -20 }, mb: -15 }}>
+                        <Grid item xs={12} sm={12} md={7} lg={7}>
                             <Maplocation></Maplocation>
                             {/* <Image src="/assets/images/test6.png" width={100} height={100} quality={97} layout='responsive' objectFit='contain' alt="Feature img" /> */}
                         </Grid>
