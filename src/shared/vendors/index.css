@@ -1462,7 +1462,7 @@ position: absolute;
   display: inline-block;
   white-space: nowrap;
   position: absolute;
-  right: -1em;
+  right: -1.3em;
   top: 350%;
   color:greenyellow;
   font-weight: 500;
@@ -1475,30 +1475,30 @@ position: absolute;
 
 }
  .usa{
-  top:35%;
+  top:42%;
   left:15%;
  }
 
 .abc{
-  top:32%;
+  top:38%;
   left: 22%;
  }
  
 .france{
-  top:61%;
-  left:50%;
+  top:57%;
+  left: 50%;
 
 }
 .sweden{
-  top:37%;
+  top:42%;
 left: 50%;
 }
 .south-africa{
-  top:57%;
-  left:55%;
+  top:54%;
+  left:53%;
 }
 .australia{
-  top:72%;
+  top:64%;
 
 left:81%;
 }

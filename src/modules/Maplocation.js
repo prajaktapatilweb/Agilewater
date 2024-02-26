@@ -5,11 +5,9 @@ import React from 'react'
 export default function Maplocation() {
     return (
         <div>
+            <div className='world-map' style={{ padding: 0 }}>
 
-
-
-            <div className='world-map' >
-                <Image src='/assets/images/test8.png' width={110} height={80} layout='responsive' priority='true' alt='worldmap'></Image>
+                <Image src='/assets/images/test6.png' width={100} height={100} objectFit='contain' priority='true' layout='responsive' alt='worldmap'></Image>
                 {/* <img src="assets/images/test8.png" alt=''></img> */}
                 <div className='pin usa'>
 
@@ -41,10 +39,6 @@ export default function Maplocation() {
                     <span></span>
 
                 </div>
-                <div className='pin lmn'>
-                    <span></span>
-
-                </div>
                 <div className='pin australia'>
                     <span></span>
 
@@ -52,6 +46,6 @@ export default function Maplocation() {
 
             </div>
 
-        </div>
+        </div >
     )
 }

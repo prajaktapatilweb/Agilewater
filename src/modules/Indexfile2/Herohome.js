@@ -6,7 +6,7 @@ import Countup from './Countup'
 export default function Herohome() {
     return (
         <div>
-            <Grid className='section-shaped' sx={{ py: 2, borderBottom: '1px white solid' }}>
+            <Grid className='section-shaped'>
                 <div className='shape shape-style-u1 shape-dark'>
                     <span className='span-150' />
                     <span className='span-50' />
@@ -19,10 +19,10 @@ export default function Herohome() {
                     <span className='span-50' />
                     <span className='span-100' />
                 </div>
-                <Container mx='lg' sx={{ position: 'relative', zIndex: 1 }}>
+                <Container sx={{ position: 'relative', zIndex: 1 }}>
 
                     <Grid container spacing={0} alignItems='center' justifyContent='center'>
-                        <Grid item xs={12} md={12} lg={5} sx={{ mt: { xs: 20, sm: 0 } }}>
+                        <Grid item xs={12} sm={12} md={5} lg={5} sx={{ mt: { xs: 20, sm: 20, md: 20, lg: 0 } }}>
                             <Box>
                                 <Typography
                                     component="h2"
@@ -72,7 +72,7 @@ export default function Herohome() {
                                 In Demand Course
                             </Button>
                         </Grid>
-                        <Grid item xs={12} md={12} lg={7} sx={{ px: { xs: 0, sm: 0 }, ml: 0, mb: { xs: 3, sm: 0 } }}>
+                        <Grid item xs={12} sm={12} md={7} lg={7} sx={{ mt: { xs: -10, sm: -10, lg: -20 }, mb: -15 }}>
                             <Maplocation></Maplocation>
                             {/* <Image src="/assets/images/test6.png" width={100} height={100} quality={97} layout='responsive' objectFit='contain' alt="Feature img" /> */}
                         </Grid>
