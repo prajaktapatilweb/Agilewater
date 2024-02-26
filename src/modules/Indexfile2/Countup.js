@@ -77,16 +77,16 @@ export default function Countup() {
                                 >
                                     <Typography
                                         sx={{
-                                            // color: "white",
+                                            color: "#3a54c5",
                                             // mb: { xs: 1, md: 0 },
                                             fontSize: { xs: 20, sm: 28, md: 30, lg: 35 },
                                             fontWeight: "bold",
                                         }}
-                                        className="paras"
+                                    // className="paras"
                                     >
                                         <CountUp end={item.numbers} duration={5} start={200} />+
                                     </Typography>
-                                    <Typography variant="h5" className="paras">
+                                    <Typography variant="h5" sx={{ color: '#2dcfaa' }}>
                                         {item.title}
                                     </Typography>
                                 </Card>
