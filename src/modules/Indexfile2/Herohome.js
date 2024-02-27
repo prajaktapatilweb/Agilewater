@@ -12,8 +12,8 @@ export default function Herohome() {
                     <span className='span-50' />
                     <span className='span-50' />
                     <span className='span-75' />
-                    {/* <span className='span-200' />
-                    <span className='span-75' /> */}
+                    <span className='span-200' />
+                    <span className='span-75' />
                     <span className='span-50' />
                     <span className='span-100' />
                     <span className='span-50' />
