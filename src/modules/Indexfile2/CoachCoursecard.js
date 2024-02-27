@@ -12,23 +12,23 @@ import MainpageCard from 'modules/commanmodules/MainpageCard';
 export default function CoachCoursecard() {
     var DetailObject = [
         {
-            img: "/assets/images/cards/maincoach1.jpg",
+            img: "/assets/images/cards/maincoach1.webp",
             title: 'Agile Coaching',
             para: <span>It's Time For You To Manage It As A CEO Career coaching with us is not just providing you with a fresh job. Its about bringing light to what you require in a job to be truthfully joyful and come up with ....</span>
         },
         {
-            img: "/assets/images/cards/maincoach6.jpg",
+            img: "/assets/images/cards/maincoach6.webp",
             title: 'Scrum Master Coaching',
             para: <span>It's Time For You To Manage It As A CEO Career coaching with us is not just . Its about bringing light to what you require in a job to be truthfully joyful and come up with ....</span>
         },
         {
-            img: "/assets/images/cards/maincoach3.jpg",
+            img: "/assets/images/cards/maincoach3.webp",
             title: 'Life Coaching',
             para: <span>It's Time For You To Manage It As A CEO Career coaching with us is not just providing you with a fresh job. Its about bringing light to what you require in a job to be truthfully joyful and come up with ....</span>
         },
 
         {
-            img: "/assets/images/cards/maincoach2.jpg",
+            img: "/assets/images/cards/maincoach2.webp",
             title: 'Career Coaching',
             para: <span>It's Time For You To Manage It As A CEO Career coaching with us is not just providing you with a fresh job. Its about bringing light to what you require in a job to be truthfully joyful and come up with ....</span>
         }

@@ -7,7 +7,7 @@ export default function Maplocation() {
         <div>
             <Box className='world-map'>
 
-                <Image src='/assets/images/testing3.png' width={100} height={100} objectFit='contain' priority='true' layout='responsive' alt='worldmap'></Image>
+                <Image src='/assets/images/test6-min.webp' width={100} height={100} objectFit='contain' priority='true' layout='responsive' alt='worldmap'></Image>
                 {/* <img src="assets/images/test8.png" alt=''></img> */}
                 <Box className='pin usa'>
 
