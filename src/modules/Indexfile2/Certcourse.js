@@ -11,6 +11,7 @@ import Safeslider from 'modules/commanmodules/Safeslider'
 import Smslider from 'modules/commanmodules/Smslider'
 import Agileslider from 'modules/commanmodules/Agileslider'
 import Poslider from 'modules/commanmodules/Poslider'
+import Devopslider from 'modules/commanmodules/Devopslider'
 
 export default function Certcourse() {
     return (
@@ -26,7 +27,7 @@ export default function Certcourse() {
                             { label: 'Scrum Alliance', panelData: <Smslider></Smslider> },
                             { label: 'ICAgile', panelData: <Agileslider></Agileslider> },
                             { label: 'Product Owner', panelData: <Poslider /> },
-                            { label: 'DevOps', panelData: <Hero /> }
+                            { label: 'DevOps', panelData: <Devopslider></Devopslider> }
                         ]} />
                     </AppCard>
                 </Container>

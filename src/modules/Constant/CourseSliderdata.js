@@ -1,3 +1,4 @@
+import { safeagilelink, safearchlink, safepopmlink, safesmlink, safeteamlink, sasmlink } from "modules/commanmodules/Pagelinks";
 
 export const data = [
 
@@ -88,6 +89,7 @@ export const safedata = [
         id: 1,
         cover: '/assets/images/courselogo/logo/SAFe-Agilist-Logo.png',
         title: 'SAFe Agilist',
+        links: safeagilelink,
 
         text: [
             'Attend Registered Scrum@Scale Practitioner Training Course.',
@@ -103,6 +105,7 @@ export const safedata = [
         id: 2,
         cover: '/assets/images/courselogo/SSM-logo.jpg',
         title: 'SAFe Scrum Master Certification',
+        links: safesmlink,
 
         text: [
             'Attend Registered Scrum@Scale Practitioner Training Course.',
@@ -117,6 +120,7 @@ export const safedata = [
         cover: '/assets/images/courselogo/SASM.jpg',
 
         title: 'SAFe Advanced Scrum Master Certification',
+        links: sasmlink,
 
         text: [
             'Attend Registered Scrum@Scale Practitioner Training Course.',
@@ -130,7 +134,7 @@ export const safedata = [
         id: 4,
         cover: '/assets/images/courselogo/SP.png',
         title: 'SAFe 6.0 For Teams Certification',
-
+        links: safeteamlink,
         text: [
             'Attend Registered Scrum@Scale Practitioner Training Course.',
 
@@ -143,6 +147,7 @@ export const safedata = [
         id: 5,
         cover: '/assets/images/courselogo/POPM.jpg',
         title: 'SAFe Product Owner/Product Manager',
+        links: safepopmlink,
         text: [
             'Attend Registered Scrum@Scale Practitioner Training Course.',
 
@@ -156,6 +161,7 @@ export const safedata = [
         id: 6,
         cover: '/assets/images/courselogo/SafeArch.jpg',
         title: 'SAFe for Architects (ARCH)',
+        links: safearchlink,
         text: [
             'Attend Registered Scrum@Scale Practitioner Training Course.',
 
@@ -393,6 +399,35 @@ export const podata = [
         id: 6,
         cover: '/assets/images/courselogo/ACSPO.jpg',
         title: 'Advanced Certified Scrum Product Owner',
+        text: [
+            'Attend Registered Scrum@Scale Practitioner Training Course.',
+
+            'After completion of the Course, clear the Certification Exam.',
+        ],
+
+    },
+
+
+];
+export const devopsdata = [
+    {
+        id: 1,
+        cover: '/assets/images/courselogo/devprof.png',
+        title: 'DevOps Professional Certification',
+        text: [
+            'Attend Registered Scrum@Scale Practitioner Training Course.',
+
+            'After completion of the Course, clear the Certification Exam.',
+        ],
+
+
+    },
+
+
+    {
+        id: 2,
+        cover: '/assets/images/courselogo/devmaster.png',
+        title: 'DevOps Master Certification Training',
         text: [
             'Attend Registered Scrum@Scale Practitioner Training Course.',
 

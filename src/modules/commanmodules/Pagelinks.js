@@ -1,4 +1,6 @@
 export const safequizlink = "/safe-quiz"
+export const safeteamlink = '/safe-for-teams'
+export const safearchlink = '/safe-for-architects'
 export const freecourselink = "/free-course"
 export const scrumquizlink = "/scrum-quiz"
 export const careerlink = "/careers"

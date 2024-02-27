@@ -35,6 +35,7 @@ const SlideItem = ({ slide }) => {
           py: 3,
           px: 4,
           position: 'absolute',
+          textAlign: 'center',
           left: 0,
           right: 0,
           bottom: 0,
@@ -46,9 +47,9 @@ const SlideItem = ({ slide }) => {
         }}
       >
         <Typography
-          component='h3'
+
           sx={{
-            fontSize: 16,
+            fontSize: 18,
             fontWeight: Fonts.SEMI_BOLD,
             mb: 3,
           }}

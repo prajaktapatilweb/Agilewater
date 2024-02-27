@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Box from '@mui/material/Box';
-import { Card, Link } from '@mui/material';
+import { Card, Link, Typography } from '@mui/material';
 import { Fonts } from 'shared/constants/AppEnums';
 
 const CourseCardItem = ({ item }) => {
@@ -36,80 +36,38 @@ const CourseCardItem = ({ item }) => {
                         sx={{
                             display: 'flex',
                             alignItems: 'center',
+                            // mr: { xs: 3, md: 4 },
                         }}
                     >
+
+                        <Link href={item.links}>
+                            <Image
+                                src={item.cover}
+                                alt={'Course ' + item.id}
+                                height={100}
+                                width={100}
+                                objectFit='contain'
+                            />
+                        </Link>
+                        {/* <img className='logo' alt='' src={item.cover} /> */}
+
                         <Box
-                            sx={{
-                                mr: { xs: 3, md: 4 },
-                            }}
-                        >
-                            <Link href='#'>
-                                <Image
-                                    src={item.cover}
-                                    alt={'Course ' + item.id}
-                                    height={100}
-                                    width={100}
-                                    objectFit='contain'
-                                />
-                            </Link>
-                            {/* <img className='logo' alt='' src={item.cover} /> */}
-                        </Box>
-                        <Box
+
                             sx={{
                                 flex: 1,
+                                display: 'inline-block',
+                                fontWeight: 500
                             }}
+
                         >
-                            <Box
-                                sx={{
-                                    display: 'inline-block',
-                                    fontWeight: Fonts.MEDIUM,
-                                    mb: 0.5,
-                                    fontSize: 14,
-                                }}
-                                component='h3'
-                            >
-                                {item.title}
-                            </Box>
+
+                            <Typography component='h4'> <Link href={item.links} style={{ textDecoration: 'none', color: 'black' }}> {item.title}</Link></Typography>
+
                         </Box>
+
+
                     </Box>
-                    {/* 
-                    <Box
-                        sx={{
-                            ml: { sm: 'auto' },
-                            display: 'flex',
-                            alignItems: 'center',
-                        }}
-                    >
 
-
-
-                        <Box
-                            sx={{
-                                ml: 1,
-                                mr: -2,
-                            }}
-                        >
-                            <IconButton
-                                aria-controls='alpha-menu'
-                                aria-haspopup='true'
-                                onClick={handleClick}
-                            >
-                                <MoreVertIcon />
-                            </IconButton>
-                            <Menu
-                                id='alpha-menu'
-                                anchorEl={anchorEl}
-                                keepMounted
-                                open={open}
-                                onClose={handleClose}
-                                TransitionComponent={Fade}
-                            >
-                                <MenuItem onClick={handleClose}>Option 1</MenuItem>
-                                <MenuItem onClick={handleClose}>Option 2</MenuItem>
-                                <MenuItem onClick={handleClose}>Option 3</MenuItem>
-                            </Menu>
-                        </Box>
-                    </Box> */}
                 </Box>
             </Card>
         </>
