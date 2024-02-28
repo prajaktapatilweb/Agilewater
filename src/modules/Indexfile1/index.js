@@ -22,7 +22,6 @@ import HomeFeature from './HomeFeature';
 import SlideBasicThree from 'modules/commanmodules/SlideBasicThree';
 import { heroPhotoList, usersPhotoList } from 'modules/Constant/Photoslider';
 import Paralloxsec from './Paralloxsec';
-import Maplocation from 'modules/Maplocation';
 
 export default function indexfile1() {
   return (

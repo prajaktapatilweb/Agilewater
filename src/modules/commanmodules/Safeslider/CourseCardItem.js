@@ -47,6 +47,8 @@ const CourseCardItem = ({ item }) => {
                                 height={100}
                                 width={100}
                                 objectFit='contain'
+
+
                             />
                         </Link>
                         {/* <img className='logo' alt='' src={item.cover} /> */}

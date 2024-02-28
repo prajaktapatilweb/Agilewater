@@ -57,7 +57,7 @@ export default function Herohome() {
                                     color: '#3e2ecd',
                                 }}
                             >
-                                In Demand Course
+                                In Demand Course ss
                             </Button>
                         </Box>
 
