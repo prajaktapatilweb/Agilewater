@@ -17,10 +17,12 @@ const HorHeaderFixed = ({ children }) => {
 
   return (
     <HorHeaderFixedContainer
+
       className={clsx({
         boxedLayout: layoutType === LayoutType.BOXED,
         framedLayout: layoutType === LayoutType.FRAMED,
       })}
+
     >
       <HorHeaderFixedWrapper
         className={clsx('horHeaderFixedWrapper', {

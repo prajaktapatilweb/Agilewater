@@ -2,12 +2,9 @@ import React from "react";
 import Box from "@mui/material/Box";
 import Slider from "react-slick";
 import Container from "@mui/material/Container";
-import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme, styled } from "@mui/material/styles";
-import IconArrowBack from "@mui/icons-material/ArrowBack";
-import IconArrowForward from "@mui/icons-material/ArrowForward";
 import Testi from "modules/commanmodules/Testi";
 import { data } from "modules/Constant/mentors.data";
 import Heading from "modules/commanmodules/Heading";
@@ -66,8 +63,8 @@ const Testimonial = () => {
         speed: 300,
         slidesToShow: matchMobileView ? 1 : 3,
         slidesToScroll: 1,
-        prevArrow: <SliderArrow type="prev" />,
-        nextArrow: <SliderArrow type="next" />,
+        // prevArrow: <SliderArrow type="prev" />,
+        // nextArrow: <SliderArrow type="next" />,
         dots: true,
         appendDots: (dots) => <StyledDots>{dots}</StyledDots>,
         customPaging: () => (
@@ -93,10 +90,6 @@ const Testimonial = () => {
             <Container maxWidth="lg">
 
                 <Heading data={headList6}></Heading>
-                {/* <Typography variant="h1" sx={{ fontSize: { xs: 30, md: 35 } }}>
-                    What Our Clients Say
-                </Typography> */}
-
 
                 <Slider {...sliderConfig}>
                     {data.map((item) => (

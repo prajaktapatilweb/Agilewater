@@ -1,11 +1,8 @@
-import { Box, Card, Container } from '@mui/material'
+import { Box, Container } from '@mui/material'
 import { headList2, } from 'modules/Constant/titlefile'
-import CertScrumaccord from 'modules/SM/CertScrumMaster/CertScrumaccord'
-import CertScruminfo from 'modules/SM/CertScrumMaster/CertScruminfo'
 import Heading from 'modules/commanmodules/Heading'
 import LabTabs from 'modules/commanmodules/LabTabs'
 import React from 'react'
-import Hero from './Hero'
 import { AppCard } from '@crema'
 import Safeslider from 'modules/commanmodules/Safeslider'
 import Smslider from 'modules/commanmodules/Smslider'
@@ -16,7 +13,6 @@ import Devopslider from 'modules/commanmodules/Devopslider'
 export default function Certcourse() {
     return (
         <div>
-
             <Box className='' sx={{ background: "#f3f7f9", pt: 2, pb: 40 }}>
                 <Container>
                     <Heading data={headList2}></Heading>
@@ -32,9 +28,6 @@ export default function Certcourse() {
                     </AppCard>
                 </Container>
             </Box>
-
-
-
         </div>
     )
 }

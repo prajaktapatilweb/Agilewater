@@ -2,7 +2,6 @@ import React from 'react';
 import Image from 'next/image';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import { AppCard } from '@crema';
 const Testi = ({ item }) => {
   return (
 
@@ -11,9 +10,8 @@ const Testi = ({ item }) => {
 
         <Box className="pic">
 
-          <Image src={item.photo} width={120} height={120} ></Image>
+          <Image src={item.photo} width={120} height={120} alt='testimonials' ></Image>
 
-          {/* <img src="images/img-1.jpg" alt="" /> */}
         </Box>
 
         <Typography variant='body2' sx={{ textAlign: 'justify', mt: 2 }}>

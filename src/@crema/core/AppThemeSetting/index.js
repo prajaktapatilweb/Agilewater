@@ -52,13 +52,14 @@ const AppThemeSetting = () => {
           },
         }}
       >
-        <IconButton onClick={() => setSettingOpen(!isSettingOpen)}>
+        <IconButton onClick={() => setSettingOpen(!isSettingOpen)} aria-label='location'>
 
           <LocationOnIcon
             sx={{
               animation: 'rotation 2s infinite linear',
               color: 'white',
             }}
+
           />
         </IconButton>
       </Box>
@@ -79,7 +80,7 @@ const AppThemeSetting = () => {
           },
         }}
       >
-        <IconButton onClick={() => setColorSettingOpen(!isSettingOpen)}>
+        <IconButton onClick={() => setColorSettingOpen(!isSettingOpen)} aria-label='contact'>
           <ContactsIcon sx={{
             color: 'white',
           }}

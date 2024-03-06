@@ -3,7 +3,7 @@ import { useThemeContext } from '../../../../utility/AppContextProvider/ThemeCon
 import PropTypes from 'prop-types';
 import { alpha, Box } from '@mui/material';
 import Image from "next/image"
-import logo1 from '../../../../../assets/icon/AWlogo1.png';
+import logo1 from '../../../../../assets/icon/AWlogo2.webp';
 // import Logo from '../../../../../assets/icon/logo.svg';
 import LogoText from '../../../../../assets/icon/logo_text.svg';
 
@@ -33,7 +33,7 @@ const AppLogo = () => {
 
         width={350}
         height={60}
-
+        alt='Agilewaters'
 
       />
 

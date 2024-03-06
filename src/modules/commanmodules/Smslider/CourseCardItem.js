@@ -1,11 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
 import Box from '@mui/material/Box';
-import { Button, Card, IconButton, ListItem, ListItemText, Rating, Typography } from '@mui/material';
+import { Button, Card, ListItem, ListItemText } from '@mui/material';
 import { Fonts } from 'shared/constants/AppEnums';
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
-import { ArrowForward } from '@mui/icons-material';
-
 
 const CourseCardItem = ({ item }) => {
     return (
@@ -20,7 +18,6 @@ const CourseCardItem = ({ item }) => {
                     background:
                         'linear-gradient(to right, #3e2bce 0%, #2dd3aa 100%, #2dd3aa 100%, #2dd3aa 100%)',
                 }}
-
             >
                 <Box
                     sx={{
@@ -75,43 +72,42 @@ const CourseCardItem = ({ item }) => {
 
                     <Box
                         sx={{
-
                             display: 'flex',
                             flexDirection: 'column',
                         }}
                     >
                         <Box
-
                             sx={{
-                                alignItems: "center",
+                                alignItems: 'center',
                                 color: 'black',
-
                             }}
                         >
                             {/* {props.testpara} */}
                             {item.text.map((text, i) => (
-                                <ListItem alignItems='flex-start' just> <KeyboardDoubleArrowRightIcon />
+                                <ListItem alignItems='flex-start' just>
+                                    {' '}
+                                    <KeyboardDoubleArrowRightIcon />
                                     <ListItemText sx={{ mt: 0, ml: 1, textAlign: 'justify' }}>
                                         {item.text[i]}
                                     </ListItemText>
                                 </ListItem>
                             ))}
-
                         </Box>
 
-                        <Box sx={{
-
-
-                        }}>
-
-                            <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center', justifyContent: 'center', my: 2 }}>
+                        <Box sx={{}}>
+                            <Box
+                                sx={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    textAlign: 'center',
+                                    justifyContent: 'center',
+                                    my: 2,
+                                }}
+                            >
                                 <Button variant='contained'>Register</Button>
-
                             </Box>
                         </Box>
                     </Box>
-
-
                 </Box>
             </Card>
         </>

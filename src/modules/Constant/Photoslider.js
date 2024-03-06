@@ -1,45 +1,41 @@
 const userPhoto = {
     agilephoto: {
-        image: '/assets/images/coursephoto/course1.jpeg',
+        image: '/assets/images/coursephoto/course1.webp',
         title: 'SAFe For Arch',
     },
     agilephoto1: {
-        image: '/assets/images/coursephoto/course2.jpeg',
+        image: '/assets/images/coursephoto/course2.webp',
         title: 'SAFe-POPM',
     },
     agilephoto2: {
-        image: '/assets/images/coursephoto/safearch5.jpeg',
+        image: '/assets/images/coursephoto/safearch5.webp',
         title: 'SAFe For Arch',
     },
     agilephoto3: {
-        image: '/assets/images/safeslide/KMP2-scaled.jpg',
-        title: 'KMP2-scaled',
-    },
-    agilephoto4: {
-        image: '/assets/images/coursephoto/safeteam1.jpeg',
+        image: '/assets/images/coursephoto/safeteam1.webp',
         title: 'SAFe For Team',
     },
+    agilephoto4: {
+        image: '/assets/images/coursephoto/safearch2.webp',
+        title: 'SAFe For Arch',
+    },
     agilephoto5: {
-        image: '/assets/images/coursephoto/safearch2.jpeg',
+        image: '/assets/images/coursephoto/safearch6.webp',
         title: 'SAFe For Arch',
     },
     agilephoto6: {
-        image: '/assets/images/coursephoto/safearch6.jpeg',
-        title: 'SAFe For Arch',
+        image: '/assets/images/coursephoto/safeteam6.webp',
+        title: 'SAFe For Team',
     },
     agilephoto7: {
-        image: '/assets/images/coursephoto/safeteam6.jpeg',
+        image: '/assets/images/coursephoto/safeteam2.webp',
         title: 'SAFe For Team',
     },
     agilephoto8: {
-        image: '/assets/images/coursephoto/safeteam2.jpeg',
-        title: 'SAFe For Team',
-    },
-    agilephoto9: {
         image: '/assets/images/coursephoto/safeteam5.jpeg',
         title: 'SAFe For Team',
     },
-    agilephoto10: {
+    agilephoto9: {
         image: '/assets/images/coursephoto/safeteam3.jpeg',
         title: 'SAFe For Team',
     },
@@ -83,7 +79,7 @@ export const usersPhotoList = [
     userPhoto.agilephoto7,
     userPhoto.agilephoto8,
     userPhoto.agilephoto9,
-    userPhoto.agilephoto10,
+
 
 ]
 export const heroPhotoList = [

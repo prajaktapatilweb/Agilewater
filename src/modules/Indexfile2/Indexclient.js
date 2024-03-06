@@ -1,5 +1,4 @@
-import { AppCard } from '@crema'
-import { Box, Button, Container, Grid, Typography } from '@mui/material'
+import { Box, Container, Grid } from '@mui/material'
 import { headList8 } from 'modules/Constant/titlefile'
 import Heading from 'modules/commanmodules/Heading'
 import Image from 'next/image'
@@ -116,18 +115,18 @@ export default function Indexclient() {
                         {/* <Grid item xs={12} md={5}> */}
                         {/* <ExpertForm AllowedFieldArray={['Name', 'Email', 'Phone', 'Certification', 'Message']} /> */}
                         {/* <AppCard sx={{ p: 3 }}>
-                                <Typography variant="h3" sx={{ textAlign: 'center', color: "#0a8fdc" }} gutterBottom>
-                                    Companies, big and small, trust us to scale their business
-                                </Typography>
-                                <Typography variant="p" sx={{ textAlign: 'justify', color: "black", }}>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                </Typography>
-                                <br></br>
-                                <br></br>
-                                <Box textAlign='center'>
-                                    <Button variant='contained'>Apply Here</Button>
-                                </Box>
-                            </AppCard> */}
+                            <Typography variant="h3" sx={{ textAlign: 'center', color: "#0a8fdc" }} gutterBottom>
+                                Companies, big and small, trust us to scale their business
+                            </Typography>
+                            <Typography variant="p" sx={{ textAlign: 'justify', color: "black", }}>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </Typography>
+                            <br></br>
+                            <br></br>
+                            <Box textAlign='center'>
+                                <Button variant='contained'>Apply Here</Button>
+                            </Box>
+                        </AppCard> */}
                         {/* </Grid> */}
                     </Grid>
                 </Container>

@@ -10,25 +10,17 @@ const SlideItem = ({ slide }) => {
       sx={{
         position: 'relative',
         width: '100%',
-        // height: '',
       }}
     >
-      <Box
-        sx={{
-          position: 'relative',
-          // maxHeight: { xs: '100%', md: 320 },
-          // minHeight: { xs: 250, md: '100%' },
-          // height: '100%',
-          // '& img': {
-          //   maxWidth: '100%',
-          //   maxHeight: '100%',
-          //   objectFit: 'cover',
-          //   width: '100%',
-          //   height: '100%',
-          // },
-        }}
-      >
-        <Image width={100} height={100} layout='responsive' objectFit='cover' src={slide.image} alt={slide.title} />
+      <Box sx={{ position: 'relative' }}>
+        <Image
+          width={100}
+          height={100}
+          layout='responsive'
+          objectFit='cover'
+          src={slide.image}
+          alt={slide.title}
+        />
       </Box>
       <Box
         sx={{
@@ -47,7 +39,6 @@ const SlideItem = ({ slide }) => {
         }}
       >
         <Typography
-
           sx={{
             fontSize: 18,
             fontWeight: Fonts.SEMI_BOLD,

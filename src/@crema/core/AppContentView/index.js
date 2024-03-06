@@ -38,6 +38,7 @@ const AppContentView = ({ children, sxStyle }) => {
           flex: 1,
           flexDirection: 'column',
           // border: "1px solid black",
+          // width: '100%',
           // p: { xs: 5, md: 7.5, xl: 12.5 },
           ...sxStyle,
         }}

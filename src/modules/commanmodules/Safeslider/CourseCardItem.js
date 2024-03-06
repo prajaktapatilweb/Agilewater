@@ -2,7 +2,6 @@ import React from 'react';
 import Image from 'next/image';
 import Box from '@mui/material/Box';
 import { Card, Link, Typography } from '@mui/material';
-import { Fonts } from 'shared/constants/AppEnums';
 
 const CourseCardItem = ({ item }) => {
     return (
@@ -39,7 +38,6 @@ const CourseCardItem = ({ item }) => {
                             // mr: { xs: 3, md: 4 },
                         }}
                     >
-
                         <Link href={item.links}>
                             <Image
                                 src={item.cover}
@@ -47,29 +45,29 @@ const CourseCardItem = ({ item }) => {
                                 height={100}
                                 width={100}
                                 objectFit='contain'
-
-
                             />
                         </Link>
                         {/* <img className='logo' alt='' src={item.cover} /> */}
 
                         <Box
-
                             sx={{
                                 flex: 1,
                                 display: 'inline-block',
-                                fontWeight: 500
+                                fontWeight: 500,
                             }}
-
                         >
-
-                            <Typography component='h4'> <Link href={item.links} style={{ textDecoration: 'none', color: 'black' }}> {item.title}</Link></Typography>
-
+                            <Typography component='h4'>
+                                {' '}
+                                <Link
+                                    href={item.links}
+                                    style={{ textDecoration: 'none', color: 'black' }}
+                                >
+                                    {' '}
+                                    {item.title}
+                                </Link>
+                            </Typography>
                         </Box>
-
-
                     </Box>
-
                 </Box>
             </Card>
         </>

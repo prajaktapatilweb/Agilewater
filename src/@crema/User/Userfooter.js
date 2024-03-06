@@ -64,9 +64,9 @@ export default function Userfooter() {
               <p style={{ color: '#75849a' }}>
                 32957 Norwalk Street, Union City, CA 94587
               </p>
-              <Typography variant='h2' color='#20509e' gutterBottom>
+              <h2 style={{ color: '#20509e' }}>
                 Other Offices
-              </Typography>
+              </h2>
               <p style={{ color: '#75849a' }}>
                 Bengaluru, Mumbai, Noida,<br></br>
                 Hyderabad, Kolkata, Mexico, UK<br></br>

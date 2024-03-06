@@ -18,7 +18,7 @@ export default function Herohome() {
                     <span className='span-50' />
                     <span className='span-100' />
                 </div>
-                <Container sx={{ position: 'relative', zIndex: 1 }}>
+                <Container sx={{ position: 'relative', zIndex: 1, py: 10 }}>
                     <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'column', md: 'row' } }} alignItems='center'
                         justifyContent='center'>
                         <Box sx={{ width: { xs: '100%', sm: '100%', md: '40%' }, mt: { xs: 20, sm: 20, md: 20, lg: 0 } }}>
@@ -26,17 +26,18 @@ export default function Herohome() {
                                 sx={{
                                     // width: { md: 850 },
                                     position: 'relative',
-                                    // fontSize: { xs: 30, md: 40, lg: 40 },
+                                    fontSize: { xs: 30, md: 40, lg: 40 },
                                     mb: { xs: 2, sm: 0 },
                                     letterSpacing: 1.5,
+                                    fontWeight: 500,
 
                                     color: 'white',
                                     lineHeight: 1.5,
                                 }}
                             >
-                                <span className='h8'>
-                                    Global Training, Certification & Recruitment Expert
-                                </span>
+                                {/* <span className='h8'> */}
+                                Global Training, Certification & Recruitment Expert
+                                {/* </span> */}
                             </Typography>
                             <Box sx={{ mb: 5, width: { xs: '100%', md: '80%' } }}>
                                 <Typography
@@ -57,17 +58,21 @@ export default function Herohome() {
                                     color: '#3e2ecd',
                                 }}
                             >
-                                In Demand Course ss
+                                In Demand Course
                             </Button>
                         </Box>
 
                         <Box className='world-map' sx={{ width: { xs: '100%', sm: '100%', md: '60%' } }}>
+
                             <Image
                                 src='/assets/images/test6-min.webp'
-                                width={100}
-                                height={100}
+                                width={857}
+                                height={536}
+                                // layout='fill'
+
+                                // sizes="(max-width: 768px) 90vw, 400px"
                                 objectFit='contain'
-                                sizes="100vw"
+                                // sizes="100vw"
                                 loading='eager'
                                 priority
                                 alt='worldmap'

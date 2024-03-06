@@ -1,24 +1,14 @@
 import React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import AppLngSwitcher from '@crema/core/AppLngSwitcher';
 import Box from '@mui/material/Box';
-import AppSearchBar from '@crema/core/AppSearchBar';
 import Hidden from '@mui/material/Hidden';
 import IconButton from '@mui/material/IconButton';
 import { toggleNavCollapsed } from '../../../../../redux/actions';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useDispatch } from 'react-redux';
-import AppMessages from '../../../AppMessages';
-import AppNotifications from '../../../AppNotifications';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
-import AppTooltip from '../../../AppTooltip';
 import { alpha } from '@mui/material/styles';
-import logo1 from '../../../../../assets/icon/AWlogo1.png';
-
-import AppLogo from '../../components/AppLogo';
+import logo1 from '../../../../../assets/icon/AWlogo2.webp';
 import UserInfo from '../../components/UserInfo';
 import HorizontalNav from '../../components/HorizontalNav';
 import { useSidebarContext } from '../../../../utility/AppContextProvider/SidebarContextProvider';
@@ -108,7 +98,7 @@ const AppHeader = () => {
                 },
               }}
             > */}
-            <Link href='/' sx={{ textDecoration: 'none' }}> <Image src={logo1} width={350} height={60} /></Link>
+            <Link href='/' sx={{ textDecoration: 'none' }}> <Image src={logo1} width={350} height={60} alt='Agilewaters' /></Link>
             {/* <AppLogo /> */}
             {/* </Box> */}
             <Hidden lgDown>
@@ -182,7 +172,7 @@ const AppHeader = () => {
                 },
               }}
             >
-              <UserInfo />
+              {/* <UserInfo /> */}
             </Box>
             {/* <Box sx={{ ml: 4 }}>
               <AppLngSwitcher iconOnly={true} tooltipPosition='bottom' />
