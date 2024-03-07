@@ -7,8 +7,10 @@ const CourseCardItem = ({ item }) => {
     return (
         <>
             <Card
+                aria-hidden='true'
                 sx={{
                     display: 'flex',
+
                     flexDirection: { xs: 'column', sm: 'row' },
                     alignItems: { sm: 'center' },
                     p: 0.5,

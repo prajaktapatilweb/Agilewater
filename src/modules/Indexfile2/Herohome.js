@@ -68,8 +68,6 @@ export default function Herohome() {
                                 src='/assets/images/test6-min.webp'
                                 width={857}
                                 height={536}
-                                // layout='fill'
-
                                 // sizes="(max-width: 768px) 90vw, 400px"
                                 objectFit='contain'
                                 // sizes="100vw"
@@ -77,7 +75,6 @@ export default function Herohome() {
                                 priority
                                 alt='worldmap'
                             ></Image>
-                            {/* <img src="assets/images/test8.png" alt=''></img> */}
                             <Box className='pin usa'>
                                 <span>
                                     San Francisco<br></br>

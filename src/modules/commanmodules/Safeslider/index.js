@@ -67,6 +67,7 @@ const Safeslider = () => {
     const { breakpoints } = useTheme();
     const matchMobileView = useMediaQuery(breakpoints.down("sm"));
     const matchMobileView1 = useMediaQuery(breakpoints.down("md"));
+
     const sliderConfig = {
         infinite: true,
         autoplay: true,
@@ -76,6 +77,7 @@ const Safeslider = () => {
         // prevArrow: <SliderArrow type="prev" />,
         // nextArrow: <SliderArrow type="next" />,
         dots: true,
+
         appendDots: (dots) => <StyledDots>{dots}</StyledDots>,
         customPaging: () => (
             <Box
@@ -92,7 +94,7 @@ const Safeslider = () => {
     return (
         <Box>
 
-            <Slider {...sliderConfig}>
+            <Slider {...sliderConfig} >
                 {safedata.map((item) => (
                     <CourseCardItem key={String(item.id)} item={item} />
                 ))}
