@@ -9,6 +9,8 @@ import Testi from "modules/commanmodules/Testi";
 import { data } from "modules/Constant/mentors.data";
 import Heading from "modules/commanmodules/Heading";
 import { headList6 } from "modules/Constant/titlefile";
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+
 const SliderArrow = (props) => {
     const { onClick, type, className } = props;
     return (
@@ -32,9 +34,9 @@ const SliderArrow = (props) => {
             className={className}
         >
             {/* {type === "next" ? (
-                <IconArrowForward sx={{ fontSize: 22 }} />
+                <ArrowForwardIcon sx={{ fontSize: 22 }} />
             ) : (
-                <IconArrowBack sx={{ fontSize: 22 }} />
+                <ArrowForwardIcon sx={{ fontSize: 22 }} />
             )} */}
         </IconButton>
     );
@@ -44,6 +46,7 @@ const StyledDots = styled("ul")(({ theme }) => ({
         position: "absolute",
         left: 0,
         bottom: -20,
+
         paddingLeft: theme.spacing(1),
         textAlign: "center",
         "& li": {
@@ -63,8 +66,9 @@ const Testimonial = () => {
         speed: 300,
         slidesToShow: matchMobileView ? 1 : 3,
         slidesToScroll: 1,
-        // prevArrow: <SliderArrow type="prev" />,
-        // nextArrow: <SliderArrow type="next" />,
+
+        prevArrow: <SliderArrow type="prev" />,
+        nextArrow: <SliderArrow type="next" />,
         dots: true,
         appendDots: (dots) => <StyledDots>{dots}</StyledDots>,
         customPaging: () => (
@@ -92,10 +96,13 @@ const Testimonial = () => {
                 <Heading data={headList6}></Heading>
 
                 <Slider {...sliderConfig}>
+
                     {data.map((item) => (
 
                         <Testi key={String(item.id)} item={item} />
+
                     ))}
+
                 </Slider>
             </Container>
         </Box>

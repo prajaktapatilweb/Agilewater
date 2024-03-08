@@ -1,27 +1,28 @@
 import React from 'react';
-import ArtTrackIcon from '@mui/icons-material/ArtTrack';
-import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
-import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
-import ContactSupportIcon from '@mui/icons-material/ContactSupport';
+import SecurityIcon from '@mui/icons-material/Security';
+import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
+import PsychologyIcon from '@mui/icons-material/Psychology';
+import GroupsIcon from '@mui/icons-material/Groups';
+
 export const data = [
     {
         title: 'Cybersecurity',
         description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore',
-        icon: <ArtTrackIcon />,
+        icon: <SecurityIcon />,
     },
     {
         title: 'Business Agility',
         description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore',
-        icon: <AttachMoneyIcon />,
+        icon: <BusinessCenterIcon />,
     },
     {
         title: 'Technology Consulting',
         description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore',
-        icon: <LocalLibraryIcon />,
+        icon: <PsychologyIcon />,
     },
     {
         title: 'Staffing',
         description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore',
-        icon: <ContactSupportIcon />,
+        icon: <GroupsIcon />,
     },
 ];

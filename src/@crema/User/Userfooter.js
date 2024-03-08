@@ -7,14 +7,7 @@ import { Button } from '@mui/material';
 import AppGridContainer from '@crema/core/AppGridContainer';
 import {
   contactlink,
-  csmlink,
-  devopsmasterlink,
-  devopsproflink,
-  pmiacplink,
-  polink,
-  safeagilelink,
-  safesmlink,
-  scrumatscalelink,
+
 } from 'modules/commanmodules/Pagelinks';
 import ScrollUp from 'modules/commanmodules/ScrollUp';
 
@@ -64,9 +57,9 @@ export default function Userfooter() {
               <p style={{ color: '#75849a' }}>
                 32957 Norwalk Street, Union City, CA 94587
               </p>
-              <h2 style={{ color: '#20509e' }}>
+              <Typography variant='h2' color='#20509e' gutterBottom>
                 Other Offices
-              </h2>
+              </Typography>
               <p style={{ color: '#75849a' }}>
                 Bengaluru, Mumbai, Noida,<br></br>
                 Hyderabad, Kolkata, Mexico, UK<br></br>

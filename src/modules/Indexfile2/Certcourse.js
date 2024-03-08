@@ -13,7 +13,7 @@ import Devopslider from 'modules/commanmodules/Devopslider'
 export default function Certcourse() {
     return (
         <div>
-            <Box className='' sx={{ background: "#f3f7f9", pt: 2, pb: 40 }}>
+            <Box className='' sx={{ background: "#f3f7f9", pt: 2, pb: 15 }}>
                 <Container>
                     <Heading data={headList2}></Heading>
                     <br></br>

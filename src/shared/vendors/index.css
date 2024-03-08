@@ -1009,23 +1009,6 @@
 
 /*kenburns effect  end*/
 
-/*glassmorph effect  start*/
-
-.cardx {
-  color: white;
-
-  /* margin-left: 25px; */
-  /* margin-right: 25px; */
-  border: 1px solid rgba(255, 255, 255, 0.55);
-  border-radius: 20px;
-  background-color: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.55);
-
-  backdrop-filter: blur(15px);
-}
-
-/*glassmorph effect  end*/
-
 /*button gradient border  start*/
 .containers {
   /* height: 100vh;
@@ -1127,7 +1110,6 @@ div.partial-border-pseudo::after {
 
 /*map animation*/
 .world-map {
- 
   /* max-width: 1100px; */
   /* margin:0 auto; */
   /* padding: 1em; */
@@ -1174,31 +1156,30 @@ div.partial-border-pseudo::after {
   font-size: 0.9em;
 }
 .usa {
-  top: 42%;
-  left: 15%;
+  top: 34%;
+  left: 14%;
 }
 
 .abc {
-  top: 38%;
+  top: 32%;
   left: 22%;
 }
 
 .france {
-  top: 57%;
+  top: 60%;
   left: 50%;
 }
 .sweden {
-  top: 42%;
+  top: 38%;
   left: 50%;
 }
 .south-africa {
-  top: 54%;
+  top: 55%;
   left: 53%;
 }
 .australia {
-  top: 64%;
-
-  left: 81%;
+  top: 72%;
+  left: 82%;
 }
 .pqr {
   top: 52%;
@@ -1207,7 +1188,6 @@ div.partial-border-pseudo::after {
 }
 .lmn {
   top: 53%;
-
   left: 74%;
 }
 .india {

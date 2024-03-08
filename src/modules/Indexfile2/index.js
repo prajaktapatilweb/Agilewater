@@ -13,9 +13,9 @@ export default function indexfile2() {
     <div>
       <Herohome></Herohome>
       <Countup />
-      <Certcourse></Certcourse>
+      {/* <Certcourse></Certcourse> */}
       <Registerform></Registerform>
-      <CoachCoursecard />
+      {/* <CoachCoursecard /> */}
       <Testimonial></Testimonial>
       <Paralloxsec></Paralloxsec>
       <Indexclient></Indexclient>

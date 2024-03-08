@@ -70,7 +70,7 @@ export default function Herohome() {
                                 height={536}
                                 // sizes="(max-width: 768px) 90vw, 400px"
                                 objectFit='contain'
-                                // sizes="100vw"
+                                sizes="100vw"
                                 loading='eager'
                                 priority
                                 alt='worldmap'

@@ -31,14 +31,7 @@ const userPhoto = {
         image: '/assets/images/coursephoto/safeteam2.webp',
         title: 'SAFe For Team',
     },
-    agilephoto8: {
-        image: '/assets/images/coursephoto/safeteam5.jpeg',
-        title: 'SAFe For Team',
-    },
-    agilephoto9: {
-        image: '/assets/images/coursephoto/safeteam3.jpeg',
-        title: 'SAFe For Team',
-    },
+
 
 
 
@@ -77,10 +70,6 @@ export const usersPhotoList = [
     userPhoto.agilephoto5,
     userPhoto.agilephoto6,
     userPhoto.agilephoto7,
-    userPhoto.agilephoto8,
-    userPhoto.agilephoto9,
-
-
 ]
 export const heroPhotoList = [
     heroPhoto.slidephoto1,
