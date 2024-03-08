@@ -7,13 +7,17 @@ import {useDispatch, useSelector} from 'react-redux';
 import {onGetCourseList} from 'redux/actions';
 import PropTypes from 'prop-types';
 import {CourseOptions} from 'modules/Constant/CommanConst';
+import { useRouter } from 'next/router';
 
-export default function CourseTable({DataID}) {
-  const PageCourseName = CourseOptions.filter((item) => item.key === DataID)[0]
-    .text;
+export default function CourseTable() {
+  const router = useRouter()
+  console.log('RRR',router)
+  // const link = router.asPath()
+  const PageCourseName = CourseOptions.filter((item) => item.WebLink === router.asPath)[0]
+    ?.text;
   console.log('PAger', PageCourseName);
-  const TableTitle = CourseOptions.filter((item) => item.key === DataID)[0]
-    .TableTitle;
+  const TableTitle = CourseOptions.filter((item) => item.WebLink === router.asPath)[0]
+    ?.TableTitle;
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(onGetCourseList());

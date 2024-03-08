@@ -289,7 +289,7 @@ export default function EnhancedTable({
                         </TableCell> */}
                         <TableCell align='left'>
                           <Link
-                            href={`team/${row.Trainer.split('#')[0]}`.replace(
+                            href={`/team/${row.Trainer.split('#')[0]}`.replace(
                               / /g,
                               '-',
                             )}

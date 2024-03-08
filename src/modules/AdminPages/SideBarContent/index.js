@@ -34,13 +34,13 @@ export const StyledSimpleBarReact = styled(SimpleBarReact)(({theme}) => ({
     maxHeight: 600,
   },
   '@media (min-width: 1920px)': {
-    maxHeight: 310,
+    maxHeight: 1000,
   },
   '@media (min-width: 2000px)': {
-    maxHeight: 350,
+    maxHeight: 1000,
   },
   '@media (min-width: 2400px)': {
-    maxHeight: 460,
+    maxHeight: 1000,
   },
 }));
 const SideBarContent = () => {

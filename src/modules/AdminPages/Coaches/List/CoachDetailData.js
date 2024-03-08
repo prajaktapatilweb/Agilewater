@@ -4,25 +4,26 @@ import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
 import LocationOnTwoToneIcon from '@mui/icons-material/LocationOnTwoTone';
 import Button from '@mui/material/Button';
-import { Fonts } from 'shared/constants/AppEnums';
+import {Fonts} from 'shared/constants/AppEnums';
 import PropTypes from 'prop-types';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import StarIcon from '@mui/icons-material/Star';
 import SendIcon from '@mui/icons-material/Send';
-import { blue } from '@mui/material/colors';
+import {blue} from '@mui/material/colors';
+import Link from 'next/link';
 
-export default function CoachDetailData({ coach }) {
-  console.log('coach', coach)
+export default function CoachDetailData({coach}) {
+  console.log('coach', coach);
   return (
-    <Card sx={{ width: '100%' }} className='cards'>
+    <Card sx={{width: '100%'}} className='cards'>
       <div className='lines'></div>
       {coach && (
         <Box
           sx={{
             display: 'flex',
-            flexDirection: { xs: 'column', sm: 'column' },
+            flexDirection: {xs: 'column', sm: 'column'},
             justifyContent: 'space-between',
             width: '100%',
           }}
@@ -38,7 +39,7 @@ export default function CoachDetailData({ coach }) {
               background:
                 'linear-gradient(to right, #3e2bce 0%, #2dd3aa 100%, #2dd3aa 100%, #2dd3aa 100%)',
               // bgcolor: 'primary.main',
-              flexDirection: { xs: 'column', sm: 'column' },
+              flexDirection: {xs: 'column', sm: 'column'},
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -69,25 +70,33 @@ export default function CoachDetailData({ coach }) {
                 mt: 5,
               }}
             >
-              <Button
-                variant='contained'
-                endIcon={<SendIcon />}
-                sx={{ background: 'white', color: '#2050ab' }}
+              <Link
+                href={`/team/${coach.CoachName.split('#')[0]}`.replace(
+                  / /g,
+                  '-',
+                )}
               >
-                Contact
-              </Button>
+                <Button
+                  variant='contained'
+                  endIcon={<SendIcon />}
+                  sx={{background: 'white', color: '#2050ab'}}
+                >
+                  Contact
+                </Button>
+                {/* {row.Trainer.split('#')[1] || row.Trainer.split('#')[0]} */}
+              </Link>
             </Box>
           </Box>
 
-          <Box sx={{ p: 4 }}>
-            <Box sx={{ color: 'grey.600' }}>
+          <Box sx={{p: 4}}>
+            <Box sx={{color: 'grey.600'}}>
               <Box
                 sx={{
                   mx: -3,
                   mb: 2,
                   color: 'text.primary',
                   display: 'flex',
-                  fontSize: { xs: 14, xl: 16 },
+                  fontSize: {xs: 14, xl: 16},
                   // flexWrap: 'wrap',
                   justifyContent: 'space-between',
                 }}
@@ -123,7 +132,7 @@ export default function CoachDetailData({ coach }) {
               </Box>
             </Box>
 
-            <Box sx={{ display: 'flex' }}>
+            <Box sx={{display: 'flex'}}>
               <Box
                 sx={{
                   color: 'grey.700',
@@ -133,13 +142,15 @@ export default function CoachDetailData({ coach }) {
                   // fontWeight: Fonts.LIGHT,
                 }}
               >
-                {coach.Expertise}
+                {coach?.Expertise?.length > 1
+                  ? coach?.Expertise?.map((item12) => `${item12}, `)
+                  : coach?.Expertise}
                 <br /> <b>Experience : </b>
                 {coach.Experience}
                 {/* {user.info1} */}
               </Box>
             </Box>
-            <Box sx={{ display: 'flex' }}>
+            <Box sx={{display: 'flex'}}>
               <Box
                 sx={{
                   color: '#e31a15',
@@ -166,7 +177,7 @@ export default function CoachDetailData({ coach }) {
                           padding: 0,
                         }}
                       >
-                        <StarIcon fontSize='1px' sx={{ mr: 2 }}></StarIcon>
+                        <StarIcon fontSize='1px' sx={{mr: 2}}></StarIcon>
                         <ListItemText primary={item} />
                       </ListItem>
                     ))}
