@@ -1,7 +1,7 @@
 const express = require('express');
 const next = require('next');
 const cors = require('cors');
-const connectDB = require('./src/server/Database/MongoDB');
+const connectDB = require('./server/Database/MongoDB');
 require('dotenv').config();
 const helmet = require('helmet');
 
@@ -40,19 +40,15 @@ app.use(helmet());
 // Apply the rate limiting middleware to all requests
 // app.use(limiter)
 // Define Route
-app.use(
-  '/api/studentdata',
-  require('./src/server/routes/api/googleSheetCourse'),
-);
-app.use('/api/courses', require('./src/server/routes/api/courses'));
-app.use('/api/coaches', require('./src/server/routes/api/coaches'));
-app.use('/api/comments', require('./src/server/routes/api/comments'));
-app.use('/api/users', require('./src/server/routes/api/users'));
-app.use('/api/auth', require('./src/server/routes/api/auth'));
-app.use('/api/lead', require('./src/server/routes/api/leads'));
-app.use('/payment', require('./src/server/routes/api/payment'));
+app.use('/api/studentdata', require('./server/routes/api/googleSheetCourse'));
+app.use('/api/courses', require('./server/routes/api/courses'));
+app.use('/api/coaches', require('./server/routes/api/coaches'));
+app.use('/api/comments', require('./server/routes/api/comments'));
+app.use('/api/users', require('./server/routes/api/users'));
+app.use('/api/auth', require('./server/routes/api/auth'));
+app.use("/payment", require("./server/routes/api/payment"));
 
-app.listen(PORT, (err) => {
+ app.listen(PORT, (err) => {
   if (err) {
     console.log({err});
   }

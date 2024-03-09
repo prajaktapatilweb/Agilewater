@@ -1,9 +1,9 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const FirebaseUserSchema = new mongoose.Schema({
   Status: {
     type: String,
-    default: 'Active',
+    default: "Active",
   },
   UserID: {
     type: String,
@@ -37,4 +37,4 @@ const FirebaseUserSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model('firebaseuser', FirebaseUserSchema);
+module.exports = mongoose.model("firebaseuser", FirebaseUserSchema);

@@ -1,10 +1,10 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const CoachesListSchema = new mongoose.Schema({
   Status: {
     type: String,
     required: true,
-    default: 'Active',
+    default: "Active",
   },
   CoachID: {
     type: String,
@@ -80,4 +80,4 @@ const CoachesListSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model('coachlist', CoachesListSchema);
+module.exports = mongoose.model("coachlist", CoachesListSchema);

@@ -18,7 +18,7 @@ router.get('/', auth, async (req, res) => {
       UserID: 1,
       Avatar: 1,
       Email: 1,
-      Role: 1,
+      Role:1
     });
     // logger.info('Auth Route - Token Verified and allowed', {
     //   by: user.UserID,
@@ -26,7 +26,7 @@ router.get('/', auth, async (req, res) => {
     //   info: {},
     // });
     // return res.json({ user: user, PageList: PermissionList });
-    return res.json({user: user});
+    return res.json({user:user});
   } catch (err) {
     logger.error(`Catch Block - Auth Route Get User Data ${err}`, {
       by: req.user.id,

@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const CommentSchema = new mongoose.Schema({
   PageAsPath: {
@@ -10,7 +10,7 @@ const CommentSchema = new mongoose.Schema({
       Status: {
         type: String,
         required: true,
-        default: 'SentForModeration',
+        default: "SentForModeration",
       },
       Content: {
         type: String,
@@ -31,7 +31,7 @@ const CommentSchema = new mongoose.Schema({
       },
       ByEmailID: {
         type: String,
-        required: true,
+        required:true
       },
       ByName: {
         type: String,
@@ -43,16 +43,16 @@ const CommentSchema = new mongoose.Schema({
         type: Date,
         default: Date.now,
       },
-      Approval: {
-        By: {
-          type: String,
+      Approval:{
+        By:{
+          type:String
         },
         OnDate: {
           type: Date,
         },
-      },
+      }
     },
   ],
 });
 
-module.exports = mongoose.model('comment', CommentSchema);
+module.exports = mongoose.model("comment", CommentSchema);

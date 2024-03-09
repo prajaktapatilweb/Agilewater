@@ -1,35 +1,33 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const bcrypt = require('bcryptjs');
-const auth = require('../../middleware/auth');
-const Comments = require('../../models/Comments');
-const fs = require('fs');
-require('dotenv').config();
-const uploadCSVFile = require('../../middleware/uploadCSVFile');
+const bcrypt = require("bcryptjs");
+const auth = require("../../middleware/auth");
+const Comments = require("../../models/Comments");
+const fs = require("fs");
+require("dotenv").config();
+const uploadCSVFile = require("../../middleware/uploadCSVFile");
 
 async function getCommentsList(req, res, PageAsPath, pageLink) {
-  console.log('In get Comments List', PageAsPath);
+  console.log("In get Comments List", PageAsPath);
   let NewList;
   const token = req?.headers?.authorization;
-  if (!PageAsPath || pageLink === 'adminpages') {
-    NewList = await Comments.find({
-      Comments: {$elemMatch: {Status: 'SentForModeration'}},
-    });
+  if (!PageAsPath || pageLink === "adminpages") {
+    NewList = await Comments.find({ Comments: { $elemMatch: { Status: "SentForModeration" } } });
   } else {
-    NewList = await Comments.findOne({PageAsPath: PageAsPath}, {_id: 0});
+    NewList = await Comments.findOne({ PageAsPath: PageAsPath }, { _id: 0 });
   }
-  console.log('first', NewList);
-  return res.status(200).json({List: NewList});
+  console.log("first", NewList);
+  return res.status(200).json({ List: NewList });
 }
 
-router.get('/getpagecommentlist/', async (req, res) => {
+router.get("/getpagecommentlist/", async (req, res) => {
   const PageAsPath = req.query.PageAsPath;
-  console.log('In request Get Page Wise comments List ', req.query.PageAsPath);
+  console.log("In request Get Page Wise comments List ", req.query.PageAsPath);
   try {
     getCommentsList(req, res, PageAsPath);
   } catch (err) {
-    console.log('Error ', err);
-    return res.status(500).json({error: `Server Error: ${err}`});
+    console.log("Error ", err);
+    return res.status(500).json({ error: `Server Error: ${err}` });
   }
 });
 
@@ -45,80 +43,78 @@ router.get('/getpagecommentlist/', async (req, res) => {
 //   }
 // });
 
-router.post('/addnewcomment', async (req, res) => {
-  console.log('In post new comment');
+router.post("/addnewcomment", async (req, res) => {
+  console.log("In post new comment");
   try {
     const data = req.body;
     const pageLink = req.body.pageLink;
-    console.log('Comments ', data);
+    console.log("Comments ", data);
     data.Comment.OnDate = Date.now();
     // return res.status(200).json({ data: "Success" });
     await Comments.updateOne(
-      {PageAsPath: data.PageAsPath},
+      { PageAsPath: data.PageAsPath },
       {
         $setOnInsert: {
           PageAsPath: data.PageAsPath,
         },
-        $push: {Comments: data.Comment},
+        $push: { Comments: data.Comment },
       },
-      {upsert: true},
+      { upsert: true }
     )
       .then(() => {
         getCommentsList(req, res, req.body.PageAsPath, pageLink);
       })
       .catch((err) => {
-        console.log('Errot', err);
-        return res
-          .status(500)
-          .json({error: `Problem in Storing to MongoDB: ${err}`});
+        console.log("Errot", err);
+        return res.status(500).json({ error: `Problem in Storing to MongoDB: ${err}` });
       });
   } catch (err) {
-    console.log('Error', err);
-    return res.status(500).json({error: `Server Error: ${err}`});
+    console.log("Error", err);
+    return res.status(500).json({ error: `Server Error: ${err}` });
   }
 });
 
-router.put('/FBChangeStatus/:CommentID', async (req, res) => {
-  console.log('In Delete Course', req.params, req.body);
+router.put("/FBChangeStatus/:CommentID", async (req, res) => {
+  console.log("In Delete Course", req.params, req.body);
   try {
     const PageAsPath = req.body.PageAsPath;
     const pageLink = req.body.pageLink;
     const CommentID = req.params.CommentID;
     await Comments.updateOne(
-      {PageAsPath: PageAsPath, 'Comments._id': CommentID},
+      { PageAsPath: PageAsPath, "Comments._id": CommentID },
       {
         $set: {
-          'Comments.$.Status': 'Deleted',
+          "Comments.$.Status": "Deleted",
         },
-      },
+      }
     );
     getCommentsList(req, res, PageAsPath, pageLink);
   } catch (err) {
-    console.log('errr', err);
-    return res.status(500).json({error: `Server Error: ${err}`});
+    console.log("errr", err);
+    return res.status(500).json({ error: `Server Error: ${err}` });
   }
 });
 
-router.put('/JWTChangeStatus/:CommentID', auth, async (req, res) => {
-  console.log('In JWT Change Status Course', req.params, req.body);
+router.put("/JWTChangeStatus/:CommentID", auth, async (req, res) => {
+  console.log("In JWT Change Status Course", req.params, req.body);
   try {
     const PageAsPath = req.body.PageAsPath;
     const CommentID = req.params.CommentID;
     const pageLink = req.body.pageLink;
     await Comments.updateOne(
-      {PageAsPath: PageAsPath, 'Comments._id': CommentID},
+      { PageAsPath: PageAsPath, "Comments._id": CommentID },
       {
         $set: {
-          'Comments.$.Status': req.body.Status,
-          'Comments.$.Approval.By': req.user.gid,
-          'Comments.$.Approval.OnDate': Date.now(),
+          "Comments.$.Status": req.body.Status,
+          "Comments.$.Approval.By": req.user.gid,
+          "Comments.$.Approval.OnDate": Date.now(),
         },
-      },
+      }
     );
     getCommentsList(req, res, PageAsPath, pageLink);
   } catch (err) {
-    console.log('errr', err);
-    return res.status(500).json({error: `Server Error: ${err}`});
+    console.log("errr", err);
+    return res.status(500).json({ error: `Server Error: ${err}` });
   }
 });
 
@@ -194,21 +190,21 @@ router.put('/JWTChangeStatus/:CommentID', auth, async (req, res) => {
 //   }
 // });
 
-router.post('/quizcsv/:Subject', auth, async (req, res) => {
+router.post("/quizcsv/:Subject", auth, async (req, res) => {
   const Subject = req.params.Subject;
 
-  console.log('In add Quiz router post request', req.params);
+  console.log("In add Quiz router post request", req.params);
   try {
     uploadCSVFile.multipleUpload(req, res, function (err) {
       if (err) {
-        console.log('Error Photo Submission', err);
-        return res.end('Error uploading file.');
+        console.log("Error Photo Submission", err);
+        return res.end("Error uploading file.");
       }
-      return res.status(200).json({Result: 'File uploaded successfully'});
+      return res.status(200).json({ Result: "File uploaded successfully" });
     });
   } catch (err) {
-    console.log('Error', err);
-    return res.status(500).json({error: `Server Error: ${err}`});
+    console.log("Error", err);
+    return res.status(500).json({ error: `Server Error: ${err}` });
   }
 });
 

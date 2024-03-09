@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const UserSchema = new mongoose.Schema({
   UserID: {
@@ -9,7 +9,7 @@ const UserSchema = new mongoose.Schema({
   Status: {
     type: String,
     required: true,
-    default: 'Active',
+    default: "Active",
   },
   Name: {
     type: String,
@@ -80,4 +80,4 @@ const UserSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model('user', UserSchema);
+module.exports = mongoose.model("user", UserSchema);

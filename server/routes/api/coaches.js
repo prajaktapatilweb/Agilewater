@@ -1,20 +1,20 @@
-const express = require('express');
-const {indexof} = require('stylis');
-const auth = require('../../middleware/auth');
-const CoursesList = require('../../models/CoursesList');
+const express = require("express");
+const { indexof } = require("stylis");
+const auth = require("../../middleware/auth");
+const CoursesList = require("../../models/CoursesList");
 const router = express.Router();
-const moment = require('moment');
-const CoachesList = require('../../models/CoachesList');
-const uploadController = require('../../middleware/uploadMultipleFiles');
+const moment = require("moment");
+const CoachesList = require("../../models/CoachesList");
+const uploadController = require("../../middleware/uploadMultipleFiles");
 
 async function getCoachList(req, res) {
-  console.log('In get Coach List');
-  let NewList = await CoachesList.find({Status: 'Active'});
-  console.log('first', NewList.length);
-  return res.status(200).json({List: NewList});
+  console.log("In get Coach List");
+  let NewList = await CoachesList.find({ Status: "Active" });
+  console.log("first", NewList.length);
+  return res.status(200).json({ List: NewList });
 }
-router.get('/getcoachlist', auth, async (req, res) => {
-  console.log('In request Get Coach List ');
+router.get("/getcoachlist", auth, async (req, res) => {
+  console.log("In request Get Coach List ");
   try {
     // updateStatus();
     getCoachList(req, res);
@@ -23,8 +23,8 @@ router.get('/getcoachlist', auth, async (req, res) => {
     // return res.status(200).json({ List: NewList });
   } catch (err) {
     // logger.error(`Catch Block - User List Request Block ${err}`, { by: req.user.gid, for: [0], info: {} })
-    console.log('Error ', err);
-    return res.status(500).json({error: `Server Error: ${err}`});
+    console.log("Error ", err);
+    return res.status(500).json({ error: `Server Error: ${err}` });
   }
 });
 
@@ -59,13 +59,13 @@ router.get('/getcoachlist', auth, async (req, res) => {
 //   }
 // });
 
-router.post('/addnewcoach', auth, async (req, res) => {
-  console.log('In add new Course router post request');
+router.post("/addnewcoach", auth, async (req, res) => {
+  console.log("In add new Course router post request");
   try {
     uploadController.multipleUpload(req, res, function (err) {
       if (err) {
-        console.log('Error Photo Submission', err);
-        return res.end('Error uploading file.');
+        console.log("Error Photo Submission", err);
+        return res.end("Error uploading file.");
       }
       // const CoachID = req.params.ID;
       const data = req.body;
@@ -80,46 +80,44 @@ router.post('/addnewcoach', auth, async (req, res) => {
         data.Created.ByName = req.user.name;
 
         FinalData = new CoachesList(data);
-        console.log('Final Data', FinalData);
+        console.log("Final Data", FinalData);
         await FinalData.save()
           .then(() => {
-            return res.status(200).json({data: 'Success'});
+            return res.status(200).json({ data: "Success" });
           })
           .catch((err) => {
-            console.log('Errot', err);
-            return res
-              .status(500)
-              .json({error: `Problem in Storing to MongoDB: ${err}`});
+            console.log("Errot", err);
+            return res.status(500).json({ error: `Problem in Storing to MongoDB: ${err}` });
           });
       }
       asyncCall();
     });
   } catch (err) {
-    console.log('Error', err);
-    return res.status(500).json({error: `Server Error: ${err}`});
+    console.log("Error", err);
+    return res.status(500).json({ error: `Server Error: ${err}` });
   }
 });
 
-router.put('/updatecoach/:CoachID', auth, async (req, res) => {
+router.put("/updatecoach/:CoachID", auth, async (req, res) => {
   try {
     uploadController.multipleUpload(req, res, function (err) {
       if (err) {
-        console.log('Error Photo Submission', err);
-        return res.end('Error uploading file.');
+        console.log("Error Photo Submission", err);
+        return res.end("Error uploading file.");
       }
-      console.log('In request Update Indiv User Data ', req.params, req.body);
+      console.log("In request Update Indiv User Data ", req.params, req.body);
       async function asyncPutCall() {
         const CoachID = req.params.CoachID;
         const newData = req.body;
-        let oldData = await CoachesList.findOne({CoachID});
-        console.log('DDDEEE', oldData, newData);
+        let oldData = await CoachesList.findOne({ CoachID });
+        console.log("DDDEEE", oldData, newData);
         let updatedThings = [];
         let cnt = 0;
 
         for (const property in newData) {
-          if (property !== 'photoURL')
+          if (property !== "photoURL")
             if (`${newData[property]}` !== `${oldData[property]}`) {
-              console.log('DDD', property);
+              console.log("DDD", property);
               updatedThings.push({
                 keyname: property,
                 oldValue: oldData[property],
@@ -129,12 +127,12 @@ router.put('/updatecoach/:CoachID', auth, async (req, res) => {
             }
           // updatedString += `${property} : ${oldData[property]} --> ${newData[property]} \n`;
         }
-        console.log('first', cnt, updatedThings);
+        console.log("first", cnt, updatedThings);
 
         if (cnt > 0) {
-          console.log('To update');
+          console.log("To update");
           await CoachesList.updateOne(
-            {CoachID: CoachID},
+            { CoachID: CoachID },
             {
               $set: newData,
               $push: {
@@ -147,52 +145,52 @@ router.put('/updatecoach/:CoachID', auth, async (req, res) => {
                   },
                 ],
               },
-            },
+            }
           )
             .then(async () => {
-              let enterData = await CoachesList.findOne({CoachID});
-              console.log('The renter data', enterData);
-              getCoachList(req, res);
+              let enterData = await CoachesList.findOne({ CoachID });
+              console.log("The renter data", enterData);
+              getCoachList(req,res);
             })
             .catch((err) => {
-              console.log('errr', err);
+              console.log("errr", err);
 
-              return res.status(500).json({error: 'Server Error'});
+              return res.status(500).json({ error: "Server Error" });
             });
         } else {
-          return res.json('Nothing to update');
+          return res.json("Nothing to update");
         }
       }
       asyncPutCall();
     });
   } catch (err) {
-    console.log('errr', err);
+    console.log("errr", err);
     // logger.error(`Catch Block - User List Request Block ${err}`, { by: req.user.gid, for: [0], info: {} })
-    return res.status(500).json({error: `Server Error: ${err}`});
+    return res.status(500).json({ error: `Server Error: ${err}` });
   }
 });
 
-router.delete('/deletecoach/:CoachID', auth, async (req, res) => {
-  console.log('In Delete Course', req.params, req.query);
+router.delete("/deletecoach/:CoachID", auth, async (req, res) => {
+  console.log("In Delete Course", req.params, req.query);
   try {
     const deleteCourse = req.params.CoachID;
     await CoachesList.updateOne(
-      {CoachID: deleteCourse},
+      { CoachID: deleteCourse },
       {
         $set: {
-          Status: 'Deleted',
-          'Deletion.ByID': req.user.gid,
-          'Deletion.ByName': req.user.gid,
-          'Deletion.OnDate': new Date(),
-          'Deletion.DeleteReason': req.user.gid,
+          Status: "Deleted",
+          "Deletion.ByID": req.user.gid,
+          "Deletion.ByName": req.user.gid,
+          "Deletion.OnDate": new Date(),
+          "Deletion.DeleteReason": req.user.gid,
         },
-      },
+      }
     );
 
     getCoachList(req, res);
   } catch (err) {
-    console.log('errr', err);
-    return res.status(500).json({error: `Server Error: ${err}`});
+    console.log("errr", err);
+    return res.status(500).json({ error: `Server Error: ${err}` });
   }
 });
 
