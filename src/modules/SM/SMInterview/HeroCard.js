@@ -1,5 +1,5 @@
 import React from 'react';
-import { Avatar, Box, Grid, Typography } from '@mui/material';
+import { Avatar, Box, Grid, Paper, Typography } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import IntlMessages from '@crema/utility/IntlMessages';
 import PropTypes from 'prop-types';
@@ -7,6 +7,7 @@ import { teal } from '@mui/material/colors';
 import AppCard from '@crema/core/AppCard';
 import { Fonts } from 'shared/constants/AppEnums';
 import { position } from 'stylis';
+import { styled } from '@mui/material/styles';
 
 const HeroCard = () => {
     var details = [
@@ -37,10 +38,34 @@ const HeroCard = () => {
         },
 
     ]
+
+
+
+
     return (
         <Box sx={{ alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
             <Typography variant='h7' sx={{ color: "#20509e" }} gutterBottom>Become an expert in corporate job interviews.</Typography><br></br><br></br>
             <Typography variant='p'>Practice, practice, practice until you eventually get numb on rejections. To give yourself the best possible chance of playing to your potential, you must prepare for every eventuality. That means practice. Practice is the hardest part of learning, and training is the essence of transformation.</Typography><br></br><br></br><br></br>
+
+            <Box display="grid" gridTemplateColumns="1fr 1fr 1fr 1fr 1fr" gap={2}>
+                <Box >
+                    fhfhh
+                </Box>
+                <Box >
+                    rewrewrew
+                </Box>
+                <Box>
+                    ewtewgbc grtre
+                </Box>
+                <Box>
+                    dsf grtyg tyht
+                </Box>
+                <Box>
+                    dsf grtyg tyht
+                </Box>
+
+            </Box>
+
             <Grid container spacing={2}>
                 {details.map((item, index) => (
                     <Grid item xs={12} sm={12} md={4} lg={4} key={index}>

@@ -8,7 +8,7 @@ import Link from "next/link";
 export default function CallBack() {
     return (
         <>
-            <IconButton> <CallTwoToneIcon /></IconButton>
+            <IconButton aria-label='phone'> <CallTwoToneIcon /></IconButton>
             <Link href={`tel:${contactno1}`} target="_blank" >
                 <a className="nav-link-inner--text text-yellow">
                     {contactno1}
@@ -19,7 +19,7 @@ export default function CallBack() {
                     {contactno2}
                 </a>
             </Link>
-            <IconButton><EmailTwoToneIcon /> </IconButton>
+            <IconButton aria-label='email'><EmailTwoToneIcon /> </IconButton>
             <Link href={`mailto:${emailid1}`} target="_blank">
                 <a className="nav-link-inner--text text-yellow">
                     {emailid1}

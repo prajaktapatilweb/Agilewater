@@ -1,56 +1,90 @@
-import * as React from 'react';
+import React from 'react';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Image from 'next/image';
-import { Grid, Box } from '@mui/material';
+import { Grid, Box, Container } from '@mui/material';
+import { headList31 } from 'modules/Constant/titlefile';
+import { motion } from 'framer-motion';
+import Heading1 from '../Heading1';
 
 export default function MainpageCard(props) {
     return (
+        <Box className='section'>
+            <Container>
+                <motion.div
+                    initial={{ y: 100, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{
+                        delay: 0.2,
+                        x: { type: 'spring', stiffness: 60 },
+                        opacity: { duration: 1 },
+                        ease: 'easeIn',
+                        duration: 1,
+                    }}
+                >
+                    <Grid item xs={12} sx={{ p: 3, textAlign: 'center' }}>
+                        <Heading1 data={headList31}></Heading1>
+                    </Grid>
+                </motion.div>
+                <motion.div
+                    initial={{ y: 100, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{
+                        delay: 0.6,
+                        x: { type: 'spring', stiffness: 60 },
+                        opacity: { duration: 0.6 },
+                        ease: 'easeIn',
+                        duration: 1,
+                    }}
+                >
+                    <Grid container spacing={3} sx={{ mb: 7 }}>
+                        {props.DetailObject.map((item, i) => (
+                            <Grid item xs={12} sm={6} md={3} lg={3} key={i}>
+                                <Card
+                                    sx={{
+                                        height: 'auto',
+                                        flexShrink: 0,
+                                        boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px',
+                                        mx: { xs: 5, sm: 0 },
+                                    }}
+                                >
+                                    <Box sx={{ height: 'auto', flexShrink: 0 }}>
+                                        <Image
+                                            src={item.img}
+                                            width={100}
+                                            height={70}
+                                            layout='responsive'
+                                        ></Image>
+                                    </Box>
+                                    <Box sx={{ p: 5 }}>
+                                        <Typography
+                                            gutterBottom
+                                            variant='h2'
+                                            className='paras'
+                                            sx={{ textAlign: 'center' }}
+                                        >
+                                            {item.title}
+                                        </Typography>
+                                        <Typography
+                                            variant='body2'
+                                            sx={{ textAlign: 'justify', color: 'black' }}
+                                        >
+                                            {item.para}
+                                        </Typography>
 
-        <Grid container spacing={3} sx={{ mb: 7 }}>
-            <Grid item xs={12} sx={{ p: 3, textAlign: 'center' }}>
-                <Typography variant='h1' sx={{ fontSize: { xs: 30, md: 35 } }}>Master Courses</Typography>
-            </Grid>
-
-            {props.DetailObject.map((item, i) => (
-                <Grid item xs={12} sm={6} md={3} lg={3} sx={{ justifyContent: 'stretch' }} key={i}>
-                    <Card>
-                        <CardMedia
-                            // component='img'
-                            // height='200'
-                            // image=''
-                            alt='green iguana'
-                            sx={{ textAlign: 'center' }}
-                        >
-
-                            <Image src={item.img} width={100} height={100}></Image>
-                        </CardMedia>
-                        <CardContent>
-                            <Typography gutterBottom variant='h3' component='div'>
-                                {item.title}
-                                {/* Lizard */}
-                            </Typography>
-                            <Typography variant='body2' color='text.secondary'>
-                                {item.para}
-                                {/* Lizards are a widespread group of squamate reptiles, with over 6,000
-                            species, ranging across all continents except Antarctica jfgkji jflghk jhlfk */}
-                            </Typography>
-                        </CardContent>
-                        <CardActions>
-                            {/* {props.links} */}
-                            {/* <Button size='small'>Share</Button> */}
-                            <Button size='small'>Learn More</Button>
-                        </CardActions>
-                    </Card>
-                </Grid>
-            ))}
-
-
-        </Grid>
-
+                                        <Button size='large' sx={{ color: '#20509e' }}>
+                                            Learn More
+                                        </Button>
+                                    </Box>
+                                </Card>
+                            </Grid>
+                        ))}
+                    </Grid>
+                </motion.div>
+            </Container>
+        </Box>
     );
 }

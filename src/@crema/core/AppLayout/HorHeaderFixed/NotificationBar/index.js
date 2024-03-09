@@ -123,48 +123,53 @@ const NotificationBar = () => {
           >
 
           </Alert> */}
-              <IconButton>
+              <IconButton aria-label='facebook'>
                 {' '}
                 <a
                   href='https://www.facebook.com/AgileWatersConsulting/'
                   target='_blank'
                   rel='noreferrer'
+                  aria-label='facebook'
                 >
                   <FacebookIcon sx={{ color: '#1b4e9b' }} />{' '}
                 </a>
               </IconButton>
-              <IconButton>
+              <IconButton aria-label='twitter'>
                 <a
                   href='https://twitter.com/AgilewatersCo'
                   target='_blank'
                   rel='noreferrer'
+                  aria-label='twitter'
                 >
                   <TwitterIcon sx={{ color: '#00aeef' }}></TwitterIcon>
                 </a>
               </IconButton>
-              <IconButton>
+              <IconButton aria-label='instagram'>
                 <a
                   href='https://www.instagram.com/agilewatersconsulting/'
                   target='_blank'
                   rel='noreferrer'
+                  aria-label='instagram'
                 >
                   <InstagramIcon sx={{ color: '#f26f37' }}></InstagramIcon>
                 </a>
               </IconButton>
-              <IconButton>
+              <IconButton aria-label='linkedin'>
                 <a
                   href='https://www.linkedin.com/company/agilewaters-consulting/'
                   target='_blank'
                   rel='noreferrer'
+                  aria-label='linkedin'
                 >
                   <LinkedInIcon sx={{ color: '#0277bd' }}> </LinkedInIcon>
                 </a>
               </IconButton>
-              <IconButton>
+              <IconButton aria-label='youtube'>
                 <a
                   href='https://www.youtube.com/channel/UCaHUj0eP9LiEK5zL7QrNbNw'
                   target='_blank'
                   rel='noreferrer'
+                  aria-label='youtube'
                 >
                   <YouTubeIcon sx={{ color: '#d50000' }}></YouTubeIcon>
                 </a>

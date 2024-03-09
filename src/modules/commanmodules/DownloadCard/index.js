@@ -5,21 +5,24 @@ import Button from '@mui/material/Button';
 import { Fonts } from 'shared/constants/AppEnums';
 import { teal } from '@mui/material/colors';
 import Image from 'next/image';
-import { Container } from '@mui/material';
+import { Card, Container, Typography } from '@mui/material';
 
 const DownloadCard = (props) => {
     return (
-        <AppCard contentStyle={{ padding: 0, display: 'flex', flexDirection: 'column', }} sx={{ mt: 5 }} >
-            <Box
-                sx={{
-                    px: 4,
-                    display: 'flex',
-                    // justifyContent: 'space-between',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                }}
-            >
-                <Image src={props.img} height={180} width={180}></Image>
+        <Card sx={{ zIndex: 1, display: 'flex', flexDirection: 'column', left: 0, top: 0, position: 'relative', background: '#009688', borderRadius: 10, border: '1px #EDEDEE solid' }} >
+            <Box sx={{ width: '100%', height: 'auto', left: 0.09, top: 0, display: 'flex', flexDirection: 'column', position: 'relative', background: 'white', borderTopLeftRadius: 25, borderTopRightRadius: 10, border: '1px #EDEDEE solid' }}>
+                <Box
+                    sx={{
+                        px: 4,
+                        display: 'flex',
+                        // justifyContent: 'space-between',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+
+                    }}
+                >
+                    <Image src={props.img} height={180} width={180}></Image>
+                </Box>
             </Box>
             <Box
                 sx={{
@@ -74,7 +77,7 @@ const DownloadCard = (props) => {
                     </Button>
                 </Box>
             </Box>
-        </AppCard>
+        </Card>
     );
 };
 

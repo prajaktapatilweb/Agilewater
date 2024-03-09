@@ -9,6 +9,7 @@ import IconArrowBack from "@mui/icons-material/ArrowBack";
 import IconArrowForward from "@mui/icons-material/ArrowForward";
 import CourseCardItem from "./CourseCardItem";
 import { data } from "modules/Constant/CourseSliderdata";
+import { AppCard } from "@crema";
 const SliderArrow = (props) => {
     const { onClick, type, className } = props;
     return (
@@ -46,14 +47,15 @@ const StyledDots = styled("ul")(({ theme }) => ({
         position: "absolute",
 
         left: 0,
-        bottom: 10,
+
+        bottom: 0,
 
 
         // paddingLeft: theme.spacing(3),
         // textAlign:'left',
         textAlign: "center",
         "& li": {
-            marginRight: theme.spacing(5),
+            marginRight: theme.spacing(1),
 
 
             "&.slick-active>div": {
@@ -80,28 +82,28 @@ const CardSlider = () => {
         customPaging: () => (
             <Box
                 sx={{
-                    height: 10,
-                    width: 30,
-
+                    height: 15,
+                    width: 15,
                     backgroundColor: "divider",
                     display: "inline-block",
-                    borderRadius: 10,
+                    borderRadius: '50%',
                 }}
             />
         ),
     };
     return (
+        // <AppCard sx={{ boxShadow: 'rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset' }}>
         <Box
             id="treatments"
             sx={{
-                p: { xs: 7, md: 7 },
+                // p: { xs: 0, md: 3 },
                 // backgroundColor: "#f1efeb",
-                borderRadius: 7
+                // borderRadius: 7
             }}
         >
             {/* <Container maxWidth="lg"> */}
-            <Grid container spacing={2}>
-                <Grid item xs={12} md={12}>
+            {/* <Grid container spacing={2}> */}
+            {/* <Grid item xs={12} md={12}>
                     <Box
                         sx={{
                             height: "100%",
@@ -115,18 +117,19 @@ const CardSlider = () => {
                             Our Popular Courses
                         </Typography>
                     </Box>
-                </Grid>
+                </Grid> */}
 
-                <Grid item xs={12} md={12}>
-                    <Slider {...sliderConfig}>
-                        {data.map((item) => (
-                            <CourseCardItem key={String(item.id)} item={item} />
-                        ))}
-                    </Slider>
-                </Grid>
-            </Grid>
+            {/* <Grid item xs={12} md={12}> */}
+            <Slider {...sliderConfig}>
+                {data.map((item) => (
+                    <CourseCardItem key={String(item.id)} item={item} />
+                ))}
+            </Slider>
+            {/* </Grid> */}
+            {/* </Grid> */}
             {/* </Container> */}
         </Box>
+        // </AppCard>
     );
 };
 export default CardSlider;

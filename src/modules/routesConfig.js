@@ -538,6 +538,12 @@ const routesConfig = [
     ]
   },
   {
+    id: "menu5",
+    messageId: "menu.cert.cybersecurity",
+    type: "item",
+    url: "/cybersecurity"
+  },
+  {
     id: "menu6",
     messageId: "menu.cert.Contactus",
     type: "item",
@@ -550,7 +556,7 @@ const routesConfig = [
     url: "/careers"
   },
   {
-    id: "menu7",
+    id: "menu8",
     messageId: "menu.cert.Refer",
     type: "item",
     url: "/refer-and-earn"

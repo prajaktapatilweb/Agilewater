@@ -18,7 +18,7 @@ export default function IndividualBlogPage({ post }) {
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
   };
-  // console.log('sds', post);
+  console.log('sds', post);
   return (
     <Box >
       <Grid container className='section' style={{ background: '#edeff3', marginBottom: 10, padding: 25 }}>

@@ -18,6 +18,8 @@ import SidebarSettings from './SidebarSettings';
 import NavStyles from './NavStyles';
 import LayoutTypes from './LayoutTypes';
 import ThemeHeader from './ThemeHeader';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import ContactsIcon from '@mui/icons-material/Contacts';
 
 const AppThemeSetting = () => {
   const [isSettingOpen, setSettingOpen] = useState(false);
@@ -50,12 +52,14 @@ const AppThemeSetting = () => {
           },
         }}
       >
-        <IconButton onClick={() => setSettingOpen(!isSettingOpen)}>
-          <SettingsOutlinedIcon
+        <IconButton onClick={() => setSettingOpen(!isSettingOpen)} aria-label='location'>
+
+          <LocationOnIcon
             sx={{
               animation: 'rotation 2s infinite linear',
               color: 'white',
             }}
+
           />
         </IconButton>
       </Box>
@@ -76,12 +80,16 @@ const AppThemeSetting = () => {
           },
         }}
       >
-        <IconButton onClick={() => setColorSettingOpen(!isSettingOpen)}>
-          <ColorLensIcon
+        <IconButton onClick={() => setColorSettingOpen(!isSettingOpen)} aria-label='contact'>
+          <ContactsIcon sx={{
+            color: 'white',
+          }}
+          />
+          {/* <ColorLensIcon
             sx={{
               color: 'white',
             }}
-          />
+          /> */}
         </IconButton>
       </Box>
       <Drawer
@@ -89,6 +97,7 @@ const AppThemeSetting = () => {
         sx={{
           '& .MuiBackdrop-root': {
             background: 'transparent',
+
           },
         }}
         className={layoutType === LayoutType.BOXED ? 'boxed-drawer' : ''}
@@ -107,24 +116,26 @@ const AppThemeSetting = () => {
             }}
           >
             <Box component='h3' mb={0.5} fontSize={18}>
-              <IntlMessages id='customizer.customiseSidebar' />
+              lgkfjhlgf
+              {/* <IntlMessages id='customizer.customiseSidebar' /> */}
             </Box>
             <Box component='p' mb={0} color='text.secondary'>
-              <IntlMessages id='customizer.customiseSidebarText' />
+              hfjdh hkhjk
+              {/* <IntlMessages id='customizer.customiseSidebarText' /> */}
             </Box>
           </Box>
-          <Box
+          {/* <Box
             sx={{
               padding: { xs: '20px', xl: '28px 22px' },
             }}
-          >
-            <NavStyles />
-            <LayoutTypes />
-            <ThemeDirection />
-            <ThemeHeader />
-            <ThemeFooter />
-            <SidebarSettings />
-          </Box>
+          > */}
+          {/* <NavStyles /> */}
+          {/* <LayoutTypes /> */}
+          {/* <ThemeDirection /> */}
+          {/* <ThemeHeader /> */}
+          {/* <ThemeFooter /> */}
+          {/* <SidebarSettings /> */}
+          {/* </Box> */}
         </AppScrollbar>
       </Drawer>
       <Drawer
@@ -150,10 +161,12 @@ const AppThemeSetting = () => {
             }}
           >
             <Box component='h3' mb={0.5} fontSize={18}>
-              <IntlMessages id='customizer.customiseTheme' />
+              fjgdgj
+              {/* <IntlMessages id='customizer.customiseTheme' /> */}
             </Box>
             <Box component='p' mb={0} color='text.secondary'>
-              <IntlMessages id='customizer.customiseText' />
+              hjfgjf
+              {/* <IntlMessages id='customizer.customiseText' /> */}
             </Box>
           </Box>
           <Box
@@ -161,8 +174,8 @@ const AppThemeSetting = () => {
               padding: { xs: '20px', xl: '28px 22px' },
             }}
           >
-            <ThemeModes />
-            <ThemeColors />
+            {/* <ThemeModes /> */}
+            {/* <ThemeColors /> */}
           </Box>
         </AppScrollbar>
       </Drawer>
