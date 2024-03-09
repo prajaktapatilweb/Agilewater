@@ -1,14 +1,10 @@
-import Herosection from 'modules/commanmodules/Herosection';
 import React from 'react';
 import CertScruminfo from './CertScruminfo';
-import { Box, Container, Grid, Typography } from '@mui/material';
+import { Container, Grid } from '@mui/material';
 import { AppCard } from '@crema';
 import PricingCard from 'modules/commanmodules/PricingCard';
-import MainCertScrumaccord from './MainCertScrumaccord';
-import VideoMain from 'modules/commanmodules/VideoMain';
 import SideCard from 'modules/SM/ScrumMasterCert/SideCard';
 import { sideList1 } from 'modules/Constant/OtherCardsConst';
-import Safetest from 'modules/SAFe/SafeAgileCert/Safetest';
 import Atscaledownload from 'modules/ScrumAtScale/Atscaledownload';
 import FreeCourseSlider from 'modules/commanmodules/FreeCourseSlider';
 import { freecourseList } from 'modules/Constant/FreeCourseConst';
@@ -26,7 +22,6 @@ export default function CertScrumMaster() {
     <div>
       <Herosectiondemo
         image1='/assets/images/courselogo/CSM4.png'
-        // /assets/images/Safe/SAFe-Agilist-Logo.png'
         heading='ScrumMaster® (CSM®) Certification Training'
         list1={[
           'Gain a high degree of proficiency in executing Scrum',
@@ -34,6 +29,7 @@ export default function CertScrumMaster() {
           'More job opportunities in IT as well as non-IT organizations.',
           '100% Assured Results',
         ]}
+        videosrc='https://www.youtube.com/watch?v=rB9dlx8V480&t=2s'
       />
       <Container sx={{ maxWidth: { xl: 1450 }, marginTop: 10 }}>
         <Grid container spacing={{ xs: 4, md: 8 }}>
@@ -46,7 +42,7 @@ export default function CertScrumMaster() {
               <LabTabs data={[
                 { label: 'Overview', panelData: <CertScruminfo /> },
                 { label: 'FAQ', panelData: <CertScrumaccord /> },
-                { label: 'ScrumQuiz', panelData: 'Item ewe' },
+                { label: 'Testimonials', panelData: 'Item ewe' },
                 { label: 'FreeCourses', panelData: 'Item ewe' }
               ]} />
 
@@ -61,20 +57,14 @@ export default function CertScrumMaster() {
 
 
 
-            <RelatedCourses data={safeadvList} />
+
           </Grid>
           <Grid item xs={12} md={4}>
-            <VideoMain
-              links='https://www.youtube.com/watch?v=rB9dlx8V480&t=2s'
-              videoPromo={'sd'}
-            />
-            <br></br>
-            <SideCard data={sideList1} />
             <Testcard data={testList2} />
+            <SideCard data={sideList1} />
             <FreeCourseSlider images={freecourseList}></FreeCourseSlider>
-            <br></br>
             <Atscaledownload />
-
+            <RelatedCourses data={safeadvList} />
 
           </Grid>
         </Grid>

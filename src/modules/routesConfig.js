@@ -114,6 +114,18 @@ const routesConfig = [
             type: "item",
             url: "/safe-for-teams"
           },
+          {
+            id: "menu217",
+            messageId: "menu.cert.spc",
+            type: "item",
+            url: "/safe-spc"
+          },
+          {
+            id: "menu218",
+            messageId: "menu.cert.rte",
+            type: "item",
+            url: "/safe-rte"
+          },
         ]
       },
       {

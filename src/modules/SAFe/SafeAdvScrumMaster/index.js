@@ -3,7 +3,6 @@ import { Grid } from '@mui/material';
 import { Container } from '@mui/material';
 import Safeadvinfo from './Safeadvinfo';
 import { AppCard } from '@crema';
-import MainSafeadvaccord from './MainSafeadvaccord';
 import RelatedCourses from 'modules/commanmodules/RelatedCourses';
 import Innerlink from 'modules/commanmodules/Innerlink';
 import { courseList2 } from 'modules/Constant/Relatecoursedata';
@@ -14,12 +13,14 @@ import EnquiryForm from 'modules/Forms/EnquiryForm';
 import Discussion from 'modules/Discussion';
 import EnquiryFormik from 'modules/Forms/EnquiryFormik';
 import Herosectiondemo from 'modules/commanmodules/Herosectiondemo';
+import Safeadvaccord from './Safeadvaccord';
+import LabTabs from 'modules/commanmodules/LabTabs';
 
 export default function SafeAdvScrumMaster() {
   return (
     <div>
       <Herosectiondemo
-        image1='/assets/images/courselogo/SASM.jpg'
+        image1='/assets/images/courselogo/safelogo/SASM3.webp'
         // /assets/images/Safe/SAFe-Agilist-Logo.png'
         heading='SAFe Advanced Scrum Master Certification'
         list1={[
@@ -28,6 +29,7 @@ export default function SafeAdvScrumMaster() {
           'Insightful Study Material',
           'Small Batch Size',
         ]}
+        videosrc='https://www.youtube.com/watch?v=-M-R3Lc-V74'
       />
 
       <Innerlink />
@@ -37,16 +39,18 @@ export default function SafeAdvScrumMaster() {
 
             <EnquiryForm AllowedFieldArray={['']} />
             <AppCard sxStyle={{ p: 5 }}>
-              <Safeadvinfo />
-              <MainSafeadvaccord />
+              <LabTabs data={[
+                { label: 'Overview', panelData: <Safeadvinfo /> },
+                { label: 'FAQ', panelData: <Safeadvaccord /> },
+                { label: 'Testimonials', panelData: 'Item ewe' },
+                { label: 'FreeCourses', panelData: 'Item ewe' }
+              ]} />
+
+
             </AppCard>
             <Discussion></Discussion>
           </Grid>
           <Grid item xs={12} md={4}>
-            <VideoMain
-              links='https://www.youtube.com/watch?v=-M-R3Lc-V74'
-              videoPromo={'sd'}
-            ></VideoMain>
             <Testcard data={testList1} />
             <RelatedCourses data={courseList2} />
           </Grid>

@@ -115,7 +115,7 @@ export const safedata = [
     },
     {
         id: 3,
-        cover: '/assets/images/courselogo/safelogo/SASM.webp',
+        cover: '/assets/images/courselogo/safelogo/SASM3.webp',
 
         title: 'SAFe Advanced Scrum Master Certification',
         links: sasmlink,

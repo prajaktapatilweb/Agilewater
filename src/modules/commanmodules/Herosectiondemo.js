@@ -10,7 +10,7 @@ import { Fonts } from 'shared/constants/AppEnums';
 import PropTypes from 'prop-types';
 import VideoMain from './VideoMain';
 
-export default function Herosectiondemo({ image1, heading, list1 }) {
+export default function Herosectiondemo({ image1, heading, list1, videosrc }) {
   return (
     <div>
       <Grid
@@ -55,8 +55,6 @@ export default function Herosectiondemo({ image1, heading, list1 }) {
                     src={image1}
                     height={80}
                     width={80}
-
-                    // layout='responsive'
                     objectFit='contain'
                     className='pngback'
                   ></Image>
@@ -92,7 +90,7 @@ export default function Herosectiondemo({ image1, heading, list1 }) {
             <Grid item xs={12} sm={12} md={4}>
               <Box sx={{ p: { xs: 3, sm: 15, md: 0 } }}>
                 <VideoMain
-                  links='https://www.youtube.com/watch?v=-M-R3Lc-V74'
+                  links={videosrc}
                   videoPromo={'sd'}
                 ></VideoMain>
               </Box>
