@@ -55,6 +55,7 @@ export default function Herosectiondemo({ image1, heading, list1 }) {
                     src={image1}
                     height={80}
                     width={80}
+
                     // layout='responsive'
                     objectFit='contain'
                     className='pngback'

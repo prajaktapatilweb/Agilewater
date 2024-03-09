@@ -1,7 +1,6 @@
 import React from 'react';
 import { Grid } from '@mui/material';
 import { Container } from '@mui/material';
-import HeroSasm from './HeroSasm';
 import Safeadvinfo from './Safeadvinfo';
 import { AppCard } from '@crema';
 import MainSafeadvaccord from './MainSafeadvaccord';
@@ -14,11 +13,23 @@ import VideoMain from 'modules/commanmodules/VideoMain';
 import EnquiryForm from 'modules/Forms/EnquiryForm';
 import Discussion from 'modules/Discussion';
 import EnquiryFormik from 'modules/Forms/EnquiryFormik';
+import Herosectiondemo from 'modules/commanmodules/Herosectiondemo';
 
 export default function SafeAdvScrumMaster() {
   return (
     <div>
-      <HeroSasm />
+      <Herosectiondemo
+        image1='/assets/images/courselogo/SASM.jpg'
+        // /assets/images/Safe/SAFe-Agilist-Logo.png'
+        heading='SAFe Advanced Scrum Master Certification'
+        list1={[
+          '2 Days of Classroom Training',
+          '  100% Assured Results',
+          'Insightful Study Material',
+          'Small Batch Size',
+        ]}
+      />
+
       <Innerlink />
       <Container sx={{ maxWidth: { xl: 1450 }, marginTop: 10 }}>
         <Grid container spacing={{ xs: 4, md: 8 }}>
