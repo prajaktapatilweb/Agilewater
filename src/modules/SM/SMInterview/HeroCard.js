@@ -47,26 +47,9 @@ const HeroCard = () => {
             <Typography variant='h7' sx={{ color: "#20509e" }} gutterBottom>Become an expert in corporate job interviews.</Typography><br></br><br></br>
             <Typography variant='p'>Practice, practice, practice until you eventually get numb on rejections. To give yourself the best possible chance of playing to your potential, you must prepare for every eventuality. That means practice. Practice is the hardest part of learning, and training is the essence of transformation.</Typography><br></br><br></br><br></br>
 
-            <Box display="grid" gridTemplateColumns="1fr 1fr 1fr 1fr 1fr" gap={2}>
-                <Box >
-                    fhfhh
-                </Box>
-                <Box >
-                    rewrewrew
-                </Box>
-                <Box>
-                    ewtewgbc grtre
-                </Box>
-                <Box>
-                    dsf grtyg tyht
-                </Box>
-                <Box>
-                    dsf grtyg tyht
-                </Box>
 
-            </Box>
 
-            <Grid container spacing={2}>
+            <Grid container spacing={2} alignItems='center' justifyContent='center' textAlign='center'>
                 {details.map((item, index) => (
                     <Grid item xs={12} sm={12} md={4} lg={4} key={index}>
                         <AppCard

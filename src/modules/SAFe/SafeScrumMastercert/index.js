@@ -1,17 +1,17 @@
 import React from 'react';
 import RelatedCourses from 'modules/commanmodules/RelatedCourses';
-import {Grid, Link} from '@mui/material';
-import {Container} from '@mui/material';
-import {AppCard} from '@crema';
+import { Grid, Link } from '@mui/material';
+import { Container } from '@mui/material';
+import { AppCard } from '@crema';
 import SafescrumHero from './SafescrumHero';
-import {courseList2} from 'modules/Constant/Relatecoursedata';
+import { courseList2 } from 'modules/Constant/Relatecoursedata';
 import SafePricingcard from 'modules/SAFe/SafeAgileCert/SafePricingcard';
-import {testList1} from 'modules/Constant/OthershortConst';
+import { testList1 } from 'modules/Constant/OthershortConst';
 import Testcard from 'modules/commanmodules/TestCard';
 import VideoMain from 'modules/commanmodules/VideoMain';
 import Safescruminfo from './Safescruminfo';
 import SlideBasicArrow from 'modules/commanmodules/SlideBasicArrow';
-import {usersPhotoList} from 'modules/Constant/Photoslider';
+import { usersPhotoList } from 'modules/Constant/Photoslider';
 import PaymentModule from 'modules/commanmodules/PaymentModule';
 import CourseTable from '../SafeAgileCert/CourseTable';
 import Discussion from 'modules/Discussion';
@@ -20,8 +20,8 @@ export default function SafeScrumMastercert() {
   return (
     <div>
       <SafescrumHero />
-      <Container sx={{maxWidth: {xl: 1450}, marginTop: 10}}>
-        <Grid container spacing={{xs: 4, md: 8}}>
+      <Container sx={{ maxWidth: { xl: 1450 }, marginTop: 10 }}>
+        <Grid container spacing={{ xs: 4, md: 8 }}>
           <Grid item xs={12} md={8}>
             {/* <CourseTable /> */}
             <CourseTable />
@@ -32,7 +32,7 @@ export default function SafeScrumMastercert() {
           </Grid>
 
           <Grid item xs={12} md={8}>
-            <AppCard sxStyle={{p: 5}}>
+            <AppCard>
               <Safescruminfo />
             </AppCard>
             <Discussion></Discussion>
@@ -46,8 +46,8 @@ export default function SafeScrumMastercert() {
             <RelatedCourses data={courseList2} />
           </Grid>
         </Grid>
-        <Grid container spacing={{xs: 4, md: 8}}>
-          <Grid item xs={12} md={8} sx={{pb: 7}}>
+        <Grid container spacing={{ xs: 4, md: 8 }}>
+          <Grid item xs={12} md={8} sx={{ pb: 7 }}>
             <SafePricingcard />
           </Grid>
         </Grid>

@@ -32,7 +32,7 @@ export default function SafeAgileCert() {
           </Grid>
 
           <Grid item xs={12} md={8}>
-            <AppCard sxStyle={{ p: 5 }}>
+            <AppCard>
               <Safeinfo />
               <MainSafeaccord />
             </AppCard>

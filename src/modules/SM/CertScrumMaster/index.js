@@ -37,7 +37,7 @@ export default function CertScrumMaster() {
             <AppCard sxStyle={{ p: 5 }}>
               Course Table Here
             </AppCard>
-            <AppCard sxStyle={{ p: 5 }}>
+            <AppCard>
 
               <LabTabs data={[
                 { label: 'Overview', panelData: <CertScruminfo /> },

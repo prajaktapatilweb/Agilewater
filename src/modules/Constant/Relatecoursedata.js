@@ -15,7 +15,7 @@ const data = {
         links: csmlink,
     },
     Scrumatscale: {
-        image: '/assets/images/courselogo/ScrumAtScale.jpg',
+        image: '/assets/images/courselogo/ScrumatScale.webp',
         title: 'Scrum@Scale Practitioner',
         links: scrumatscalelink,
         views: '1.5k',

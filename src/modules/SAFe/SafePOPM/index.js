@@ -30,7 +30,7 @@ export default function SafePOPM() {
       <Container sx={{ maxWidth: { xl: 1450 }, marginTop: 10 }}>
         <Grid container spacing={{ xs: 4, md: 8 }}>
           <Grid item xs={12} md={8}>
-            <AppCard sxStyle={{ p: 5 }}>
+            <AppCard>
               <LabTabs data={[
                 { label: 'Overview', panelData: <Popmdetails /> },
                 { label: 'FAQ', panelData: <Popmaccord /> },

@@ -38,7 +38,7 @@ export default function SafeAdvScrumMaster() {
           <Grid item xs={12} md={8}>
 
             <EnquiryForm AllowedFieldArray={['']} />
-            <AppCard sxStyle={{ p: 5 }}>
+            <AppCard>
               <LabTabs data={[
                 { label: 'Overview', panelData: <Safeadvinfo /> },
                 { label: 'FAQ', panelData: <Safeadvaccord /> },

@@ -1,38 +1,49 @@
 import React from 'react';
-import HeroAdvScrum from './HeroAdvScrum';
-import {Container, Grid} from '@mui/material';
-import {AppCard} from '@crema';
+import { Container, Grid } from '@mui/material';
+import { AppCard } from '@crema';
 import AdvScruminfo from './AdvScruminfo';
-import MainAdvSMaccord from './MainAdvSMaccord';
-import VideoMain from 'modules/commanmodules/VideoMain';
 import FreeCourseSlider from 'modules/commanmodules/FreeCourseSlider';
-import {freecourseList} from 'modules/Constant/FreeCourseConst';
+import { freecourseList } from 'modules/Constant/FreeCourseConst';
 import RelatedCourses from 'modules/commanmodules/RelatedCourses';
-import {safeadvList} from 'modules/Constant/Relatecoursedata';
-import Innerlink from 'modules/commanmodules/Innerlink';
+import { safeadvList } from 'modules/Constant/Relatecoursedata';
 import Testcard from 'modules/commanmodules/TestCard';
-import {testList2} from 'modules/Constant/OthershortConst';
+import { testList2 } from 'modules/Constant/OthershortConst';
 import Discussion from 'modules/Discussion';
+import LabTabs from 'modules/commanmodules/LabTabs';
+import AdvSMaccord from './AdvSMaccord';
+import Herosectiondemo from 'modules/commanmodules/Herosectiondemo';
 
 export default function AdvScrumMaster() {
   return (
     <div>
-      <HeroAdvScrum />
-      <Innerlink />
-      <Container sx={{maxWidth: {xl: 1450}, marginTop: 10}}>
-        <Grid container spacing={{xs: 4, md: 8}}>
+      <Herosectiondemo
+        image1='/assets/images/courselogo/smlogo/ACSM1.webp'
+        // /assets/images/Safe/SAFe-Agilist-Logo.png'
+        heading='Advanced Certified Scrum Master Training'
+        list1={[
+          '2 Days of Classroom / Online Training',
+          ' 100% Assured Results',
+          'Build on your foundational knowledge',
+          'Self-paced training to suit your schedule'
+        ]}
+        videosrc='https://www.youtube.com/watch?v=rB9dlx8V480&t=2s'
+      />
+
+      <Container sx={{ maxWidth: { xl: 1450 }, marginTop: 10 }}>
+        <Grid container spacing={{ xs: 4, md: 8 }}>
           <Grid item xs={12} md={8}>
-            <AppCard sxStyle={{p: 5}}>
-              <AdvScruminfo />
-              <MainAdvSMaccord />
+            <AppCard>
+              <LabTabs data={[
+                { label: 'Overview', panelData: <AdvScruminfo /> },
+                { label: 'FAQ', panelData: <AdvSMaccord /> },
+                { label: 'Testimonials', panelData: 'Item ewe' },
+                { label: 'FreeCourses', panelData: 'Item ewe' }
+              ]} />
+
             </AppCard>
             <Discussion></Discussion>
           </Grid>
           <Grid item xs={12} md={4}>
-            <VideoMain
-              links='https://www.youtube.com/watch?v=rB9dlx8V480&t=2s'
-              videoPromo={'sd'}
-            />
             <Testcard data={testList2} />
             <FreeCourseSlider images={freecourseList}></FreeCourseSlider>
             <RelatedCourses data={safeadvList} />
