@@ -2,7 +2,6 @@ import React from 'react';
 import { Container, Grid } from '@mui/material';
 import { AppCard } from '@crema';
 import PSM2info from './PSM2info';
-import VideoMain from 'modules/commanmodules/VideoMain';
 import FreeCourseSlider from 'modules/commanmodules/FreeCourseSlider';
 import { freecourseList } from 'modules/Constant/FreeCourseConst';
 import { safeadvList } from 'modules/Constant/Relatecoursedata';

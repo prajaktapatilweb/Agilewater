@@ -53,8 +53,8 @@ export default function Herosectiondemo({ image1, heading, list1, videosrc }) {
                   <Image
                     alt='Safelogo'
                     src={image1}
-                    height={80}
-                    width={80}
+                    height={100}
+                    width={100}
                     objectFit='contain'
                     className='pngback'
                   ></Image>

@@ -2,7 +2,6 @@ import React from 'react';
 import { Container, Grid } from '@mui/material';
 import { AppCard } from '@crema';
 import CSPSMinfo from './CSPSMinfo';
-import VideoMain from 'modules/commanmodules/VideoMain';
 import Testcard from 'modules/commanmodules/TestCard';
 import { testList2 } from 'modules/Constant/OthershortConst';
 import FreeCourseSlider from 'modules/commanmodules/FreeCourseSlider';
