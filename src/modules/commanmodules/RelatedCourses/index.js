@@ -5,8 +5,6 @@ import Slider from 'react-slick';
 import CourseItem from './CourseItem';
 import PropTypes from 'prop-types';
 import CourseSlider from './CourseSlider';
-import Image from 'next/image';
-import { atscale, courseList2 } from 'modules/Constant/Relatecoursedata';
 
 const RelatedCourses = ({ data }) => {
   // var relatedCourses1 = [

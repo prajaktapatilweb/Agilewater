@@ -41,7 +41,6 @@ export default function CSPO() {
                 { label: 'Testimonials', panelData: 'Item ewe' },
                 { label: 'FreeCourses', panelData: 'Item ewe' }
               ]} />
-
             </AppCard>
             <Discussion></Discussion>
           </Grid>

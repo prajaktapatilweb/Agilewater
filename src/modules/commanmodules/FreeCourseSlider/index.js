@@ -21,7 +21,7 @@ const settings = {
 const FreeCourseSlider = ({ images }) => {
 
   return (
-    <AppCard contentStyle={{ padding: 0, }} sx={{ mt: 5 }}>
+    <AppCard contentStyle={{ padding: 0, }} sx={{ my: 5 }}>
       <CourseSlider>
         <Slider {...settings}>
           {images.map((item, index) => (

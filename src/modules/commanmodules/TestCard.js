@@ -11,7 +11,7 @@ const Testcard = ({ data }) => {
     return (
         <Box>
             {data.map((item, index) => (
-                <AppCard sxStyle={{ backgroundColor: '#0A8FDC', mt: 5 }} key={index}>
+                <AppCard sxStyle={{ backgroundColor: '#0A8FDC', mt: 3 }} key={index}>
                     <Box
                         sx={{
                             display: 'flex',

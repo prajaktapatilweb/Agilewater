@@ -4,7 +4,7 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
-import { AppBar, Box, Card, Container, Typography } from '@mui/material';
+import { Box, Container } from '@mui/material';
 import Image from 'next/image';
 import { Fonts } from 'shared/constants/AppEnums';
 import PropTypes from 'prop-types';
@@ -102,19 +102,7 @@ export default function Herosection({ image1, heading, list1 }) {
             </Grid>
           </Grid>
         </Container>
-        {/* SVG separator */}
-        {/* <div className="separator separator-bottom separator-skew zindex-100">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        preserveAspectRatio="none"
-                        version="1.1"
-                        viewBox="0 0 2560 100"
-                        x="0"
-                        y="0"
-                    >
-                        <polygon className="fill-white" points="2560 0 2560 100 0 100" />
-                    </svg>
-                </div> */}
+
       </Grid>
     </div>
   );

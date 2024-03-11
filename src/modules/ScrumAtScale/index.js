@@ -49,13 +49,11 @@ export default function ScrumAtScale() {
 
             <Testcard data={testList2} />
             <RelatedCourses data={atscale} />
-          </Grid>
-          <Grid item xs={12} md={4} sx={{ mb: 5 }}>
             <Atscaledownload />
-          </Grid>
-          <Grid item xs={12} md={4}>
             <FreeCourseSlider images={freecourseList}></FreeCourseSlider>
+
           </Grid>
+
         </Grid>
       </Container>
     </div>
