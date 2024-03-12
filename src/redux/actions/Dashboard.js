@@ -7,6 +7,8 @@ import {
   ADD_NEW_COURSE,
   GET_INDIV_COURSE_DATA,
   GET_COURSE_LIST,
+  ADD_NEW_COUPON,
+  GET_COUPON_LIST,
   GET_BLOG_LIST,
 } from 'shared/constants/ActionTypes';
 import IntlMessages from '@crema/utility/IntlMessages';
@@ -133,6 +135,57 @@ export const onDeleteIndivCourseData = ({ CourseID }) => {
         if (data.status === 200) {
           dispatch({ type: FETCH_SUCCESS });
           dispatch({ type: GET_COURSE_LIST, payload: data.data });
+        } else {
+          dispatch({
+            type: FETCH_ERROR,
+            payload: <IntlMessages id='message.somethingWentWrong' />,
+          });
+        }
+      })
+      .catch((error) => {
+        dispatch({ type: FETCH_ERROR, payload: error.message });
+      });
+  };
+};
+
+export const onPostCouponCode = ({ data, resetForm }) => {
+  return (dispatch) => {
+    dispatch({ type: FETCH_START });
+    jwtAxios
+      .post('/courses/addnewcoupon', { data })
+      .then((data) => {
+        if (data.status === 200) {
+          dispatch({ type: FETCH_SUCCESS });
+          dispatch({ type: ADD_NEW_COUPON, payload: data.data });
+          dispatch({
+            type: SHOW_MESSAGE,
+            payload: 'Coupon Code Added Succefully',
+          });
+          resetForm();
+        } else {
+          dispatch({
+            type: FETCH_ERROR,
+            payload: <IntlMessages id='message.somethingWentWrong' />,
+          });
+        }
+      })
+      .catch((error) => {
+        dispatch({ type: FETCH_ERROR, payload: error.message });
+      });
+  };
+};
+
+export const onGetCouponList = () => {
+  console.log('Redux Get Coupon List ');
+  return (dispatch) => {
+    dispatch({ type: FETCH_START });
+    jwtAxios
+      .get('/courses/getcouponlist')
+      .then((data) => {
+        console.log('Data Rece REdux', data.data);
+        if (data.status === 200) {
+          dispatch({ type: FETCH_SUCCESS });
+          dispatch({ type: GET_COUPON_LIST, payload: data.data });
         } else {
           dispatch({
             type: FETCH_ERROR,

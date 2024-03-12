@@ -7,6 +7,14 @@ export const CityOptions = [
   { key: 3, text: 'Bangalore' },
   { key: 4, text: 'Online' },
 ];
+export const DiscountTypeOptions = [
+  { key: 0, text: '123 Code Discount' },
+  { key: 1, text: 'Group Discount' },
+  { key: 2, text: 'Access Code' },
+  { key: 3, text: 'Flat Discount' },
+  { key: 4, text: 'Loyalty Discount' },
+  { key: 5, text: 'Affiliate Discount' },
+];
 export const CourseOptions = [
   // { key: 0, text: "Title", value: "" },
   {
@@ -66,6 +74,10 @@ export const CocheSubject = [
   { key: 1, text: 'Agile Coach', value: 'Agile Coach' },
   { key: 2, text: 'Career Coach', value: 'Career Coach' },
   { key: 3, text: 'Life Coach', value: 'Life Coach' },
+];
+export const TicketType = [
+  { key: 1, text: 'Early Bird', value: 'Early Bird' },
+  { key: 2, text: 'Regular', value: 'Regular' },
 ];
 export const QuizSubjectList = [
   { key: 1, text: 'SAFE' },

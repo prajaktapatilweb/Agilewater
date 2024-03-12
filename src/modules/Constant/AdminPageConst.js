@@ -4,10 +4,11 @@ export const RouteLinks = {
   id301: {link: '/adminpages/course/add', allowedRole: ['Admin', 'Employee']},
   id302: {link: '/adminpages/course/edit', allowedRole: ['Admin', 'Employee']},
   id303: {link: '/adminpages/course/delete', allowedRole: ['Admin']},
+  id304: {link: '/adminpages/coupons', allowedRole: ['Admin']},
   id401: {link: '/adminpages/coaches/add', allowedRole: ['Admin', 'Employee']},
   id402: {link: '/adminpages/coaches/list', allowedRole: ['Admin', 'Employee']},
   id501: {link: '/adminpages/comments', allowedRole: ['Admin']},
-  id601: {link: '/adminpages/quiz', allowedRole: ['Admin']},
+  id601: {link: '/adminpages/quiz',   allowedRole: ['Admin']},
 };
 export const roterList = [
   {
@@ -41,6 +42,12 @@ export const roterList = [
         color: '#ff0000',
         id: 203,
         name: 'Delete Course',
+      },
+      {
+        linkID: 'id304',
+        color: '#ff0000',
+        id: 204,
+        name: 'Discount Coupons',
       },
     ],
   },
