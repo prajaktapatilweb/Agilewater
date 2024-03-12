@@ -1,5 +1,4 @@
 import React from 'react';
-import Innerlink from 'modules/commanmodules/Innerlink';
 import { AppCard } from '@crema';
 import { Container, Grid } from '@mui/material';
 import Popmdetails from './Popmdetails';
@@ -26,7 +25,7 @@ export default function SafePOPM() {
         ]}
         videosrc='https://www.youtube.com/watch?v=-M-R3Lc-V74'
       />
-      <Innerlink />
+
       <Container sx={{ maxWidth: { xl: 1450 }, marginTop: 10 }}>
         <Grid container spacing={{ xs: 4, md: 8 }}>
           <Grid item xs={12} md={8}>

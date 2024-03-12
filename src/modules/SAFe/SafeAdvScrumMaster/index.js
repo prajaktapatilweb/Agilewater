@@ -4,14 +4,11 @@ import { Container } from '@mui/material';
 import Safeadvinfo from './Safeadvinfo';
 import { AppCard } from '@crema';
 import RelatedCourses from 'modules/commanmodules/RelatedCourses';
-import Innerlink from 'modules/commanmodules/Innerlink';
 import { courseList2 } from 'modules/Constant/Relatecoursedata';
 import { testList1 } from 'modules/Constant/OthershortConst';
 import Testcard from 'modules/commanmodules/TestCard';
-import VideoMain from 'modules/commanmodules/VideoMain';
 import EnquiryForm from 'modules/Forms/EnquiryForm';
 import Discussion from 'modules/Discussion';
-import EnquiryFormik from 'modules/Forms/EnquiryFormik';
 import Herosectiondemo from 'modules/commanmodules/Herosectiondemo';
 import Safeadvaccord from './Safeadvaccord';
 import LabTabs from 'modules/commanmodules/LabTabs';
@@ -32,7 +29,6 @@ export default function SafeAdvScrumMaster() {
         videosrc='https://www.youtube.com/watch?v=-M-R3Lc-V74'
       />
 
-      <Innerlink />
       <Container sx={{ maxWidth: { xl: 1450 }, marginTop: 10 }}>
         <Grid container spacing={{ xs: 4, md: 8 }}>
           <Grid item xs={12} md={8}>

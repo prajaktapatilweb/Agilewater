@@ -16,7 +16,7 @@ export default function PO() {
   return (
     <div>
       <Herosectiondemo
-        image1='/assets/images/courselogo/pologo/ProductOwner.webp'
+        image1='/assets/images/courselogo/pologo/PO2.png'
         // /assets/images/Safe/SAFe-Agilist-Logo.png'
         heading='Scrum Product Owner Certification'
         list1={[

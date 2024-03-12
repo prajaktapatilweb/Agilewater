@@ -855,7 +855,7 @@
 /* end scroll*/
 /*png back shadow*/
 .pngback {
-  filter: drop-shadow(2px 5px 2px rgb(48, 48, 48));
+  filter:drop-shadow(2.5px 2.5px 3px #f0f0f0);
 }
 /*end*/
 /* .react-player border */
