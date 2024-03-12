@@ -16,7 +16,6 @@ export default function ICPAPO() {
     <div>
       <Herosectiondemo
         image1='/assets/images/courselogo/pologo/ICPAPO.png'
-        // /assets/images/Safe/SAFe-Agilist-Logo.png'
         heading='Value-Driven Product Ownership'
         list1={[
           'Applied, hands-on learning',

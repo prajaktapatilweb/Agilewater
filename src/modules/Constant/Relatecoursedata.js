@@ -3,13 +3,13 @@ import { acsmlink, csmlink, icpacclink, icpcatlink, icpentlink, polink, psm1link
 const data = {
 
     IcpACC: {
-        image: '/assets/images/courselogo/ICP-ACC.jpg',
+        image: '/assets/images/courselogo/icplogo/ICP-ACC.webp',
         title: 'Agile Coaching',
         links: icpacclink,
         views: '1.8k',
     },
     Csm: {
-        image: '/assets/images/courselogo/CSM.png',
+        image: '/assets/images/courselogo/smlogo/CSM4.webp',
         title: 'Scrum Master',
         views: '1.2k',
         links: csmlink,
@@ -21,19 +21,19 @@ const data = {
         views: '1.5k',
     },
     Prowner: {
-        image: '/assets/images/courselogo/ProductOwner.jpg',
+        image: '/assets/images/courselogo/pologo/PO2.png',
         title: 'Product Owner',
         links: polink,
         views: '1.2k',
     },
     IcpCat: {
-        image: '/assets/images/courselogo/ICP-CAT.jpg',
+        image: '/assets/images/courselogo/icplogo/ICP-CAT.webp',
         title: 'ICP-CAT',
         links: icpcatlink,
         views: '1.2k',
     },
     PSM1: {
-        image: '/assets/images/courselogo/PSM1.jpg',
+        image: '/assets/images/courselogo/smlogo/psm1.webp',
         title: 'PSM1',
         links: psm1link,
         views: '1.2k',
@@ -45,13 +45,13 @@ const data = {
         views: '1.2k',
     },
     IcpEnt: {
-        image: '/assets/images/courselogo/ICP-ENT.jpg',
+        image: '/assets/images/courselogo/icplogo/ICP-ENT1.png',
         title: 'ICP-ENT',
         links: icpentlink,
         views: '1.2k',
     },
     ACSM: {
-        image: '/assets/images/courselogo/ACSM1.png',
+        image: '/assets/images/courselogo/smlogo/ACSM1.webp',
         title: 'ACSM',
         links: acsmlink,
         views: '1.2k',
