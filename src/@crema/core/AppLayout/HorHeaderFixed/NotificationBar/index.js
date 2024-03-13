@@ -2,15 +2,12 @@ import React from 'react';
 import IconButton from '@mui/material/IconButton';
 import Collapse from '@mui/material/Collapse';
 import { Box, alpha, Container, Hidden } from '@mui/material';
-import Alert from '@mui/material/Alert';
-import CloseIcon from '@mui/icons-material/Close';
 import { useSidebarContext } from '../../../../utility/AppContextProvider/SidebarContextProvider';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import YouTubeIcon from '@mui/icons-material/YouTube';
-import Grid from '@mui/material';
 import CallBack from 'modules/commanmodules/CallBack';
 
 const NotificationBar = () => {
@@ -151,7 +148,7 @@ const NotificationBar = () => {
                   rel='noreferrer'
                   aria-label='instagram'
                 >
-                  <InstagramIcon sx={{ color: '#f26f37' }}></InstagramIcon>
+                  <InstagramIcon sx={{ color: '#f26f37', Width: 30, Height: 30 }}></InstagramIcon>
                 </a>
               </IconButton>
               <IconButton aria-label='linkedin'>
@@ -161,7 +158,7 @@ const NotificationBar = () => {
                   rel='noreferrer'
                   aria-label='linkedin'
                 >
-                  <LinkedInIcon sx={{ color: '#0277bd' }}> </LinkedInIcon>
+                  <LinkedInIcon style={{ color: '#0277bd', Width: 18, Height: 18 }}> </LinkedInIcon>
                 </a>
               </IconButton>
               <IconButton aria-label='youtube'>

@@ -1,12 +1,13 @@
-import React from 'react'
-import { Box, Typography } from '@mui/material'
+import React from 'react';
+import { Box, Typography } from '@mui/material';
+import PropTypes from 'prop-types';
 
 export default function Heading1({ data }) {
     return (
         <div>
             <Box>
-                {data.map((item, index) => (
-                    <Box>
+                {data.map((item, i) => (
+                    <Box key={i}>
 
 
                         <Typography
@@ -54,5 +55,9 @@ export default function Heading1({ data }) {
                 ))}
             </Box>
         </div>
-    )
+    );
 }
+Heading1.propTypes = {
+    data: PropTypes.Object,
+
+};

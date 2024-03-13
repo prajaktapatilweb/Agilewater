@@ -18,7 +18,9 @@ module.exports = {
     'react/jsx-uses-react': 'error',
     'react/jsx-uses-vars': 'error',
     'react/display-name': 'off',
-    'prettier/prettier': 'warn',
+    // 'prettier/prettier': 'warn',
+    'prettier/prettier': 0,
+
     'react/react-in-jsx-scope': 'off',
   },
   settings: {

@@ -4,7 +4,7 @@ export const data = [
 
     {
         id: 1,
-        cover: '/assets/images/courselogo/SAFe-Agilist-Logo.png',
+        cover: '/assets/images/courselogo/safelogo/SAFe-Agilist-Logo.webp',
         title: 'SAFe Agilist',
 
         text: [
@@ -17,7 +17,7 @@ export const data = [
     },
     {
         id: 2,
-        cover: '/assets/images/courselogo/SSM-logo.jpg',
+        cover: '/assets/images/courselogo/safelogo/SSM-logo.webp',
         title: 'SAFe Scrum Master Certification',
 
         text: [
@@ -30,7 +30,7 @@ export const data = [
     },
     {
         id: 3,
-        cover: '/assets/images/courselogo/SASM.jpg',
+        cover: '/assets/images/courselogo/safelogo/SASM3.webp',
 
         title: 'SAFe Advanced Scrum Master Certification',
 
@@ -44,7 +44,7 @@ export const data = [
     },
     {
         id: 4,
-        cover: '/assets/images/courselogo/SP.png',
+        cover: '/assets/images/courselogo/safelogo/SP.webp',
         title: 'SAFe 6.0 For Teams Certification',
 
         text: [
@@ -57,7 +57,7 @@ export const data = [
     },
     {
         id: 5,
-        cover: '/assets/images/courselogo/POPM.jpg',
+        cover: '/assets/images/courselogo/safelogo/POPM.webp',
         title: 'SAFe Product Owner/Product Manager',
         text: [
             'Attend Registered Scrum@Scale Practitioner Training Course.',
@@ -70,7 +70,7 @@ export const data = [
     },
     {
         id: 6,
-        cover: '/assets/images/courselogo/SafeArch.jpg',
+        cover: '/assets/images/courselogo/safelogo/SafeArch.webp',
         title: 'SAFe for Architects (ARCH)',
         text: [
             'Attend Registered Scrum@Scale Practitioner Training Course.',
@@ -168,7 +168,7 @@ export const safedata = [
         ],
 
     },
-]
+];
 export const smdata = [
     {
         id: 1,

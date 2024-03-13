@@ -98,7 +98,7 @@ const AppHeader = () => {
                 },
               }}
             > */}
-            <Link href='/' sx={{ textDecoration: 'none' }}> <Image src={logo1} width={350} height={60} alt='Agilewaters' /></Link>
+            <Link href='/' sx={{ textDecoration: 'none' }}> <Image src={logo1} width={300} height={60} alt='Agilewaters' style={{ width: '300px', maxWidth: '100%', height: '60px' }} /></Link>
             {/* <AppLogo /> */}
             {/* </Box> */}
             <Hidden lgDown>

@@ -1,5 +1,6 @@
+import { Button } from '@mui/material';
 import React from 'react';
-import {FloatingWhatsApp} from 'react-floating-whatsapp';
+import { FloatingWhatsApp } from 'react-floating-whatsapp';
 // import FloatingWhatsApp from "react-floating-whatsapp";
 // import * as contactdetail from "./Constants";
 // import avt from '../public/logo-t.png';
@@ -19,20 +20,22 @@ export default function Whatsappnew() {
         allowEsc='true'
         notification='true'
         notificationDelay='30000'
-        style={{float: 'left'}}
-        // styles={{zIndex:"-1"}}
-        // height="1000"
+        style={{ float: 'left' }}
+
+      // style={{ float: 'left', width: '50px', height: '50px' }}
+      // styles={{zIndex:"-1"}}
+      // height="1000"
       />
-      {/* <div className="alwaysonTop" style={{left:"12px",bottom:"80px"}}>
-          <Button
-            className="btn-lg btn-icon-only rounded-circle ml-3"
-            color="success"
-          >
-            <span className="btn-inner--icon">
-              <i className="fa fa-phone" />
-            </span>
-          </Button>
-        </div> */}
+      {/* <div className="alwaysonTop" style={{ left: "12px", bottom: "80px" }}>
+        <Button
+          className="btn-lg btn-icon-only rounded-circle ml-3"
+          color="success"
+        >
+          <span className="btn-inner--icon">
+            <i className="fa fa-phone" />
+          </span>
+        </Button>
+      </div> */}
     </div>
   );
 }
