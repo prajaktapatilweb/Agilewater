@@ -7,14 +7,56 @@ const { default: mongoose } = require("mongoose");
 const PayOrder = require("../../models/PayOrder");
 require("dotenv").config();
 
+router.post("/verifypayment", async (req, res) => {
+  console.log("Receided", req.body);
+  try {
+    const RecData = req.body;
+    let FilteredData = await CoursesList.aggregate([
+      { $match: { CourseID: RecData.CourseID } },
+      {
+        $project: {
+          PaymentType: {
+            $filter: {
+              input: "$PaymentTypes",
+              as: "item",
+              cond: {
+                $or: [
+                  { $eq: ["$$item._id", new mongoose.Types.ObjectId(RecData?.regDetail?.[0]?.PayID)] },
+                  { $eq: ["$$item._id", new mongoose.Types.ObjectId(RecData?.regDetail?.[1]?.PayID)] },
+                ],
+              },
+            },
+          },
+        },
+      },
+    ]);
+    let wrongentry = false;
+    console.log('Matching Data',FilteredData[0].PaymentType)
+    RecData.regDetail.map((item) => {
+      if (item.Amount !== FilteredData[0].PaymentType.filter((item1) => item1.ConcessionType === item.PayType)[0].Amount) {
+        wrongentry = true;
+      }
+    });
+    console.log('Matching Data',wrongentry)
+
+    if (wrongentry) {
+      return res.status(404).json({ error: "Error" });
+    } else {
+      let FAmount = 0;
+      RecData.regDetail.map((item) => (FAmount += item.Amount * item.RegisteredNumber));
+      console.log("Final Amount ", FAmount);
+      return res.json(FAmount);
+    }
+  } catch (error) {
+    console.log("Rrrr", error);
+    res.status(500).send(error);
+  }
+});
+
 router.post("/orders", async (req, res) => {
   console.log("Receided", req.body);
   try {
     const RecData = req.body;
-    const instance = new Razorpay({
-      key_id: process.env.RAZORPAY_KEY_ID,
-      key_secret: process.env.RAZORPAY_SECRET,
-    });
     let FilteredData = await CoursesList.aggregate([
       { $match: { CourseID: RecData.CourseID } },
       {
@@ -47,10 +89,13 @@ router.post("/orders", async (req, res) => {
     //   return item.Title === RecData.DiscountCoupon;
     // })[0].Percentage;
 
-    // console.log(FilteredData[0].PaymentType[0], DisPercentage);
     if (wrongentry) {
-          return res.status(404).json({error:'Error'});
+      return res.status(404).json({ error: "Error" });
     } else {
+      const instance = new Razorpay({
+        key_id: process.env.RAZORPAY_KEY_ID,
+        key_secret: process.env.RAZORPAY_SECRET,
+      });
       let totalNumber = await PayOrder.countDocuments();
       totalNumber = totalNumber >= 1 ? totalNumber + 1001 : 1001;
       Receipt_ID = `receipt_order_${totalNumber}`;

@@ -1,67 +1,45 @@
 const mongoose = require('mongoose');
 
-const CoursesListSchema = new mongoose.Schema({
+const CouponListSchema = new mongoose.Schema({
   Status: {
     type: String,
     required: true,
     default: 'Active',
   },
-  CourseID: {
+  CouponID: {
     type: String,
     required: true,
     unique: true,
   },
-  CourseName: {
+  DiscountCode: {
     type: String,
     required: true,
+    unique: true,
   },
-  StartDate: {
-    type: Date,
-  },
-  EndDate: {
-    type: Date,
-  },
-  Time: {
+  DiscountType: {
     type: String,
   },
-  ActualCost: {
+  CouponStartDate: {
+    type: Date,
+  },
+  CouponEndDate: {
+    type: Date,
+  },
+  NumberofTimes: {
     type: Number,
   },
-  DiscountedCost: {
+  UsedTimes: {
     type: Number,
   },
-  Trainer: {
+  DiscountAmount: {
+    type: Number,
+  },
+  DiscountAmountType: {
     type: String,
   },
-  Place: {
-    type: String,
+  TicketType: {
+    type: Array,
   },
-  EventDeleteDate: {
-    type: Date,
-  },
-  PaymentTypes: [
-    {
-      ConcessionType: {
-        type: String,
-      },
-      Amount: {
-        type: Number,
-      },
-      CloseDate: {
-        type: Date,
-      },
-      // DiscountCoupon: [
-      //   {
-      //     Title: {
-      //       type: String,
-      //     },
-      //     Percentage: {
-      //       type: Number,
-      //     },
-      //   },
-      // ],
-    },
-  ],
   Created: {
     ByID: {
       type: String,
@@ -108,4 +86,4 @@ const CoursesListSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model('courselist', CoursesListSchema);
+module.exports = mongoose.model('couponlist', CouponListSchema);
