@@ -103,12 +103,12 @@ const validationSchema = yup.object({
     yup.object({
       Amount: yup.string().required('It is required'),
       CloseDate: yup.date().required('It is required'),
-      DiscountCoupon: yup.array().of(
-        yup.object({
-          Title: yup.string().required('It is required'),
-          Percentage: yup.string().required('It is required'),
-        }),
-      ),
+      // DiscountCoupon: yup.array().of(
+      //   yup.object({
+      //     Title: yup.string().required('It is required'),
+      //     Percentage: yup.string().required('It is required'),
+      //   }),
+      // ),
     }),
   ),
 });
@@ -144,12 +144,12 @@ const AddCourseForm = ({CourseID, closefn}) => {
 
   const onSubmit = async (data, {setSubmitting, resetForm}) => {
     console.log('Signup Form Submission', data);
-    data.PaymentTypes[0].DiscountCoupon.map((item) => {
-      item.Title = item.Title.toUpperCase();
-    });
-    data.PaymentTypes[1].DiscountCoupon.map((item) => {
-      item.Title = item.Title.toUpperCase();
-    });
+    // data.PaymentTypes[0].DiscountCoupon.map((item) => {
+    //   item.Title = item.Title.toUpperCase();
+    // });
+    // data.PaymentTypes[1].DiscountCoupon.map((item) => {
+    //   item.Title = item.Title.toUpperCase();
+    // });
     console.log('Signup Form Submission', data);
     setSubmitting(true);
     CourseID
@@ -170,16 +170,16 @@ const AddCourseForm = ({CourseID, closefn}) => {
     EventDeleteDate: CourseData?.EventDeleteDate || '',
     PaymentTypes: [
       {
-        ConcessionType: 'EarlyBird',
+        ConcessionType: 'Early Bird',
         Amount: '',
         CloseDate: '',
-        DiscountCoupon: [{Title: '', Percentage: '', MaxTimeAppl: ''}],
+        // DiscountCoupon: [{Title: '', Percentage: '', MaxTimeAppl: ''}],
       },
       {
         ConcessionType: 'Regular',
         Amount: '',
         CloseDate: '',
-        DiscountCoupon: [{Title: '', Percentage: '', MaxTimeAppl: ''}],
+        // DiscountCoupon: [{Title: '', Percentage: '', MaxTimeAppl: ''}],
       },
     ],
   };
@@ -192,16 +192,16 @@ const AddCourseForm = ({CourseID, closefn}) => {
           CourseData?.PaymentTypes[index].ConcessionType || 'Regular');
     initialValues.PaymentTypes[index].Amount = item.Amount || '';
     initialValues.PaymentTypes[index].CloseDate = item.CloseDate || '';
-    initialValues.PaymentTypes[index].DiscountCoupon = [];
-    item.DiscountCoupon.map((item2, index2) => {
-      initialValues.PaymentTypes[index].DiscountCoupon[index2] = {};
-      initialValues.PaymentTypes[index].DiscountCoupon[index2].Title =
-        item2.Title;
-      initialValues.PaymentTypes[index].DiscountCoupon[index2].Percentage =
-        item2.Percentage;
-      initialValues.PaymentTypes[index].DiscountCoupon[index2].MaxTimeAppl =
-        item2.MaxTimeAppl;
-    });
+    // initialValues.PaymentTypes[index].DiscountCoupon = [];
+    // item.DiscountCoupon.map((item2, index2) => {
+    //   initialValues.PaymentTypes[index].DiscountCoupon[index2] = {};
+    //   initialValues.PaymentTypes[index].DiscountCoupon[index2].Title =
+    //     item2.Title;
+    //   initialValues.PaymentTypes[index].DiscountCoupon[index2].Percentage =
+    //     item2.Percentage;
+    //   initialValues.PaymentTypes[index].DiscountCoupon[index2].MaxTimeAppl =
+    //     item2.MaxTimeAppl;
+    // });
   });
 
   return (
@@ -447,7 +447,7 @@ const AddCourseForm = ({CourseID, closefn}) => {
                       <Typography>MM/DD/YYYY</Typography>
                     )}
                   </Grid>
-                  <Grid item xs={12}>
+                  {/* <Grid item xs={12}>
                     <CustomizedFieldArray2TextBox
                       PTIndex={0}
                       arrayField='DiscountCoupon'
@@ -455,7 +455,7 @@ const AddCourseForm = ({CourseID, closefn}) => {
                       fieldName2='Applicable Percentage discount'
                       fieldName3='Maximum times Applicable'
                     />
-                  </Grid>
+                  </Grid> */}
                 </Grid>
               </Box>
               {/* *****************Payment Related Information  Finished 1*/}
@@ -471,7 +471,7 @@ const AddCourseForm = ({CourseID, closefn}) => {
                   <Grid item xs={6}>
                     <AppTextField
                       type='number'
-                      label={<IntlMessages id='Course.earlybirdcost' />}
+                      label={'Regular Registration Price'}
                       disabled={values.isSubmitting}
                       name='PaymentTypes[1]Amount'
                       variant='outlined'
@@ -503,7 +503,7 @@ const AddCourseForm = ({CourseID, closefn}) => {
                       <Typography>MM/DD/YYYY</Typography>
                     )}
                   </Grid>
-                  <Grid item xs={12}>
+                  {/* <Grid item xs={12}>
                     <CustomizedFieldArray2TextBox
                       PTIndex={1}
                       arrayField='DiscountCoupon'
@@ -511,7 +511,7 @@ const AddCourseForm = ({CourseID, closefn}) => {
                       fieldName2='Applicable Percentage discount'
                       fieldName3='Maximum times Applicable'
                     />
-                  </Grid>
+                  </Grid> */}
                 </Grid>
               </Box>
               {/* <Divider component="li" sx={{borderBottomWidth: 4}} /> */}

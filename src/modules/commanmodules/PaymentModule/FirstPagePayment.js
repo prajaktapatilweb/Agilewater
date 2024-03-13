@@ -22,12 +22,19 @@ import {Form, Formik} from 'formik';
 import * as yup from 'yup';
 import AppTextField from '@crema/core/AppFormComponents/AppTextField';
 import {Fonts} from 'shared/constants/AppEnums';
+import axios from 'axios';
 
 export default function FirstPagePayment({data, open, onClose}) {
   // const [regNumber, setRegNumber] = React.useState({EarlyBird: 0, Regular: 0});
   const [regDetail, setRegDetail] = React.useState([]);
   const [PartcipantDetails, setPartcipantDetail] = React.useState([]);
   const [pageno, setPageNo] = React.useState(1);
+  // const [DiscountCouponCode, setDiscountCouponCode] = React.useState('')
+  const [couponCodeDetail, setCouponCodeDetail] = React.useState({
+    CouponApplied: false,
+    FinalAmount: 0,
+    Code: '',
+  });
   const [GSTDetail, setGSTDetail] = React.useState({
     isGSTNo: false,
     CompanyName: '',
@@ -44,6 +51,7 @@ export default function FirstPagePayment({data, open, onClose}) {
     setRegDetail([]);
     setPartcipantDetail([]);
     setPageNo(1);
+    setCouponCodeDetail();
     // onClose();
   }
   let Amount = 0;
@@ -55,6 +63,9 @@ export default function FirstPagePayment({data, open, onClose}) {
   regDetail?.map((item) => {
     Amount += item.Amount * item.RegisteredNumber;
   });
+  Amount = couponCodeDetail?.CouponApplied
+    ? couponCodeDetail.FinalAmount
+    : Amount;
   return (
     <Dialog
       sx={{
@@ -150,6 +161,47 @@ export default function FirstPagePayment({data, open, onClose}) {
                   <strong>{Amount} </strong>
                 </Typography>
               </Stack>
+            </Stack>
+
+            <Stack direction='row' mx={6} spacing={2}>
+              <TextField
+                label='Discount Coupon if available'
+                value={couponCodeDetail?.Code}
+                disabled={couponCodeDetail?.CouponApplied}
+                variant='outlined'
+                sx={{width: '50%'}}
+                onChange={(e) => {
+                  setCouponCodeDetail({
+                    CouponApplied: false,
+                    FinalAmount: 0,
+                    Code: e.target.value,
+                  });
+                }}
+              />
+              <Button
+                variant='contained'
+                disabled={couponCodeDetail?.CouponApplied}
+                onClick={async () => {
+                  console.log(data.CourseID, regDetail, PartcipantDetails);
+                  setCouponCodeDetail({
+                    CouponApplied: true,
+                    FinalAmount: 1000,
+                    Code: couponCodeDetail.Code,
+                  });
+                  const result = await axios.post(
+                    'http://localhost:4000/payment/verifypayment',
+                    {
+                      CourseID: data.CourseID,
+                      regDetail: regDetail,
+                      PartcipantDetails: PartcipantDetails,
+                    },
+                  );
+                  console.log('Resuult',result)
+                }}
+              >
+                Apply
+              </Button>
+              <pre>{JSON.stringify(couponCodeDetail, null, 2)}</pre>
             </Stack>
             <Stack
               direction='row'

@@ -5,6 +5,7 @@ const auth = require("../../middleware/auth");
 const CoursesList = require("../../models/CoursesList");
 const router = express.Router();
 const moment = require("moment");
+const CouponList = require("../../models/CouponList");
 
 async function updateStatus(req, res) {
   try {
@@ -40,7 +41,7 @@ async function getCoursList(req, res) {
         Date: 1,
         Time: 1,
         Trainer: 1,
-        PaymentTypes:1
+        PaymentTypes: 1,
       },
     },
     {
@@ -76,7 +77,7 @@ async function getCoursList(req, res) {
         Date: 1,
         Time: 1,
         Trainer: 1,
-        PaymentTypes:1
+        PaymentTypes: 1,
         // isExpired: {
         //   // new field
         //   $cond: {
@@ -89,6 +90,14 @@ async function getCoursList(req, res) {
     },
   ]);
   console.log("first12", NewList[2]);
+
+  return res.status(200).json({ List: NewList });
+}
+
+async function getCouponList(req, res) {
+  console.log("In get Coupon List");
+  let NewList = await CouponList.find();
+  console.log("first12", NewList);
 
   return res.status(200).json({ List: NewList });
 }
@@ -127,7 +136,7 @@ router.get("/getindividualcourse", async (req, res) => {
         StartDate: 1,
         Time: 1,
         Trainer: 1,
-        PaymentTypes:1,
+        PaymentTypes: 1,
         _id: 0,
       }
     );
@@ -210,7 +219,7 @@ router.put("/updatecourse/:CourseID", auth, async (req, res) => {
         {
           $set: newData,
           $push: {
-            Updation: [ 
+            Updation: [
               {
                 ByID: req.user.gid,
                 ByName: req.user.name,
@@ -261,6 +270,111 @@ router.delete("/DeleteCourse/:CourseID", auth, async (req, res) => {
     getCoursList(req, res);
   } catch (err) {
     console.log("errr", err);
+    return res.status(500).json({ error: `Server Error: ${err}` });
+  }
+});
+
+router.post("/addnewcoupon", auth, async (req, res) => {
+  console.log("In add new Coupon Code post request");
+  try {
+    if (req.body.data?.CouponID === null) {
+      console.log("In Add Entry");
+      const data = req.body.data;
+      let totalNumber = await CouponList.countDocuments();
+      totalNumber = totalNumber >= 1 ? totalNumber + 1 : 1;
+      data.CouponID = `DCC-${totalNumber}`;
+
+      data.Created = {};
+      data.Created.ByID = req.user.gid;
+      data.Created.ByName = req.user.name;
+      FinalData = new CouponList(data);
+      console.log("Final Data", FinalData);
+      await FinalData.save()
+        .then(() => {
+          getCouponList(req, res);
+          // return res.status(200).json({ data: "Success" });
+        })
+        .catch((err) => {
+          console.log("Errot", err);
+          return res.status(500).json({ error: `Problem in Storing to MongoDB: ${err}` });
+        });
+    } else {
+      //Write code for Update the Coupon Data. first Check is any points changes and record what are changes
+      console.log("Reached to Put section ");
+      const CouponID = req.body.data.CouponID;
+      const newData = req.body.data;
+      let oldData = await CouponList.findOne({ CouponID });
+      let updatedThings = [];
+      let cnt = 0;
+      console.log("DDDD", CouponID, "SSS", oldData, "TTTT", newData);
+      for (const property in newData) {
+        console.log("DDD", property);
+        if (`${newData[property]}` !== `${oldData[property]}`) {
+          if (property.includes("Date")) {
+            if (`${oldData[property]}` !== `${new Date(newData[property])}`) {
+              updatedThings.push({
+                keyname: property,
+                oldValue: oldData[property],
+                newValue: newData[property],
+              });
+              cnt++;
+            }
+          } else {
+            updatedThings.push({
+              keyname: property,
+              oldValue: oldData[property],
+              newValue: newData[property],
+            });
+            cnt++;
+          }
+          // updatedString += `${property} : ${oldData[property]} --> ${newData[property]} \n`;
+        }
+      }
+      console.log("first", cnt, updatedThings);
+
+      if (cnt > 0) {
+        console.log("To update");
+        await CouponList.updateOne(
+          { CouponID: CouponID },
+          {
+            $set: newData,
+            $push: {
+              Updation: [
+                {
+                  ByID: req.user.gid,
+                  ByName: req.user.name,
+                  OnDate: new Date(),
+                  Updates: updatedThings,
+                },
+              ],
+            },
+          }
+        )
+          .then(async () => {
+            let enterData = await CouponList.findOne({ CouponID });
+            console.log("The renter data", enterData);
+            getCouponList(req, res);
+          })
+          .catch((err) => {
+            console.log("errr", err);
+            return res.status(500).json({ error: "Server Error" });
+          });
+      } else {
+        return res.json("Nothing to update");
+      }
+    }
+  } catch (err) {
+    console.log("Error", err);
+    return res.status(500).json({ error: `Server Error: ${err}` });
+  }
+});
+
+router.get("/getcouponlist", async (req, res) => {
+  console.log("In request Get Coupon List ");
+  try {
+    getCouponList(req, res);
+  } catch (err) {
+    console.log("Error ", err);
     return res.status(500).json({ error: `Server Error: ${err}` });
   }
 });

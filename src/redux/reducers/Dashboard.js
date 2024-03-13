@@ -2,12 +2,15 @@ import {
   GET_COURSE_LIST,
   ADD_NEW_COURSE,
   GET_INDIV_COURSE_DATA,
+  ADD_NEW_COUPON,
+  GET_COUPON_LIST,
 } from 'shared/constants/ActionTypes';
 
 const initialState = {
   courselist: null,
   result: null,
   Coursedata: null,
+  couponlist: null,
 };
 
 const dashboardReducer = (state = initialState, action) => {
@@ -17,7 +20,6 @@ const dashboardReducer = (state = initialState, action) => {
         ...state,
         courselist: action.payload,
       };
-
     case ADD_NEW_COURSE:
       return {
         ...state,
@@ -29,7 +31,16 @@ const dashboardReducer = (state = initialState, action) => {
         ...state,
         Coursedata: action.payload,
       };
-
+    case ADD_NEW_COUPON:
+      return {
+        ...state,
+        couponlist: action.payload,
+      };
+    case GET_COUPON_LIST:
+      return {
+        ...state,
+        couponlist: action.payload,
+      };
     default:
       return state;
   }
