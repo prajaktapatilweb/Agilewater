@@ -6,9 +6,9 @@ require('dotenv').config();
 const helmet = require('helmet');
 
 // For production
-// const dev = process.env.NODE_ENV === 'production';
+const dev = process.env.NODE_ENV === 'production';
 // For Development
-const dev = process.env.NODE_ENV !== 'production';
+// const dev = process.env.NODE_ENV !== 'production';
 const appn = next({ dev });
 const handle = appn.getRequestHandler();
 const PORT = process.env.PORT || 4000;
