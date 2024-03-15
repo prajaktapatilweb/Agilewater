@@ -3,10 +3,10 @@ import axios from 'axios';
 console.log('On hit');
 const jwtAxios = axios.create({
   // baseURL: 'https://crema-mongo-api.herokuapp.com/api/', // YOUR_API_URL HERE
-  baseURL:
-    process.env.NODE_ENV === 'development'
-      ? 'http://localhost:4000/api/'
-      : 'http://localhost:4000/api/',
+  baseURL:'http://52.221.68.55:4000/api',
+    // process.env.NODE_ENV === 'development'
+    //   ? 'http://localhost:4000/api/'
+    //   : 'http://localhost:4000/api/',
       // : 'https://agilewaterback.vercel.app/api', // YOUR_API_URL HERE
   headers: {
     'Content-Type': 'application/json',
