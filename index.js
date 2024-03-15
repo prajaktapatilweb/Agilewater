@@ -9,6 +9,7 @@ const helmet = require('helmet');
 const dev = process.env.NODE_ENV === 'production';
 // For Development
 // const dev = process.env.NODE_ENV !== 'production';
+console.log('DDD',dev)
 const appn = next({ dev });
 const handle = appn.getRequestHandler();
 const PORT = process.env.PORT || 4000;
