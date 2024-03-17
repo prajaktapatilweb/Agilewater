@@ -7,7 +7,7 @@ const withTM = require('next-transpile-modules')([
 module.exports = withTM({
   reactStrictMode: true,
   swcMinify: true,
-  images: { domains: ['cdn.sanity.io'] },
+  images: { domains: ['cdn.sanity.io','52.221.68.55'] },
   webpack: (config) => {
     config.resolve.alias = {
       ...config.resolve.alias,
