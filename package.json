@@ -36,7 +36,6 @@
     "firebase": "^9.0.2",
     "formik": "^2.2.9",
     "framer-motion": "6.5.1",
-    "googleapis": "^134.0.0",
     "helmet": "^7.0.0",
     "jsonwebtoken": "^9.0.1",
     "moment": "^2.29.1",

@@ -1,5 +1,4 @@
 const express = require("express");
-const { getAuthToken, getSpreadSheetValues } = require("../../Database/googleSheetsService");
 const auth = require("../../middleware/auth");
 const CoursesList = require("../../models/CoursesList");
 const router = express.Router();

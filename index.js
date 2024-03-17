@@ -6,12 +6,13 @@ require('dotenv').config();
 const helmet = require('helmet');
 
 // For production
-const dev = process.env.NODE_ENV === 'production';
+// const dev = process.env.NODE_ENV === 'production';
 // For Development
-// const dev = process.env.NODE_ENV !== 'production';
-console.log('DDD',dev)
+const dev = process.env.NODE_ENV !== 'production';
+console.log('DDD',dev,process.env.NODE_ENV)
 const appn = next({ dev });
 const handle = appn.getRequestHandler();
+console.log('hdna',appn)
 const PORT = process.env.PORT || 4000;
 
 connectDB();
@@ -42,10 +43,7 @@ app.use(helmet());
 // app.use(limiter)
 // Define Route
 app.use('/userFileUploads', express.static(__dirname + '/public/userFileUploads'));
-app.use(
-  '/api/studentdata',
-  require('./server/routes/api/googleSheetCourse'),
-);
+
 app.use('/api/courses', require('./server/routes/api/courses'));
 app.use('/api/coaches', require('./server/routes/api/coaches'));
 app.use('/api/comments', require('./server/routes/api/comments'));

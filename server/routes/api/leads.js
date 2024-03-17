@@ -54,12 +54,12 @@ router.post('/addnewlead', async (req, res) => {
     Date & Time :${FinalData.Created.OnDate} \n
     IP Address: ${clientIp} \n`;
 
-      await client.sendMail({
-        from: `Web Developer <${process.env.EMAILID}>`,
-        to: 'prajubpatil@gmail.com',
-        subject: 'emailSubject',
-        text: emailContent,
-      });
+      // await client.sendMail({
+      //   from: `Web Developer <${process.env.EMAILID}>`,
+      //   to: 'prajubpatil@gmail.com',
+      //   subject: 'emailSubject',
+      //   text: emailContent,
+      // });
 
       console.log('Final Data', FinalData);
       await FinalData.save()
@@ -106,12 +106,12 @@ router.post('/addnewexpert', async (req, res) => {
     Date & Time :${FinalData.Created.OnDate} \n
     IP Address: ${clientIp} \n`;
 
-      await client.sendMail({
-        from: `Web Developer <${process.env.EMAILID}>`,
-        to: 'prajubpatil@gmail.com',
-        subject: 'emailSubject',
-        text: emailContent,
-      });
+      // await client.sendMail({
+      //   from: `Web Developer <${process.env.EMAILID}>`,
+      //   to: 'prajubpatil@gmail.com',
+      //   subject: 'emailSubject',
+      //   text: emailContent,
+      // });
 
       console.log('Final Data', FinalData);
       await FinalData.save()
