@@ -41,6 +41,7 @@ app.use(helmet());
 // Apply the rate limiting middleware to all requests
 // app.use(limiter)
 // Define Route
+app.use('/userFileUploads', express.static(__dirname + '/public/userFileUploads'));
 app.use(
   '/api/studentdata',
   require('./server/routes/api/googleSheetCourse'),
