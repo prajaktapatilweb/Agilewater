@@ -1,6 +1,5 @@
 const express = require("express");
 const { getAuthToken, getSpreadSheetValues } = require("../../Database/googleSheetsService");
-const { indexof } = require("stylis");
 const auth = require("../../middleware/auth");
 const CoursesList = require("../../models/CoursesList");
 const router = express.Router();

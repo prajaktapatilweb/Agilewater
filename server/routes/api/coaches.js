@@ -1,5 +1,4 @@
 const express = require("express");
-const { indexof } = require("");
 const auth = require("../../middleware/auth");
 const router = express.Router();
 const moment = require("moment");

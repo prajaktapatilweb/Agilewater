@@ -3,7 +3,6 @@ const {
   getAuthToken,
   getSpreadSheetValues,
 } = require('../../Database/googleSheetsService');
-const {indexof} = require('stylis');
 const router = express.Router();
 
 router.get('/googlesheet', async (req, res) => {
