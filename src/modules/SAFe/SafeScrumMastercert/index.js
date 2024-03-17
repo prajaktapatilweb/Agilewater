@@ -35,7 +35,7 @@ export default function SafeScrumMastercert() {
           <Grid item xs={12} md={8}>
             {/* <CourseTable /> */}
             <CourseTable />
-            <PaymentModule />
+            {/* <PaymentModule /> */}
           </Grid>
           <Grid item xs={12} md={4}>
             <SlideBasicArrow data={usersPhotoList} />

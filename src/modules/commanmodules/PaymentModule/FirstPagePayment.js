@@ -167,35 +167,38 @@ export default function FirstPagePayment({data, open, onClose}) {
               <TextField
                 label='Discount Coupon if available'
                 value={couponCodeDetail?.Code}
-                disabled={couponCodeDetail?.CouponApplied}
+                // disabled={couponCodeDetail?.CouponApplied}
                 variant='outlined'
                 sx={{width: '50%'}}
                 onChange={(e) => {
                   setCouponCodeDetail({
                     CouponApplied: false,
                     FinalAmount: 0,
-                    Code: e.target.value,
+                    Code: e.target.value.toUpperCase(),
                   });
                 }}
               />
               <Button
                 variant='contained'
-                disabled={couponCodeDetail?.CouponApplied}
+                // disabled={couponCodeDetail?.CouponApplied}
                 onClick={async () => {
                   console.log(data.CourseID, regDetail, PartcipantDetails);
-                  setCouponCodeDetail({
-                    CouponApplied: true,
-                    FinalAmount: 1000,
-                    Code: couponCodeDetail.Code,
-                  });
                   const result = await axios.post(
                     'http://localhost:4000/payment/verifypayment',
                     {
                       CourseID: data.CourseID,
                       regDetail: regDetail,
                       PartcipantDetails: PartcipantDetails,
+                      CouponDetail:couponCodeDetail
                     },
                   );
+                  if(result){
+                    setCouponCodeDetail({
+                      CouponApplied: true,
+                      FinalAmount: result.data,
+                      Code: couponCodeDetail.Code,
+                    });
+                  }
                   console.log('Resuult',result)
                 }}
               >

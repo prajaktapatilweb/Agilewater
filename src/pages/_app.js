@@ -49,7 +49,9 @@ export default function MyApp(props) {
     },
   };
   const onLoad = () => {
-    tawkMessengerRef.current.popup();
+    setTimeout(function () {
+      tawkMessengerRef.current.popup();
+    }, 20000);
   };
 
   !(splitRoute[1] !== 'authlogin' || splitRoute[1] !== 'adminpages') &&
@@ -86,7 +88,7 @@ export default function MyApp(props) {
                           propertyId='5da463fbfbec0f2fe3b9a18a'
                           widgetId='default'
                           customStyle={customStyle}
-                          onLoad={onLoad}
+                          // onLoad={onLoad}
                           ref={tawkMessengerRef}
                         />
                       )}
