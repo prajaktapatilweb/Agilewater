@@ -123,24 +123,30 @@ const AddCoachForm = ({CoachData, closefn}) => {
     Summary: CoachData?.Summary,
   };
   const validationSchema = yup.object({
-    CoachName: yup
-      .string()
-      .required(
-        <>
-          <IntlMessages id='Coach.Name' /> required !
-        </>,
-      )
-      .test(
-        'checkIfExist',
-        `The Coach Name is already added`,
-        function (value) {
-          console.log(
-            'ssss',
-            CoachList.some((item) => item.CoachName === value),
-          );
-          return !CoachList.some((item) => item.CoachName === value);
-        },
-      ),
+    CoachName: CoachID
+      ? yup.string().required(
+          <>
+            <IntlMessages id='Coach.Name' /> required !
+          </>,
+        )
+      : yup
+          .string()
+          .required(
+            <>
+              <IntlMessages id='Coach.Name' /> required !
+            </>,
+          )
+          .test(
+            'checkIfExist',
+            `The Coach Name is already added`,
+            function (value) {
+              console.log(
+                'ssss',
+                CoachList.some((item) => item.CoachName === value),
+              );
+              return !CoachList.some((item) => item.CoachName === value);
+            },
+          ),
     Experience: yup
       .string()
       .required(
@@ -157,7 +163,7 @@ const AddCoachForm = ({CoachData, closefn}) => {
           <IntlMessages id='Coach.country' /> required !
         </>,
       )
-      .matches(/^[aA-zZ]+$/, 'Only alphabets are allowed for this field '),
+      .matches(/^[aA-zZ ]+$/, 'Only alphabets are allowed for this field '),
 
     Avatar: yup.string().required(
       <>
