@@ -4,6 +4,7 @@ console.log('On hit ENV', process.env.NODE_ENV);
 const jwtAxios = axios.create({
   // baseURL: 'https://crema-mongo-api.herokuapp.com/api/', // YOUR_API_URL HERE
 	baseURL: 'http://43.205.240.226:3000/api/', // YOUR_API_URL HERE
+	baseURL: 'http://52.221.268.55:3000/api/', // YOUR_API_URL HERE
   // : 'https://agilewaterback.vercel.app/api', // YOUR_API_URL HERE
   headers: {
     'Content-Type': 'application/json',
