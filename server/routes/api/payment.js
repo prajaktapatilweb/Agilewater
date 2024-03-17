@@ -5,12 +5,26 @@ const crypto = require("crypto");
 const CoursesList = require("../../models/CoursesList");
 const { default: mongoose } = require("mongoose");
 const PayOrder = require("../../models/PayOrder");
+const CouponList = require("../../models/CouponList");
 require("dotenv").config();
 
 router.post("/verifypayment", async (req, res) => {
-  console.log("Receided", req.body);
+  console.log("Receided", req.body, new Date());
   try {
     const RecData = req.body;
+    let DiscountCouponAvailable = await CouponList.findOne({
+      DiscountCode: RecData.CouponDetail.Code,
+      Status: "Active",
+    }).countDocuments();
+    let DiscountCouponData = await CouponList.findOne(
+      {
+        DiscountCode: RecData.CouponDetail.Code,
+        Status: "Active",
+        CouponStartDate: { $lte: new Date() },
+        CouponEndDate: { $gte: new Date() },
+      },
+      { NumberofTimes: 1, UsedTimes: 1, DiscountAmountType: 1, TicketType: 1, DiscountAmount: 1 }
+    );
     let FilteredData = await CoursesList.aggregate([
       { $match: { CourseID: RecData.CourseID } },
       {
@@ -30,20 +44,29 @@ router.post("/verifypayment", async (req, res) => {
         },
       },
     ]);
+
     let wrongentry = false;
-    console.log('Matching Data',FilteredData[0].PaymentType)
-    RecData.regDetail.map((item) => {
-      if (item.Amount !== FilteredData[0].PaymentType.filter((item1) => item1.ConcessionType === item.PayType)[0].Amount) {
-        wrongentry = true;
-      }
-    });
-    console.log('Matching Data',wrongentry)
+    let FAmount = 0;
+    console.log("Matching Data", FilteredData[0].PaymentType, DiscountCouponData);
+    if (DiscountCouponData.NumberofTimes > DiscountCouponData.UsedTimes) {
+      RecData.regDetail.map((item) => {
+        if (DiscountCouponData.TicketType.includes(item.PayType) && DiscountCouponData.DiscountAmountType === "Percentage") {
+          FAmount += item.Amount * item.RegisteredNumber * (1 - DiscountCouponData.DiscountAmount / 100);
+        } else {
+          FAmount += item.Amount * item.RegisteredNumber;
+        }
+        if (item.Amount !== FilteredData[0].PaymentType.filter((item1) => item1.ConcessionType === item.PayType)[0].Amount) {
+          wrongentry = true;
+        }
+      });
+    } else {
+      return res.status(200).json({ reason: "Discount Coupon Expired" });
+    }
+    console.log("Matching Data", wrongentry, FAmount);
 
     if (wrongentry) {
       return res.status(404).json({ error: "Error" });
     } else {
-      let FAmount = 0;
-      RecData.regDetail.map((item) => (FAmount += item.Amount * item.RegisteredNumber));
       console.log("Final Amount ", FAmount);
       return res.json(FAmount);
     }
