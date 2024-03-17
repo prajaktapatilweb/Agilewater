@@ -9,10 +9,10 @@ const helmet = require('helmet');
 // const dev = process.env.NODE_ENV === 'production';
 // For Development
 const dev = process.env.NODE_ENV !== 'production';
-console.log('DDD',dev,process.env.NODE_ENV)
+console.log('DDD',dev,process.env.NODE_ENV);
 const appn = next({ dev });
 const handle = appn.getRequestHandler();
-console.log('hdna',appn)
+console.log('hdna',appn);
 const PORT = process.env.PORT || 4000;
 
 connectDB();
@@ -37,7 +37,10 @@ app.use(express.json({ limit: '10kb' })); // Body limit is 10
 //Not used because not found correct dependancy.
 
 // Preventing XSS Attacks:Setting special HTTP headers for project
-app.use(helmet());
+//app.use(helmet());
+//app.use(helmet({ crossOriginResourcePolicy: { policy: "same-site" } }));
+app.use(helmet( {contentSecurityPolicy:false  }));
+//app.use(helmet( {contentSecurityPolicy: {directives:{"default-src":["self","example.com"]}} }));
 
 // Apply the rate limiting middleware to all requests
 // app.use(limiter)
