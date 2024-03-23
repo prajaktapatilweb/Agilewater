@@ -1,6 +1,7 @@
 import { Grid, Container, Box, Typography, Button } from '@mui/material';
 import Image from 'next/image';
 import React from 'react';
+import AssistantPhotoIcon from '@mui/icons-material/AssistantPhoto';
 
 export default function Herohome() {
     return (
@@ -65,7 +66,7 @@ export default function Herohome() {
                         <Box className='world-map' sx={{ width: { xs: '100%', sm: '100%', md: '60%' } }}>
 
                             <Image
-                                src='/assets/images/test6-min.webp'
+                                src='/assets/images/map1.png'
                                 width={857}
                                 height={536}
                                 // sizes="(max-width: 768px) 90vw, 400px"
@@ -76,9 +77,11 @@ export default function Herohome() {
                                 alt='worldmap'
                             ></Image>
                             <Box className='pin usa'>
-                                <span>
+                                <span style={{ fontWeight: 600, color: 'purple', }}>
+                                    <AssistantPhotoIcon sx={{ ml: 10, color: 'greenyellow' }} /><br />
                                     San Francisco<br></br>
                                     California -USA
+
                                 </span>
                             </Box>
                             <Box className='pin abc'>
@@ -94,7 +97,9 @@ export default function Herohome() {
                                 <span></span>
                             </Box>
                             <Box className='pin india'>
-                                <span>
+                                <span style={{ fontWeight: 600, color: 'purple', }}>
+                                    <br></br>
+                                    <AssistantPhotoIcon sx={{ color: 'greenyellow' }} /><br />
                                     Pune <br></br> India
                                 </span>
                             </Box>

@@ -19,7 +19,7 @@ const Testi = ({ item }) => {
           {item.description}
         </Typography>
         <h3 className="title">{item.name}
-          <span className="post"> - Web Developer</span>
+          {/* <span className="post"> - Web Developer</span> */}
         </h3>
       </div>
 

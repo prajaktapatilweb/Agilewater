@@ -11,6 +11,7 @@ import { useEffect } from 'react'
 import CoachDetailData from 'modules/AdminPages/Coaches/List/CoachDetailData'
 import { AppGrid } from '@crema'
 import AppActionGridCard from '@crema/core/New/AppActionGridCard'
+import userList from '@crema/services/db/userList'
 
 export default function Agilecoaching() {
 
@@ -31,7 +32,7 @@ export default function Agilecoaching() {
                 <Box sx={{ textAlign: 'center', my: 10 }} >
                     <Typography variant='h7'>Choose From Our Top Agile Coaches</Typography>
                 </Box>
-                {/* <CoachProfile data={CoachList} /> */}
+                {/* <CoachProfile data={userList} /> */}
 
                 {AgileCoachList && (
                     <AppGrid

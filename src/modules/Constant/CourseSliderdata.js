@@ -273,7 +273,7 @@ export const agiledata = [
     },
     {
         id: 4,
-        cover: '/assets/images/courselogo/icplogo/ICP-ATF.webp',
+        cover: '/assets/images/courselogo/icplogo/ICP-ATF.png',
         title: 'ICP Agile Team Facilitation Certification',
         text: [
             'Attend Registered Scrum@Scale Practitioner Training Course.',
@@ -284,7 +284,7 @@ export const agiledata = [
     },
     {
         id: 5,
-        cover: '/assets/images/courselogo/icplogo/ICP-BAF.webp',
+        cover: '/assets/images/courselogo/icplogo/ICP-BAF.png',
         title: 'ICP-BAF Certification Training',
         text: [
             'Attend Registered Scrum@Scale Practitioner Training Course.',
@@ -331,7 +331,7 @@ export const agiledata = [
 export const podata = [
     {
         id: 1,
-        cover: '/assets/images/courselogo/pologo/ProductOwner.webp',
+        cover: '/assets/images/courselogo/pologo/PO2.png',
         title: 'Scrum Product Owner Certification',
         text: [
             'Attend Registered Scrum@Scale Practitioner Training Course.',
@@ -345,7 +345,7 @@ export const podata = [
 
     {
         id: 2,
-        cover: '/assets/images/courselogo/pologo/PSPO-1.webp',
+        cover: '/assets/images/courselogo/pologo/pspo1.webp',
         title: ' PROFESSIONAL SCRUM PRODUCT OWNER™ I',
         text: [
             'Attend Registered Scrum@Scale Practitioner Training Course.',
@@ -356,7 +356,7 @@ export const podata = [
     },
     {
         id: 3,
-        cover: '/assets/images/courselogo/pologo/PSPO-2.webp',
+        cover: '/assets/images/courselogo/pologo/pspo2.webp',
         title: 'PROFESSIONAL SCRUM PRODUCT OWNER™ II',
         text: [
             'Attend Registered Scrum@Scale Practitioner Training Course.',

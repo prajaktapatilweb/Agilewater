@@ -12,22 +12,26 @@ const userPhoto = {
         title: 'SAFe For Arch',
     },
     agilephoto3: {
+        image: '/assets/images/coursephoto/ScrumatScale1.webp',
+        title: 'Scrum At Scale Banglore-Atacana Batch',
+    },
+    agilephoto4: {
         image: '/assets/images/coursephoto/safeteam1.webp',
         title: 'SAFe For Team',
     },
-    agilephoto4: {
+    agilephoto5: {
         image: '/assets/images/coursephoto/safearch2.webp',
         title: 'SAFe For Arch',
     },
-    agilephoto5: {
+    agilephoto6: {
         image: '/assets/images/coursephoto/safearch6.webp',
         title: 'SAFe For Arch',
     },
-    agilephoto6: {
+    agilephoto7: {
         image: '/assets/images/coursephoto/safeteam6.webp',
         title: 'SAFe For Team',
     },
-    agilephoto7: {
+    agilephoto8: {
         image: '/assets/images/coursephoto/safeteam2.webp',
         title: 'SAFe For Team',
     },

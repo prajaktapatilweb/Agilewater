@@ -9,7 +9,6 @@ import Testi from "modules/commanmodules/Testi";
 import { data } from "modules/Constant/mentors.data";
 import Heading from "modules/commanmodules/Heading";
 import { headList6 } from "modules/Constant/titlefile";
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 const SliderArrow = (props) => {
     const { onClick, type, className } = props;
